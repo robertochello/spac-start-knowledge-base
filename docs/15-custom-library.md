@@ -10,6 +10,12 @@ Mantenere la libreria ordinata, stabile e facilmente consultabile nel tempo.
 
 La libreria custom deve essere organizzata in una cartella dedicata `_CUSTOM` all'interno della libreria BLK di SPAC Start.
 
+Path operativo di riferimento:
+
+```text
+C:\SPAC Start 26\Librerie\Blk\_CUSTOM
+```
+
 La cartella deve contenere categorie funzionali stabili e una sezione documentale separata.
 
 ## Installazione operativa
