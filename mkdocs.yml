@@ -1,0 +1,92 @@
+site_name: SPAC Start Knowledge Base
+site_description: Knowledge base operativa per workflow SPAC Start, simboli custom, attributi, pinatura e troubleshooting.
+site_author: Roberto Chello
+site_url: https://robertochello.github.io/spac-start-knowledge-base/
+
+repo_name: robertochello/spac-start-knowledge-base
+repo_url: https://github.com/robertochello/spac-start-knowledge-base
+edit_uri: edit/master/docs/
+
+theme:
+  name: material
+  language: it
+  palette:
+    - scheme: slate
+      primary: blue
+      accent: cyan
+      toggle:
+        icon: material/weather-sunny
+        name: Passa alla modalità chiara
+    - scheme: default
+      primary: blue
+      accent: cyan
+      toggle:
+        icon: material/weather-night
+        name: Passa alla modalità scura
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.action.edit
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.highlight
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+nav:
+  - Start:
+      - Home: index.md
+      - Overview: 00-overview.md
+      - Roadmap: roadmap.md
+      - Changelog: ../CHANGELOG.md
+  - Workflow:
+      - Interfaccia e menu: 01-interface-and-menu.md
+      - Workflow CAD 2D: 02-cad-workflow.md
+      - Pagine, cartigli e immagini: 05-pages-titleblocks-images.md
+  - Simboli:
+      - Simboli custom: 03-custom-symbols.md
+      - Attributi e pinatura: 04-attributes-and-pinning.md
+      - Checklist validazione simbolo: 10-symbol-validation-checklist.md
+  - Multifilare:
+      - Multifilare: 09-multifilare.md
+      - Rimandi e morsetti: 06-cross-references-terminals.md
+  - Troubleshooting:
+      - Troubleshooting generale: 07-troubleshooting.md
+      - Known Issues: known-issues/index.md
+      - Casi pratici: 12-practical-cases.md
+  - Governance:
+      - Standard operativi: 08-standards.md
+      - Decision log: 11-decision-log.md
+      - Linee guida manutenzione: 13-maintenance-guidelines.md
+      - Glossario: glossary.md
+  - Playbook:
+      - Introduzione: playbooks/index.md
+      - Creare un simbolo custom: playbooks/create-custom-symbol.md
+      - Validare un simbolo: playbooks/validate-custom-symbol.md
+      - Diagnosticare pin non agganciato: playbooks/diagnose-pin-not-snapping.md
+      - Gestire cartiglio e logo: playbooks/titleblock-logo-workflow.md
