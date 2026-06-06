@@ -12,6 +12,101 @@ In SPAC è importante distinguere tra:
 
 Un simbolo custom utile deve essere riconoscibile e gestibile come componente SPAC, non solo come geometria grafica.
 
+## Workflow generale
+
+```mermaid
+flowchart LR
+    A[Disegno sorgente] --> B[Pulizia]
+    B --> C[Normalizzazione]
+    C --> D[Blocco DWG]
+    D --> E[Anteprima SLD]
+    E --> F[Attributi]
+    F --> G[Test]
+    G --> H[Inventario]
+```
+
+## Creazione elemento grafico
+
+Questa procedura serve quando si parte da:
+
+- DWG esterno;
+- simbolo SPAC esistente;
+- geometria disegnata manualmente.
+
+Regole iniziali:
+
+- lavorare in un foglio o progetto di prova;
+- non usare una commessa reale come laboratorio;
+- pulire il disegno da testi o linee non necessarie;
+- normalizzare layer, colore, tipo linea e spessore.
+
+## Importazione da DWG esterno
+
+Dopo aver importato un DWG esterno:
+
+1. verificare scala;
+2. verificare layer;
+3. eliminare attributi o testi non necessari;
+4. esplodere solo se serve realmente;
+5. normalizzare il disegno;
+6. trasformarlo in blocco riutilizzabile.
+
+## Importazione da simbolo SPAC esistente
+
+Un simbolo esistente può essere usato come base, ma va sempre ripulito.
+
+Checklist:
+
+- rimuovere attributi non pertinenti;
+- verificare logica Madre/Figlio;
+- controllare pinatura;
+- rinominare secondo convenzione;
+- testare il nuovo simbolo come entità autonoma.
+
+## Pulizia e normalizzazione
+
+Per i simboli custom:
+
+- usare Layer 0;
+- colore DaBlocco;
+- tipo linea DaBlocco;
+- spessore linea DaBlocco;
+- eliminare elementi non necessari;
+- mantenere il disegno leggibile e scalato.
+
+## Creazione blocco DWG
+
+Quando la geometria è pronta:
+
+1. selezionare gli oggetti del simbolo;
+2. creare il blocco DWG;
+3. scegliere un punto base coerente;
+4. salvare nella categoria corretta della libreria custom;
+5. usare il nome secondo la convenzione;
+6. lasciare l'unità senza forzature se il simbolo deve restare generico.
+
+Per simboli puramente grafici, il punto base può essere il centro grafico. Per simboli con pin, il punto base deve aiutare l'inserimento coerente nello schema.
+
+## Creazione anteprima SLD
+
+Ogni blocco DWG custom deve avere un'anteprima coerente.
+
+Regole:
+
+- aprire il DWG del simbolo;
+- centrare il disegno;
+- regolare lo zoom;
+- creare la slide SLD;
+- salvare la slide nella stessa cartella del DWG;
+- usare lo stesso nome base.
+
+Regola obbligatoria:
+
+```text
+NOME_SIMBOLO.dwg
+NOME_SIMBOLO.sld
+```
+
 ## Simbolo Madre
 
 Un simbolo Madre rappresenta il componente principale.
@@ -29,16 +124,22 @@ Esempi di simboli che possono essere gestiti come Madre:
 - dispositivi modulari;
 - componenti senza pin ma con materiale associabile.
 
-## Simbolo Figlia
+## Simbolo Figlio
 
-Un simbolo Figlia rappresenta un elemento collegato a un componente Madre, ad esempio:
+Un simbolo Figlio rappresenta un elemento collegato a un componente Madre, ad esempio:
 
 - contatti ausiliari;
 - bobine;
 - accessori;
 - elementi funzionali associati.
 
-La relazione Madre/Figlia deve essere chiara e verificabile nel progetto.
+La relazione Madre/Figlio deve essere chiara e verificabile nel progetto.
+
+Regola operativa:
+
+- Madre con `PRES = M`;
+- Figlio con `PRES = F`;
+- Figlio con lo stesso `NOME` della Madre quando deve essere associato logicamente.
 
 ## Simboli senza pin
 
@@ -72,6 +173,17 @@ Workflow consigliato:
 - usare macro per raggruppare insiemi ricorrenti;
 - mantenere chiara la relazione tra elementi;
 - testare ogni simbolo singolarmente prima di inserirlo in macro.
+
+## Associazione materiale
+
+Un simbolo intelligente può avere materiali associati se deve contribuire alla distinta.
+
+Regole:
+
+- associare materiali solo a simboli riconosciuti;
+- evitare materiali su pura grafica;
+- verificare report o distinta;
+- documentare eccezioni.
 
 ## Inventario simboli
 
