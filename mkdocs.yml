@@ -14,25 +14,17 @@ theme:
     - scheme: slate
       primary: blue
       accent: cyan
-      toggle:
-        icon: material/weather-sunny
-        name: Passa alla modalità chiara
     - scheme: default
       primary: blue
       accent: cyan
-      toggle:
-        icon: material/weather-night
-        name: Passa alla modalità scura
   features:
     - navigation.tabs
     - navigation.sections
     - navigation.expand
     - navigation.top
-    - navigation.footer
     - search.suggest
     - search.highlight
     - content.code.copy
-    - content.action.edit
 
 plugins:
   - search
@@ -45,23 +37,19 @@ markdown_extensions:
   - toc:
       permalink: true
   - pymdownx.details
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.superfences
   - pymdownx.highlight
   - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.tabbed:
-      alternate_style: true
   - pymdownx.tasklist:
       custom_checkbox: true
 
 nav:
   - Start:
       - Home: index.md
+      - Concetti SPAC: concepts.md
       - Overview: 00-overview.md
+      - Command Reference: command-reference.md
+      - FAQ: faq.md
       - Roadmap: roadmap.md
       - Changelog: changelog.md
   - Workflow:
@@ -72,6 +60,7 @@ nav:
       - Simboli custom: 03-custom-symbols.md
       - Attributi e pinatura: 04-attributes-and-pinning.md
       - Checklist validazione simbolo: 10-symbol-validation-checklist.md
+      - Standard simboli: standards/symbols.md
   - Multifilare:
       - Multifilare: 09-multifilare.md
       - Rimandi e morsetti: 06-cross-references-terminals.md
@@ -82,8 +71,12 @@ nav:
       - Riferimento immagine mancante: known-issues/missing-image-reference.md
       - Cross-reference obsoleto: known-issues/obsolete-cross-reference.md
       - Casi pratici: 12-practical-cases.md
-  - Governance:
+  - Standards:
+      - Introduzione: standards/index.md
       - Standard operativi: 08-standards.md
+      - Standard simboli: standards/symbols.md
+      - Standard CAD: standards/cad.md
+  - Governance:
       - Decision log: 11-decision-log.md
       - Linee guida manutenzione: 13-maintenance-guidelines.md
       - Quality gates: 14-quality-gates.md
