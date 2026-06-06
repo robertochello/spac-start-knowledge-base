@@ -1,5 +1,25 @@
 # Changelog
 
+## 0.6.0 - Professional polish and materials workflow
+
+### Added
+
+- Diagramma visuale della knowledge base.
+- Diagramma lifecycle simbolo custom.
+- Diagramma workflow archivi materiali custom.
+- Guida archivi materiali custom.
+- Standard materiali.
+- Template record materiale.
+- Quality gate specifico per archivi materiali.
+- Decisioni operative per import materiali e stati record.
+
+### Changed
+
+- Homepage documentale resa più visuale e orientata all'accesso rapido.
+- Guida simboli custom riorganizzata con diagramma lifecycle e tabella fasi/output.
+- Indice playbook aggiornato con tutti i playbook operativi disponibili.
+- Indice standard aggiornato con standard materiali.
+
 ## 0.5.1 - Workflow hardening
 
 ### Changed
