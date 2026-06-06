@@ -24,6 +24,18 @@ Un simbolo custom è documentabile come stabile quando:
 - lo stato è indicato nell'inventario;
 - eventuali limitazioni sono annotate.
 
+## Quality gate per archivi materiali
+
+Un archivio materiali è documentabile come stabile quando:
+
+- esiste un backup dello stato precedente;
+- i dati sono normalizzati;
+- i duplicati sono stati controllati;
+- l'import è stato testato in ambiente non critico;
+- almeno un materiale è stato associato a un simbolo;
+- distinta o report sono stati verificati;
+- ogni record ha uno stato chiaro.
+
 ## Quality gate per troubleshooting
 
 Una nota di troubleshooting è pronta quando:
