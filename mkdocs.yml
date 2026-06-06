@@ -48,6 +48,8 @@ nav:
       - Home: index.md
       - Concetti SPAC: concepts.md
       - Overview: 00-overview.md
+      - Libreria custom: 15-custom-library.md
+      - Template progetto: 16-project-template.md
       - Command Reference: command-reference.md
       - FAQ: faq.md
       - Roadmap: roadmap.md
@@ -56,10 +58,16 @@ nav:
       - Interfaccia e menu: 01-interface-and-menu.md
       - Workflow CAD 2D: 02-cad-workflow.md
       - Pagine, cartigli e immagini: 05-pages-titleblocks-images.md
+      - Numerazione e identificazione fili: 18-wire-numbering.md
+  - Unifilare:
+      - Schema unifilare: 17-unifilare.md
+      - Numerazione e identificazione fili: 18-wire-numbering.md
   - Simboli:
       - Simboli custom: 03-custom-symbols.md
       - Attributi e pinatura: 04-attributes-and-pinning.md
       - Checklist validazione simbolo: 10-symbol-validation-checklist.md
+      - Nomenclatura simboli: 19-symbol-naming.md
+      - Dizionario abbreviazioni: 20-abbreviations.md
       - Standard simboli: standards/symbols.md
   - Multifilare:
       - Multifilare: 09-multifilare.md
