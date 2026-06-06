@@ -93,3 +93,35 @@ Usare preferibilmente immagini raster con riferimenti controllati quando il work
 
 **Stato**  
 Attiva.
+
+---
+
+### D006 — Import materiali sempre tramite staging
+
+**Contesto**  
+Gli archivi materiali possono impattare distinta, report e associazioni ai simboli.
+
+**Decisione**  
+Ogni archivio materiali custom deve passare da backup, staging, controllo duplicati e validazione su progetto non critico prima di diventare standard.
+
+**Motivazione**  
+Riduce il rischio di duplicazioni, dati incoerenti e import non reversibili.
+
+**Stato**  
+Attiva.
+
+---
+
+### D007 — Ogni materiale deve avere uno stato
+
+**Contesto**  
+Un archivio materiali può contenere record in fasi diverse di maturità.
+
+**Decisione**  
+Ogni record materiale deve avere uno stato tra Bozza, Da verificare, Validato e Deprecato.
+
+**Motivazione**  
+Permette di distinguere materiali pronti all'uso da materiali ancora da validare.
+
+**Stato**  
+Attiva.
