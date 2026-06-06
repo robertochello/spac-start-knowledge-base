@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="430" viewBox="0 0 1180 430" role="img" aria-labelledby="title desc">
+  <title id="title">Custom symbol lifecycle</title>
+  <desc id="desc">Lifecycle from CAD source to SPAC custom symbol validation and inventory.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1220"/><stop offset="1" stop-color="#020617"/></linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#172554"/><stop offset="1" stop-color="#0f172a"/></linearGradient>
+    <style>
+      .box { fill: url(#card); stroke: #2563eb; stroke-width: 1.4; }
+      .final { fill: #0e7490; stroke: #67e8f9; stroke-width: 1.4; }
+      .title { fill: #f8fafc; font-family: Inter, Arial, sans-serif; font-size: 25px; font-weight: 800; }
+      .label { fill: #f8fafc; font-family: Inter, Arial, sans-serif; font-size: 18px; font-weight: 750; }
+      .text { fill: #cbd5e1; font-family: Inter, Arial, sans-serif; font-size: 13px; }
+      .arrow { stroke: #38bdf8; stroke-width: 3; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#38bdf8"/></marker>
+  </defs>
+  <rect width="1180" height="430" rx="28" fill="url(#bg)"/>
+  <text x="54" y="58" class="title">Lifecycle simbolo custom</text>
+  <text x="54" y="86" class="text">Dal disegno sorgente al simbolo validato, inventariato e riutilizzabile.</text>
+
+  <rect x="54" y="154" width="170" height="96" rx="18" class="box"/>
+  <text x="82" y="194" class="label">Sorgente</text>
+  <text x="82" y="219" class="text">DWG o simbolo base</text>
+
+  <rect x="270" y="154" width="170" height="96" rx="18" class="box"/>
+  <text x="298" y="194" class="label">Pulizia</text>
+  <text x="298" y="219" class="text">Layer, scala, geometria</text>
+
+  <rect x="486" y="154" width="170" height="96" rx="18" class="box"/>
+  <text x="514" y="194" class="label">DWG / SLD</text>
+  <text x="514" y="219" class="text">Blocco e anteprima</text>
+
+  <rect x="702" y="154" width="170" height="96" rx="18" class="box"/>
+  <text x="730" y="194" class="label">Attributi</text>
+  <text x="730" y="219" class="text">Madre, Figlio, pin</text>
+
+  <rect x="918" y="154" width="210" height="96" rx="18" class="final"/>
+  <text x="946" y="194" class="label">Validazione</text>
+  <text x="946" y="219" class="text">Test, materiale, inventario</text>
+
+  <line x1="224" y1="202" x2="270" y2="202" class="arrow"/>
+  <line x1="440" y1="202" x2="486" y2="202" class="arrow"/>
+  <line x1="656" y1="202" x2="702" y2="202" class="arrow"/>
+  <line x1="872" y1="202" x2="918" y2="202" class="arrow"/>
+
+  <rect x="170" y="306" width="840" height="58" rx="16" fill="#0f172a" stroke="#334155"/>
+  <text x="214" y="342" class="text">Regola: un simbolo è stabile solo se inserimento, attributi, pinatura, materiale e inventario sono stati verificati.</text>
+</svg>
