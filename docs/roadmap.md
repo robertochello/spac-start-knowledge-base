@@ -4,9 +4,9 @@ Questa roadmap definisce le prossime evoluzioni della knowledge base SPAC Start.
 
 ## Fase 1 — Base operativa
 
-Stato: avviata.
+Stato: completata come prima struttura.
 
-Obiettivi:
+Contenuti presenti:
 
 - README principale;
 - struttura `docs/`;
@@ -14,11 +14,31 @@ Obiettivi:
 - guida attributi e pinatura;
 - workflow CAD 2D;
 - troubleshooting iniziale;
-- standard operativi.
+- standard operativi;
+- template di base;
+- changelog.
 
-## Fase 2 — Multifilare
+## Fase 2 — Consolidamento standard
 
-Stato: da creare.
+Stato: in corso.
+
+Contenuti presenti:
+
+- checklist validazione simbolo;
+- decision log;
+- casi pratici iniziali;
+- linee guida di manutenzione.
+
+Prossimi miglioramenti:
+
+- aggiungere esempi non sensibili;
+- collegare ogni standard a un caso pratico;
+- creare checklist specifiche per cartigli, rimandi e morsetti;
+- aggiungere tabella stato per simboli custom.
+
+## Fase 3 — Multifilare
+
+Stato: da sviluppare.
 
 Contenuti previsti:
 
@@ -30,31 +50,31 @@ Contenuti previsti:
 - rimandi alimentazioni;
 - morsetti e rappresentazione grafica.
 
-## Fase 3 — Template e inventari
+## Fase 4 — Template e inventari
 
 Stato: da espandere.
 
 Contenuti previsti:
 
-- template inventario simboli custom;
 - template checklist simbolo;
 - template pagina standard;
-- template troubleshooting;
-- modello changelog knowledge base.
+- modello changelog knowledge base;
+- modello scheda decisione;
+- modello caso pratico.
 
-## Fase 4 — Casi pratici
+## Fase 5 — Casi pratici
 
-Stato: da alimentare progressivamente.
+Stato: avviata.
 
 Contenuti previsti:
 
-- casi reali risolti;
+- casi reali risolti, riscritti in forma generica;
 - errori ricorrenti;
 - procedure validate;
 - screenshot non sensibili;
-- esempi generici riproducibili.
+- esempi riproducibili.
 
-## Fase 5 — Qualità e revisione
+## Fase 6 — Qualità e revisione
 
 Stato: continuativa.
 
@@ -64,4 +84,5 @@ Attività:
 - distinzione tra testato e da verificare;
 - miglioramento struttura;
 - standardizzazione terminologia;
-- aggiornamento README.
+- aggiornamento README;
+- controllo link interni.
