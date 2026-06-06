@@ -2,6 +2,8 @@
 
 Questa sezione definisce il workflow operativo per creare e gestire simboli custom in SPAC Start.
 
+![Lifecycle simbolo custom](assets/diagrams/custom-symbol-lifecycle.svg)
+
 ## Concetto generale
 
 In SPAC è importante distinguere tra:
@@ -14,16 +16,16 @@ Un simbolo custom utile deve essere riconoscibile e gestibile come componente SP
 
 ## Workflow generale
 
-```mermaid
-flowchart LR
-    A[Disegno sorgente] --> B[Pulizia]
-    B --> C[Normalizzazione]
-    C --> D[Blocco DWG]
-    D --> E[Anteprima SLD]
-    E --> F[Attributi]
-    F --> G[Test]
-    G --> H[Inventario]
-```
+| Fase | Output |
+|---|---|
+| Disegno sorgente | Geometria o simbolo base |
+| Pulizia | Entità essenziali e leggibili |
+| Normalizzazione | Layer, colore, tipo linea e scala coerenti |
+| Blocco DWG | Simbolo salvato nella categoria corretta |
+| Anteprima SLD | Anteprima con stesso nome base del DWG |
+| Attributi | Madre, Figlio, pinatura e dati componente |
+| Test | Inserimento, collegamenti, materiale e report |
+| Inventario | Stato e note operative documentate |
 
 ## Creazione elemento grafico
 
