@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.5.0 - README integration sprint
+
+### Added
+
+- Sezione libreria custom con installazione, categorie e checklist manutenzione.
+- Sezione template progetto con pagine standard e riferimento DWG.
+- Sezione schema unifilare.
+- Sezione numerazione e identificazione fili.
+- Sezione nomenclatura simboli.
+- Dizionario abbreviazioni.
+
+### Changed
+
+- Guida simboli custom ampliata con workflow DWG, SLD, normalizzazione, Madre/Figlio e materiali.
+- Guida attributi e pinatura ampliata con relazione Madre/Figlio e dettagli configurazione pin.
+- Guida pagine, cartigli e immagini ampliata con gestione riferimenti e cartella risorse.
+- Guida rimandi, cross-reference e morsetti ampliata con direzioni rimandi, lista rimandi, morsettiere e rappresentazioni NumI/NumO/NumM.
+- Navigazione MkDocs aggiornata con le sezioni importate dal README operativo.
+
 ## 0.4.0 - Operational playbooks sprint
 
 ### Added
