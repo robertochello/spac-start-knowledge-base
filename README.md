@@ -20,12 +20,13 @@ Non è un manuale sostitutivo del software. È una raccolta tecnica personale e 
 | Area | Stato | Note |
 |---|---:|---|
 | Struttura repository | Avviata | README, docs, template e changelog presenti |
-| Simboli custom | In corso | Standard iniziale definito |
+| Simboli custom | In corso | Standard iniziale e checklist disponibili |
 | Attributi e pinatura | In corso | Convenzione PINA/PINB documentata |
 | Workflow CAD 2D | In corso | Layer, blocchi, scala e geometrie documentati |
 | Rimandi e morsetti | In corso | Prima checklist operativa disponibile |
+| Decision log | Avviato | Scelte operative tracciate |
+| Casi pratici | Avviato | Primi casi generici disponibili |
 | Multifilare | Da sviluppare | Placeholder creato |
-| Casi pratici | Da alimentare | Da aggiungere con esempi non sensibili |
 
 ## Mappa rapida
 
@@ -41,15 +42,20 @@ Non è un manuale sostitutivo del software. È una raccolta tecnica personale e 
 | [`docs/07-troubleshooting.md`](docs/07-troubleshooting.md) | Quando qualcosa non funziona e serve una diagnosi ordinata |
 | [`docs/08-standards.md`](docs/08-standards.md) | Per convenzioni operative e regole generali |
 | [`docs/09-multifilare.md`](docs/09-multifilare.md) | Per la futura sezione multifilare |
+| [`docs/10-symbol-validation-checklist.md`](docs/10-symbol-validation-checklist.md) | Per validare un simbolo custom prima del riuso |
+| [`docs/11-decision-log.md`](docs/11-decision-log.md) | Per consultare le decisioni operative consolidate |
+| [`docs/12-practical-cases.md`](docs/12-practical-cases.md) | Per casi pratici risolti o da consolidare |
+| [`docs/13-maintenance-guidelines.md`](docs/13-maintenance-guidelines.md) | Per mantenere ordinata la knowledge base |
 | [`docs/roadmap.md`](docs/roadmap.md) | Per pianificare le prossime evoluzioni |
 
 ## Workflow consigliato
 
 1. **Cerca prima nel troubleshooting** se il problema è operativo.
 2. **Consulta lo standard** se devi creare o modificare un simbolo.
-3. **Aggiorna il template** se il caso diventa ricorrente.
-4. **Documenta solo procedure testate** oppure marca chiaramente ciò che è da verificare.
-5. **Non inserire dati sensibili**: la knowledge base deve restare generica e riutilizzabile.
+3. **Usa la checklist** prima di dichiarare stabile un simbolo custom.
+4. **Aggiungi un caso pratico** se il problema può ripresentarsi.
+5. **Registra una decisione** quando una scelta tecnica diventa standard.
+6. **Non inserire dati sensibili**: la knowledge base deve restare generica e riutilizzabile.
 
 ## Principi editoriali
 
@@ -65,6 +71,8 @@ Non è un manuale sostitutivo del software. È una raccolta tecnica personale e 
 |---|---|
 | [`templates/symbol-inventory-template.md`](templates/symbol-inventory-template.md) | Struttura consigliata per inventario simboli custom |
 | [`templates/troubleshooting-template.md`](templates/troubleshooting-template.md) | Modello per documentare problemi ricorrenti |
+| [`templates/decision-template.md`](templates/decision-template.md) | Modello per registrare decisioni operative |
+| [`templates/practical-case-template.md`](templates/practical-case-template.md) | Modello per documentare casi pratici |
 
 ## Prossime evoluzioni
 
@@ -72,9 +80,9 @@ Le prossime attività ad alto valore sono:
 
 - completare la sezione multifilare;
 - creare esempi non sensibili di simboli custom;
-- aggiungere una checklist di validazione simbolo;
-- creare una sezione decision log;
-- collegare casi pratici a procedure e standard.
+- aggiungere checklist specifiche per cartigli, rimandi e morsetti;
+- collegare ogni caso pratico a standard e decisioni;
+- creare una struttura per screenshot e allegati non sensibili.
 
 ## Nota importante
 
