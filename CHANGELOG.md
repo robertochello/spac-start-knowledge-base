@@ -2,6 +2,29 @@
 
 Tutte le modifiche rilevanti alla knowledge base saranno documentate in questo file.
 
+## 0.3.0 - Documentation site foundation
+
+### Added
+
+- Configurazione MkDocs Material.
+- Dipendenze MkDocs in `requirements.txt`.
+- Homepage documentale in `docs/index.md`.
+- Workflow GitHub Actions per build e deploy documentazione.
+- Playbook operativi:
+  - creazione simbolo custom;
+  - validazione simbolo custom;
+  - diagnosi pin non agganciato;
+  - gestione cartiglio e logo.
+- Glossario operativo.
+- Sezione Known Issues.
+- Quality gates documentali.
+- Changelog interno per sito documentale.
+
+### Changed
+
+- README aggiornato per riflettere il nuovo sito documentale.
+- Navigazione documentale organizzata per aree operative.
+
 ## 0.2.0 - Knowledge base consolidation
 
 ### Added
