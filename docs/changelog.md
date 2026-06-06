@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.5.1 - Workflow hardening
+
+### Changed
+
+- Dipendenze documentazione rese esplicite in `requirements.txt`.
+- Workflow GitHub Actions reso più robusto per il deploy MkDocs.
+- Build deploy non più eseguita in modalità strict, per evitare failure su warning non bloccanti.
+- Configurazione Git author aggiunta prima del deploy.
+- Deploy configurato con `--no-history`.
+
 ## 0.5.0 - README integration sprint
 
 ### Added
