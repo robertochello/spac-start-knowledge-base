@@ -16,6 +16,7 @@ Knowledge base operativa per **SPAC Start Impianti**, pensata per trasformare pr
 | Creare o revisionare un simbolo custom | [Simboli custom](03-custom-symbols.md) |
 | Controllare attributi e pinatura | [Attributi e pinatura](04-attributes-and-pinning.md) |
 | Gestire archivi materiali custom | [Archivi materiali custom](21-material-archives.md) |
+| Consultare esempi operativi | [Esempi operativi](24-operational-examples.md) |
 | Validare un simbolo prima del riuso | [Checklist validazione simbolo](10-symbol-validation-checklist.md) |
 | Risolvere un problema ricorrente | [Troubleshooting](07-troubleshooting.md) |
 | Consultare decisioni operative | [Decision log](11-decision-log.md) |
@@ -47,6 +48,7 @@ Knowledge base operativa per **SPAC Start Impianti**, pensata per trasformare pr
 | Workflow CAD | In consolidamento |
 | Rimandi e morsetti | In corso |
 | Materiali custom | Avviata |
+| Esempi operativi | Avviati |
 | Multifilare | In sviluppo |
 | Casi pratici | Avviati |
 | Governance documentale | Avviata |
@@ -59,4 +61,4 @@ Le prossime evoluzioni chiave sono:
 2. aggiungere screenshot non sensibili;
 3. creare known issues dedicati;
 4. collegare ogni caso pratico a una decisione o a uno standard;
-5. consolidare una release `1.0.0` come primo standard stabile.
+5. consolidare una baseline stabile come primo standard operativo.
