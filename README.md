@@ -2,66 +2,79 @@
 
 Knowledge base operativa per raccogliere procedure, standard, note tecniche e workflow pratici su **SPAC Start Impianti**.
 
-L'obiettivo non è creare un manuale alternativo al software, ma una base di conoscenza incrementale, strutturata e consultabile per lavorare in modo più ordinato su disegni elettrici, simboli custom, cartigli, pagine standard, rimandi e flussi CAD.
+Questa repository nasce per trasformare appunti, prove e procedure ricorrenti in una base di conoscenza ordinata, consultabile e aggiornabile nel tempo.
 
-## Obiettivo
+## Posizionamento
 
-Questa repository nasce per documentare ciò che viene realmente testato sul campo, con un taglio pratico:
+Non è un manuale sostitutivo del software. È una raccolta tecnica personale e incrementale, orientata a:
 
-- procedure operative;
-- standard di nomenclatura;
-- gestione simboli custom;
-- attributi e pinatura;
-- workflow CAD 2D;
-- pagine standard e cartigli;
-- rimandi, morsetti e riferimenti;
-- troubleshooting ricorrente.
+- ridurre ambiguità operative;
+- standardizzare simboli e attributi;
+- documentare procedure testate;
+- velocizzare troubleshooting e riuso;
+- mantenere memoria tecnica dei casi risolti;
+- costruire uno standard pratico di lavoro su SPAC Start.
 
-## Principi della knowledge base
+## Stato progetto
 
-- **Solo contenuti testati o ragionevolmente verificati**.
-- **Procedure brevi, chiare e riutilizzabili**.
-- **Standard incrementali**, migliorabili nel tempo.
-- **Nessun dato aziendale sensibile**.
-- **Nessun archivio materiale completo nel README**.
-- **Separazione tra guida, standard, troubleshooting e template**.
+| Area | Stato | Note |
+|---|---:|---|
+| Struttura repository | Avviata | README, docs, template e changelog presenti |
+| Simboli custom | In corso | Standard iniziale definito |
+| Attributi e pinatura | In corso | Convenzione PINA/PINB documentata |
+| Workflow CAD 2D | In corso | Layer, blocchi, scala e geometrie documentati |
+| Rimandi e morsetti | In corso | Prima checklist operativa disponibile |
+| Multifilare | Da sviluppare | Placeholder creato |
+| Casi pratici | Da alimentare | Da aggiungere con esempi non sensibili |
 
-## Struttura
+## Mappa rapida
 
-| Percorso | Contenuto |
+| Sezione | Quando usarla |
 |---|---|
-| `docs/00-overview.md` | Visione generale e logica della knowledge base |
-| `docs/01-interface-and-menu.md` | Interfaccia, menu, comandi e ripristino ambiente |
-| `docs/02-cad-workflow.md` | Workflow CAD 2D, disegno, layer, blocchi e scala |
-| `docs/03-custom-symbols.md` | Simboli custom, macro, simboli madre/figlia e librerie |
-| `docs/04-attributes-and-pinning.md` | Attributi SPAC, pinatura e convenzioni PINA/PINB |
-| `docs/05-pages-titleblocks-images.md` | Pagine standard, cartigli, immagini e riferimenti esterni |
-| `docs/06-cross-references-terminals.md` | Rimandi, alimentazioni, cross-reference e morsetti |
-| `docs/07-troubleshooting.md` | Problemi ricorrenti e checklist diagnostiche |
-| `docs/08-standards.md` | Standard generali e convenzioni operative |
-| `docs/roadmap.md` | Roadmap della knowledge base |
-| `templates/` | Template riutilizzabili |
+| [`docs/00-overview.md`](docs/00-overview.md) | Per capire scopo, metodo e limiti della knowledge base |
+| [`docs/01-interface-and-menu.md`](docs/01-interface-and-menu.md) | Quando menu, librerie o shortcut devono essere ripristinati o documentati |
+| [`docs/02-cad-workflow.md`](docs/02-cad-workflow.md) | Per disegno CAD 2D, layer, scala, blocchi e geometrie non elettriche |
+| [`docs/03-custom-symbols.md`](docs/03-custom-symbols.md) | Per creare o revisionare simboli custom |
+| [`docs/04-attributes-and-pinning.md`](docs/04-attributes-and-pinning.md) | Per attributi, PRES, PINA e PINB |
+| [`docs/05-pages-titleblocks-images.md`](docs/05-pages-titleblocks-images.md) | Per pagine standard, cartigli, immagini e loghi |
+| [`docs/06-cross-references-terminals.md`](docs/06-cross-references-terminals.md) | Per rimandi, cross-reference, alimentazioni e morsetti |
+| [`docs/07-troubleshooting.md`](docs/07-troubleshooting.md) | Quando qualcosa non funziona e serve una diagnosi ordinata |
+| [`docs/08-standards.md`](docs/08-standards.md) | Per convenzioni operative e regole generali |
+| [`docs/09-multifilare.md`](docs/09-multifilare.md) | Per la futura sezione multifilare |
+| [`docs/roadmap.md`](docs/roadmap.md) | Per pianificare le prossime evoluzioni |
 
-## Quick Start
+## Workflow consigliato
 
-Per consultare la guida, partire da:
+1. **Cerca prima nel troubleshooting** se il problema è operativo.
+2. **Consulta lo standard** se devi creare o modificare un simbolo.
+3. **Aggiorna il template** se il caso diventa ricorrente.
+4. **Documenta solo procedure testate** oppure marca chiaramente ciò che è da verificare.
+5. **Non inserire dati sensibili**: la knowledge base deve restare generica e riutilizzabile.
 
-1. [`docs/00-overview.md`](docs/00-overview.md)
-2. [`docs/03-custom-symbols.md`](docs/03-custom-symbols.md)
-3. [`docs/04-attributes-and-pinning.md`](docs/04-attributes-and-pinning.md)
-4. [`docs/07-troubleshooting.md`](docs/07-troubleshooting.md)
+## Principi editoriali
 
-## Stato del progetto
+- Scrivere procedure brevi, verificabili e operative.
+- Separare ciò che è testato da ciò che è ipotesi.
+- Evitare duplicazioni tra file.
+- Preferire checklist e decisioni pratiche rispetto a testo teorico.
+- Mantenere i contenuti indipendenti dalle singole commesse.
 
-Questa repository è una base iniziale. Verrà ampliata progressivamente con:
+## Template disponibili
 
-- esempi pratici;
-- screenshot;
-- template;
-- checklist;
-- procedure multifilare;
-- convenzioni interne più strutturate;
-- note sui casi reali risolti.
+| Template | Uso |
+|---|---|
+| [`templates/symbol-inventory-template.md`](templates/symbol-inventory-template.md) | Struttura consigliata per inventario simboli custom |
+| [`templates/troubleshooting-template.md`](templates/troubleshooting-template.md) | Modello per documentare problemi ricorrenti |
+
+## Prossime evoluzioni
+
+Le prossime attività ad alto valore sono:
+
+- completare la sezione multifilare;
+- creare esempi non sensibili di simboli custom;
+- aggiungere una checklist di validazione simbolo;
+- creare una sezione decision log;
+- collegare casi pratici a procedure e standard.
 
 ## Nota importante
 
