@@ -87,3 +87,8 @@ nav:
       - Validare un simbolo: playbooks/validate-custom-symbol.md
       - Diagnosticare pin non agganciato: playbooks/diagnose-pin-not-snapping.md
       - Gestire cartiglio e logo: playbooks/titleblock-logo-workflow.md
+      - Gestire accessori e bobine: playbooks/manage-accessories-and-coils.md
+      - Verificare rappresentazione morsetti: playbooks/terminal-representation.md
+      - Diagnosticare rimandi alimentazione: playbooks/power-reference-diagnostic.md
+      - Associare materiali: playbooks/material-association.md
+      - Pulire oggetti residui: playbooks/clean-residual-objects.md
