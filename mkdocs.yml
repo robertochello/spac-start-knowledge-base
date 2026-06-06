@@ -63,7 +63,7 @@ nav:
       - Home: index.md
       - Overview: 00-overview.md
       - Roadmap: roadmap.md
-      - Changelog: ../CHANGELOG.md
+      - Changelog: changelog.md
   - Workflow:
       - Interfaccia e menu: 01-interface-and-menu.md
       - Workflow CAD 2D: 02-cad-workflow.md
@@ -78,11 +78,15 @@ nav:
   - Troubleshooting:
       - Troubleshooting generale: 07-troubleshooting.md
       - Known Issues: known-issues/index.md
+      - Pin non agganciato: known-issues/pin-not-snapping.md
+      - Riferimento immagine mancante: known-issues/missing-image-reference.md
+      - Cross-reference obsoleto: known-issues/obsolete-cross-reference.md
       - Casi pratici: 12-practical-cases.md
   - Governance:
       - Standard operativi: 08-standards.md
       - Decision log: 11-decision-log.md
       - Linee guida manutenzione: 13-maintenance-guidelines.md
+      - Quality gates: 14-quality-gates.md
       - Glossario: glossary.md
   - Playbook:
       - Introduzione: playbooks/index.md
