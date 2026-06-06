@@ -27,40 +27,56 @@ Contenuti presenti:
 - checklist validazione simbolo;
 - decision log;
 - casi pratici iniziali;
-- linee guida di manutenzione.
+- linee guida di manutenzione;
+- quality gates;
+- standard materiali;
+- linee guida immagini e screenshot.
 
 Prossimi miglioramenti:
 
-- aggiungere esempi non sensibili;
 - collegare ogni standard a un caso pratico;
 - creare checklist specifiche per cartigli, rimandi e morsetti;
-- aggiungere tabella stato per simboli custom.
+- aggiungere tabella stato per simboli custom;
+- consolidare esempi sanitizzati.
 
 ## Fase 3 — Multifilare
 
-Stato: da sviluppare.
+Stato: in sviluppo.
 
-Contenuti previsti:
+Contenuti presenti:
 
-- inserimento simboli multifilare;
+- concetti base multifilare;
 - gestione bobine/accessori;
-- simboli Madre/Figlia;
 - associazione materiali;
 - riferimenti incrociati;
 - rimandi alimentazioni;
 - morsetti e rappresentazione grafica.
 
-## Fase 4 — Template e inventari
+Prossimi miglioramenti:
 
-Stato: da espandere.
+- esempi guidati;
+- checklist avanzata morsettiere;
+- casi pratici su accessori e bobine;
+- troubleshooting dedicato.
 
-Contenuti previsti:
+## Fase 4 — Materiali custom
 
-- template checklist simbolo;
-- template pagina standard;
-- modello changelog knowledge base;
-- modello scheda decisione;
-- modello caso pratico.
+Stato: avviata.
+
+Contenuti presenti:
+
+- workflow archivi materiali;
+- standard materiali;
+- stati record;
+- quality gate;
+- decisioni operative.
+
+Prossimi miglioramenti:
+
+- guida di import basata su caso reale;
+- esempio archivio ridotto e generico;
+- checklist di validazione compatta;
+- collegamento con simboli custom e report.
 
 ## Fase 5 — Casi pratici
 
@@ -71,7 +87,7 @@ Contenuti previsti:
 - casi reali risolti, riscritti in forma generica;
 - errori ricorrenti;
 - procedure validate;
-- screenshot non sensibili;
+- screenshot sanitizzati;
 - esempi riproducibili.
 
 ## Fase 6 — Qualità e revisione
@@ -85,4 +101,16 @@ Attività:
 - miglioramento struttura;
 - standardizzazione terminologia;
 - aggiornamento README;
-- controllo link interni.
+- controllo link interni;
+- verifica build documentale.
+
+## Baseline stabile
+
+La knowledge base sarà considerata stabile quando:
+
+- la navigazione è coerente;
+- ogni sezione principale ha uno scopo chiaro;
+- i contenuti principali hanno verifica finale o quality gate;
+- i materiali visuali sono sanitizzati;
+- il deploy documentale è verificato;
+- il changelog descrive chiaramente lo stato della guida.
