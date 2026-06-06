@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.7.0 - Operational examples sprint
+
+### Added
+
+- Esempio visuale simbolo Madre.
+- Esempio visuale simbolo cablato con pin.
+- Esempio visuale rappresentazione morsetto.
+- Esempio visuale record materiale.
+- Pagina `Esempi operativi` con riferimenti e verifiche minime.
+
+### Changed
+
+- Homepage documentale aggiornata con accesso rapido agli esempi operativi.
+
 ## 0.6.0 - Professional polish and materials workflow
 
 ### Added
