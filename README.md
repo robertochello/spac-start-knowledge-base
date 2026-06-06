@@ -4,6 +4,22 @@ Knowledge base operativa per raccogliere procedure, standard, note tecniche e wo
 
 Questa repository nasce per trasformare appunti, prove e procedure ricorrenti in una base di conoscenza ordinata, consultabile e aggiornabile nel tempo.
 
+## Documentation site
+
+La repository è configurata per essere pubblicata come sito documentale tramite **MkDocs Material**.
+
+Caratteristiche principali:
+
+- navigazione laterale strutturata;
+- ricerca interna;
+- tema dark/light;
+- supporto Mermaid per diagrammi;
+- playbook operativi;
+- known issues;
+- decision log;
+- quality gates;
+- deploy automatico tramite GitHub Actions.
+
 ## Posizionamento
 
 Non è un manuale sostitutivo del software. È una raccolta tecnica personale e incrementale, orientata a:
@@ -19,6 +35,7 @@ Non è un manuale sostitutivo del software. È una raccolta tecnica personale e 
 
 | Area | Stato | Note |
 |---|---:|---|
+| Sito documentale | Avviato | MkDocs Material configurato |
 | Struttura repository | Avviata | README, docs, template e changelog presenti |
 | Simboli custom | In corso | Standard iniziale e checklist disponibili |
 | Attributi e pinatura | In corso | Convenzione PINA/PINB documentata |
@@ -26,12 +43,14 @@ Non è un manuale sostitutivo del software. È una raccolta tecnica personale e 
 | Rimandi e morsetti | In corso | Prima checklist operativa disponibile |
 | Decision log | Avviato | Scelte operative tracciate |
 | Casi pratici | Avviato | Primi casi generici disponibili |
+| Known issues | Avviato | Problemi ricorrenti organizzati |
 | Multifilare | Da sviluppare | Placeholder creato |
 
 ## Mappa rapida
 
 | Sezione | Quando usarla |
 |---|---|
+| [`docs/index.md`](docs/index.md) | Homepage documentale della knowledge base |
 | [`docs/00-overview.md`](docs/00-overview.md) | Per capire scopo, metodo e limiti della knowledge base |
 | [`docs/01-interface-and-menu.md`](docs/01-interface-and-menu.md) | Quando menu, librerie o shortcut devono essere ripristinati o documentati |
 | [`docs/02-cad-workflow.md`](docs/02-cad-workflow.md) | Per disegno CAD 2D, layer, scala, blocchi e geometrie non elettriche |
@@ -46,6 +65,8 @@ Non è un manuale sostitutivo del software. È una raccolta tecnica personale e 
 | [`docs/11-decision-log.md`](docs/11-decision-log.md) | Per consultare le decisioni operative consolidate |
 | [`docs/12-practical-cases.md`](docs/12-practical-cases.md) | Per casi pratici risolti o da consolidare |
 | [`docs/13-maintenance-guidelines.md`](docs/13-maintenance-guidelines.md) | Per mantenere ordinata la knowledge base |
+| [`docs/14-quality-gates.md`](docs/14-quality-gates.md) | Per verificare la qualità dei contenuti |
+| [`docs/glossary.md`](docs/glossary.md) | Per chiarire terminologia e concetti |
 | [`docs/roadmap.md`](docs/roadmap.md) | Per pianificare le prossime evoluzioni |
 
 ## Workflow consigliato
@@ -57,13 +78,20 @@ Non è un manuale sostitutivo del software. È una raccolta tecnica personale e 
 5. **Registra una decisione** quando una scelta tecnica diventa standard.
 6. **Non inserire dati sensibili**: la knowledge base deve restare generica e riutilizzabile.
 
-## Principi editoriali
+## Local preview
 
-- Scrivere procedure brevi, verificabili e operative.
-- Separare ciò che è testato da ciò che è ipotesi.
-- Evitare duplicazioni tra file.
-- Preferire checklist e decisioni pratiche rispetto a testo teorico.
-- Mantenere i contenuti indipendenti dalle singole commesse.
+Per visualizzare localmente la documentazione:
+
+```bash
+pip install -r requirements.txt
+mkdocs serve
+```
+
+Per generare il sito statico:
+
+```bash
+mkdocs build --strict
+```
 
 ## Template disponibili
 
@@ -82,7 +110,8 @@ Le prossime attività ad alto valore sono:
 - creare esempi non sensibili di simboli custom;
 - aggiungere checklist specifiche per cartigli, rimandi e morsetti;
 - collegare ogni caso pratico a standard e decisioni;
-- creare una struttura per screenshot e allegati non sensibili.
+- creare una struttura per screenshot e allegati non sensibili;
+- collegare il sito documentale al portfolio personale.
 
 ## Nota importante
 
