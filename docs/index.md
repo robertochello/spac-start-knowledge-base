@@ -2,38 +2,32 @@
 
 Knowledge base operativa per **SPAC Start Impianti**, pensata per trasformare prove, procedure e standard in documentazione tecnica consultabile.
 
+![SPAC Start Knowledge Base map](assets/diagrams/knowledge-base-map.svg)
+
 !!! note "Obiettivo"
-    Portare ordine nei workflow SPAC: simboli custom, attributi, pinatura, cartigli, rimandi, morsetti, troubleshooting e standard documentali.
-
-## Mappa operativa
-
-```mermaid
-flowchart LR
-    A[Problema operativo] --> B{Che tipo di problema è?}
-    B -->|Simbolo| C[Simboli custom]
-    B -->|Pinatura| D[Attributi e pin]
-    B -->|Rimandi/Morsetti| E[Cross-reference]
-    B -->|Cartiglio/Logo| F[Pagine e cartigli]
-    B -->|Errore ricorrente| G[Troubleshooting]
-    C --> H[Checklist validazione]
-    D --> H
-    E --> G
-    F --> G
-    G --> I[Caso pratico]
-    H --> J[Decision log]
-```
+    Portare ordine nei workflow SPAC: simboli custom, attributi, pinatura, cartigli, rimandi, morsetti, materiali, troubleshooting e standard documentali.
 
 ## Accesso rapido
 
 | Necessità | Vai a |
 |---|---|
 | Capire struttura e scopo | [Overview](00-overview.md) |
+| Installare o mantenere la libreria custom | [Libreria custom](15-custom-library.md) |
 | Creare o revisionare un simbolo custom | [Simboli custom](03-custom-symbols.md) |
 | Controllare attributi e pinatura | [Attributi e pinatura](04-attributes-and-pinning.md) |
+| Gestire archivi materiali custom | [Archivi materiali custom](21-material-archives.md) |
 | Validare un simbolo prima del riuso | [Checklist validazione simbolo](10-symbol-validation-checklist.md) |
 | Risolvere un problema ricorrente | [Troubleshooting](07-troubleshooting.md) |
 | Consultare decisioni operative | [Decision log](11-decision-log.md) |
 | Standardizzare il modo di lavorare | [Standard operativi](08-standards.md) |
+
+## Come usare questa guida
+
+1. Parti dal problema operativo.
+2. Vai alla sezione dedicata.
+3. Segui il playbook o la checklist.
+4. Verifica il risultato in un progetto di prova.
+5. Aggiorna decision log, standard o casi pratici se emerge una nuova regola.
 
 ## Principi guida
 
@@ -52,7 +46,8 @@ flowchart LR
 | Attributi e pinatura | In consolidamento |
 | Workflow CAD | In consolidamento |
 | Rimandi e morsetti | In corso |
-| Multifilare | Da sviluppare |
+| Materiali custom | Avviata |
+| Multifilare | In sviluppo |
 | Casi pratici | Avviati |
 | Governance documentale | Avviata |
 
