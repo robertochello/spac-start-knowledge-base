@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.4.0 - Operational playbooks sprint
+
+### Added
+
+- Sezione multifilare ampliata con workflow, materiali, morsetti, rimandi e checklist.
+- Playbook gestione accessori e bobine.
+- Playbook verifica rappresentazione morsetti.
+- Playbook diagnosi rimandi alimentazione.
+- Playbook associazione materiali.
+- Playbook pulizia oggetti residui.
+
+### Changed
+
+- Navigazione MkDocs aggiornata con i nuovi playbook operativi.
+- Knowledge base collegata al portfolio personale come progetto dedicato.
+
 ## 0.3.0 - Documentation site foundation
 
 ### Added
