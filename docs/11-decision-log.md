@@ -125,3 +125,22 @@ Permette di distinguere materiali pronti all'uso da materiali ancora da validare
 
 **Stato**  
 Attiva.
+
+---
+
+### D008 — Aggiornare DbCables tramite sostituzione controllata
+
+**Contesto**  
+L'Archivio Cavi avanzato di SPAC usa il database `DbCables.db`. Il metodo Import/Export può rifiutare database custom generati manualmente.
+
+**Decisione**  
+Per aggiornare l'Archivio Cavi avanzato si usa la sostituzione diretta controllata di `DbCables.db`, seguita dall'allineamento versione librerie tramite SPAC.
+
+**Motivazione**  
+La sostituzione controllata è risultata utilizzabile dopo l'allineamento strutturale eseguito da SPAC, mentre l'Import/Export può restituire un errore di database non valido.
+
+**Conseguenze**  
+Backup obbligatorio, test su ambiente non critico, dati tecnici da validare su datasheet e rollback sempre disponibile.
+
+**Stato**  
+Attiva.
