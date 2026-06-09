@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.8.1 - Manual deploy support
+
+### Added
+
+- Guida `Deploy manuale senza GitHub Actions`.
+- Script PowerShell per deploy locale MkDocs.
+- Script shell per deploy locale MkDocs.
+
+### Changed
+
+- Navigazione MkDocs aggiornata con la pagina di deploy manuale.
+- Homepage documentale aggiornata con accesso rapido al deploy senza Actions.
+
 ## 0.8.0 - DbCables archive sprint
 
 ### Added
