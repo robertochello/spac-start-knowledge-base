@@ -1,5 +1,22 @@
 # Changelog
 
+## 0.8.0 - DbCables archive sprint
+
+### Added
+
+- Diagramma workflow sostituzione controllata `DbCables.db`.
+- Guida `Archivio Cavi DbCables`.
+- Playbook `Aggiornare Archivio Cavi DbCables`.
+- Known issue `DbCables versione non congruente`.
+- Quality gate specifico per rilascio `DbCables.db` custom.
+- Decisione D008 per sostituzione controllata e allineamento librerie.
+
+### Changed
+
+- Homepage documentale aggiornata con accesso rapido all'Archivio Cavi.
+- Indice playbook aggiornato con procedura DbCables.
+- Indice known issues aggiornato con avviso versione non congruente.
+
 ## 0.7.0 - Operational examples sprint
 
 ### Added
