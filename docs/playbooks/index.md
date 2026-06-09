@@ -14,6 +14,7 @@ I playbook sono procedure operative guidate. Servono per passare da un problema 
 | [Verificare rappresentazione morsetti](terminal-representation.md) | Capire quale dato viene mostrato dal simbolo morsetto |
 | [Diagnosticare rimandi alimentazione](power-reference-diagnostic.md) | Analizzare selezioni non valide e riferimenti non coerenti |
 | [Associare materiali](material-association.md) | Associare materiali evitando duplicazioni e ambiguità |
+| [Aggiornare Archivio Cavi DbCables](update-dbcables-archive.md) | Sostituire controllatamente il database cavi e validare l'allineamento |
 | [Pulire oggetti residui](clean-residual-objects.md) | Gestire residui grafici o intelligenti che alterano i riferimenti |
 
 ## Regola playbook
