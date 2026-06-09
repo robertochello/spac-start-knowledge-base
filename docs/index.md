@@ -18,7 +18,6 @@ Knowledge base operativa per **SPAC Start Impianti**, pensata per trasformare pr
 | Gestire archivi materiali custom | [Archivi materiali custom](21-material-archives.md) |
 | Aggiornare Archivio Cavi DbCables | [Archivio Cavi DbCables](25-cable-archive-dbcables.md) |
 | Consultare esempi operativi | [Esempi operativi](24-operational-examples.md) |
-| Pubblicare il sito senza Actions | [Deploy manuale senza Actions](26-deploy-without-actions.md) |
 | Validare un simbolo prima del riuso | [Checklist validazione simbolo](10-symbol-validation-checklist.md) |
 | Risolvere un problema ricorrente | [Troubleshooting](07-troubleshooting.md) |
 | Consultare decisioni operative | [Decision log](11-decision-log.md) |
@@ -51,7 +50,6 @@ Knowledge base operativa per **SPAC Start Impianti**, pensata per trasformare pr
 | Rimandi e morsetti | In corso |
 | Materiali custom | Avviata |
 | Archivio Cavi DbCables | Avviato |
-| Deploy senza Actions | Documentato |
 | Esempi operativi | Avviati |
 | Multifilare | In sviluppo |
 | Casi pratici | Avviati |
