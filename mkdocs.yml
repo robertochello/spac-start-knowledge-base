@@ -69,6 +69,10 @@ nav:
       - Nomenclatura simboli: 19-symbol-naming.md
       - Dizionario abbreviazioni: 20-abbreviations.md
       - Standard simboli: standards/symbols.md
+  - Cavi:
+      - Archivio Cavi DbCables: 25-cable-archive-dbcables.md
+      - Aggiornare DbCables: playbooks/update-dbcables-archive.md
+      - Versione non congruente: known-issues/dbcables-version-mismatch.md
   - Multifilare:
       - Multifilare: 09-multifilare.md
       - Rimandi e morsetti: 06-cross-references-terminals.md
@@ -78,6 +82,7 @@ nav:
       - Pin non agganciato: known-issues/pin-not-snapping.md
       - Riferimento immagine mancante: known-issues/missing-image-reference.md
       - Cross-reference obsoleto: known-issues/obsolete-cross-reference.md
+      - DbCables versione non congruente: known-issues/dbcables-version-mismatch.md
       - Casi pratici: 12-practical-cases.md
   - Standards:
       - Introduzione: standards/index.md
@@ -99,4 +104,5 @@ nav:
       - Verificare rappresentazione morsetti: playbooks/terminal-representation.md
       - Diagnosticare rimandi alimentazione: playbooks/power-reference-diagnostic.md
       - Associare materiali: playbooks/material-association.md
+      - Aggiornare Archivio Cavi DbCables: playbooks/update-dbcables-archive.md
       - Pulire oggetti residui: playbooks/clean-residual-objects.md
