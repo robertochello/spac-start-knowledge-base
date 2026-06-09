@@ -93,7 +93,6 @@ nav:
       - Decision log: 11-decision-log.md
       - Linee guida manutenzione: 13-maintenance-guidelines.md
       - Quality gates: 14-quality-gates.md
-      - Deploy manuale senza Actions: 26-deploy-without-actions.md
       - Glossario: glossary.md
   - Playbook:
       - Introduzione: playbooks/index.md
