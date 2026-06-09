@@ -5,7 +5,7 @@ Knowledge base operativa per **SPAC Start Impianti**, pensata per trasformare pr
 ![SPAC Start Knowledge Base map](assets/diagrams/knowledge-base-map.svg)
 
 !!! note "Obiettivo"
-    Portare ordine nei workflow SPAC: simboli custom, attributi, pinatura, cartigli, rimandi, morsetti, materiali, troubleshooting e standard documentali.
+    Portare ordine nei workflow SPAC: simboli custom, attributi, pinatura, cartigli, rimandi, morsetti, materiali, cavi, troubleshooting e standard documentali.
 
 ## Accesso rapido
 
@@ -16,6 +16,7 @@ Knowledge base operativa per **SPAC Start Impianti**, pensata per trasformare pr
 | Creare o revisionare un simbolo custom | [Simboli custom](03-custom-symbols.md) |
 | Controllare attributi e pinatura | [Attributi e pinatura](04-attributes-and-pinning.md) |
 | Gestire archivi materiali custom | [Archivi materiali custom](21-material-archives.md) |
+| Aggiornare Archivio Cavi DbCables | [Archivio Cavi DbCables](25-cable-archive-dbcables.md) |
 | Consultare esempi operativi | [Esempi operativi](24-operational-examples.md) |
 | Validare un simbolo prima del riuso | [Checklist validazione simbolo](10-symbol-validation-checklist.md) |
 | Risolvere un problema ricorrente | [Troubleshooting](07-troubleshooting.md) |
@@ -48,6 +49,7 @@ Knowledge base operativa per **SPAC Start Impianti**, pensata per trasformare pr
 | Workflow CAD | In consolidamento |
 | Rimandi e morsetti | In corso |
 | Materiali custom | Avviata |
+| Archivio Cavi DbCables | Avviato |
 | Esempi operativi | Avviati |
 | Multifilare | In sviluppo |
 | Casi pratici | Avviati |
