@@ -36,6 +36,26 @@ Un archivio materiali è documentabile come stabile quando:
 - distinta o report sono stati verificati;
 - ogni record ha uno stato chiaro.
 
+## Quality gate per Archivio Cavi DbCables
+
+Un `DbCables.db` custom è rilasciabile solo quando:
+
+- il database originale è stato salvato come backup;
+- l'integrity check SQLite è OK;
+- non sono presenti codici cavo duplicati indesiderati;
+- ogni cavo ha conduttori coerenti nella tabella dedicata;
+- i campi tecnici principali sono popolati;
+- i cavi custom sono marcati con campi di tracciabilità;
+- SPAC avvia il controllo versione;
+- l'allineamento versione librerie è completato;
+- SPAC viene riaperto dopo l'allineamento;
+- Archivio Cavi è consultabile;
+- almeno un cavo custom è selezionabile;
+- il pannello dati tecnici è popolato;
+- i conduttori sono visibili;
+- il test posa cavo è stato eseguito;
+- il rollback è verificabile.
+
 ## Quality gate per troubleshooting
 
 Una nota di troubleshooting è pronta quando:
