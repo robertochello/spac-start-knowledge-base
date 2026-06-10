@@ -46,6 +46,7 @@ markdown_extensions:
 nav:
   - Start:
       - Home: index.md
+      - Come usare questa guida: 00-how-to-use.md
       - Concetti SPAC: concepts.md
       - Overview: 00-overview.md
       - Libreria custom: 15-custom-library.md
@@ -53,7 +54,6 @@ nav:
       - Command Reference: command-reference.md
       - FAQ: faq.md
       - Roadmap: roadmap.md
-      - Changelog: changelog.md
   - Workflow:
       - Interfaccia e menu: 01-interface-and-menu.md
       - Workflow CAD 2D: 02-cad-workflow.md
