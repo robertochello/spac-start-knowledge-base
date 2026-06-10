@@ -11,6 +11,7 @@ Knowledge base operativa per **SPAC Start Impianti**, pensata per trasformare pr
 
 | Necessità | Vai a |
 |---|---|
+| Orientarsi nella guida | [Come usare questa guida](00-how-to-use.md) |
 | Capire struttura e scopo | [Overview](00-overview.md) |
 | Installare o mantenere la libreria custom | [Libreria custom](15-custom-library.md) |
 | Creare o revisionare un simbolo custom | [Simboli custom](03-custom-symbols.md) |
