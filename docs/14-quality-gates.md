@@ -56,6 +56,23 @@ Un `DbCables.db` custom è rilasciabile solo quando:
 - il test posa cavo è stato eseguito;
 - il rollback è verificabile.
 
+## Quality gate DbCables cross-version
+
+Quando l'archivio è destinato a più ambienti, la validazione deve essere ripetuta sia su SPAC Automazione sia su SPAC Start.
+
+| Controllo | SPAC Automazione | SPAC Start | Esito richiesto |
+|---|---|---|---|
+| Avvio software | OK | OK | Entrambi validi |
+| Allineamento librerie | OK | OK | Entrambi validi |
+| Archivio Cavi consultabile | OK | OK | Entrambi validi |
+| Ricerca cavo custom | OK | OK | Entrambi validi |
+| Dati tecnici visibili | OK | OK | Entrambi validi |
+| Conduttori coerenti | OK | OK | Entrambi validi |
+| Posa cavo testata | OK | OK | Entrambi validi |
+| Rollback verificato | OK | OK | Entrambi validi |
+
+Se uno dei due ambienti fallisce, lo stato finale resta **Da verificare**.
+
 ## Quality gate per troubleshooting
 
 Una nota di troubleshooting è pronta quando:
