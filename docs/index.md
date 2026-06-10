@@ -17,7 +17,6 @@ Knowledge base operativa per **SPAC Start Impianti**, pensata per trasformare pr
 | Controllare attributi e pinatura | [Attributi e pinatura](04-attributes-and-pinning.md) |
 | Gestire archivi materiali custom | [Archivi materiali custom](21-material-archives.md) |
 | Aggiornare Archivio Cavi DbCables | [Archivio Cavi DbCables](25-cable-archive-dbcables.md) |
-| Eseguire controlli incrociati | [Back-check e controlli incrociati](26-back-check-controls.md) |
 | Consultare esempi operativi | [Esempi operativi](24-operational-examples.md) |
 | Validare un simbolo prima del riuso | [Checklist validazione simbolo](10-symbol-validation-checklist.md) |
 | Risolvere un problema ricorrente | [Troubleshooting](07-troubleshooting.md) |
@@ -33,7 +32,7 @@ Knowledge base operativa per **SPAC Start Impianti**, pensata per trasformare pr
 | Simboli | simboli custom, attributi, pinatura, nomenclatura |
 | Archivi | materiali custom, Archivio Cavi DbCables, validazione dati |
 | Diagnostica | troubleshooting, known issues, casi pratici |
-| Governance | decision log, quality gates, back-check, manutenzione |
+| Governance | decision log, quality gates, manutenzione |
 
 ## Come usare questa guida
 
@@ -41,8 +40,7 @@ Knowledge base operativa per **SPAC Start Impianti**, pensata per trasformare pr
 2. Vai alla sezione dedicata.
 3. Segui il playbook o la checklist.
 4. Verifica il risultato in un progetto di prova.
-5. Applica back-check e controlli incrociati quando la modifica impatta archivi, simboli o workflow condivisi.
-6. Aggiorna decision log, standard o casi pratici se emerge una nuova regola.
+5. Aggiorna decision log, standard o casi pratici se emerge una nuova regola.
 
 ## Principi guida
 
@@ -51,7 +49,7 @@ Knowledge base operativa per **SPAC Start Impianti**, pensata per trasformare pr
 - Non inserire dati sensibili o specifici di commessa.
 - Preferire checklist e flussi operativi a descrizioni teoriche.
 - Aggiornare il decision log quando una scelta diventa standard.
-- Non considerare stabile una procedura senza verifica incrociata.
+- Non considerare stabile una procedura senza verifica finale.
 
 ## Stato attuale
 
@@ -64,7 +62,6 @@ Knowledge base operativa per **SPAC Start Impianti**, pensata per trasformare pr
 | Rimandi e morsetti | In corso |
 | Materiali custom | Avviata |
 | Archivio Cavi DbCables | Verificato su SPAC Automazione e SPAC Start |
-| Back-check | Avviato |
 | Esempi operativi | Avviati |
 | Multifilare | In sviluppo |
 | Casi pratici | Avviati |
