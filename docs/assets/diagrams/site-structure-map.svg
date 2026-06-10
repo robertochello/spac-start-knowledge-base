@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="640" viewBox="0 0 1200 640" role="img" aria-labelledby="title desc">
+  <title id="title">Mappa struttura sito</title>
+  <desc id="desc">Schema delle aree principali della knowledge base SPAC Start.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0f172a"/><stop offset="1" stop-color="#020617"/></linearGradient>
+    <style>
+      .title{fill:#f8fafc;font-family:Inter,Arial,sans-serif;font-size:28px;font-weight:800}.text{fill:#cbd5e1;font-family:Inter,Arial,sans-serif;font-size:14px}.label{fill:#f8fafc;font-family:Inter,Arial,sans-serif;font-size:18px;font-weight:750}.core{fill:#0e7490;stroke:#67e8f9;stroke-width:2}.box{fill:#111827;stroke:#334155;stroke-width:1.6}.accent{fill:#172554;stroke:#60a5fa;stroke-width:1.7}.arrow{stroke:#67e8f9;stroke-width:2.5;marker-end:url(#arrowhead)}
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#67e8f9"/></marker>
+  </defs>
+  <rect width="1200" height="640" rx="28" fill="url(#bg)"/>
+  <text x="56" y="60" class="title">SPAC Start Knowledge Base — struttura consigliata</text>
+  <text x="56" y="90" class="text">La guida è organizzata per flusso di lavoro: capire, operare, validare, diagnosticare e standardizzare.</text>
+
+  <rect x="470" y="230" width="260" height="120" rx="26" class="core"/>
+  <text x="540" y="275" class="label">HOME</text>
+  <text x="510" y="305" class="text">accesso rapido</text>
+  <text x="500" y="330" class="text">mappa logica della guida</text>
+
+  <rect x="70" y="150" width="220" height="90" rx="20" class="box"/>
+  <text x="110" y="190" class="label">Workflow</text>
+  <text x="96" y="216" class="text">interfaccia · CAD · cartigli</text>
+
+  <rect x="70" y="300" width="220" height="90" rx="20" class="box"/>
+  <text x="122" y="340" class="label">Schemi</text>
+  <text x="95" y="366" class="text">unifilare · multifilare</text>
+
+  <rect x="70" y="450" width="220" height="90" rx="20" class="box"/>
+  <text x="120" y="490" class="label">Simboli</text>
+  <text x="92" y="516" class="text">attributi · pinatura · nomi</text>
+
+  <rect x="910" y="150" width="220" height="90" rx="20" class="accent"/>
+  <text x="960" y="190" class="label">Archivi</text>
+  <text x="940" y="216" class="text">materiali · cavi</text>
+
+  <rect x="910" y="300" width="220" height="90" rx="20" class="box"/>
+  <text x="952" y="340" class="label">Diagnostica</text>
+  <text x="935" y="366" class="text">known issues · casi pratici</text>
+
+  <rect x="910" y="450" width="220" height="90" rx="20" class="box"/>
+  <text x="952" y="490" class="label">Governance</text>
+  <text x="942" y="516" class="text">decisioni · quality gates</text>
+
+  <line x1="470" y1="270" x2="290" y2="195" class="arrow"/>
+  <line x1="470" y1="295" x2="290" y2="345" class="arrow"/>
+  <line x1="470" y1="325" x2="290" y2="495" class="arrow"/>
+  <line x1="730" y1="270" x2="910" y2="195" class="arrow"/>
+  <line x1="730" y1="295" x2="910" y2="345" class="arrow"/>
+  <line x1="730" y1="325" x2="910" y2="495" class="arrow"/>
+</svg>
