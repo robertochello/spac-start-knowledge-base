@@ -136,11 +136,14 @@ L'Archivio Cavi avanzato di SPAC usa il database `DbCables.db`. Il metodo Import
 **Decisione**  
 Per aggiornare l'Archivio Cavi avanzato si usa la sostituzione diretta controllata di `DbCables.db`, seguita dall'allineamento versione librerie tramite SPAC.
 
+**Validazione**  
+La procedura è stata testata sia su SPAC Automazione sia su SPAC Start. Il workflow operativo è lo stesso in entrambi gli ambienti.
+
 **Motivazione**  
 La sostituzione controllata è risultata utilizzabile dopo l'allineamento strutturale eseguito da SPAC, mentre l'Import/Export può restituire un errore di database non valido.
 
 **Conseguenze**  
-Backup obbligatorio, test su ambiente non critico, dati tecnici da validare su datasheet e rollback sempre disponibile.
+Backup obbligatorio, test su ambiente non critico, back-check su ambiente reale di destinazione, dati tecnici da validare su datasheet e rollback sempre disponibile.
 
 **Stato**  
 Attiva.
