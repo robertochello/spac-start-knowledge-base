@@ -69,7 +69,9 @@ nav:
       - Nomenclatura simboli: 19-symbol-naming.md
       - Dizionario abbreviazioni: 20-abbreviations.md
       - Standard simboli: standards/symbols.md
-  - Cavi:
+  - Archivi:
+      - Archivi materiali custom: 21-material-archives.md
+      - Standard materiali: standards/materials.md
       - Archivio Cavi DbCables: 25-cable-archive-dbcables.md
       - Aggiornare DbCables: playbooks/update-dbcables-archive.md
       - Versione non congruente: known-issues/dbcables-version-mismatch.md
