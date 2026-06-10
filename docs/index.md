@@ -2,7 +2,7 @@
 
 Knowledge base operativa per **SPAC Start Impianti**, pensata per trasformare prove, procedure e standard in documentazione tecnica consultabile.
 
-![SPAC Start Knowledge Base map](assets/diagrams/knowledge-base-map.svg)
+![SPAC Start Knowledge Base map](assets/diagrams/site-structure-map.svg)
 
 !!! note "Obiettivo"
     Portare ordine nei workflow SPAC: simboli custom, attributi, pinatura, cartigli, rimandi, morsetti, materiali, cavi, troubleshooting e standard documentali.
