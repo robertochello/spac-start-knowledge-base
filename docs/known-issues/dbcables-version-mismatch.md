@@ -11,6 +11,10 @@ Il file DbCables.db non ha una versione congruente con il programma.
 È necessario l'adeguamento strutturale.
 ```
 
+## Ambienti verificati
+
+La stessa gestione è stata verificata sia su SPAC Automazione sia su SPAC Start.
+
 ## Causa probabile
 
 Il file `DbCables.db` è strutturalmente valido, ma non è allineato alla versione attesa dall'installazione SPAC corrente.
@@ -57,8 +61,10 @@ Eseguire rollback se:
 - Eseguire integrity check prima del rilascio.
 - Marcare i cavi custom con campi dedicati.
 - Verificare i dati tecnici su datasheet prima dell'uso reale.
+- Applicare i back-check quando il database è destinato a più ambienti.
 
 ## Collegamenti
 
 - [Archivio Cavi DbCables](../25-cable-archive-dbcables.md)
 - [Aggiornare Archivio Cavi DbCables](../playbooks/update-dbcables-archive.md)
+- [Back-check e controlli incrociati](../26-back-check-controls.md)
