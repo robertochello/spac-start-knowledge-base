@@ -4,6 +4,8 @@ Questa sezione documenta il comportamento operativo dell'archivio cavi avanzato 
 
 ![Workflow DbCables](assets/diagrams/dbcables-replace-workflow.svg)
 
+![Validazione incrociata DbCables](assets/diagrams/dbcables-cross-version-validation.svg)
+
 ## Obiettivo
 
 Gestire l'Archivio Cavi avanzato di SPAC in modo sicuro, tracciabile e reversibile.
@@ -15,6 +17,19 @@ DbCables.db
 ```
 
 che è l'archivio reale utilizzato dalla finestra avanzata **Archivio Cavi**.
+
+## Compatibilità verificata
+
+La procedura di aggiornamento tramite sostituzione controllata del file `DbCables.db` è stata testata con esito positivo su:
+
+| Ambiente | Esito | Note |
+|---|---|---|
+| SPAC Automazione | Verificato | Procedura funzionante con allineamento versione librerie |
+| SPAC Start | Verificato | Procedura identica a SPAC Automazione |
+
+Conclusione operativa:
+
+> Per Archivio Cavi avanzato, il workflow `backup → sostituzione → allineamento → riavvio → verifica` è lo stesso su SPAC Automazione e SPAC Start.
 
 ## Differenza tra L_CAVI.txt e DbCables.db
 
@@ -50,13 +65,13 @@ Conclusione operativa:
 
 ## Percorso operativo
 
-Percorso osservato:
+Percorsi osservati o attesi:
 
 ```text
 C:\SPAC Automazione CAD 2025\Librerie\Archivi\DbCables.db
 ```
 
-Il percorso può variare in base a versione e installazione.
+Su SPAC Start il percorso può cambiare in base all'installazione, ma la logica operativa resta la stessa: individuare la cartella `Librerie\Archivi` della propria installazione e lavorare sul file `DbCables.db` presente in quella posizione.
 
 ## Natura del database
 
@@ -128,6 +143,21 @@ Sintesi:
 5. riapertura SPAC;
 6. validazione dell'archivio.
 
+## Back-check e controlli incrociati
+
+Per evitare falsi positivi, la validazione deve essere fatta su più livelli.
+
+| Controllo | Scopo | Esito atteso |
+|---|---|---|
+| SQLite integrity check | Verificare che il database non sia corrotto | OK |
+| Confronto conteggio cavi | Verificare che gli inserimenti siano presenti | Numero coerente |
+| Confronto `Cables` / `Cables_Conductors` | Verificare che ogni cavo abbia conduttori coerenti | Nessun record orfano |
+| Ricerca in Archivio Cavi | Verificare visibilità da interfaccia SPAC | Cavo trovato |
+| Apertura dettaglio tecnico | Verificare dati tecnici | Campi popolati |
+| Test posa cavo | Verificare uso operativo | Cavo selezionabile |
+| Test SPAC Automazione / SPAC Start | Verificare procedura comune | Stesso comportamento atteso |
+| Rollback | Verificare reversibilità | Archivio originale ripristinabile |
+
 ## Marcatura cavi custom
 
 Per distinguere cavi aggiunti da cavi originali, usare campi disponibili nel DB.
@@ -179,6 +209,7 @@ Famiglie utili per archivi custom:
 ## Collegamenti
 
 - [Aggiornare Archivio Cavi DbCables](playbooks/update-dbcables-archive.md)
+- [Back-check e controlli incrociati](26-back-check-controls.md)
 - [Known Issue — DbCables versione non congruente](known-issues/dbcables-version-mismatch.md)
 - [Quality gates](14-quality-gates.md)
 - [Decision log](11-decision-log.md)
