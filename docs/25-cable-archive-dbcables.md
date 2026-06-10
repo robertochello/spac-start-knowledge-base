@@ -143,7 +143,7 @@ Sintesi:
 5. riapertura SPAC;
 6. validazione dell'archivio.
 
-## Back-check e controlli incrociati
+## Verifica finale e controlli incrociati
 
 Per evitare falsi positivi, la validazione deve essere fatta su più livelli.
 
@@ -209,7 +209,6 @@ Famiglie utili per archivi custom:
 ## Collegamenti
 
 - [Aggiornare Archivio Cavi DbCables](playbooks/update-dbcables-archive.md)
-- [Back-check e controlli incrociati](26-back-check-controls.md)
 - [Known Issue — DbCables versione non congruente](known-issues/dbcables-version-mismatch.md)
 - [Quality gates](14-quality-gates.md)
 - [Decision log](11-decision-log.md)
