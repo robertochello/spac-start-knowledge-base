@@ -72,7 +72,6 @@ nav:
   - Cavi:
       - Archivio Cavi DbCables: 25-cable-archive-dbcables.md
       - Aggiornare DbCables: playbooks/update-dbcables-archive.md
-      - Back-check DbCables: 26-back-check-controls.md
       - Versione non congruente: known-issues/dbcables-version-mismatch.md
   - Multifilare:
       - Multifilare: 09-multifilare.md
@@ -94,7 +93,6 @@ nav:
       - Decision log: 11-decision-log.md
       - Linee guida manutenzione: 13-maintenance-guidelines.md
       - Quality gates: 14-quality-gates.md
-      - Back-check e controlli incrociati: 26-back-check-controls.md
       - Glossario: glossary.md
   - Playbook:
       - Introduzione: playbooks/index.md
