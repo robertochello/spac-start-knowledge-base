@@ -208,6 +208,7 @@ Famiglie utili per archivi custom:
 
 ## Collegamenti
 
+- [Download](downloads.md)
 - [Aggiornare Archivio Cavi DbCables](playbooks/update-dbcables-archive.md)
 - [Known Issue — DbCables versione non congruente](known-issues/dbcables-version-mismatch.md)
 - [Quality gates](14-quality-gates.md)

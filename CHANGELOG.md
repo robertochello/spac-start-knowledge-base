@@ -7,6 +7,8 @@ Tutte le modifiche rilevanti alla knowledge base saranno documentate in questo f
 ### Added
 
 - Pagina `26-back-check-controls.md` per back-check e controlli incrociati.
+- Pagina `downloads.md` e cartelle pubbliche per archivi materiali e archivi cavi.
+- Link download per gli archivi materiali `ABB_Materials.db` e `Gaslini.db`.
 - CSS minimale per migliorare leggibilità del sito MkDocs su GitHub Pages.
 - Collegamento alla guida operativa completa in navigazione e Home.
 
@@ -17,6 +19,7 @@ Tutte le modifiche rilevanti alla knowledge base saranno documentate in questo f
 - Navigazione MkDocs riorganizzata per percorsi operativi e sottogruppi.
 - Navigazione pubblica semplificata in cinque aree principali: Start, Operativo, Playbook, Diagnosi e Governance.
 - Home resa più leggibile con percorsi principali e dettagli secondari richiudibili.
+- Stato Home aggiornato: le aree principali sono dichiarate come baseline completata o verificata.
 - Standard nomenclatura allineato a `SCB` per contatto di scambio.
 - Stato multifilare aggiornato da placeholder a base operativa presente.
 - Command Reference estesa con i comandi citati nella guida operativa.

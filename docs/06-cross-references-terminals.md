@@ -145,3 +145,19 @@ Quando la rappresentazione del morsetto non è corretta:
 ## Regola pratica
 
 Non correggere solo il testo visibile se l'oggetto è intelligente. Verificare sempre il dato sorgente e la configurazione grafica che lo mostra.
+
+## Baseline sezione
+
+La sezione rimandi e morsetti è completa come riferimento operativo quando copre:
+
+- principio del cross-reference tra rimandi;
+- direzione coerente arrivo/partenza;
+- aggiornamento dei riferimenti;
+- controllo lista rimandi usati;
+- diagnosi di selezioni non valide;
+- pulizia numerazione fili;
+- gestione morsettiere e inserimento morsetti;
+- differenza tra `NumI`, `NumO` e `NumM`;
+- verifica finale della rappresentazione morsetti.
+
+Nuove anomalie ricorrenti vanno documentate come known issue o playbook dedicato.

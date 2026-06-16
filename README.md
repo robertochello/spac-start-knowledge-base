@@ -34,6 +34,9 @@ Raccogliere procedure pratiche e standard riutilizzabili per:
 | `docs/21-material-archives.md` | Archivi materiali custom |
 | `docs/25-cable-archive-dbcables.md` | Archivio Cavi `DbCables.db` |
 | `docs/26-back-check-controls.md` | Back-check e controlli incrociati |
+| `docs/downloads.md` | File scaricabili pubblicati dal sito |
+| `docs/assets/downloads/materiali/` | Cartella pubblica per archivi materiali, inclusi i file `.db` pubblicati |
+| `docs/assets/downloads/cavi/` | Cartella pubblica per archivi cavi |
 | `docs/07-troubleshooting.md` | Troubleshooting generale |
 | `docs/known-issues/` | Problemi noti |
 | `docs/playbooks/` | Procedure guidate |
@@ -47,6 +50,7 @@ Raccogliere procedure pratiche e standard riutilizzabili per:
 - Non inserire dati sensibili, nomi cliente o dettagli di commessa.
 - Usare immagini solo se chiariscono una procedura o un controllo.
 - Mantenere grafica e diagrammi minimal, leggibili e non decorativi.
+- Pubblicare download solo se generici, verificati e privi di dati sensibili.
 - Aggiornare il decision log quando una scelta diventa standard.
 
 ## Pubblicazione

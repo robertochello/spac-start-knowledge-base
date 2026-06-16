@@ -14,6 +14,7 @@ Questa pagina serve come punto di orientamento. La knowledge base non va letta t
 | creare o sistemare un simbolo custom | [Simboli custom](03-custom-symbols.md) | [Attributi e pinatura](04-attributes-and-pinning.md) |
 | verificare un simbolo prima del riuso | [Checklist validazione simbolo](10-symbol-validation-checklist.md) | [Quality gates](14-quality-gates.md) |
 | gestire materiali o cavi | [Archivi materiali custom](21-material-archives.md) | [Archivio Cavi DbCables](25-cable-archive-dbcables.md) |
+| scaricare archivi pubblicati | [Download](downloads.md) | [Back-check e controlli incrociati](26-back-check-controls.md) |
 | seguire una procedura passo-passo | [Playbook](playbooks/index.md) | [Command Reference](command-reference.md) |
 | risolvere un problema pratico | [Troubleshooting](07-troubleshooting.md) | [Known Issues](known-issues/index.md) |
 | capire una scelta già presa | [Decision log](11-decision-log.md) | [Standard operativi](08-standards.md) |
@@ -35,7 +36,7 @@ Se una pagina non aiuta in nessuno di questi punti, va semplificata.
 | Sezione | Scopo |
 |---|---|
 | Start | Orientamento, guida completa, concetti e glossario |
-| Operativo | Setup, schemi, simboli e archivi |
+| Operativo | Setup, schemi, simboli, archivi e download |
 | Playbook | Procedure guidate, checklist e riferimenti rapidi |
 | Diagnosi | Problemi noti, troubleshooting e casi pratici |
 | Governance | Standard, decisioni, manutenzione, quality gates e roadmap |

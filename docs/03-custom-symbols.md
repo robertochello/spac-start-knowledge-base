@@ -219,3 +219,16 @@ Prima di considerare un simbolo custom riutilizzabile:
 - testare inserimento in progetto prova;
 - testare associazione materiale se richiesta;
 - documentare nome e convenzione nell'inventario.
+
+## Baseline sezione
+
+La sezione simboli custom è completa come riferimento operativo quando permette di:
+
+- distinguere grafica CAD, blocco DWG e simbolo intelligente;
+- creare DWG e SLD con lo stesso nome base;
+- gestire simboli Madre e Figlio;
+- distinguere simboli senza pin, cablati e complessi;
+- associare materiali solo quando il simbolo deve contribuire alla distinta;
+- rimandare a inventario, checklist e standard di nomenclatura.
+
+I nuovi simboli reali vanno aggiunti all'inventario dedicato, non alla struttura della guida.

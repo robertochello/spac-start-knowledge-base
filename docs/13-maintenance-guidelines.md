@@ -64,3 +64,16 @@ Ogni revisione dovrebbe controllare:
 ## Regola principale
 
 La knowledge base deve restare utile durante il lavoro reale. Se un contenuto non aiuta a decidere, risolvere o standardizzare, va semplificato o rimosso.
+
+## Baseline sezione
+
+La governance documentale è completa come riferimento operativo quando sono presenti:
+
+- criteri per aggiungere o non aggiungere note;
+- struttura consigliata per le procedure;
+- regole di aggiornamento delle decisioni;
+- revisione periodica;
+- quality gates collegati;
+- changelog aggiornato per modifiche rilevanti.
+
+La manutenzione resta continuativa, ma la struttura di governo è definita.

@@ -78,6 +78,7 @@ Usare una delle seguenti etichette quando necessario:
 
 | Stato | Significato |
 |---|---|
+| `Baseline completata` | Struttura e contenuti minimi presenti; miglioramenti futuri non bloccanti |
 | `Testato` | Procedura verificata praticamente |
 | `Da verificare` | Nota plausibile ma non ancora consolidata |
 | `In revisione` | Contenuto da completare o correggere |

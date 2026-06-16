@@ -123,8 +123,23 @@ Un archivio materiali è pronto quando:
 - distinta o report sono stati verificati;
 - lo stato dei record è documentato.
 
+## Baseline sezione
+
+La sezione archivi materiali è completa come riferimento operativo quando definisce:
+
+- principio di backup e staging;
+- campi minimi consigliati;
+- stati ammessi dei record;
+- controllo duplicati;
+- import in ambiente di prova;
+- validazione su simboli;
+- criteri per promuovere l'archivio a standard.
+
+Gli archivi reali e i codici articolo non devono essere pubblicati nella guida.
+
 ## Collegamenti
 
+- [Download](downloads.md)
 - [Associare materiali](playbooks/material-association.md)
 - [Simboli custom](03-custom-symbols.md)
 - [Quality gates](14-quality-gates.md)

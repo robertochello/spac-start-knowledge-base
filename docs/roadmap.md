@@ -20,7 +20,7 @@ Contenuti presenti:
 
 ## Fase 2 — Consolidamento standard
 
-Stato: in corso.
+Stato: baseline completata.
 
 Contenuti presenti:
 
@@ -32,7 +32,7 @@ Contenuti presenti:
 - standard materiali;
 - linee guida immagini e screenshot.
 
-Prossimi miglioramenti:
+Estensioni future:
 
 - collegare ogni standard a un caso pratico;
 - creare checklist specifiche per cartigli, rimandi e morsetti;
@@ -41,7 +41,7 @@ Prossimi miglioramenti:
 
 ## Fase 3 — Multifilare
 
-Stato: base operativa presente, da consolidare.
+Stato: baseline operativa completata.
 
 Contenuti presenti:
 
@@ -52,7 +52,7 @@ Contenuti presenti:
 - rimandi alimentazioni;
 - morsetti e rappresentazione grafica.
 
-Prossimi miglioramenti:
+Estensioni future:
 
 - esempi guidati;
 - checklist avanzata morsettiere;
@@ -61,7 +61,7 @@ Prossimi miglioramenti:
 
 ## Fase 4 — Materiali custom
 
-Stato: avviata.
+Stato: baseline completata.
 
 Contenuti presenti:
 
@@ -71,7 +71,7 @@ Contenuti presenti:
 - quality gate;
 - decisioni operative.
 
-Prossimi miglioramenti:
+Estensioni future:
 
 - guida di import basata su caso reale;
 - esempio archivio ridotto e generico;
@@ -80,9 +80,9 @@ Prossimi miglioramenti:
 
 ## Fase 5 — Casi pratici
 
-Stato: avviata.
+Stato: struttura completata, contenuti incrementali.
 
-Contenuti previsti:
+Contenuti incrementali:
 
 - casi reali risolti, riscritti in forma generica;
 - errori ricorrenti;

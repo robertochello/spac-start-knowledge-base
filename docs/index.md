@@ -16,6 +16,8 @@ Knowledge base operativa per **SPAC Start Impianti**. Serve per trovare rapidame
 
 [**Archivi**<br>Materiali custom, cavi `DbCables.db` e back-check.](21-material-archives.md){ .home-card }
 
+[**Download**<br>File scaricabili: materiali, cavi e archivi verificati.](downloads.md){ .home-card }
+
 [**Playbook**<br>Procedure guidate per casi operativi specifici.](playbooks/index.md){ .home-card }
 
 [**Diagnosi**<br>Troubleshooting, known issues e casi pratici.](07-troubleshooting.md){ .home-card }
@@ -48,19 +50,19 @@ Knowledge base operativa per **SPAC Start Impianti**. Serve per trovare rapidame
 
     | Area | Stato |
     |---|---|
-    | Base documentale | Avviata |
-    | Simboli custom | In consolidamento |
-    | Attributi e pinatura | In consolidamento |
-    | Workflow CAD | In consolidamento |
-    | Rimandi e morsetti | In corso |
-    | Materiali custom | Avviata |
+    | Base documentale | Baseline completata |
+    | Simboli custom | Baseline completata |
+    | Attributi e pinatura | Baseline completata |
+    | Workflow CAD | Baseline completata |
+    | Rimandi e morsetti | Baseline completata |
+    | Materiali custom | Baseline completata |
     | Archivio Cavi DbCables | Verificato su SPAC Automazione e SPAC Start |
-    | Multifilare | Base operativa presente |
-    | Governance documentale | Avviata |
+    | Multifilare | Baseline operativa completata |
+    | Governance documentale | Baseline completata |
 
-??? note "Prossimo livello"
+??? note "Estensioni future"
 
-    1. Consolidare la sezione multifilare con casi pratici.
+    1. Aggiungere casi pratici multifilare quando emergono esempi riutilizzabili.
     2. Aggiungere screenshot sanitizzati solo dove servono.
     3. Collegare ogni caso pratico a una decisione o a uno standard.
     4. Mantenere navigazione e Home pulite.

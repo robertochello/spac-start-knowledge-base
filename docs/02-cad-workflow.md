@@ -74,3 +74,16 @@ Prima di riutilizzare una geometria CAD in una commessa:
 - verificare layer;
 - verificare eventuali riferimenti esterni;
 - controllare che non ci siano entità invisibili o inutili.
+
+## Baseline sezione
+
+Il workflow CAD 2D è completo come riferimento operativo quando copre:
+
+- quando usare disegno CAD/planimetrico invece di schemi elettrici intelligenti;
+- regola Layer 0;
+- gestione di rettangoli, geometrie e tratteggi;
+- controllo scala su disegni copiati o importati;
+- creazione di blocchi CAD riutilizzabili;
+- test minimi prima del riuso in commessa.
+
+Eventuali casi grafici speciali vanno aggiunti solo se ricorrenti e riutilizzabili.

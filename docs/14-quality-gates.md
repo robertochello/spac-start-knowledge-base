@@ -73,6 +73,18 @@ Quando l'archivio è destinato a più ambienti, la validazione deve essere ripet
 
 Se uno dei due ambienti fallisce, lo stato finale resta **Da verificare**.
 
+## Quality gate per download
+
+Un file può essere pubblicato in `docs/assets/downloads/` solo quando:
+
+- è privo di dati cliente, commessa o informazioni non pubblicabili;
+- il nome file è chiaro, senza spazi e con versione o release;
+- il contenuto è apribile e verificato;
+- l'archivio compresso, se presente, è stato testato;
+- la pagina [Download](downloads.md) riporta stato e note;
+- il file è collegato a una procedura o a un quality gate;
+- il link viene verificato dopo build del sito.
+
 ## Quality gate per troubleshooting
 
 Una nota di troubleshooting è pronta quando:
@@ -96,3 +108,17 @@ Una decisione è pronta quando:
 ## Regola finale
 
 Se un contenuto non aiuta a decidere, risolvere, standardizzare o verificare, deve essere semplificato o rimosso.
+
+## Baseline sezione
+
+I quality gates sono completi come riferimento operativo quando coprono:
+
+- procedure documentali;
+- simboli custom;
+- archivi materiali;
+- Archivio Cavi DbCables;
+- download pubblici;
+- troubleshooting;
+- decisioni operative.
+
+Ogni nuova area deve aggiungere un quality gate solo se introduce un rischio o una verifica non già coperta.

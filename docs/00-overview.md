@@ -50,3 +50,16 @@ Ogni nuova nota dovrebbe rispettare questa logica:
 Usare preferibilmente file Markdown brevi, con sezioni chiare e titoli descrittivi.
 
 Le procedure devono essere scritte come istruzioni operative, non come appunti disordinati.
+
+## Baseline documentale
+
+La base documentale è considerata completa come struttura iniziale quando sono presenti:
+
+- Home e guida d'uso;
+- navigazione MkDocs coerente;
+- overview, concetti, FAQ e glossario;
+- workflow operativi principali;
+- playbook, troubleshooting, standard, decision log e quality gates;
+- changelog per tracciare le evoluzioni.
+
+Nuove pagine e casi pratici possono essere aggiunti in futuro, ma non bloccano più la completezza della baseline.

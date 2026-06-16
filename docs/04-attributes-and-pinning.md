@@ -124,3 +124,17 @@ Dopo aver creato o modificato un simbolo:
 ## Nota su PINB
 
 Non usare `PINB` se non serve realmente riportare il segnale. Una pinatura eccessiva o non coerente rende il simbolo più difficile da mantenere.
+
+## Baseline sezione
+
+La sezione attributi e pinatura è completa come riferimento operativo quando documenta:
+
+- ruolo degli attributi principali;
+- differenza tra simbolo Madre e simbolo Figlio;
+- uso di `NOME` e `PRES`;
+- convenzione `PINA<n>` / `PINB<n>`;
+- casi in cui usare solo `PINA`;
+- casi in cui usare `PINA` e `PINB`;
+- controlli finali su aggancio fili, attributi e report.
+
+Le eccezioni devono essere documentate nel simbolo specifico o nel decision log.

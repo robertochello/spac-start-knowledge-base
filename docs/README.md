@@ -6,6 +6,7 @@
   - [Indice](#indice)
   - [Scopo](#scopo)
   - [Come usare questa guida](#come-usare-questa-guida)
+  - [Download e file pubblici](#download-e-file-pubblici)
   - [Installazione e impostazioni](#installazione-e-impostazioni)
     - [Installazione cartella libreria custom](#installazione-cartella-libreria-custom)
     - [Categorie libreria custom](#categorie-libreria-custom)
@@ -95,6 +96,38 @@ La guida e' organizzata in ordine operativo.
 4. Usare **Schema unifilare** o **Schema multifilare** in base al tipo di elaborato.
 5. Usare **Creazione e manutenzione simboli custom** quando bisogna creare o correggere simboli della libreria.
 6. Usare **Convenzioni e catalogo libreria** per verificare nomi, abbreviazioni e simboli gia' realizzati.
+
+---
+
+## Download e file pubblici
+
+Il sito può pubblicare file scaricabili, ad esempio archivi materiali o archivi cavi.
+
+La pagina di riferimento è:
+
+```text
+downloads.md
+```
+
+Le cartelle pubbliche predisposte sono:
+
+```text
+docs/assets/downloads/materiali/
+docs/assets/downloads/cavi/
+```
+
+Regole operative:
+
+- pubblicare solo file generici o sanitizzati;
+- non inserire dati cliente, commessa o contenuti non pubblicabili;
+- usare nomi file chiari, senza spazi e con release;
+- aggiornare la pagina Download dopo aver aggiunto o sostituito un file;
+- verificare il link dopo la build del sito.
+
+File materiali attualmente collegati:
+
+- `ABB_Materials.db`;
+- `Gaslini.db`.
 
 ---
 
