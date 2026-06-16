@@ -35,12 +35,9 @@ Se una pagina non aiuta in nessuno di questi punti, va semplificata.
 | Sezione | Scopo |
 |---|---|
 | Start | Orientamento, guida completa, concetti e glossario |
-| Setup e Workflow | Preparazione ambiente, template, interfaccia, CAD e cartigli |
-| Schemi | Unifilare, multifilare, fili, morsetti e rimandi |
-| Simboli | Creazione, attributi, pinatura e nomi |
-| Archivi | Materiali custom e Archivio Cavi |
-| Playbook | Procedure guidate ordinate per ambito |
-| Troubleshooting | Problemi noti, diagnosi, casi pratici ed esempi |
+| Operativo | Setup, schemi, simboli e archivi |
+| Playbook | Procedure guidate, checklist e riferimenti rapidi |
+| Diagnosi | Problemi noti, troubleshooting e casi pratici |
 | Governance | Standard, decisioni, manutenzione, quality gates e roadmap |
 
 ## Metodo di aggiornamento

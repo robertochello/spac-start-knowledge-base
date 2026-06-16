@@ -1,39 +1,50 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="560" viewBox="0 0 1180 560" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="500" viewBox="0 0 1180 500" role="img" aria-labelledby="title desc">
   <title id="title">Percorsi di lettura</title>
   <desc id="desc">Schema dei percorsi consigliati per usare la knowledge base.</desc>
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0f172a"/><stop offset="1" stop-color="#020617"/></linearGradient>
-    <style>.title{fill:#f8fafc;font-family:Inter,Arial,sans-serif;font-size:28px;font-weight:800}.text{fill:#cbd5e1;font-family:Inter,Arial,sans-serif;font-size:14px}.label{fill:#f8fafc;font-family:Inter,Arial,sans-serif;font-size:18px;font-weight:750}.start{fill:#0e7490;stroke:#67e8f9;stroke-width:2}.box{fill:#111827;stroke:#334155;stroke-width:1.6}.accent{fill:#172554;stroke:#60a5fa;stroke-width:1.7}.arrow{stroke:#67e8f9;stroke-width:2.5;marker-end:url(#arrowhead)}</style>
-    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#67e8f9"/></marker>
+    <style>
+      .bg{fill:#f8fafc}.title{fill:#0f172a;font-family:Inter,Arial,sans-serif;font-size:26px;font-weight:800}.text{fill:#475569;font-family:Inter,Arial,sans-serif;font-size:14px}.label{fill:#0f172a;font-family:Inter,Arial,sans-serif;font-size:18px;font-weight:750}.start{fill:#e0f2fe;stroke:#0284c7;stroke-width:2}.box{fill:#ffffff;stroke:#cbd5e1;stroke-width:1.6}.accent{fill:#ecfdf5;stroke:#0f766e;stroke-width:1.7}.arrow{stroke:#64748b;stroke-width:2.2;marker-end:url(#arrowhead)}
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#64748b"/>
+    </marker>
   </defs>
-  <rect width="1180" height="560" rx="28" fill="url(#bg)"/>
-  <text x="54" y="58" class="title">Percorsi rapidi di lettura</text>
-  <text x="54" y="88" class="text">Scegli il percorso in base al problema: non serve leggere tutta la guida in ordine.</text>
-  <rect x="70" y="230" width="210" height="100" rx="22" class="start"/>
-  <text x="122" y="270" class="label">Ho un problema</text>
-  <text x="110" y="298" class="text">da risolvere in SPAC</text>
-  <rect x="370" y="90" width="230" height="90" rx="20" class="box"/>
-  <text x="420" y="128" class="label">Capire</text>
-  <text x="405" y="154" class="text">Overview · concetti · FAQ</text>
-  <rect x="370" y="225" width="230" height="90" rx="20" class="box"/>
-  <text x="420" y="263" class="label">Operare</text>
-  <text x="404" y="289" class="text">Workflow · playbook</text>
-  <rect x="370" y="360" width="230" height="90" rx="20" class="box"/>
-  <text x="416" y="398" class="label">Verificare</text>
-  <text x="405" y="424" class="text">Checklist · quality gates</text>
-  <rect x="720" y="90" width="240" height="90" rx="20" class="accent"/>
-  <text x="770" y="128" class="label">Simboli</text>
-  <text x="750" y="154" class="text">attributi · pinatura · nomi</text>
-  <rect x="720" y="225" width="240" height="90" rx="20" class="accent"/>
-  <text x="770" y="263" class="label">Archivi</text>
-  <text x="748" y="289" class="text">materiali · cavi DbCables</text>
-  <rect x="720" y="360" width="240" height="90" rx="20" class="accent"/>
-  <text x="762" y="398" class="label">Diagnostica</text>
-  <text x="752" y="424" class="text">known issues · casi pratici</text>
-  <line x1="280" y1="280" x2="370" y2="135" class="arrow"/>
-  <line x1="280" y1="280" x2="370" y2="270" class="arrow"/>
-  <line x1="280" y1="280" x2="370" y2="405" class="arrow"/>
-  <line x1="600" y1="135" x2="720" y2="135" class="arrow"/>
-  <line x1="600" y1="270" x2="720" y2="270" class="arrow"/>
-  <line x1="600" y1="405" x2="720" y2="405" class="arrow"/>
+  <rect width="1180" height="500" rx="8" class="bg"/>
+  <text x="52" y="58" class="title">Percorsi rapidi di lettura</text>
+  <text x="52" y="86" class="text">Scegli il percorso in base al problema operativo. La guida non è pensata per essere letta tutta in ordine.</text>
+
+  <rect x="70" y="205" width="210" height="96" rx="8" class="start"/>
+  <text x="120" y="244" class="label">Problema SPAC</text>
+  <text x="104" y="270" class="text">cosa devo fare adesso?</text>
+
+  <rect x="380" y="95" width="220" height="82" rx="8" class="box"/>
+  <text x="437" y="130" class="label">Capire</text>
+  <text x="414" y="155" class="text">overview · concetti · FAQ</text>
+
+  <rect x="380" y="205" width="220" height="82" rx="8" class="accent"/>
+  <text x="434" y="240" class="label">Operare</text>
+  <text x="415" y="265" class="text">setup · schemi · archivi</text>
+
+  <rect x="380" y="315" width="220" height="82" rx="8" class="box"/>
+  <text x="432" y="350" class="label">Verificare</text>
+  <text x="416" y="375" class="text">checklist · quality gates</text>
+
+  <rect x="730" y="95" width="250" height="82" rx="8" class="box"/>
+  <text x="806" y="130" class="label">Standard</text>
+  <text x="772" y="155" class="text">regole · decisioni · roadmap</text>
+
+  <rect x="730" y="205" width="250" height="82" rx="8" class="accent"/>
+  <text x="813" y="240" class="label">Playbook</text>
+  <text x="774" y="265" class="text">procedure passo-passo</text>
+
+  <rect x="730" y="315" width="250" height="82" rx="8" class="box"/>
+  <text x="810" y="350" class="label">Diagnosi</text>
+  <text x="773" y="375" class="text">troubleshooting · known issues</text>
+
+  <line x1="280" y1="253" x2="380" y2="136" class="arrow"/>
+  <line x1="280" y1="253" x2="380" y2="246" class="arrow"/>
+  <line x1="280" y1="253" x2="380" y2="356" class="arrow"/>
+  <line x1="600" y1="136" x2="730" y2="136" class="arrow"/>
+  <line x1="600" y1="246" x2="730" y2="246" class="arrow"/>
+  <line x1="600" y1="356" x2="730" y2="356" class="arrow"/>
 </svg>

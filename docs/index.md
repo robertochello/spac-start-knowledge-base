@@ -1,83 +1,66 @@
 # SPAC Start Knowledge Base
 
-Knowledge base operativa per **SPAC Start Impianti**, pensata per trasformare prove, procedure e standard in documentazione tecnica consultabile.
+Knowledge base operativa per **SPAC Start Impianti**. Serve per trovare rapidamente procedure, standard, playbook e soluzioni ricorrenti senza dover leggere tutta la guida in ordine.
 
-![SPAC Start Knowledge Base map](assets/diagrams/site-structure-map.svg)
+## Percorsi principali
 
-!!! note "Obiettivo"
-    Portare ordine nei workflow SPAC: simboli custom, attributi, pinatura, cartigli, rimandi, morsetti, materiali, cavi, troubleshooting e standard documentali.
+<div class="home-grid" markdown>
 
-## Accesso rapido
+[**Inizia qui**<br>Orientamento, scopo e concetti base.](00-how-to-use.md){ .home-card }
 
-| Necessità | Vai a |
-|---|---|
-| Orientarsi nella guida | [Come usare questa guida](00-how-to-use.md) |
-| Consultare il README operativo completo | [Guida operativa completa](README.md) |
-| Installare o mantenere la libreria custom | [Libreria custom](15-custom-library.md) |
-| Preparare una commessa base | [Template progetto](16-project-template.md) |
-| Gestire pagine, cartigli o immagini | [Pagine, cartigli e immagini](05-pages-titleblocks-images.md) |
-| Lavorare sullo schema unifilare | [Schema unifilare](17-unifilare.md) |
-| Gestire rimandi, fili o morsetti | [Rimandi e morsetti](06-cross-references-terminals.md) |
-| Creare o revisionare un simbolo custom | [Simboli custom](03-custom-symbols.md) |
-| Controllare attributi e pinatura | [Attributi e pinatura](04-attributes-and-pinning.md) |
-| Gestire archivi materiali custom | [Archivi materiali custom](21-material-archives.md) |
-| Aggiornare Archivio Cavi DbCables | [Archivio Cavi DbCables](25-cable-archive-dbcables.md) |
-| Seguire una procedura guidata | [Playbook](playbooks/index.md) |
-| Risolvere un problema ricorrente | [Troubleshooting](07-troubleshooting.md) |
-| Consultare decisioni operative | [Decision log](11-decision-log.md) |
-| Standardizzare il modo di lavorare | [Standard operativi](08-standards.md) |
+[**Setup progetto**<br>Libreria custom, template, interfaccia, cartigli.](15-custom-library.md){ .home-card }
+
+[**Schemi**<br>Unifilare, multifilare, fili, rimandi e morsetti.](17-unifilare.md){ .home-card }
+
+[**Simboli custom**<br>Creazione, attributi, pinatura e nomenclatura.](03-custom-symbols.md){ .home-card }
+
+[**Archivi**<br>Materiali custom, cavi `DbCables.db` e back-check.](21-material-archives.md){ .home-card }
+
+[**Playbook**<br>Procedure guidate per casi operativi specifici.](playbooks/index.md){ .home-card }
+
+[**Diagnosi**<br>Troubleshooting, known issues e casi pratici.](07-troubleshooting.md){ .home-card }
+
+[**Governance**<br>Standard, decisioni, quality gates e manutenzione.](08-standards.md){ .home-card }
+
+</div>
 
 ## Mappa logica
 
-| Area | Contenuti principali |
-|---|---|
-| Setup e Workflow | libreria custom, template progetto, interfaccia, CAD, cartigli |
-| Schemi | unifilare, multifilare, rimandi, morsetti |
-| Simboli | simboli custom, attributi, pinatura, nomenclatura |
-| Archivi | materiali custom, Archivio Cavi DbCables, validazione dati |
-| Playbook | procedure guidate per simboli, cartigli, schemi e archivi |
-| Diagnostica | troubleshooting, known issues, casi pratici |
-| Governance | decision log, quality gates, manutenzione, immagini |
+![SPAC Start Knowledge Base map](assets/diagrams/site-structure-map.svg)
 
-## Come usare questa guida
+| Area | Cosa contiene |
+|---|---|
+| Start | orientamento, overview, concetti, FAQ, glossario |
+| Operativo | setup, schemi, simboli, archivi |
+| Playbook | procedure guidate e checklist |
+| Diagnosi | troubleshooting, known issues, casi pratici |
+| Governance | standard, decisioni, quality gates, roadmap |
+
+## Uso consigliato
 
 1. Parti dal problema operativo.
-2. Vai alla sezione dedicata.
-3. Segui il playbook o la checklist.
+2. Apri la sezione dedicata.
+3. Segui il playbook, la procedura o la checklist.
 4. Verifica il risultato in un progetto di prova.
-5. Aggiorna decision log, standard o casi pratici se emerge una nuova regola.
+5. Aggiorna standard, decision log o casi pratici se emerge una regola riutilizzabile.
 
-## Principi guida
+??? info "Stato attuale"
 
-- Documentare procedure realmente utili.
-- Separare standard, procedure, decisioni e casi pratici.
-- Non inserire dati sensibili o specifici di commessa.
-- Preferire checklist e flussi operativi a descrizioni teoriche.
-- Aggiornare il decision log quando una scelta diventa standard.
-- Non considerare stabile una procedura senza verifica finale.
+    | Area | Stato |
+    |---|---|
+    | Base documentale | Avviata |
+    | Simboli custom | In consolidamento |
+    | Attributi e pinatura | In consolidamento |
+    | Workflow CAD | In consolidamento |
+    | Rimandi e morsetti | In corso |
+    | Materiali custom | Avviata |
+    | Archivio Cavi DbCables | Verificato su SPAC Automazione e SPAC Start |
+    | Multifilare | Base operativa presente |
+    | Governance documentale | Avviata |
 
-## Stato attuale
+??? note "Prossimo livello"
 
-| Area | Stato |
-|---|---|
-| Base documentale | Avviata |
-| Simboli custom | In consolidamento |
-| Attributi e pinatura | In consolidamento |
-| Workflow CAD | In consolidamento |
-| Rimandi e morsetti | In corso |
-| Materiali custom | Avviata |
-| Archivio Cavi DbCables | Verificato su SPAC Automazione e SPAC Start |
-| Esempi operativi | Avviati |
-| Multifilare | Base operativa presente |
-| Casi pratici | Avviati |
-| Governance documentale | Avviata |
-
-## Prossimo livello
-
-Le prossime evoluzioni chiave sono:
-
-1. completare la sezione multifilare;
-2. aggiungere screenshot non sensibili;
-3. creare known issues dedicati;
-4. collegare ogni caso pratico a una decisione o a uno standard;
-5. consolidare una baseline stabile come primo standard operativo.
+    1. Consolidare la sezione multifilare con casi pratici.
+    2. Aggiungere screenshot sanitizzati solo dove servono.
+    3. Collegare ogni caso pratico a una decisione o a uno standard.
+    4. Mantenere navigazione e Home pulite.

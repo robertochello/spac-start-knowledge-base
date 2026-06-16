@@ -13,6 +13,36 @@
   max-width: 920px;
 }
 
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: .75rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.md-typeset .home-card {
+  display: block;
+  min-height: 5.2rem;
+  padding: .85rem .95rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: .35rem;
+  background: var(--md-code-bg-color);
+  color: var(--md-default-fg-color);
+  text-decoration: none;
+}
+
+.md-typeset .home-card strong {
+  display: block;
+  margin-bottom: .2rem;
+  color: var(--md-primary-fg-color);
+  font-size: .9rem;
+}
+
+.md-typeset .home-card:hover {
+  border-color: var(--md-accent-fg-color);
+  color: var(--md-default-fg-color);
+}
+
 .md-typeset h1 {
   font-weight: 700;
 }

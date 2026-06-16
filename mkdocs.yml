@@ -52,35 +52,34 @@ nav:
   - Start:
       - Home: index.md
       - Come usare questa guida: 00-how-to-use.md
-      - Guida operativa completa: README.md
       - Overview: 00-overview.md
       - Concetti SPAC: concepts.md
+      - Guida operativa completa: README.md
       - FAQ: faq.md
       - Glossario: glossary.md
-  - Setup e Workflow:
-      - Libreria custom: 15-custom-library.md
-      - Template progetto: 16-project-template.md
-      - Interfaccia e menu: 01-interface-and-menu.md
-      - Workflow CAD 2D: 02-cad-workflow.md
-      - Pagine, cartigli e immagini: 05-pages-titleblocks-images.md
-      - Command Reference: command-reference.md
-  - Schemi:
-      - Schema unifilare: 17-unifilare.md
-      - Numerazione e identificazione fili: 18-wire-numbering.md
-      - Multifilare: 09-multifilare.md
-      - Rimandi e morsetti: 06-cross-references-terminals.md
-  - Simboli:
-      - Simboli custom: 03-custom-symbols.md
-      - Attributi e pinatura: 04-attributes-and-pinning.md
-      - Checklist validazione simbolo: 10-symbol-validation-checklist.md
-      - Nomenclatura simboli: 19-symbol-naming.md
-      - Dizionario abbreviazioni: 20-abbreviations.md
-      - Standard simboli: standards/symbols.md
-  - Archivi:
-      - Archivi materiali custom: 21-material-archives.md
-      - Standard materiali: standards/materials.md
-      - Archivio Cavi DbCables: 25-cable-archive-dbcables.md
-      - Back-check e controlli incrociati: 26-back-check-controls.md
+  - Operativo:
+      - Setup:
+          - Libreria custom: 15-custom-library.md
+          - Template progetto: 16-project-template.md
+          - Interfaccia e menu: 01-interface-and-menu.md
+          - Workflow CAD 2D: 02-cad-workflow.md
+          - Pagine, cartigli e immagini: 05-pages-titleblocks-images.md
+      - Schemi:
+          - Schema unifilare: 17-unifilare.md
+          - Numerazione e identificazione fili: 18-wire-numbering.md
+          - Multifilare: 09-multifilare.md
+          - Rimandi e morsetti: 06-cross-references-terminals.md
+      - Simboli:
+          - Simboli custom: 03-custom-symbols.md
+          - Attributi e pinatura: 04-attributes-and-pinning.md
+          - Nomenclatura simboli: 19-symbol-naming.md
+          - Dizionario abbreviazioni: 20-abbreviations.md
+          - Standard simboli: standards/symbols.md
+      - Archivi:
+          - Archivi materiali custom: 21-material-archives.md
+          - Standard materiali: standards/materials.md
+          - Archivio Cavi DbCables: 25-cable-archive-dbcables.md
+          - Back-check e controlli incrociati: 26-back-check-controls.md
   - Playbook:
       - Introduzione: playbooks/index.md
       - Simboli:
@@ -88,6 +87,10 @@ nav:
           - Validare un simbolo: playbooks/validate-custom-symbol.md
           - Diagnosticare pin non agganciato: playbooks/diagnose-pin-not-snapping.md
           - Pulire oggetti residui: playbooks/clean-residual-objects.md
+      - Checklist e riferimenti:
+          - Checklist validazione simbolo: 10-symbol-validation-checklist.md
+          - Command Reference: command-reference.md
+          - Esempi operativi: 24-operational-examples.md
       - Cartigli e immagini:
           - Gestire cartiglio e logo: playbooks/titleblock-logo-workflow.md
       - Schemi:
@@ -97,7 +100,7 @@ nav:
       - Archivi:
           - Associare materiali: playbooks/material-association.md
           - Aggiornare Archivio Cavi DbCables: playbooks/update-dbcables-archive.md
-  - Troubleshooting:
+  - Diagnosi:
       - Troubleshooting generale: 07-troubleshooting.md
       - Known Issues:
           - Indice: known-issues/index.md
@@ -106,13 +109,14 @@ nav:
           - Cross-reference obsoleto: known-issues/obsolete-cross-reference.md
           - DbCables versione non congruente: known-issues/dbcables-version-mismatch.md
       - Casi pratici: 12-practical-cases.md
-      - Esempi operativi: 24-operational-examples.md
   - Governance:
-      - Standard operativi: 08-standards.md
-      - Indice standard: standards/index.md
-      - Standard CAD: standards/cad.md
-      - Decision log: 11-decision-log.md
-      - Linee guida manutenzione: 13-maintenance-guidelines.md
-      - Quality gates: 14-quality-gates.md
-      - Linee guida immagini: 22-visual-assets-guidelines.md
+      - Standard:
+          - Standard operativi: 08-standards.md
+          - Indice standard: standards/index.md
+          - Standard CAD: standards/cad.md
+      - Manutenzione:
+          - Decision log: 11-decision-log.md
+          - Linee guida manutenzione: 13-maintenance-guidelines.md
+          - Quality gates: 14-quality-gates.md
+          - Linee guida immagini: 22-visual-assets-guidelines.md
       - Roadmap: roadmap.md
