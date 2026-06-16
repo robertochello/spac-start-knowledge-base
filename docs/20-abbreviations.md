@@ -31,7 +31,7 @@ Questa sezione raccoglie le abbreviazioni usate nella nomenclatura dei simboli c
 | MULT | Multimetro |
 | PLC | Controllore logico programmabile |
 | RELE | Relè |
-| SCAMBIO | Contatto di scambio |
+| SCB | Contatto di scambio |
 | SENS | Sensore |
 | SEZ | Sezionatore |
 | SGL | Sgancio a lancio di corrente |
@@ -51,7 +51,7 @@ Questa sezione raccoglie le abbreviazioni usate nella nomenclatura dei simboli c
 - `MTD` indica magnetotermico differenziale.
 - `AUS` resta valido quando l'accessorio è generico.
 - `FC` significa finecorsa: usarlo con attenzione perché può essere ambiguo in contesti PLC/software.
-- Per contatto di scambio usare `SCAMBIO`.
+- `SCB` è lo standard per contatto di scambio.
 
 ## Collegamenti
 

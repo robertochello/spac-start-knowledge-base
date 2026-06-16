@@ -44,13 +44,13 @@ PINB<n>
 
 ## Contatti di scambio
 
-Per indicare un contatto di scambio, usare la parola:
+Per indicare un contatto di scambio, usare l'abbreviazione documentata:
 
 ```text
-SCAMBIO
+SCB
 ```
 
-Non usare l'abbreviazione `SCB`.
+Non introdurre abbreviazioni alternative.
 
 ## Inventario simboli
 

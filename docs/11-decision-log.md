@@ -64,16 +64,16 @@ Attiva.
 
 ---
 
-### D004 — Usare SCAMBIO, non abbreviazioni non documentate
+### D004 — Usare SCB per contatto di scambio
 
 **Contesto**  
 Le abbreviazioni possono generare ambiguità nei nomi dei simboli o nelle descrizioni.
 
 **Decisione**  
-Per contatti di scambio usare la parola SCAMBIO.
+Per contatti di scambio usare l'abbreviazione documentata `SCB`.
 
 **Motivazione**  
-Maggiore chiarezza e minore ambiguità.
+Il nome resta breve e coerente con il limite massimo di 32 caratteri.
 
 **Stato**  
 Attiva.

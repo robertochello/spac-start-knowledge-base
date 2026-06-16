@@ -41,7 +41,7 @@ Prossimi miglioramenti:
 
 ## Fase 3 — Multifilare
 
-Stato: in sviluppo.
+Stato: base operativa presente, da consolidare.
 
 Contenuti presenti:
 

@@ -7,14 +7,24 @@ Riferimento operativo dei comandi e delle funzioni citate nella knowledge base.
 
 ## Funzioni citate
 
-| Area | Uso |
-|---|---|
-| Gestione menu | Ripristino o gestione dei menu CAD/SPAC |
-| Personalizzazione interfaccia | Creazione shortcut e comandi personalizzati |
-| Libreria simboli | Apertura della libreria simboli SPAC |
-| Riferimenti | Gestione rimandi e cross-reference |
-| Morsetti | Inserimento e configurazione morsetti |
-| Cartigli | Gestione pagine standard e cartigli |
+| Comando / funzione | Area | Uso |
+|---|---|---|
+| `_MENU` | Interfaccia | Ripristino o gestione menu CAD/SPAC |
+| `SP_XML_MENU` | Libreria simboli | Apertura libreria simboli |
+| `CUI` / `_CUI` | Interfaccia | Personalizzazione comandi e shortcut |
+| `_DSETTINGS` | CAD | Impostazione snap e griglia |
+| `IMMAGINI` | Immagini | Gestione immagini collegate |
+| `IMAGEFRAME` | Immagini | Visualizzazione bordo immagini |
+| `_INSER` | CAD | Inserimento DWG o blocchi di partenza |
+| `ESPLODI` | CAD | Esplosione geometria importata prima della pulizia |
+| `MBLOCCO` | Simboli | Creazione file DWG del simbolo |
+| `_MSLIDE` | Simboli | Creazione anteprima SLD |
+| `ATTDEF` | Simboli | Definizione attributi |
+| `PROPRIETA` / `CTRL+1` | CAD | Modifica proprietà attributi o geometrie |
+| `CORRISPROP` | CAD | Copia proprietà da un oggetto a un altro |
+| `EDITATT` | Simboli | Modifica attributi istanza simbolo |
+| `DEL_NUMF` | Fili | Eliminazione numerazione fili |
+| `SPINSMOR` | Morsetti | Inserimento morsetti |
 
 ## Uso consigliato
 
@@ -34,13 +44,12 @@ Quando un comando viene consolidato, documentarlo con:
 - esito atteso;
 - problemi noti.
 
-## Da espandere
+## Da consolidare
 
 Questa pagina dovrà essere ampliata progressivamente con:
 
-- comandi rimandi;
-- comandi morsetti;
-- comandi simboli;
-- comandi gestione materiali;
-- comandi cross-reference;
-- comandi di aggiornamento e rigenerazione.
+- percorso menu esatto quando verificato;
+- prerequisiti operativi;
+- output atteso;
+- problemi noti;
+- collegamento al playbook relativo.

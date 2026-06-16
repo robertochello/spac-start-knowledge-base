@@ -12,6 +12,7 @@ Knowledge base operativa per **SPAC Start Impianti**, pensata per trasformare pr
 | Necessità | Vai a |
 |---|---|
 | Orientarsi nella guida | [Come usare questa guida](00-how-to-use.md) |
+| Consultare il README operativo completo | [Guida operativa completa](README.md) |
 | Capire struttura e scopo | [Overview](00-overview.md) |
 | Installare o mantenere la libreria custom | [Libreria custom](15-custom-library.md) |
 | Creare o revisionare un simbolo custom | [Simboli custom](03-custom-symbols.md) |
@@ -33,7 +34,7 @@ Knowledge base operativa per **SPAC Start Impianti**, pensata per trasformare pr
 | Simboli | simboli custom, attributi, pinatura, nomenclatura |
 | Archivi | materiali custom, Archivio Cavi DbCables, validazione dati |
 | Diagnostica | troubleshooting, known issues, casi pratici |
-| Governance | decision log, quality gates, manutenzione |
+| Governance | decision log, quality gates, manutenzione, immagini |
 
 ## Come usare questa guida
 
@@ -64,7 +65,7 @@ Knowledge base operativa per **SPAC Start Impianti**, pensata per trasformare pr
 | Materiali custom | Avviata |
 | Archivio Cavi DbCables | Verificato su SPAC Automazione e SPAC Start |
 | Esempi operativi | Avviati |
-| Multifilare | In sviluppo |
+| Multifilare | Base operativa presente |
 | Casi pratici | Avviati |
 | Governance documentale | Avviata |
 

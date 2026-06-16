@@ -2,6 +2,27 @@
 
 Tutte le modifiche rilevanti alla knowledge base saranno documentate in questo file.
 
+## 0.4.0 - Site coherence pass
+
+### Added
+
+- Pagina `26-back-check-controls.md` per back-check e controlli incrociati.
+- CSS minimale per migliorare leggibilità del sito MkDocs su GitHub Pages.
+- Collegamento alla guida operativa completa in navigazione e Home.
+
+### Changed
+
+- README principale reso più sintetico e orientato al sito documentale.
+- Navigazione MkDocs completata con pagine non ancora esposte.
+- Standard nomenclatura allineato a `SCB` per contatto di scambio.
+- Stato multifilare aggiornato da placeholder a base operativa presente.
+- Command Reference estesa con i comandi citati nella guida operativa.
+
+### Fixed
+
+- Link rotti verso la pagina di back-check.
+- Riga isolata non documentale nella guida operativa completa.
+
 ## 0.3.0 - Documentation site foundation
 
 ### Added

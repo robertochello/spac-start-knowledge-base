@@ -54,6 +54,12 @@ Approccio pratico consigliato:
 
 La gestione immagini permette di vedere i riferimenti presenti nel progetto e di scollegare o ricollegare asset esterni.
 
+Comando:
+
+```text
+IMMAGINI
+```
+
 Procedure tipiche:
 
 - verificare quali immagini sono collegate;
@@ -89,6 +95,18 @@ Checklist:
 ## Bordo immagini
 
 Le immagini possono essere visualizzate con un bordo o frame.
+
+Comando:
+
+```text
+IMAGEFRAME
+```
+
+Valore consigliato per non visualizzare il bordo:
+
+```text
+0
+```
 
 Regola operativa:
 

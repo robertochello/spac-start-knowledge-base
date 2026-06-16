@@ -2,7 +2,7 @@
 
 Questa sezione raccoglie le procedure relative al lavoro in ambiente multifilare SPAC Start.
 
-Stato: in sviluppo operativo.
+Stato: base operativa presente, da consolidare con casi reali.
 
 ## Obiettivo
 

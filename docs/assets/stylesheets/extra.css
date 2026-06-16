@@ -1,0 +1,47 @@
+/* Minimal technical reading style for GitHub Pages. */
+
+:root {
+  --md-primary-fg-color: #1f5f8b;
+  --md-accent-fg-color: #008c89;
+}
+
+.md-grid {
+  max-width: 1320px;
+}
+
+.md-content__inner {
+  max-width: 920px;
+}
+
+.md-typeset h1 {
+  font-weight: 700;
+}
+
+.md-typeset h2 {
+  margin-top: 2rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  padding-bottom: .25rem;
+}
+
+.md-typeset table:not([class]) {
+  font-size: .74rem;
+}
+
+.md-typeset table:not([class]) th {
+  white-space: nowrap;
+}
+
+.md-typeset code {
+  border-radius: .18rem;
+}
+
+.md-typeset img {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: .28rem;
+  background: var(--md-default-bg-color);
+}
+
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: .28rem;
+}

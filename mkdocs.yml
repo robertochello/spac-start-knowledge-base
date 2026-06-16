@@ -26,6 +26,9 @@ theme:
     - search.highlight
     - content.code.copy
 
+extra_css:
+  - assets/stylesheets/extra.css
+
 plugins:
   - search
 
@@ -47,11 +50,13 @@ nav:
   - Start:
       - Home: index.md
       - Come usare questa guida: 00-how-to-use.md
+      - Guida operativa completa: README.md
       - Concetti SPAC: concepts.md
       - Overview: 00-overview.md
       - Libreria custom: 15-custom-library.md
       - Template progetto: 16-project-template.md
       - Command Reference: command-reference.md
+      - Esempi operativi: 24-operational-examples.md
       - FAQ: faq.md
       - Roadmap: roadmap.md
   - Workflow:
@@ -73,6 +78,7 @@ nav:
       - Archivi materiali custom: 21-material-archives.md
       - Standard materiali: standards/materials.md
       - Archivio Cavi DbCables: 25-cable-archive-dbcables.md
+      - Back-check e controlli incrociati: 26-back-check-controls.md
       - Aggiornare DbCables: playbooks/update-dbcables-archive.md
       - Versione non congruente: known-issues/dbcables-version-mismatch.md
   - Multifilare:
@@ -95,6 +101,7 @@ nav:
       - Decision log: 11-decision-log.md
       - Linee guida manutenzione: 13-maintenance-guidelines.md
       - Quality gates: 14-quality-gates.md
+      - Linee guida immagini: 22-visual-assets-guidelines.md
       - Glossario: glossary.md
   - Playbook:
       - Introduzione: playbooks/index.md

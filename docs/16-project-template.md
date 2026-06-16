@@ -18,11 +18,11 @@ Il template deve essere una base comune. Le differenze tra unifilare e multifila
 
 ## Pagine standard consigliate
 
-| Foglio | Contenuto |
-|---|---|
-| 1 | Dati cliente e dati aziendali |
-| 2 | Disposizioni o informazioni di sicurezza |
-| 3 | Targa quadro e marcatura |
+| Foglio | Riferimento DWG | Contenuto |
+|---|---|---|
+| 1 | `01_BLOCCO_DATI` | Dati cliente e dati aziendali |
+| 2 | `02_BLOCCO_DISPOSIZIONI_SICUREZZA` | Disposizioni o informazioni di sicurezza |
+| 3 | `03_BLOCCO_TARGA_QUADRO` | Targa quadro e marcatura |
 
 ## Inserimento pagine standard
 
