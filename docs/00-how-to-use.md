@@ -9,9 +9,12 @@ Questa pagina serve come punto di orientamento. La knowledge base non va letta t
 | Se devi... | Parti da | Poi vai a |
 |---|---|---|
 | capire come è organizzata la guida | [Overview](00-overview.md) | [Concetti SPAC](concepts.md) |
+| preparare ambiente o progetto | [Libreria custom](15-custom-library.md) | [Template progetto](16-project-template.md) |
+| lavorare su uno schema | [Schema unifilare](17-unifilare.md) | [Rimandi e morsetti](06-cross-references-terminals.md) |
 | creare o sistemare un simbolo custom | [Simboli custom](03-custom-symbols.md) | [Attributi e pinatura](04-attributes-and-pinning.md) |
 | verificare un simbolo prima del riuso | [Checklist validazione simbolo](10-symbol-validation-checklist.md) | [Quality gates](14-quality-gates.md) |
 | gestire materiali o cavi | [Archivi materiali custom](21-material-archives.md) | [Archivio Cavi DbCables](25-cable-archive-dbcables.md) |
+| seguire una procedura passo-passo | [Playbook](playbooks/index.md) | [Command Reference](command-reference.md) |
 | risolvere un problema pratico | [Troubleshooting](07-troubleshooting.md) | [Known Issues](known-issues/index.md) |
 | capire una scelta già presa | [Decision log](11-decision-log.md) | [Standard operativi](08-standards.md) |
 
@@ -31,13 +34,14 @@ Se una pagina non aiuta in nessuno di questi punti, va semplificata.
 
 | Sezione | Scopo |
 |---|---|
-| Workflow | Procedure operative generali |
-| Schemi | Unifilare, multifilare, morsetti e rimandi |
+| Start | Orientamento, guida completa, concetti e glossario |
+| Setup e Workflow | Preparazione ambiente, template, interfaccia, CAD e cartigli |
+| Schemi | Unifilare, multifilare, fili, morsetti e rimandi |
 | Simboli | Creazione, attributi, pinatura e nomi |
 | Archivi | Materiali custom e Archivio Cavi |
-| Troubleshooting | Problemi noti e diagnosi |
-| Standards | Regole stabili da applicare |
-| Governance | Decisioni, manutenzione e quality gates |
+| Playbook | Procedure guidate ordinate per ambito |
+| Troubleshooting | Problemi noti, diagnosi, casi pratici ed esempi |
+| Governance | Standard, decisioni, manutenzione, quality gates e roadmap |
 
 ## Metodo di aggiornamento
 

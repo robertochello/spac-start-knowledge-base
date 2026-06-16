@@ -20,7 +20,9 @@ theme:
   features:
     - navigation.tabs
     - navigation.sections
-    - navigation.expand
+    - navigation.indexes
+    - navigation.footer
+    - navigation.tracking
     - navigation.top
     - search.suggest
     - search.highlight
@@ -51,22 +53,22 @@ nav:
       - Home: index.md
       - Come usare questa guida: 00-how-to-use.md
       - Guida operativa completa: README.md
-      - Concetti SPAC: concepts.md
       - Overview: 00-overview.md
+      - Concetti SPAC: concepts.md
+      - FAQ: faq.md
+      - Glossario: glossary.md
+  - Setup e Workflow:
       - Libreria custom: 15-custom-library.md
       - Template progetto: 16-project-template.md
-      - Command Reference: command-reference.md
-      - Esempi operativi: 24-operational-examples.md
-      - FAQ: faq.md
-      - Roadmap: roadmap.md
-  - Workflow:
       - Interfaccia e menu: 01-interface-and-menu.md
       - Workflow CAD 2D: 02-cad-workflow.md
       - Pagine, cartigli e immagini: 05-pages-titleblocks-images.md
-      - Numerazione e identificazione fili: 18-wire-numbering.md
-  - Unifilare:
+      - Command Reference: command-reference.md
+  - Schemi:
       - Schema unifilare: 17-unifilare.md
       - Numerazione e identificazione fili: 18-wire-numbering.md
+      - Multifilare: 09-multifilare.md
+      - Rimandi e morsetti: 06-cross-references-terminals.md
   - Simboli:
       - Simboli custom: 03-custom-symbols.md
       - Attributi e pinatura: 04-attributes-and-pinning.md
@@ -79,39 +81,38 @@ nav:
       - Standard materiali: standards/materials.md
       - Archivio Cavi DbCables: 25-cable-archive-dbcables.md
       - Back-check e controlli incrociati: 26-back-check-controls.md
-      - Aggiornare DbCables: playbooks/update-dbcables-archive.md
-      - Versione non congruente: known-issues/dbcables-version-mismatch.md
-  - Multifilare:
-      - Multifilare: 09-multifilare.md
-      - Rimandi e morsetti: 06-cross-references-terminals.md
+  - Playbook:
+      - Introduzione: playbooks/index.md
+      - Simboli:
+          - Creare un simbolo custom: playbooks/create-custom-symbol.md
+          - Validare un simbolo: playbooks/validate-custom-symbol.md
+          - Diagnosticare pin non agganciato: playbooks/diagnose-pin-not-snapping.md
+          - Pulire oggetti residui: playbooks/clean-residual-objects.md
+      - Cartigli e immagini:
+          - Gestire cartiglio e logo: playbooks/titleblock-logo-workflow.md
+      - Schemi:
+          - Gestire accessori e bobine: playbooks/manage-accessories-and-coils.md
+          - Verificare rappresentazione morsetti: playbooks/terminal-representation.md
+          - Diagnosticare rimandi alimentazione: playbooks/power-reference-diagnostic.md
+      - Archivi:
+          - Associare materiali: playbooks/material-association.md
+          - Aggiornare Archivio Cavi DbCables: playbooks/update-dbcables-archive.md
   - Troubleshooting:
       - Troubleshooting generale: 07-troubleshooting.md
-      - Known Issues: known-issues/index.md
-      - Pin non agganciato: known-issues/pin-not-snapping.md
-      - Riferimento immagine mancante: known-issues/missing-image-reference.md
-      - Cross-reference obsoleto: known-issues/obsolete-cross-reference.md
-      - DbCables versione non congruente: known-issues/dbcables-version-mismatch.md
+      - Known Issues:
+          - Indice: known-issues/index.md
+          - Pin non agganciato: known-issues/pin-not-snapping.md
+          - Riferimento immagine mancante: known-issues/missing-image-reference.md
+          - Cross-reference obsoleto: known-issues/obsolete-cross-reference.md
+          - DbCables versione non congruente: known-issues/dbcables-version-mismatch.md
       - Casi pratici: 12-practical-cases.md
-  - Standards:
-      - Introduzione: standards/index.md
-      - Standard operativi: 08-standards.md
-      - Standard simboli: standards/symbols.md
-      - Standard CAD: standards/cad.md
+      - Esempi operativi: 24-operational-examples.md
   - Governance:
+      - Standard operativi: 08-standards.md
+      - Indice standard: standards/index.md
+      - Standard CAD: standards/cad.md
       - Decision log: 11-decision-log.md
       - Linee guida manutenzione: 13-maintenance-guidelines.md
       - Quality gates: 14-quality-gates.md
       - Linee guida immagini: 22-visual-assets-guidelines.md
-      - Glossario: glossary.md
-  - Playbook:
-      - Introduzione: playbooks/index.md
-      - Creare un simbolo custom: playbooks/create-custom-symbol.md
-      - Validare un simbolo: playbooks/validate-custom-symbol.md
-      - Diagnosticare pin non agganciato: playbooks/diagnose-pin-not-snapping.md
-      - Gestire cartiglio e logo: playbooks/titleblock-logo-workflow.md
-      - Gestire accessori e bobine: playbooks/manage-accessories-and-coils.md
-      - Verificare rappresentazione morsetti: playbooks/terminal-representation.md
-      - Diagnosticare rimandi alimentazione: playbooks/power-reference-diagnostic.md
-      - Associare materiali: playbooks/material-association.md
-      - Aggiornare Archivio Cavi DbCables: playbooks/update-dbcables-archive.md
-      - Pulire oggetti residui: playbooks/clean-residual-objects.md
+      - Roadmap: roadmap.md

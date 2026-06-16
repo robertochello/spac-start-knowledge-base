@@ -13,14 +13,16 @@ Knowledge base operativa per **SPAC Start Impianti**, pensata per trasformare pr
 |---|---|
 | Orientarsi nella guida | [Come usare questa guida](00-how-to-use.md) |
 | Consultare il README operativo completo | [Guida operativa completa](README.md) |
-| Capire struttura e scopo | [Overview](00-overview.md) |
 | Installare o mantenere la libreria custom | [Libreria custom](15-custom-library.md) |
+| Preparare una commessa base | [Template progetto](16-project-template.md) |
+| Gestire pagine, cartigli o immagini | [Pagine, cartigli e immagini](05-pages-titleblocks-images.md) |
+| Lavorare sullo schema unifilare | [Schema unifilare](17-unifilare.md) |
+| Gestire rimandi, fili o morsetti | [Rimandi e morsetti](06-cross-references-terminals.md) |
 | Creare o revisionare un simbolo custom | [Simboli custom](03-custom-symbols.md) |
 | Controllare attributi e pinatura | [Attributi e pinatura](04-attributes-and-pinning.md) |
 | Gestire archivi materiali custom | [Archivi materiali custom](21-material-archives.md) |
 | Aggiornare Archivio Cavi DbCables | [Archivio Cavi DbCables](25-cable-archive-dbcables.md) |
-| Consultare esempi operativi | [Esempi operativi](24-operational-examples.md) |
-| Validare un simbolo prima del riuso | [Checklist validazione simbolo](10-symbol-validation-checklist.md) |
+| Seguire una procedura guidata | [Playbook](playbooks/index.md) |
 | Risolvere un problema ricorrente | [Troubleshooting](07-troubleshooting.md) |
 | Consultare decisioni operative | [Decision log](11-decision-log.md) |
 | Standardizzare il modo di lavorare | [Standard operativi](08-standards.md) |
@@ -29,10 +31,11 @@ Knowledge base operativa per **SPAC Start Impianti**, pensata per trasformare pr
 
 | Area | Contenuti principali |
 |---|---|
-| Workflow | interfaccia, libreria custom, template progetto, CAD 2D |
+| Setup e Workflow | libreria custom, template progetto, interfaccia, CAD, cartigli |
 | Schemi | unifilare, multifilare, rimandi, morsetti |
 | Simboli | simboli custom, attributi, pinatura, nomenclatura |
 | Archivi | materiali custom, Archivio Cavi DbCables, validazione dati |
+| Playbook | procedure guidate per simboli, cartigli, schemi e archivi |
 | Diagnostica | troubleshooting, known issues, casi pratici |
 | Governance | decision log, quality gates, manutenzione, immagini |
 

@@ -10,15 +10,19 @@
   </defs>
   <rect width="1200" height="640" rx="28" fill="url(#bg)"/>
   <text x="56" y="60" class="title">SPAC Start Knowledge Base — struttura consigliata</text>
-  <text x="56" y="90" class="text">La guida è organizzata per flusso di lavoro: capire, operare, validare, diagnosticare e standardizzare.</text>
+  <text x="56" y="90" class="text">La guida è organizzata per flusso di lavoro: orientarsi, operare, seguire playbook, diagnosticare e standardizzare.</text>
 
   <rect x="470" y="230" width="260" height="120" rx="26" class="core"/>
   <text x="540" y="275" class="label">HOME</text>
   <text x="510" y="305" class="text">accesso rapido</text>
   <text x="500" y="330" class="text">mappa logica della guida</text>
 
+  <rect x="470" y="410" width="260" height="80" rx="20" class="accent"/>
+  <text x="555" y="445" class="label">Playbook</text>
+  <text x="505" y="472" class="text">procedure guidate per ambito</text>
+
   <rect x="70" y="150" width="220" height="90" rx="20" class="box"/>
-  <text x="110" y="190" class="label">Workflow</text>
+  <text x="88" y="190" class="label">Setup e Workflow</text>
   <text x="96" y="216" class="text">interfaccia · CAD · cartigli</text>
 
   <rect x="70" y="300" width="220" height="90" rx="20" class="box"/>
@@ -44,6 +48,7 @@
   <line x1="470" y1="270" x2="290" y2="195" class="arrow"/>
   <line x1="470" y1="295" x2="290" y2="345" class="arrow"/>
   <line x1="470" y1="325" x2="290" y2="495" class="arrow"/>
+  <line x1="600" y1="350" x2="600" y2="410" class="arrow"/>
   <line x1="730" y1="270" x2="910" y2="195" class="arrow"/>
   <line x1="730" y1="295" x2="910" y2="345" class="arrow"/>
   <line x1="730" y1="325" x2="910" y2="495" class="arrow"/>

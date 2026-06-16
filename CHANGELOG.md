@@ -14,6 +14,7 @@ Tutte le modifiche rilevanti alla knowledge base saranno documentate in questo f
 
 - README principale reso più sintetico e orientato al sito documentale.
 - Navigazione MkDocs completata con pagine non ancora esposte.
+- Navigazione MkDocs riorganizzata per percorsi operativi e sottogruppi.
 - Standard nomenclatura allineato a `SCB` per contatto di scambio.
 - Stato multifilare aggiornato da placeholder a base operativa presente.
 - Command Reference estesa con i comandi citati nella guida operativa.
