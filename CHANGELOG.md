@@ -8,7 +8,7 @@ Tutte le modifiche rilevanti alla knowledge base saranno documentate in questo f
 
 - Pagina `26-back-check-controls.md` per back-check e controlli incrociati.
 - Pagina `downloads.md` e cartelle pubbliche per archivi materiali e archivi cavi.
-- Link download per gli archivi materiali `ABB_Materials.db` e `Gaslini.db`.
+- Link download per gli archivi materiali `ABB_Materials.db` e `archivio-materiali-custom-r01.db`.
 - CSS minimale per migliorare leggibilità del sito MkDocs su GitHub Pages.
 - Collegamento alla guida operativa completa in navigazione e Home.
 

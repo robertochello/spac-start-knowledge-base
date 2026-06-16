@@ -127,7 +127,7 @@ Regole operative:
 File materiali attualmente collegati:
 
 - `ABB_Materials.db`;
-- `Gaslini.db`.
+- `archivio-materiali-custom-r01.db`.
 
 ---
 

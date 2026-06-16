@@ -30,7 +30,7 @@ MkDocs pubblica queste cartelle nel sito statico. I link vanno quindi scritti co
 | Area | File | Stato | Note |
 |---|---|---|---|
 | Materiali | [ABB_Materials.db](assets/downloads/materiali/ABB_Materials.db) | Pubblicato | Archivio materiali ABB |
-| Materiali | [Gaslini.db](assets/downloads/materiali/Gaslini.db) | Pubblicato | Archivio materiali custom |
+| Materiali | [archivio-materiali-custom-r01.db](assets/downloads/materiali/archivio-materiali-custom-r01.db) | Pubblicato | Archivio materiali custom |
 | Cavi | Da caricare in `assets/downloads/cavi/` | Non pubblicato | Archivio cavi o `DbCables.db` sanitizzato/verificato |
 
 ## Template riga download
