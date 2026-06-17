@@ -80,6 +80,8 @@ Un file può essere pubblicato in `docs/assets/downloads/` solo quando:
 - è privo di dati cliente, commessa o informazioni non pubblicabili;
 - il nome file è chiaro, senza spazi e con versione o release;
 - il contenuto è apribile e verificato;
+- provenienza o criterio di generazione sono documentati;
+- l'hash SHA256 è registrato per i file binari;
 - l'archivio compresso, se presente, è stato testato;
 - la pagina [Download](downloads.md) riporta stato e note;
 - il file è collegato a una procedura o a un quality gate;

@@ -41,17 +41,17 @@ Il DB scelto non è un DB di SPAC valido
 4. Copiare il database modificato nella stessa cartella.
 5. Rinominare il database modificato in:
 
-```text
-DbCables.db
-```
+   ```text
+   DbCables.db
+   ```
 
 6. Avviare SPAC.
 7. Se compare l'avviso di versione non congruente, proseguire.
 8. Nella finestra di ripristino usare:
 
-```text
-Allinea la versione delle librerie
-```
+   ```text
+   Allinea la versione delle librerie
+   ```
 
 9. Attendere il completamento.
 10. Chiudere la finestra di allineamento.
@@ -105,9 +105,9 @@ Se qualcosa non funziona:
 3. Ripristinare il backup originale.
 4. Rinominare il backup in:
 
-```text
-DbCables.db
-```
+   ```text
+   DbCables.db
+   ```
 
 5. Riaprire SPAC.
 6. Verificare Archivio Cavi.

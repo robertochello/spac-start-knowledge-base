@@ -96,9 +96,7 @@ Every operational standard should include:
 Do not invent SPAC commands, menu paths or behaviors.
 
 If a command, menu path or behavior is not verified in SPAC Start 26, mark it
-clearly as:
-
-**Da verificare**
+clearly as `Da verificare`.
 
 When documenting SPAC workflows:
 

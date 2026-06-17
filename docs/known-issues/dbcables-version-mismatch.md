@@ -31,9 +31,9 @@ Procedura sintetica:
 2. Aprire la finestra di ripristino/allineamento.
 3. Usare:
 
-```text
-Allinea la versione delle librerie
-```
+   ```text
+   Allinea la versione delle librerie
+   ```
 
 4. Attendere il completamento.
 5. Chiudere la finestra.

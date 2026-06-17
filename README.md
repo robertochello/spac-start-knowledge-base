@@ -20,7 +20,7 @@ Raccogliere procedure pratiche e standard riutilizzabili per:
 | Area | Contenuto |
 |---|---|
 | `docs/index.md` | Home della guida pubblicata |
-| `docs/README.md` | Guida operativa completa SPAC Start 26 |
+| `docs/guida-operativa-completa.md` | Guida operativa completa SPAC Start 26 |
 | `docs/00-how-to-use.md` | Percorsi di lettura |
 | `docs/15-custom-library.md` | Libreria custom `_CUSTOM` |
 | `docs/16-project-template.md` | Template progetto e pagine standard |
@@ -69,7 +69,7 @@ Caratteristiche abilitate:
 Workflow:
 
 ```text
-push su master -> build MkDocs -> deploy gh-pages
+push su master -> mkdocs build --strict -> deploy gh-pages
 ```
 
 ## Preview locale

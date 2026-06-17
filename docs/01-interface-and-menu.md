@@ -28,9 +28,9 @@ Per creare una scorciatoia da tastiera:
 
 1. aprire la personalizzazione interfaccia con:
 
-```text
-_CUI
-```
+   ```text
+   _CUI
+   ```
 
 2. creare un nuovo comando nella Command List;
 3. associare al comando l'apertura della libreria simboli SPAC;

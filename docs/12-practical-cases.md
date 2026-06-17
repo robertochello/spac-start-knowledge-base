@@ -20,14 +20,14 @@ Ogni caso dovrebbe contenere:
 **Contesto**  
 Un simbolo custom viene inserito correttamente dal punto di vista grafico, ma non si comporta come componente SPAC.
 
-**Possibili cause**
+### Possibili cause
 
 - attributi mancanti;
 - simbolo creato come semplice blocco CAD;
 - valore PRES assente o non coerente;
 - simbolo non testato in progetto prova.
 
-**Procedura consigliata**
+### Procedura consigliata
 
 1. Verificare attributi principali.
 2. Controllare se il simbolo deve essere Madre.
@@ -35,7 +35,7 @@ Un simbolo custom viene inserito correttamente dal punto di vista grafico, ma no
 4. Testare associazione materiale, se richiesta.
 5. Aggiornare inventario simboli.
 
-**Riferimenti**
+### Riferimenti
 
 - `docs/03-custom-symbols.md`
 - `docs/04-attributes-and-pinning.md`
@@ -48,14 +48,14 @@ Un simbolo custom viene inserito correttamente dal punto di vista grafico, ma no
 **Contesto**  
 Il simbolo è visibile, ma il collegamento non si aggancia correttamente al pin.
 
-**Possibili cause**
+### Possibili cause
 
 - pin non allineato alla griglia;
 - attributo pin errato;
 - filo non intelligente;
 - simbolo modificato graficamente senza aggiornare attributi.
 
-**Procedura consigliata**
+### Procedura consigliata
 
 1. Verificare posizione del pin.
 2. Allineare il punto alla griglia.
@@ -63,7 +63,7 @@ Il simbolo è visibile, ma il collegamento non si aggancia correttamente al pin.
 4. Inserire un filo nuovo in progetto prova.
 5. Validare il simbolo con checklist.
 
-**Riferimenti**
+### Riferimenti
 
 - `docs/04-attributes-and-pinning.md`
 - `docs/10-symbol-validation-checklist.md`
@@ -75,21 +75,21 @@ Il simbolo è visibile, ma il collegamento non si aggancia correttamente al pin.
 **Contesto**  
 Un riferimento punta a un punto del foglio dove il collegamento non è più presente.
 
-**Possibili cause**
+### Possibili cause
 
 - vecchi oggetti intelligenti rimasti nel progetto;
 - rimandi non aggiornati;
 - oggetti cancellati solo graficamente;
 - rigenerazione riferimenti non eseguita.
 
-**Procedura consigliata**
+### Procedura consigliata
 
 1. Verificare presenza di oggetti residui.
 2. Controllare rimandi non utilizzati.
 3. Rigenerare riferimenti.
 4. Testare il collegamento su un foglio pulito.
 
-**Riferimenti**
+### Riferimenti
 
 - `docs/06-cross-references-terminals.md`
 - `docs/07-troubleshooting.md`

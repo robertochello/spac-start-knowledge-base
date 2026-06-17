@@ -1147,4 +1147,3 @@ Per ogni simbolo sono riportati:
 - descrizione funzionale.
 
 > Nota: salvo diversa indicazione, il file `.dwg` e il relativo file `.sld` devono utilizzare lo stesso nome base.
-
