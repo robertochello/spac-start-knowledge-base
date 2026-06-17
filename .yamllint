@@ -1,0 +1,31 @@
+---
+extends: default
+
+rules:
+  # Keep YAML readable without forcing artificial wrapping in MkDocs nav labels,
+  # long URLs, GitHub Actions expressions or documentation metadata.
+  line-length: disable
+
+  # MkDocs and GitHub Actions commonly use two-space indentation.
+  indentation:
+    spaces: 2
+    indent-sequences: consistent
+    check-multi-line-strings: false
+
+  # Allow common truthy values used by GitHub Actions and MkDocs examples.
+  truthy:
+    allowed-values:
+      - 'true'
+      - 'false'
+      - 'on'
+      - 'off'
+      - 'yes'
+      - 'no'
+    check-keys: false
+
+  # Keep comments flexible in configuration files.
+  comments:
+    min-spaces-from-content: 1
+
+  # Avoid noisy failures on short, operational config files.
+  document-start: disable
