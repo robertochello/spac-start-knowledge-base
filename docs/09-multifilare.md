@@ -158,6 +158,14 @@ Riferimenti operativi:
 Un rimando deve essere collegato a un oggetto coerente, non a una semplice linea
 grafica.
 
+Prima di diagnosticare un rimando distinguere tra:
+
+- linea grafica CAD;
+- alimentazione o collegamento SPAC;
+- oggetto intelligente;
+- rimando;
+- cross-reference generato.
+
 Quando un rimando non funziona:
 
 1. verificare se l'oggetto è riconosciuto;
@@ -193,7 +201,7 @@ Per il flusso di lavoro usare il playbook
 |---|---|---|
 | Accessorio non collegato logicamente al componente | Attributi e relazione Madre/Figlia | [Gestire accessori e bobine](playbooks/manage-accessories-and-coils.md) |
 | Morsetto mostra numero filo invece del dato atteso | Campo visualizzato dalla rappresentazione | [Verificare rappresentazione morsetti](playbooks/terminal-representation.md) |
-| Rimando non accetta la selezione | Oggetto intelligente selezionato | [Diagnosticare rimandi alimentazione](playbooks/power-reference-diagnostic.md) |
+| Rimando non accetta la selezione | Linea grafica o oggetto intelligente selezionato | [Diagnosticare rimandi alimentazione](playbooks/power-reference-diagnostic.md) |
 | Cross-reference punta a posizione non più valida | Oggetti residui e riferimenti non aggiornati | [Known Issue - Cross-reference obsoleto](known-issues/obsolete-cross-reference.md) |
 | Materiale duplicato o mancante in distinta | Punto di associazione del materiale | [Associare materiali](playbooks/material-association.md) |
 
