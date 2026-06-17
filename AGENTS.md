@@ -185,6 +185,12 @@ strategy without explicit confirmation.
 
 ## Safe change policy
 
+For this repository, low-risk changes must be completed autonomously.
+
+When the task scope is clear and the change is low risk, do not stop for an
+approval step. Apply the change, run the required validation commands, create a
+focused commit and push it to the repository.
+
 Low-risk changes:
 
 - fixing typos;
@@ -201,7 +207,7 @@ Ask for confirmation before:
 
 - deleting files;
 - deleting documentation sections;
-- replacing downloadable `.db`, `.zip`, `.xlsx`, `.dwg`, `.dxf` or archive
+- replacing downloadable .db, .zip, .xlsx, .dwg, .dxf or archive
   files;
 - changing repository visibility;
 - changing branch strategy;
