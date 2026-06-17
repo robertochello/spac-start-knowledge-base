@@ -52,5 +52,6 @@ La configurazione è corretta quando:
 
 ## Collegamenti
 
+- [Multifilare](../09-multifilare.md)
 - [Rimandi, cross-reference e morsetti](../06-cross-references-terminals.md)
 - [Troubleshooting](../07-troubleshooting.md)

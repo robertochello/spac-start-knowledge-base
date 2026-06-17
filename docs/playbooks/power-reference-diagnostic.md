@@ -56,5 +56,6 @@ Il rimando è corretto quando:
 
 ## Collegamenti
 
+- [Multifilare](../09-multifilare.md)
 - [Rimandi, cross-reference e morsetti](../06-cross-references-terminals.md)
 - [Known Issue — Cross-reference obsoleto](../known-issues/obsolete-cross-reference.md)

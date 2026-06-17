@@ -146,6 +146,13 @@ Quando la rappresentazione del morsetto non è corretta:
 
 Non correggere solo il testo visibile se l'oggetto è intelligente. Verificare sempre il dato sorgente e la configurazione grafica che lo mostra.
 
+## Collegamenti
+
+- [Multifilare](09-multifilare.md)
+- [Numerazione e identificazione fili](18-wire-numbering.md)
+- [Verificare rappresentazione morsetti](playbooks/terminal-representation.md)
+- [Diagnosticare rimandi alimentazione](playbooks/power-reference-diagnostic.md)
+
 ## Baseline sezione
 
 La sezione rimandi e morsetti è completa come riferimento operativo quando copre:
