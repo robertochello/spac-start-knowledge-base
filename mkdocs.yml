@@ -1,4 +1,4 @@
-site_name: SPAC Start Knowledge Base
+﻿site_name: SPAC Start Knowledge Base
 site_description: Knowledge base operativa per workflow SPAC Start, simboli custom, attributi, pinatura e troubleshooting.
 site_author: Roberto Chello
 site_url: https://robertochello.github.io/spac-start-knowledge-base/
@@ -54,7 +54,7 @@ nav:
       - Come usare questa guida: 00-how-to-use.md
       - Overview: 00-overview.md
       - Concetti SPAC: concepts.md
-      - Guida operativa completa: README.md
+      - Guida operativa completa: guida-operativa-completa.md
       - FAQ: faq.md
       - Glossario: glossary.md
   - Operativo:

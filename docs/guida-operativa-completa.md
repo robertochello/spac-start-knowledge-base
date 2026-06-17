@@ -1,4 +1,4 @@
-# Guida operativa SPAC Start 26
+﻿# Guida operativa SPAC Start 26
 
 ## Indice
 
@@ -12,7 +12,7 @@
     - [Categorie libreria custom](#categorie-libreria-custom)
     - [Creazione shortcut da tastiera personalizzati](#creazione-shortcut-da-tastiera-personalizzati)
       - [Esempio: shortcut per aprire la libreria simboli](#esempio-shortcut-per-aprire-la-libreria-simboli)
-      - [Procedura](#procedura)
+      - [Procedura](#procedura-1)
     - [Operazioni grafiche comuni](#operazioni-grafiche-comuni)
       - [Colorare o riempire una forma](#colorare-o-riempire-una-forma)
     - [Come inserire immagini](#come-inserire-immagini)
@@ -62,7 +62,7 @@
       - [Formato standard](#formato-standard)
       - [Significato dei campi](#significato-dei-campi)
       - [Regole formali](#regole-formali)
-      - [Regola di priorità](#regola-di-priorità)
+      - [Regola di priorità](#regola-di-priorita)
     - [Dizionario abbreviazioni](#dizionario-abbreviazioni)
       - [Note sulle abbreviazioni](#note-sulle-abbreviazioni)
     - [Simboli realizzati](#simboli-realizzati)
@@ -206,7 +206,7 @@ Comando SPAC da richiamare:
 SP_XML_MENU
 ```
 
-#### Procedura
+#### Procedura { #procedura-1 }
 
 1. Digitare nella riga comando:
 
@@ -332,7 +332,7 @@ Questa sezione descrive la creazione di un template riutilizzabile per progetti 
 
 Il template e' una base comune. Le differenze operative tra schema unifilare e schema multifilare devono essere documentate in sezioni dedicate.
 
-#### Procedura
+#### Procedura {: #procedura-2 }
 
 1. Creare un nuovo progetto con le informazioni principali della commessa.
 2. Scegliere il cartiglio master.
@@ -443,7 +443,7 @@ Procedura:
 
 Questa sezione descrive la realizzazione dello schema unifilare dopo le operazioni preliminari di creazione del progetto, inserimento fogli, inserimento fogli standard e rimozione del frame delle immagini.
 
-### Preparazione
+### Preparazione {: #preparazione-1 }
 
 Prima di iniziare lo schema:
 
@@ -715,7 +715,7 @@ Questa parte serve per creare, aggiornare e rendere coerenti i simboli della lib
 
 Questa procedura serve per creare un simbolo grafico custom partendo da un DWG esterno o da un simbolo SPAC esistente.
 
-#### Procedura
+#### Procedura { #procedura-1 }
 
 1. Aprire un foglio di lavoro di prova, non una commessa reale.
 2. Selezionare ambiente **FUNZIONALE/UNIFILARE**.
@@ -1147,3 +1147,4 @@ Per ogni simbolo sono riportati:
 - descrizione funzionale.
 
 > Nota: salvo diversa indicazione, il file `.dwg` e il relativo file `.sld` devono utilizzare lo stesso nome base.
+
