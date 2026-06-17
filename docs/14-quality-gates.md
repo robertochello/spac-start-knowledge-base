@@ -14,6 +14,37 @@ Una nuova procedura è pronta quando:
 - rimanda a standard, decisioni o casi pratici collegati;
 - è collocata nella sezione corretta.
 
+## Quality gate repository
+
+Prima di pubblicare modifiche strutturali o documentali, la repository deve
+superare i controlli locali di validazione.
+
+Comandi ufficiali:
+
+```powershell
+mkdocs build --strict
+npx --yes markdownlint-cli2
+yamllint mkdocs.yml .github/workflows
+```
+
+I controlli hanno questo scopo:
+
+- `mkdocs build --strict` verifica build, navigazione e link interni gestiti
+  da MkDocs;
+- `npx --yes markdownlint-cli2` verifica la forma dei file Markdown secondo
+  la configurazione della repository;
+- `yamllint mkdocs.yml .github/workflows` verifica la sintassi e lo stile dei
+  file YAML principali.
+
+Una modifica è pronta per il push quando:
+
+- i tre controlli terminano senza errori;
+- eventuali warning residui sono compresi e non bloccanti;
+- `git diff --check` non segnala spazi o caratteri problematici;
+- i file generati localmente, come `site/`, non vengono committati;
+- le modifiche non introducono dati cliente, commessa o informazioni non
+  pubblicabili.
+
 ## Quality gate per simboli custom
 
 Un simbolo custom è documentabile come stabile quando:
