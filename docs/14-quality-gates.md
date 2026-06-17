@@ -14,6 +14,23 @@ Una nuova procedura è pronta quando:
 - rimanda a standard, decisioni o casi pratici collegati;
 - è collocata nella sezione corretta.
 
+## Validazione repository
+
+Prima di completare una modifica documentale eseguire:
+
+```bash
+mkdocs build --strict
+npx --yes markdownlint-cli2
+yamllint mkdocs.yml .github/workflows
+```
+
+Esito richiesto:
+
+- build MkDocs completato senza errori;
+- lint Markdown completato senza errori;
+- lint YAML completato senza errori;
+- eventuali limitazioni documentate nel riepilogo della modifica.
+
 ## Quality gate per simboli custom
 
 Un simbolo custom è documentabile come stabile quando:
