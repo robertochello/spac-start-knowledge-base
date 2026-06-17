@@ -141,6 +141,13 @@ Per i morsetti distinguere sempre:
 Se il testo visibile non è quello atteso, non correggere solo la grafica:
 controllare dato sorgente e rappresentazione.
 
+La distinzione operativa è:
+
+- oggetto morsetto;
+- dati sorgente;
+- rappresentazione grafica;
+- testo visibile.
+
 Riferimenti operativi:
 
 - [Rimandi, cross-reference e morsetti](06-cross-references-terminals.md)

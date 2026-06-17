@@ -92,6 +92,19 @@ Per i morsetti, distinguere sempre tra:
 
 Prima di inserire morsetti è consigliato nominare i fili presenti nella pagina.
 
+## Oggetto, dati e rappresentazione
+
+Un morsetto deve essere verificato su tre livelli distinti.
+
+| Livello | Cosa controllare | Errore tipico |
+|---|---|---|
+| Oggetto intelligente | Il morsetto esiste come oggetto SPAC collegato al filo corretto | Testo corretto ma oggetto non coerente |
+| Dati morsetto | Morsettiera, numero morsetto, numero filo e riferimento funzionale | Numero morsetto e numero filo confusi |
+| Rappresentazione grafica | Campo mostrato dal simbolo o dalla grafica selezionata | La grafica mostra `NumI` o `NumO` invece di `NumM` |
+
+Il testo visibile è un risultato della rappresentazione. Non deve essere usato
+come unica fonte di verità.
+
 ## Morsettiere
 
 Durante la gestione morsettiere, verificare:
@@ -131,16 +144,36 @@ Per una lettura più chiara dello schema, preferire rappresentazioni che mostrin
 
 Se sul morsetto compare il numero filo invece del numero morsetto, il problema è probabilmente nella configurazione della rappresentazione grafica o nei dati visualizzati dal simbolo morsetto.
 
+## Diagnostica visualizzazione morsetti
+
+| Sintomo | Verifiche minime | Azione documentale |
+|---|---|---|
+| Compare il numero filo invece del numero morsetto | Controllare se la rappresentazione mostra `NumI` o `NumO` invece di `NumM` | Annotare la rappresentazione usata |
+| Compare una morsettiera inattesa | Controllare dati morsettiera e appartenenza del morsetto | Verificare su morsetto nuovo |
+| Il numero morsetto è corretto ma la grafica non lo mostra | Controllare campi visualizzati dal simbolo morsetto | Non correggere solo il testo |
+| Il morsetto non mantiene il comportamento dopo aggiornamenti | Controllare oggetto intelligente, dati sorgente e riferimenti | Aprire caso pratico o known issue se ricorrente |
+| Il riferimento punta a una posizione non più valida | Controllare oggetti residui e cross-reference non aggiornati | Usare [Known Issue - Cross-reference obsoleto](known-issues/obsolete-cross-reference.md) |
+
 ## Checklist morsetti
 
 Quando la rappresentazione del morsetto non è corretta:
 
-1. verificare proprietà del morsetto;
-2. controllare dati morsettiera;
-3. verificare campi visualizzati dal simbolo;
-4. controllare impostazioni grafiche della rappresentazione;
-5. aggiornare o rigenerare i riferimenti;
-6. testare su un morsetto nuovo in progetto prova.
+1. distinguere oggetto morsetto, dati sorgente e testo visibile;
+2. verificare proprietà del morsetto;
+3. controllare dati morsettiera;
+4. verificare numero morsetto, numero filo e riferimento funzionale;
+5. verificare campi visualizzati dal simbolo;
+6. controllare impostazioni grafiche della rappresentazione;
+7. aggiornare o rigenerare i riferimenti quando necessario;
+8. testare su un morsetto nuovo in progetto prova.
+
+## Checklist diagnostica rapida
+
+- `NumM` atteso ma non visibile: controllare rappresentazione grafica.
+- `NumI` o `NumO` visibile al posto di `NumM`: controllare campo mostrato.
+- Morsettiera errata: controllare appartenenza e dati del morsetto.
+- Numero filo errato: controllare numerazione fili prima del morsetto.
+- Comportamento non ripetibile: testare su morsetto nuovo e documentare esito.
 
 ## Regola pratica
 
@@ -152,6 +185,8 @@ Non correggere solo il testo visibile se l'oggetto è intelligente. Verificare s
 - [Numerazione e identificazione fili](18-wire-numbering.md)
 - [Verificare rappresentazione morsetti](playbooks/terminal-representation.md)
 - [Diagnosticare rimandi alimentazione](playbooks/power-reference-diagnostic.md)
+- [Known Issue - Cross-reference obsoleto](known-issues/obsolete-cross-reference.md)
+- [Known Issues](known-issues/index.md)
 
 ## Baseline sezione
 
@@ -164,7 +199,9 @@ La sezione rimandi e morsetti è completa come riferimento operativo quando copr
 - diagnosi di selezioni non valide;
 - pulizia numerazione fili;
 - gestione morsettiere e inserimento morsetti;
+- distinzione tra oggetto morsetto, dati sorgente e rappresentazione grafica;
 - differenza tra `NumI`, `NumO` e `NumM`;
+- diagnostica della visualizzazione morsetti;
 - verifica finale della rappresentazione morsetti.
 
 Nuove anomalie ricorrenti vanno documentate come known issue o playbook dedicato.
