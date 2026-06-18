@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="420" viewBox="0 0 1000 420" role="img" aria-labelledby="title desc">
+  <title id="title">Esempio simbolo Madre</title>
+  <desc id="desc">Schema generico di simbolo Madre con attributi essenziali.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0f172a"/><stop offset="1" stop-color="#020617"/></linearGradient>
+    <style>
+      .title{fill:#f8fafc;font-family:Inter,Arial,sans-serif;font-size:26px;font-weight:800}.text{fill:#cbd5e1;font-family:Inter,Arial,sans-serif;font-size:15px}.label{fill:#f8fafc;font-family:Inter,Arial,sans-serif;font-size:18px;font-weight:700}.box{fill:#111827;stroke:#38bdf8;stroke-width:2}.attr{fill:#172554;stroke:#60a5fa;stroke-width:1.5}.line{stroke:#38bdf8;stroke-width:2;stroke-dasharray:7 8}</style>
+  </defs>
+  <rect width="1000" height="420" rx="26" fill="url(#bg)"/>
+  <text x="48" y="58" class="title">Esempio generico — Simbolo Madre</text>
+  <text x="48" y="86" class="text">Rappresenta il componente principale. Può essere senza pin se ha valore documentale o materiale.</text>
+  <rect x="90" y="150" width="260" height="150" rx="20" class="box"/>
+  <text x="165" y="212" class="label">SIMBOLO MADRE</text>
+  <text x="166" y="246" class="text">Componente principale</text>
+  <rect x="520" y="130" width="330" height="56" rx="14" class="attr"/>
+  <text x="548" y="165" class="label">NOME = identificativo componente</text>
+  <rect x="520" y="205" width="330" height="56" rx="14" class="attr"/>
+  <text x="548" y="240" class="label">PRES = M</text>
+  <rect x="520" y="280" width="330" height="56" rx="14" class="attr"/>
+  <text x="548" y="315" class="label">Materiale associabile</text>
+  <line x1="350" y1="225" x2="520" y2="158" class="line"/>
+  <line x1="350" y1="225" x2="520" y2="233" class="line"/>
+  <line x1="350" y1="225" x2="520" y2="308" class="line"/>
+</svg>

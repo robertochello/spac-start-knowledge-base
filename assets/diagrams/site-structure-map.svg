@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="520" viewBox="0 0 1180 520" role="img" aria-labelledby="title desc">
+  <title id="title">Mappa struttura sito</title>
+  <desc id="desc">Schema delle cinque aree principali della knowledge base SPAC Start.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f8fafc}.title{fill:#0f172a;font-family:Inter,Arial,sans-serif;font-size:26px;font-weight:800}.text{fill:#475569;font-family:Inter,Arial,sans-serif;font-size:14px}.label{fill:#0f172a;font-family:Inter,Arial,sans-serif;font-size:18px;font-weight:750}.core{fill:#e0f2fe;stroke:#0284c7;stroke-width:2}.box{fill:#ffffff;stroke:#cbd5e1;stroke-width:1.6}.accent{fill:#ecfdf5;stroke:#0f766e;stroke-width:1.7}.line{stroke:#94a3b8;stroke-width:2}
+    </style>
+  </defs>
+  <rect width="1180" height="520" rx="8" class="bg"/>
+  <text x="52" y="58" class="title">SPAC Start Knowledge Base</text>
+  <text x="52" y="86" class="text">La navigazione è organizzata per orientarsi, lavorare, seguire procedure, diagnosticare e mantenere gli standard.</text>
+
+  <rect x="455" y="135" width="270" height="92" rx="8" class="core"/>
+  <text x="552" y="172" class="label">Start</text>
+  <text x="502" y="198" class="text">home · guida · concetti · FAQ</text>
+
+  <line x1="590" y1="227" x2="590" y2="278" class="line"/>
+
+  <rect x="74" y="305" width="190" height="92" rx="8" class="box"/>
+  <text x="122" y="342" class="label">Operativo</text>
+  <text x="104" y="368" class="text">setup · schemi</text>
+  <text x="114" y="390" class="text">simboli · archivi</text>
+
+  <rect x="303" y="305" width="190" height="92" rx="8" class="accent"/>
+  <text x="361" y="342" class="label">Playbook</text>
+  <text x="338" y="368" class="text">procedure guidate</text>
+  <text x="350" y="390" class="text">checklist</text>
+
+  <rect x="532" y="305" width="190" height="92" rx="8" class="box"/>
+  <text x="584" y="342" class="label">Diagnosi</text>
+  <text x="566" y="368" class="text">troubleshooting</text>
+  <text x="566" y="390" class="text">known issues</text>
+
+  <rect x="761" y="305" width="190" height="92" rx="8" class="box"/>
+  <text x="805" y="342" class="label">Governance</text>
+  <text x="796" y="368" class="text">standard · decisioni</text>
+  <text x="810" y="390" class="text">quality gates</text>
+
+  <rect x="990" y="305" width="116" height="92" rx="8" class="box"/>
+  <text x="1018" y="342" class="label">Repo</text>
+  <text x="1013" y="368" class="text">changelog</text>
+  <text x="1019" y="390" class="text">roadmap</text>
+
+  <line x1="169" y1="278" x2="1048" y2="278" class="line"/>
+  <line x1="169" y1="278" x2="169" y2="305" class="line"/>
+  <line x1="398" y1="278" x2="398" y2="305" class="line"/>
+  <line x1="627" y1="278" x2="627" y2="305" class="line"/>
+  <line x1="856" y1="278" x2="856" y2="305" class="line"/>
+  <line x1="1048" y1="278" x2="1048" y2="305" class="line"/>
+</svg>

@@ -1,0 +1,83 @@
+/* Minimal technical reading style for GitHub Pages. */
+
+:root {
+  --md-primary-fg-color: #1f5f8b;
+  --md-accent-fg-color: #008c89;
+}
+
+.md-grid {
+  max-width: 1320px;
+}
+
+.md-content__inner {
+  max-width: 920px;
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: .75rem;
+  margin: 1rem 0 1.5rem;
+}
+
+.md-typeset .home-card {
+  display: block;
+  min-height: 5.2rem;
+  padding: .85rem .95rem;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: .35rem;
+  background: var(--md-code-bg-color);
+  color: var(--md-default-fg-color);
+  text-decoration: none;
+}
+
+.md-typeset .home-card strong {
+  display: block;
+  margin-bottom: .2rem;
+  color: var(--md-primary-fg-color);
+  font-size: .9rem;
+}
+
+.md-typeset .home-card:hover {
+  border-color: var(--md-accent-fg-color);
+  color: var(--md-default-fg-color);
+  box-shadow: 0 .08rem .35rem rgba(0, 0, 0, .12);
+}
+
+.md-typeset h1 {
+  font-weight: 700;
+}
+
+.md-typeset h2 {
+  margin-top: 2rem;
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+  padding-bottom: .25rem;
+}
+
+.md-typeset table:not([class]) {
+  font-size: .74rem;
+}
+
+.md-typeset table:not([class]) th {
+  white-space: nowrap;
+  background: var(--md-code-bg-color);
+}
+
+.md-typeset table:not([class]) tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--md-code-bg-color) 55%, transparent);
+}
+
+.md-typeset code {
+  border-radius: .18rem;
+}
+
+.md-typeset img {
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: .28rem;
+  background: var(--md-default-bg-color);
+}
+
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: .28rem;
+}

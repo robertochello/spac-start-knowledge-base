@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="500" viewBox="0 0 1180 500" role="img" aria-labelledby="title desc">
+  <title id="title">Material archive workflow</title>
+  <desc id="desc">Workflow for preparing, validating and importing custom material archives.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#082f49"/><stop offset="1" stop-color="#020617"/></linearGradient>
+    <style>
+      .step { fill: #0f172a; stroke: #38bdf8; stroke-width: 1.4; }
+      .gate { fill: #1e293b; stroke: #fbbf24; stroke-width: 1.4; }
+      .title { fill: #f8fafc; font-family: Inter, Arial, sans-serif; font-size: 25px; font-weight: 800; }
+      .label { fill: #f8fafc; font-family: Inter, Arial, sans-serif; font-size: 17px; font-weight: 760; }
+      .text { fill: #cbd5e1; font-family: Inter, Arial, sans-serif; font-size: 13px; }
+      .arrow { stroke: #67e8f9; stroke-width: 3; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#67e8f9"/></marker>
+  </defs>
+  <rect width="1180" height="500" rx="28" fill="url(#bg)"/>
+  <text x="54" y="58" class="title">Workflow archivi materiali custom</text>
+  <text x="54" y="86" class="text">Preparazione controllata, staging, import e validazione prima dell'uso operativo.</text>
+
+  <rect x="58" y="154" width="180" height="92" rx="18" class="step"/>
+  <text x="88" y="190" class="label">Raccolta dati</text>
+  <text x="88" y="215" class="text">Codici, descrizioni, marche</text>
+
+  <rect x="282" y="154" width="180" height="92" rx="18" class="step"/>
+  <text x="312" y="190" class="label">Normalizzazione</text>
+  <text x="312" y="215" class="text">Campi, categorie, naming</text>
+
+  <rect x="506" y="154" width="180" height="92" rx="18" class="gate"/>
+  <text x="536" y="190" class="label">Staging</text>
+  <text x="536" y="215" class="text">Archivio di prova</text>
+
+  <rect x="730" y="154" width="180" height="92" rx="18" class="step"/>
+  <text x="760" y="190" class="label">Import</text>
+  <text x="760" y="215" class="text">Ambiente controllato</text>
+
+  <rect x="954" y="154" width="180" height="92" rx="18" class="gate"/>
+  <text x="984" y="190" class="label">Validazione</text>
+  <text x="984" y="215" class="text">Test su progetto prova</text>
+
+  <line x1="238" y1="200" x2="282" y2="200" class="arrow"/>
+  <line x1="462" y1="200" x2="506" y2="200" class="arrow"/>
+  <line x1="686" y1="200" x2="730" y2="200" class="arrow"/>
+  <line x1="910" y1="200" x2="954" y2="200" class="arrow"/>
+
+  <rect x="146" y="318" width="888" height="78" rx="18" fill="#0f172a" stroke="#334155"/>
+  <text x="188" y="352" class="label">Quality gate</text>
+  <text x="188" y="377" class="text">Non importare archivi materiali in ambiente operativo senza backup, staging, controllo duplicati e test su progetto non critico.</text>
+</svg>

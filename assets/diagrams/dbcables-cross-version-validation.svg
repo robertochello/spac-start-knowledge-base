@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="520" viewBox="0 0 1180 520" role="img" aria-labelledby="title desc">
+  <title id="title">DbCables cross-version validation</title>
+  <desc id="desc">Validation flow showing that the same DbCables procedure has been tested on SPAC Automazione and SPAC Start.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0f172a"/><stop offset="1" stop-color="#020617"/></linearGradient>
+    <style>
+      .title{fill:#f8fafc;font-family:Inter,Arial,sans-serif;font-size:26px;font-weight:800}.text{fill:#cbd5e1;font-family:Inter,Arial,sans-serif;font-size:14px}.label{fill:#f8fafc;font-family:Inter,Arial,sans-serif;font-size:18px;font-weight:750}.box{fill:#111827;stroke:#38bdf8;stroke-width:1.6}.ok{fill:#0e7490;stroke:#67e8f9;stroke-width:1.8}.gate{fill:#172554;stroke:#fbbf24;stroke-width:1.6}.arrow{stroke:#67e8f9;stroke-width:3;marker-end:url(#arrowhead)}.muted{fill:#94a3b8;font-family:Inter,Arial,sans-serif;font-size:13px}
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#67e8f9"/></marker>
+  </defs>
+  <rect width="1180" height="520" rx="28" fill="url(#bg)"/>
+  <text x="54" y="58" class="title">DbCables — validazione incrociata</text>
+  <text x="54" y="88" class="text">La stessa procedura è stata verificata su SPAC Automazione e SPAC Start.</text>
+
+  <rect x="72" y="164" width="245" height="105" rx="20" class="box"/>
+  <text x="104" y="205" class="label">SPAC Automazione</text>
+  <text x="104" y="232" class="text">Archivio Cavi avanzato</text>
+
+  <rect x="72" y="304" width="245" height="105" rx="20" class="box"/>
+  <text x="104" y="345" class="label">SPAC Start</text>
+  <text x="104" y="372" class="text">Archivio Cavi avanzato</text>
+
+  <rect x="452" y="218" width="280" height="120" rx="24" class="gate"/>
+  <text x="490" y="262" class="label">Procedura unica</text>
+  <text x="490" y="289" class="text">backup · replace · allineamento</text>
+  <text x="490" y="315" class="text">riavvio · verifica · rollback</text>
+
+  <rect x="862" y="218" width="245" height="120" rx="24" class="ok"/>
+  <text x="900" y="262" class="label">Esito atteso</text>
+  <text x="900" y="289" class="text">Archivio consultabile</text>
+  <text x="900" y="315" class="text">Cavi custom verificabili</text>
+
+  <line x1="317" y1="216" x2="452" y2="260" class="arrow"/>
+  <line x1="317" y1="356" x2="452" y2="296" class="arrow"/>
+  <line x1="732" y1="278" x2="862" y2="278" class="arrow"/>
+
+  <rect x="168" y="444" width="844" height="38" rx="14" fill="#0f172a" stroke="#334155"/>
+  <text x="204" y="469" class="muted">Back-check obbligatorio: ogni risultato va verificato su entrambi gli ambienti quando il database è destinato a uso condiviso.</text>
+</svg>
