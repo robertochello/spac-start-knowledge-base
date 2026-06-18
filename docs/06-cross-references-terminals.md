@@ -50,7 +50,7 @@ Prima di diagnosticare un rimando distinguere questi livelli.
 | Cross-reference | Testo o riferimento generato dalla logica SPAC | Testo corretto graficamente ma collegato al dato sbagliato |
 
 ```mermaid
-flowchart LR
+graph LR
     A[Elemento selezionato] --> B{Riconosciuto da SPAC?}
     B -->|No| C[Verificare linea CAD o oggetto residuo]
     B -->|Sì| D[Controllare nome e direzione]

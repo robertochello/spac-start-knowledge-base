@@ -46,7 +46,7 @@ controlli. Per concetti generali usare prima le pagine operative.
 Ogni playbook deve terminare con una verifica finale. Una procedura senza verifica non è ancora una procedura stabile.
 
 ```mermaid
-flowchart LR
+graph LR
     A[Pagina generale] --> B[Playbook]
     B --> C[Verifica finale]
     C --> D{Problema ricorrente?}

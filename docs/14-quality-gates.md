@@ -44,7 +44,7 @@ I controlli hanno questo scopo:
 Processo consigliato:
 
 ```mermaid
-flowchart LR
+graph LR
     A[Modifica documentale] --> B[Build MkDocs]
     B --> C[Markdown lint]
     C --> D[YAML lint]

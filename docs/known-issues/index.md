@@ -20,7 +20,7 @@ confermato usare prima [Troubleshooting generale](../07-troubleshooting.md).
 ## Flusso di diagnosi
 
 ```mermaid
-flowchart TD
+graph TD
     A[Sintomo ricorrente] --> B[Known issue]
     B --> C[Cause probabili]
     C --> D[Diagnosi]

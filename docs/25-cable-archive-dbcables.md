@@ -116,7 +116,7 @@ Un cavo è valido solo se questi tre livelli sono coerenti. La sola presenza del
 record principale non basta per considerare utilizzabile il cavo.
 
 ```mermaid
-flowchart LR
+graph LR
     A[DbCables.db] --> B[Cables]
     A --> C[Cables_Conductors]
     B --> D[Archivio Cavi SPAC]

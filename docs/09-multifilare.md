@@ -74,7 +74,7 @@ Se un comportamento non è verificato in SPAC Start 26, documentarlo come
 ## Sequenza consigliata
 
 ```mermaid
-flowchart LR
+graph LR
     A[Componente principale] --> B[Elementi associati]
     B --> C[Collegamenti]
     C --> D[Fili e numerazione]

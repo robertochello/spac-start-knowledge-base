@@ -52,7 +52,7 @@ Un archivio è pronto solo quando record, associazione, distinta/report e file
 pubblicato sono coerenti tra loro.
 
 ```mermaid
-flowchart LR
+graph LR
     A[Record archivio] --> B[Associazione simbolo]
     B --> C[Distinta o report]
     C --> D[Back-check]

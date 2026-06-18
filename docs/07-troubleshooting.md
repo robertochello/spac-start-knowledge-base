@@ -20,7 +20,7 @@ Questa sezione raccoglie problemi ricorrenti e checklist diagnostiche per SPAC S
 | un file scaricabile non è affidabile | sanitizzazione, versione, hash e link | [Download](downloads.md) e [Quality gates](14-quality-gates.md) |
 
 ```mermaid
-flowchart TD
+graph TD
     A[Sintomo] --> B{È ripetibile?}
     B -->|No| C[Test su progetto o foglio pulito]
     B -->|Sì| D{Esiste known issue?}

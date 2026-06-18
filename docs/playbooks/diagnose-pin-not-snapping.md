@@ -14,7 +14,7 @@ Capire perché un filo non si aggancia correttamente al pin di un simbolo custom
 ## Diagnosi rapida
 
 ```mermaid
-flowchart TD
+graph TD
     A[Il filo non aggancia] --> B{Pin presente?}
     B -->|No| C[Controllare attributi pin]
     B -->|Sì| D{Pin in griglia?}

@@ -16,7 +16,7 @@ Usare questo playbook quando:
 ## Flusso operativo
 
 ```mermaid
-flowchart TD
+graph TD
     A[Geometria iniziale] --> B[Pulizia CAD]
     B --> C[Definizione tipo simbolo]
     C --> D[Attributi]

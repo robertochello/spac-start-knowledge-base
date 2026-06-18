@@ -12,7 +12,7 @@ Questa sezione raccoglie le convenzioni operative sugli attributi principali dei
 ## Flusso attributi e pin
 
 ```mermaid
-flowchart LR
+graph LR
     A[Simbolo custom] --> B[Attributi principali]
     B --> C{Madre o Figlio?}
     C --> D[NOME e PRES]

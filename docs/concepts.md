@@ -12,7 +12,7 @@ Questa pagina raccoglie i concetti fondamentali usati nella knowledge base.
 ## Mappa concettuale
 
 ```mermaid
-flowchart LR
+graph LR
     A[Grafica CAD] --> B[Blocco CAD]
     B --> C[Simbolo SPAC intelligente]
     C --> D[Attributi]
@@ -40,7 +40,7 @@ logico SPAC. Usare questa tabella prima di correggere graficamente un oggetto.
 Il percorso corretto di diagnosi è questo.
 
 ```mermaid
-flowchart LR
+graph LR
     A[Elemento visibile] --> B{È solo grafica CAD?}
     B -->|Sì| C[Controllare disegno e layer]
     B -->|No| D[Oggetto SPAC intelligente]

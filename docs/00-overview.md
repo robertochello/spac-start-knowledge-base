@@ -70,7 +70,7 @@ scegliere il tipo di pagina più adatto.
 | Decision log | Registra una scelta già presa | motivazione, impatto e stato |
 
 ```mermaid
-flowchart LR
+graph LR
     A[Problema operativo] --> B{Ricorrente?}
     B -->|No| C[Pagina operativa]
     B -->|Sì| D[Playbook]
