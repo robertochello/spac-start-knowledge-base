@@ -5,6 +5,13 @@ alle procedure specialistiche già presenti nella knowledge base.
 
 Stato: base operativa presente, da consolidare con casi reali riutilizzabili.
 
+## In questa pagina impari
+
+- come leggere il multifilare come insieme di oggetti, dati e rappresentazioni;
+- quando passare ai playbook su accessori, morsetti, rimandi o materiali;
+- quali controlli fare prima di validare report, distinta o cross-reference;
+- quando marcare un comportamento come `Da verificare`.
+
 ## Obiettivo
 
 Nel multifilare il disegno non deve essere trattato come sola grafica. Ogni
@@ -37,6 +44,12 @@ Per procedure specifiche usare i playbook collegati:
 | Materiale da associare a componente o accessorio | [Associare materiali](playbooks/material-association.md) |
 | Cross-reference verso posizione non valida | [Known Issue - Cross-reference obsoleto](known-issues/obsolete-cross-reference.md) |
 
+## Quando non usarla
+
+Non usare questa pagina come guida completa per correggere un singolo sintomo.
+Se il problema è già chiaro, aprire direttamente il playbook o la known issue
+correlata.
+
 ## Principio operativo
 
 Non correggere solo l'effetto visibile. Prima distinguere sempre tra:
@@ -51,6 +64,12 @@ Non correggere solo l'effetto visibile. Prima distinguere sempre tra:
 
 Se un comportamento non è verificato in SPAC Start 26, documentarlo come
 `Da verificare`.
+
+!!! warning "Prima della correzione"
+
+    Nel multifilare una correzione solo grafica può nascondere il problema
+    reale. Verificare sempre oggetto SPAC, attributi, collegamenti, dato
+    sorgente e rappresentazione.
 
 ## Sequenza consigliata
 

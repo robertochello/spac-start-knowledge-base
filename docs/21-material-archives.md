@@ -4,6 +4,12 @@ Questa sezione definisce un workflow controllato per preparare, importare e vali
 
 ![Workflow archivi materiali](assets/diagrams/material-archive-workflow.svg)
 
+!!! warning "Rischio principale"
+
+    Un archivio materiali impatta associazioni, distinte e report. Non
+    promuovere record con codici catalogo fittizi, iniziali personali o stato
+    non verificato.
+
 ## Obiettivo
 
 Gestire materiali custom in modo ordinato, evitando duplicazioni, import non controllati e dati non coerenti.
@@ -44,6 +50,16 @@ Nel workflow materiali distinguere sempre questi livelli.
 
 Un archivio è pronto solo quando record, associazione, distinta/report e file
 pubblicato sono coerenti tra loro.
+
+```mermaid
+flowchart LR
+    A[Record archivio] --> B[Associazione simbolo]
+    B --> C[Distinta o report]
+    C --> D[Back-check]
+    D --> E{Pronto?}
+    E -->|Sì| F[Archivio standard]
+    E -->|No| G[Da verificare]
+```
 
 ## Workflow consigliato
 

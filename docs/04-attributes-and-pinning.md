@@ -2,6 +2,25 @@
 
 Questa sezione raccoglie le convenzioni operative sugli attributi principali dei simboli custom SPAC e sulla gestione della pinatura.
 
+## In questa pagina impari
+
+- quali attributi controllare nei simboli custom;
+- come distinguere Madre, Figlio e relazione logica;
+- quando usare solo `PINA<n>` e quando aggiungere `PINB<n>`;
+- quali test fare prima di validare il simbolo.
+
+## Flusso attributi e pin
+
+```mermaid
+flowchart LR
+    A[Simbolo custom] --> B[Attributi principali]
+    B --> C{Madre o Figlio?}
+    C --> D[NOME e PRES]
+    D --> E[Pinatura PINA/PINB]
+    E --> F[Test aggancio fili]
+    F --> G[Report o materiale]
+```
+
 ## Attributi principali
 
 Attributi ricorrenti da considerare nei simboli custom:
@@ -124,6 +143,11 @@ Dopo aver creato o modificato un simbolo:
 ## Nota su PINB
 
 Non usare `PINB` se non serve realmente riportare il segnale. Una pinatura eccessiva o non coerente rende il simbolo più difficile da mantenere.
+
+!!! warning "Errore da evitare"
+
+    Non aggiungere pin per tentativi. Se il filo non aggancia, verificare prima
+    posizione, attributo del pin, griglia e stato del simbolo.
 
 ## Baseline sezione
 

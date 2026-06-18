@@ -2,6 +2,13 @@
 
 Questa pagina raccoglie i concetti fondamentali usati nella knowledge base.
 
+## In questa pagina impari
+
+- la differenza tra geometria CAD e oggetto SPAC intelligente;
+- perché attributi, pinatura e dati sorgente non sono semplice testo;
+- quando un problema va cercato nella rappresentazione e non nel disegno;
+- quali pagine usare per approfondire simboli, morsetti, rimandi e materiali.
+
 ## Mappa concettuale
 
 ```mermaid
@@ -29,6 +36,23 @@ logico SPAC. Usare questa tabella prima di correggere graficamente un oggetto.
 | Attributi | dati associati al simbolo | testo libero senza effetto operativo | [Checklist validazione simbolo](10-symbol-validation-checklist.md) |
 | Dati sorgente | informazione usata da report, rimandi o rappresentazioni | necessariamente il testo visibile nel foglio | [Rimandi e morsetti](06-cross-references-terminals.md) |
 | Rappresentazione | modo in cui un dato viene mostrato | prova che il dato sorgente sia corretto | [Verificare rappresentazione morsetti](playbooks/terminal-representation.md) |
+
+Il percorso corretto di diagnosi è questo.
+
+```mermaid
+flowchart LR
+    A[Elemento visibile] --> B{È solo grafica CAD?}
+    B -->|Sì| C[Controllare disegno e layer]
+    B -->|No| D[Oggetto SPAC intelligente]
+    D --> E[Attributi e dati sorgente]
+    E --> F[Rappresentazione visibile]
+    F --> G[Report, rimandi o distinta]
+```
+
+!!! warning "Errore tipico"
+
+    Se il testo visibile è sbagliato, non modificarlo manualmente prima di
+    avere controllato oggetto, attributi, dato sorgente e rappresentazione.
 
 ## Grafica CAD
 

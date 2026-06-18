@@ -4,6 +4,11 @@ Questa knowledge base raccoglie procedure e standard operativi per l'utilizzo di
 
 Il focus è pratico: documentare ciò che serve davvero durante il lavoro quotidiano, evitando una struttura troppo pesante o dispersiva.
 
+!!! note "Scopo della knowledge base"
+
+    Questa non è una copia del manuale SPAC. È una base operativa per decidere,
+    eseguire, diagnosticare e verificare workflow ricorrenti in SPAC Start.
+
 ## Obiettivi operativi
 
 - Ridurre la dipendenza dalla memoria individuale.
@@ -34,6 +39,11 @@ La repository non deve contenere:
 - credenziali o path sensibili;
 - file DWG aziendali non pubblicabili;
 - screenshot con dati riservati.
+
+!!! warning "Prima di pubblicare"
+
+    Se una nota, immagine o archivio contiene dati cliente, commessa, ordine o
+    informazioni non pubblicabili, non deve entrare nella knowledge base.
 
 ## Metodo di aggiornamento
 

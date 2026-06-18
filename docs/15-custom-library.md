@@ -2,6 +2,13 @@
 
 Questa sezione raccoglie le regole operative per installare, organizzare e mantenere la libreria custom SPAC.
 
+## In questa pagina impari
+
+- dove collocare la libreria custom;
+- come distinguere categorie stabili e area temporanea;
+- quali controlli fare prima di aggiungere simboli;
+- quali pagine usare per nome, attributi e validazione.
+
 ## Obiettivo
 
 Mantenere la libreria ordinata, stabile e facilmente consultabile nel tempo.
@@ -31,6 +38,11 @@ Procedura consigliata:
 
 Se la cartella è già presente, verificare il contenuto prima di sovrascrivere file esistenti.
 
+!!! warning "Prima di sovrascrivere"
+
+    Non sostituire una libreria esistente senza backup e senza sapere quali
+    simboli, anteprime e inventari contiene.
+
 ## Categorie libreria
 
 | Categoria | Utilizzo |
@@ -59,6 +71,15 @@ Se la cartella è già presente, verificare il contenuto prima di sovrascrivere 
 ## Inventario
 
 L'inventario completo dei simboli custom deve restare separato dal README e deve essere gestito con il template dedicato.
+
+## Pagine correlate
+
+| Se devi... | Vai a |
+|---|---|
+| creare o pulire un simbolo | [Simboli custom](03-custom-symbols.md) |
+| impostare attributi e pinatura | [Attributi e pinatura](04-attributes-and-pinning.md) |
+| scegliere il nome del file | [Nomenclatura simboli](19-symbol-naming.md) |
+| validare il simbolo prima del riuso | [Checklist validazione simbolo](10-symbol-validation-checklist.md) |
 
 ## Checklist manutenzione libreria
 

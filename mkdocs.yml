@@ -51,9 +51,9 @@ markdown_extensions:
 nav:
   - Start:
       - Home: index.md
-      - Come usare questa guida: 00-how-to-use.md
+      - Dove andare: 00-how-to-use.md
       - Overview: 00-overview.md
-      - Concetti SPAC: concepts.md
+      - Concetti base SPAC: concepts.md
       - Guida operativa completa: guida-operativa-completa.md
       - FAQ: faq.md
       - Glossario: glossary.md
@@ -102,7 +102,7 @@ nav:
           - Associare materiali: playbooks/material-association.md
           - Aggiornare Archivio Cavi DbCables: playbooks/update-dbcables-archive.md
   - Diagnosi:
-      - Troubleshooting generale: 07-troubleshooting.md
+      - Diagnosi rapida: 07-troubleshooting.md
       - Known Issues:
           - Indice: known-issues/index.md
           - Pin non agganciato: known-issues/pin-not-snapping.md
@@ -116,8 +116,8 @@ nav:
           - Indice standard: standards/index.md
           - Standard CAD: standards/cad.md
       - Manutenzione:
-          - Decision log: 11-decision-log.md
+          - Decisioni operative: 11-decision-log.md
           - Linee guida manutenzione: 13-maintenance-guidelines.md
-          - Quality gates: 14-quality-gates.md
+          - Quality gate e validazione: 14-quality-gates.md
           - Linee guida immagini: 22-visual-assets-guidelines.md
       - Roadmap: roadmap.md

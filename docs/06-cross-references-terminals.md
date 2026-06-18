@@ -7,6 +7,23 @@ Usare questa pagina come riferimento centrale quando il problema riguarda il
 collegamento logico tra punti dello schema, il rimando tra fogli o la coerenza
 tra dato sorgente e rappresentazione visibile.
 
+## In questa pagina impari
+
+- distinguere linea grafica, alimentazione SPAC, oggetto intelligente e rimando;
+- diagnosticare una selezione non valida;
+- capire se un testo visibile deriva dal dato corretto;
+- scegliere il playbook giusto per morsetti o cross-reference.
+
+## Vai direttamente a
+
+| Problema | Sezione o playbook |
+|---|---|
+| la linea non viene accettata dal rimando | [Quando la selezione risulta non valida](#quando-la-selezione-risulta-non-valida) |
+| il cross-reference punta a una vecchia posizione | [Cross-reference non aggiornati](#cross-reference-non-aggiornati) |
+| il morsetto mostra numero filo invece del numero morsetto | [Rappresentazione morsetti](#rappresentazione-morsetti) |
+| serve una procedura guidata sui morsetti | [Verificare rappresentazione morsetti](playbooks/terminal-representation.md) |
+| serve una procedura guidata sui rimandi | [Diagnosticare rimandi alimentazione](playbooks/power-reference-diagnostic.md) |
+
 ## Cross-reference
 
 Il cross-reference dei rimandi è una procedura comune sia allo schema unifilare
@@ -45,6 +62,11 @@ flowchart LR
 
 Regola: il rimando deve appoggiarsi a un collegamento o oggetto riconosciuto,
 non alla sola geometria visibile.
+
+!!! warning "Errore da evitare"
+
+    Non spostare manualmente il testo del riferimento per farlo sembrare
+    corretto. Prima va verificato il collegamento logico che genera il dato.
 
 ## Sequenza operativa consigliata
 

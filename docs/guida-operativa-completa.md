@@ -1041,7 +1041,7 @@ La regola è: inserire solo i campi necessari a distinguere correttamente il sim
 | `<POLI>` | Numero poli, solo se utile. | `1P`, `3P`, `4P` |
 | `<ESECUZIONE>` | Caratteristica costruttiva/meccanica. | `ESTR`, `FUS` |
 | `<AZIONAMENTO>` | Modalità di comando/azionamento. | `MOT`, `MAN` |
-| `<ACCESSORI>` | Accessori o funzioni aggiuntive. | `SGL`, `AUS`, `SCB` |
+| `<ACCESSORI>` | Accessori o funzioni aggiuntive. | `SGL`, `AUS` |
 
 #### Regole formali
 
@@ -1072,8 +1072,6 @@ Esempi:
 | Interruttore magnetotermico differenziale con ausiliari | `INT_MTD_AUS` |
 | Interruttore magnetotermico differenziale estraibile con ausiliari | `INT_MTD_ESTR_AUS` |
 | Interruttore sezionatore manuale unipolare fusibilato | `INT_SEZ_MAN_1P_FUS` |
-| Interruttore sezionatore manuale unipolare con contatto di scambio | `INT_SEZ_MAN_1P_SCB` |
-| Interruttore manuale con contatto di scambio | `INT_MAN_SCB` |
 
 ### Dizionario abbreviazioni
 
@@ -1104,7 +1102,6 @@ Esempi:
 | `MULT` | Multimetro |
 | `PLC` | PLC / controllore logico programmabile |
 | `RELE` | Relè |
-| `SCB` | Contatto di scambio |
 | `SENS` | Sensore |
 | `SEZ` | Sezionatore |
 | `SGL` | Sgancio a lancio di corrente |
@@ -1122,7 +1119,6 @@ Esempi:
 - `MAGN` si usa solo quando il dispositivo ha funzione magnetica senza funzione termica.
 - `TERM` si usa solo quando il dispositivo ha funzione termica senza funzione magnetica.
 - `MTD` indica magnetotermico differenziale e sostituisce la forma estesa `MT_DIFF`.
-- `SCB` è lo standard adottato per accorciare `SCAMBIO`.
 - `AUS` resta valido solo quando l'accessorio è generico o non si vuole specificare il tipo di contatto.
 - `FC` significa finecorsa: usarlo con attenzione perché può essere ambiguo in contesti PLC/software.
 

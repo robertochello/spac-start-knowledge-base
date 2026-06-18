@@ -6,6 +6,11 @@ Questa sezione documenta il comportamento operativo dell'archivio cavi avanzato 
 
 ![Validazione incrociata DbCables](assets/diagrams/dbcables-cross-version-validation.svg)
 
+!!! warning "File sensibile"
+
+    `DbCables.db` è un database operativo. Prima di sostituirlo servono backup,
+    controllo SQLite, allineamento librerie e test su cavo reale.
+
 ## Obiettivo
 
 Gestire l'Archivio Cavi avanzato di SPAC in modo sicuro, tracciabile e reversibile.
@@ -109,6 +114,16 @@ Nel workflow DbCables distinguere sempre tre livelli.
 
 Un cavo è valido solo se questi tre livelli sono coerenti. La sola presenza del
 record principale non basta per considerare utilizzabile il cavo.
+
+```mermaid
+flowchart LR
+    A[DbCables.db] --> B[Cables]
+    A --> C[Cables_Conductors]
+    B --> D[Archivio Cavi SPAC]
+    C --> D
+    D --> E[Dati tecnici visibili]
+    E --> F[Test posa cavo]
+```
 
 ## Regola strutturale
 

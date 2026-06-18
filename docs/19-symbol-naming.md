@@ -50,7 +50,7 @@ Non tutti i campi sono obbligatori. Inserire solo i campi necessari a distinguer
 | POLI | Numero poli se utile | 1P, 3P, 4P |
 | ESECUZIONE | Caratteristica meccanica o costruttiva | ESTR, FUS |
 | AZIONAMENTO | Modalità di comando | MOT, MAN |
-| ACCESSORI | Accessori o funzioni aggiuntive | SGL, AUS, SCB |
+| ACCESSORI | Accessori o funzioni aggiuntive | SGL, AUS |
 
 ## Regole formali
 
@@ -78,12 +78,6 @@ FAMIGLIA → TIPO → POLI → ESECUZIONE → AZIONAMENTO → ACCESSORI
 | Interruttore magnetotermico estraibile motorizzato con ausiliari | INT_MT_ESTR_MOT_AUS |
 | Interruttore magnetotermico differenziale con ausiliari | INT_MTD_AUS |
 | Interruttore sezionatore manuale unipolare fusibilato | INT_SEZ_MAN_1P_FUS |
-| Interruttore sezionatore manuale unipolare con contatto di scambio | INT_SEZ_MAN_1P_SCB |
-| Interruttore manuale con contatto di scambio | INT_MAN_SCB |
-
-## Nota su SCB
-
-`SCB` è lo standard adottato per accorciare `SCAMBIO`. Usare sempre questa forma nei nomi simbolo.
 
 ## Collegamenti
 

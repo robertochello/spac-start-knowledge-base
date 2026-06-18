@@ -2,6 +2,13 @@
 
 Questa sezione raccoglie le procedure operative per impostare e sviluppare uno schema unifilare in SPAC Start.
 
+## In questa pagina impari
+
+- come impostare il flusso unifilare senza confonderlo con il multifilare;
+- quali controlli fare su linee, identificazione, numerazione e materiali;
+- quando passare a rimandi, numerazione fili o back-check;
+- quali verifiche fare prima di considerare stabile la pagina.
+
 ## Flusso unifilare
 
 Il flusso unifilare deve mantenere separati disegno, riconoscimento SPAC,
@@ -23,6 +30,13 @@ flowchart LR
 | identificazione linee | alimentazioni e collegamenti nominati in modo coerente | [Rimandi e morsetti](06-cross-references-terminals.md) |
 | numerazione fili | numeri leggibili e rigenerabili | [Numerazione e identificazione fili](18-wire-numbering.md) |
 | materiali e report | materiali associati e distinta verificata | [Associare materiali](playbooks/material-association.md) |
+
+!!! note "Differenza dal multifilare"
+
+    In unifilare l'obiettivo è rappresentare linee, livelli e materiali in
+    modo sintetico. Per componenti associati, morsetti dettagliati e rimandi
+    tra fogli, verificare anche [Multifilare](09-multifilare.md) e
+    [Rimandi e morsetti](06-cross-references-terminals.md).
 
 ## Preparazione
 

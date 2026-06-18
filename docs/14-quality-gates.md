@@ -2,6 +2,11 @@
 
 I quality gates definiscono quando un contenuto può essere considerato pronto per la knowledge base.
 
+!!! success "Criterio generale"
+
+    Una modifica è pronta solo se aiuta a decidere, eseguire, diagnosticare o
+    verificare, e se supera i controlli locali richiesti.
+
 ## Definition of Done documentale
 
 Una nuova procedura è pronta quando:

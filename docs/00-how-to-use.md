@@ -4,6 +4,29 @@ Questa pagina serve come punto di orientamento. La knowledge base non va letta t
 
 ![Percorsi di lettura](assets/diagrams/reading-paths.svg)
 
+## In questa pagina impari
+
+- dove iniziare se non conosci ancora la struttura;
+- quale pagina aprire in base al problema;
+- quando usare pagina generale, playbook, known issue o standard;
+- come evitare duplicazioni quando aggiungi nuova documentazione.
+
+## Non so da dove partire
+
+Questo flusso serve per scegliere rapidamente la prima pagina utile.
+
+```mermaid
+flowchart TD
+    A[Ho un obiettivo o problema] --> B{È un problema pratico?}
+    B -->|Sì| C[Troubleshooting]
+    C --> D{Esiste una procedura guidata?}
+    D -->|Sì| E[Playbook]
+    D -->|No| F[Known issue o caso pratico]
+    B -->|No| G{È una regola o convenzione?}
+    G -->|Sì| H[Standard o decision log]
+    G -->|No| I[Overview e concetti SPAC]
+```
+
 ## Percorsi consigliati
 
 | Se devi... | Parti da | Poi vai a |
@@ -42,6 +65,12 @@ Ogni pagina dovrebbe aiutare a fare almeno una di queste cose:
 - standardizzare.
 
 Se una pagina non aiuta in nessuno di questi punti, va semplificata.
+
+!!! note "Uso corretto"
+
+    Una pagina generale orienta. Un playbook guida una procedura. Una known
+    issue diagnostica un problema ricorrente. Un quality gate decide se il
+    lavoro è pronto.
 
 ## Differenza tra sezioni
 

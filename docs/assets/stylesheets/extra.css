@@ -41,6 +41,7 @@
 .md-typeset .home-card:hover {
   border-color: var(--md-accent-fg-color);
   color: var(--md-default-fg-color);
+  box-shadow: 0 .08rem .35rem rgba(0, 0, 0, .12);
 }
 
 .md-typeset h1 {
@@ -59,6 +60,11 @@
 
 .md-typeset table:not([class]) th {
   white-space: nowrap;
+  background: var(--md-code-bg-color);
+}
+
+.md-typeset table:not([class]) tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--md-code-bg-color) 55%, transparent);
 }
 
 .md-typeset code {

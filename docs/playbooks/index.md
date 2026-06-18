@@ -6,6 +6,12 @@ o obiettivo a un risultato verificabile.
 Usarli quando il caso è abbastanza concreto da richiedere una sequenza di
 controlli. Per concetti generali usare prima le pagine operative.
 
+!!! note "Come leggere un playbook"
+
+    Un playbook parte da un caso pratico e deve chiudersi con una verifica.
+    Se il problema diventa ricorrente, collegarlo a una known issue o a uno
+    standard.
+
 ## Quando usare quale playbook
 
 | Necessità operativa | Playbook | Prima pagina di contesto |
@@ -38,3 +44,13 @@ controlli. Per concetti generali usare prima le pagine operative.
 ## Regola playbook
 
 Ogni playbook deve terminare con una verifica finale. Una procedura senza verifica non è ancora una procedura stabile.
+
+```mermaid
+flowchart LR
+    A[Pagina generale] --> B[Playbook]
+    B --> C[Verifica finale]
+    C --> D{Problema ricorrente?}
+    D -->|Sì| E[Known issue]
+    D -->|No| F[Caso pratico]
+    E --> G[Standard o quality gate]
+```

@@ -42,16 +42,6 @@ PINB<n>
 
 `PINB<n>` si usa solo quando serve riportare in uscita il segnale associato a `PINA<n>`.
 
-## Contatti di scambio
-
-Per indicare un contatto di scambio, usare l'abbreviazione documentata:
-
-```text
-SCB
-```
-
-Non introdurre abbreviazioni alternative.
-
 ## Inventario simboli
 
 L'inventario completo dei simboli custom deve stare in un file separato, non nel README.

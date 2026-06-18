@@ -4,6 +4,13 @@ Questa sezione definisce il workflow operativo per creare e gestire simboli cust
 
 ![Lifecycle simbolo custom](assets/diagrams/custom-symbol-lifecycle.svg)
 
+## In questa pagina impari
+
+- distinguere simbolo grafico, blocco DWG e simbolo SPAC intelligente;
+- capire quando servono attributi, `PRES` e pinatura;
+- collegare creazione, validazione, inventario e riuso;
+- scegliere il playbook corretto per creare o diagnosticare un simbolo.
+
 ## Concetto generale
 
 In SPAC è importante distinguere tra:
@@ -13,6 +20,11 @@ In SPAC è importante distinguere tra:
 - **simbolo SPAC intelligente**: oggetto riconosciuto da SPAC, con attributi e logiche applicative.
 
 Un simbolo custom utile deve essere riconoscibile e gestibile come componente SPAC, non solo come geometria grafica.
+
+!!! tip "Regola pratica"
+
+    Un simbolo è pronto al riuso solo quando inserimento, attributi, pinatura,
+    materiale e report sono stati verificati in un progetto di prova.
 
 ## Workflow generale
 

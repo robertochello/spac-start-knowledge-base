@@ -2,6 +2,12 @@
 
 Knowledge base operativa per **SPAC Start Impianti**. Serve per trovare rapidamente procedure, standard, playbook e soluzioni ricorrenti senza dover leggere tutta la guida in ordine.
 
+!!! tip "Non sai da dove partire?"
+
+    Parti da [Come usare questa guida](00-how-to-use.md). Se hai già un
+    problema pratico, vai direttamente a [Troubleshooting](07-troubleshooting.md)
+    o ai [Playbook](playbooks/index.md).
+
 ## Percorsi principali
 
 <div class="home-grid" markdown>
@@ -73,6 +79,11 @@ flowchart LR
 3. Segui il playbook, la procedura o la checklist.
 4. Verifica il risultato in un progetto di prova.
 5. Aggiorna standard, decision log o casi pratici se emerge una regola riutilizzabile.
+
+!!! warning "Regola operativa"
+
+    Non correggere solo l'effetto visibile: prima verifica se il problema è
+    grafico, attributivo, logico, di rappresentazione o di dato sorgente.
 
 ## Stato attuale
 

@@ -64,22 +64,6 @@ Attiva.
 
 ---
 
-### D004 — Usare SCB per contatto di scambio
-
-**Contesto**  
-Le abbreviazioni possono generare ambiguità nei nomi dei simboli o nelle descrizioni.
-
-**Decisione**  
-Per contatti di scambio usare l'abbreviazione documentata `SCB`.
-
-**Motivazione**  
-Il nome resta breve e coerente con il limite massimo di 32 caratteri.
-
-**Stato**  
-Attiva.
-
----
-
 ### D005 — Preferire approccio raster controllato per loghi ricorrenti
 
 **Contesto**  

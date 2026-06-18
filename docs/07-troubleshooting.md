@@ -2,6 +2,11 @@
 
 Questa sezione raccoglie problemi ricorrenti e checklist diagnostiche per SPAC Start.
 
+!!! tip "Metodo rapido"
+
+    Prima identifica il livello del problema: grafica CAD, attributi, oggetto
+    intelligente, rappresentazione, riferimento esterno o archivio.
+
 ## Diagnosi rapida
 
 | Sintomo | Prima verifica | Pagina o playbook |
@@ -13,6 +18,16 @@ Questa sezione raccoglie problemi ricorrenti e checklist diagnostiche per SPAC S
 | un materiale manca o risulta duplicato | punto di associazione e report | [Associare materiali](playbooks/material-association.md) |
 | `DbCables.db` non risulta allineato | allineamento versione librerie e riapertura SPAC | [Known Issue DbCables](known-issues/dbcables-version-mismatch.md) |
 | un file scaricabile non è affidabile | sanitizzazione, versione, hash e link | [Download](downloads.md) e [Quality gates](14-quality-gates.md) |
+
+```mermaid
+flowchart TD
+    A[Sintomo] --> B{È ripetibile?}
+    B -->|No| C[Test su progetto o foglio pulito]
+    B -->|Sì| D{Esiste known issue?}
+    D -->|Sì| E[Seguire known issue]
+    D -->|No| F[Seguire playbook o checklist]
+    F --> G[Registrare caso se ricorrente]
+```
 
 ## Menu o librerie non visibili
 
