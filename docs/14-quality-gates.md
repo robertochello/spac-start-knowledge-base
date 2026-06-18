@@ -45,12 +45,16 @@ Processo consigliato:
 
 ```mermaid
 flowchart LR
-    A[Modifica documentale] --> B[Build MkDocs]
-    B --> C[Markdown lint]
-    C --> D[YAML lint]
-    D --> E[git diff --check]
-    E --> F[Commit focalizzato]
-    F --> G[Push e deploy GitHub Pages]
+    A[Modifica]:::process --> B[Build MkDocs]:::warn
+    B --> C[Markdown lint]:::warn
+    C --> D[YAML lint]:::warn
+    D --> E[git diff check]:::warn
+    E --> F[Commit]:::process
+    F --> G[Push e deploy]:::ok
+
+    classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
+    classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
+    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
 ```
 
 Una modifica è pronta per il push quando:
@@ -123,7 +127,8 @@ Quando l'archivio è destinato a più ambienti, la validazione deve essere ripet
 | Posa cavo testata | OK | OK | Entrambi validi |
 | Rollback verificato | OK | OK | Entrambi validi |
 
-Se uno dei due ambienti fallisce, lo stato finale resta **Da verificare**.
+!!! warning "Da verificare"
+    Se uno dei due ambienti fallisce, lo stato finale resta **Da verificare**.
 
 ## Quality gate per download
 

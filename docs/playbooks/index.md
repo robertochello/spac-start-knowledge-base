@@ -47,10 +47,17 @@ Ogni playbook deve terminare con una verifica finale. Una procedura senza verifi
 
 ```mermaid
 flowchart LR
-    A[Pagina generale] --> B[Playbook]
-    B --> C[Verifica finale]
-    C --> D{Problema ricorrente?}
-    D -->|Sì| E[Known issue]
-    D -->|No| F[Caso pratico]
-    E --> G[Standard o quality gate]
+    A[Pagina generale]:::info --> B[Playbook]:::process
+    B --> C[Verifica finale]:::warn
+    C --> D{Ricorrente?}:::warn
+    D -->|Sì| E[Known issue]:::danger
+    D -->|No| F[Caso pratico]:::todo
+    E --> G[Standard o gate]:::ok
+
+    classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
+    classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
+    classDef danger fill:#fdecea,stroke:#c62828,color:#7f1d1d;
+    classDef info fill:#e8f0fe,stroke:#1565c0,color:#0d47a1;
+    classDef todo fill:#f3e8ff,stroke:#7b1fa2,color:#4a148c;
+    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
 ```

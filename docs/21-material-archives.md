@@ -2,7 +2,27 @@
 
 Questa sezione definisce un workflow controllato per preparare, importare e validare archivi materiali personalizzati.
 
-![Workflow archivi materiali](assets/diagrams/material-archive-workflow.svg)
+Il workflow deve restare reversibile: i dati vengono normalizzati, provati e
+validati prima di diventare standard.
+
+```mermaid
+flowchart LR
+    A[Raccolta dati]:::process --> B[Normalizzazione]:::process
+    B --> C[Backup]:::warn
+    C --> D[Import prova]:::process
+    D --> E[Associazione simbolo]:::data
+    E --> F[Distinta o report]:::process
+    F --> G{Esito?}:::warn
+    G -->|OK| H[Standard]:::ok
+    G -->|Da verificare| I[Correggere dati]:::todo
+    I --> B
+
+    classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
+    classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
+    classDef todo fill:#f3e8ff,stroke:#7b1fa2,color:#4a148c;
+    classDef data fill:#e0f7fa,stroke:#00838f,color:#004d40;
+    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
+```
 
 !!! warning "Rischio principale"
 
@@ -53,12 +73,18 @@ pubblicato sono coerenti tra loro.
 
 ```mermaid
 flowchart LR
-    A[Record archivio] --> B[Associazione simbolo]
-    B --> C[Distinta o report]
-    C --> D[Back-check]
-    D --> E{Pronto?}
-    E -->|Sì| F[Archivio standard]
-    E -->|No| G[Da verificare]
+    A[Record archivio]:::data --> B[Associazione simbolo]:::data
+    B --> C[Distinta o report]:::process
+    C --> D[Back-check]:::warn
+    D --> E{Pronto?}:::warn
+    E -->|Sì| F[Archivio standard]:::ok
+    E -->|No| G[Da verificare]:::todo
+
+    classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
+    classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
+    classDef todo fill:#f3e8ff,stroke:#7b1fa2,color:#4a148c;
+    classDef data fill:#e0f7fa,stroke:#00838f,color:#004d40;
+    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
 ```
 
 ## Workflow consigliato
@@ -166,8 +192,11 @@ Checklist:
 - progetto prova disponibile;
 - report materiali verificabile.
 
-Se la modalità di import varia in base all'installazione o alla versione SPAC,
-marcare il passaggio come `Da verificare` e documentare ambiente e risultato.
+!!! warning "Da verificare"
+
+    Se la modalità di import varia in base all'installazione o alla versione
+    SPAC, marcare il passaggio come `Da verificare` e documentare ambiente e
+    risultato.
 
 ## Validazione su simboli
 

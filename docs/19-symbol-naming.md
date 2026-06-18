@@ -66,9 +66,12 @@ Non tutti i campi sono obbligatori. Inserire solo i campi necessari a distinguer
 
 Ordine consigliato:
 
-```text
-FAMIGLIA → TIPO → POLI → ESECUZIONE → AZIONAMENTO → ACCESSORI
-```
+1. `FAMIGLIA`
+2. `TIPO`
+3. `POLI`
+4. `ESECUZIONE`
+5. `AZIONAMENTO`
+6. `ACCESSORI`
 
 ## Esempi
 

@@ -2,8 +2,6 @@
 
 Questa pagina serve come punto di orientamento. La knowledge base non va letta tutta in ordine: va usata in base al problema da risolvere.
 
-![Percorsi di lettura](assets/diagrams/reading-paths.svg)
-
 ## In questa pagina impari
 
 - dove iniziare se non conosci ancora la struttura;
@@ -17,14 +15,20 @@ Questo flusso serve per scegliere rapidamente la prima pagina utile.
 
 ```mermaid
 flowchart TD
-    A[Ho un obiettivo o problema] --> B{È un problema pratico?}
-    B -->|Sì| C[Troubleshooting]
-    C --> D{Esiste una procedura guidata?}
-    D -->|Sì| E[Playbook]
-    D -->|No| F[Known issue o caso pratico]
-    B -->|No| G{È una regola o convenzione?}
-    G -->|Sì| H[Standard o decision log]
-    G -->|No| I[Overview e concetti SPAC]
+    A[Obiettivo o problema]:::info --> B{Problema pratico?}:::warn
+    B -->|Sì| C[Troubleshooting]:::process
+    C --> D{Procedura guidata?}:::warn
+    D -->|Sì| E[Playbook]:::process
+    D -->|No| F[Known issue o caso]:::todo
+    B -->|No| G{Regola o convenzione?}:::warn
+    G -->|Sì| H[Standard o decision log]:::ok
+    G -->|No| I[Overview e concetti]:::info
+
+    classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
+    classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
+    classDef info fill:#e8f0fe,stroke:#1565c0,color:#0d47a1;
+    classDef todo fill:#f3e8ff,stroke:#7b1fa2,color:#4a148c;
+    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
 ```
 
 ## Percorsi consigliati

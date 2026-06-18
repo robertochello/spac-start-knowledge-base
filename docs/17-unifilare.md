@@ -16,11 +16,15 @@ identificazione delle linee e verifica finale.
 
 ```mermaid
 flowchart LR
-    A[Preparazione pagina] --> B[Linee e simboli]
-    B --> C[Identificazione linee]
-    C --> D[Numerazione fili]
-    D --> E[Materiali]
-    E --> F[Report e controlli]
+    A[Preparazione]:::process --> B[Linee e simboli]:::process
+    B --> C[Identificazione]:::data
+    C --> D[Numerazione]:::data
+    D --> E[Materiali]:::data
+    E --> F[Report e controlli]:::ok
+
+    classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
+    classDef data fill:#e0f7fa,stroke:#00838f,color:#004d40;
+    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
 ```
 
 | Fase | Verifica minima | Rimando |

@@ -29,6 +29,26 @@ Separare sempre:
 | Rimando | Il rimando usa nome e direzione coerenti con il punto collegato? |
 | Cross-reference | Il riferimento è stato aggiornato dopo le modifiche? |
 
+## Flusso diagnostico
+
+```mermaid
+flowchart TD
+    A[Linea selezionata]:::info --> B{Oggetto SPAC?}:::warn
+    B -->|No| C[Test foglio pulito]:::todo
+    B -->|Sì| D[Nome e direzione]:::process
+    D --> E[Aggiorna riferimenti]:::process
+    E --> F{Riferimento OK?}:::warn
+    F -->|Sì| G[OK]:::ok
+    F -->|No| H[Controllare residui]:::danger
+
+    classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
+    classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
+    classDef danger fill:#fdecea,stroke:#c62828,color:#7f1d1d;
+    classDef info fill:#e8f0fe,stroke:#1565c0,color:#0d47a1;
+    classDef todo fill:#f3e8ff,stroke:#7b1fa2,color:#4a148c;
+    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
+```
+
 ## Diagnosi
 
 Verificare:
@@ -66,8 +86,12 @@ Assicurarsi che la selezione riguardi l'oggetto corretto e non una linea CAD sov
 ### 2. Verificare alimentazione o collegamento
 
 Controllare che la linea sia riconosciuta come alimentazione o collegamento
-SPAC. Se non è verificabile nella propria installazione, segnare il caso come
-`Da verificare`.
+SPAC.
+
+!!! warning "Da verificare"
+
+    Se il comportamento non è verificabile nella propria installazione,
+    segnare il caso come `Da verificare`.
 
 ### 3. Cercare residui
 

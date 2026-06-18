@@ -62,8 +62,10 @@ Non correggere solo l'effetto visibile. Prima distinguere sempre tra:
 - dato sorgente mostrato dalla rappresentazione;
 - report, distinta o cross-reference generati.
 
-Se un comportamento non è verificato in SPAC Start 26, documentarlo come
-`Da verificare`.
+!!! warning "Da verificare"
+
+    Se un comportamento non è verificato in SPAC Start 26, documentarlo come
+    `Da verificare`.
 
 !!! warning "Prima della correzione"
 
@@ -75,16 +77,21 @@ Se un comportamento non è verificato in SPAC Start 26, documentarlo come
 
 ```mermaid
 flowchart LR
-    A[Componente principale] --> B[Elementi associati]
-    B --> C[Collegamenti]
-    C --> D[Fili e numerazione]
-    D --> E[Morsetti]
-    D --> F[Rimandi]
-    A --> G[Materiali]
+    A[Componente]:::data --> B[Elementi associati]:::data
+    B --> C[Collegamenti]:::process
+    C --> D[Fili e numerazione]:::process
+    D --> E[Morsetti]:::warn
+    D --> F[Rimandi]:::warn
+    A --> G[Materiali]:::data
     B --> G
-    E --> H[Verifica finale]
+    E --> H[Verifica finale]:::ok
     F --> H
     G --> H
+
+    classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
+    classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
+    classDef data fill:#e0f7fa,stroke:#00838f,color:#004d40;
+    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
 ```
 
 1. Identificare il componente principale.

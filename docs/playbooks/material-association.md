@@ -21,6 +21,22 @@ Prima di associare un materiale distinguere:
 | Associazione | Il materiale è collegato al punto corretto? |
 | Distinta o report | Il materiale compare una sola volta e nel punto atteso? |
 
+```mermaid
+flowchart LR
+    A[Archivio]:::data --> B[Simbolo SPAC]:::data
+    B --> C[Associazione]:::process
+    C --> D[Distinta o report]:::process
+    D --> E{Coerente?}:::warn
+    E -->|Sì| F[OK]:::ok
+    E -->|No| G[Correggere punto]:::danger
+
+    classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
+    classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
+    classDef danger fill:#fdecea,stroke:#c62828,color:#7f1d1d;
+    classDef data fill:#e0f7fa,stroke:#00838f,color:#004d40;
+    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
+```
+
 ## Scenari tipici
 
 | Scenario | Approccio consigliato |
@@ -48,8 +64,10 @@ Capire quale oggetto rappresenta il dispositivo fisico o l'accessorio da riporta
 
 Controllare codice, costruttore, descrizione, categoria e stato.
 
-Se il codice catalogo non è verificato, marcarlo come `Da verificare` e non
-promuoverlo a standard.
+!!! warning "Da verificare"
+
+    Se il codice catalogo non è verificato, marcarlo come `Da verificare` e non
+    promuoverlo a standard.
 
 ### 3. Verificare il simbolo
 

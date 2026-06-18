@@ -15,13 +15,19 @@ Capire perché un filo non si aggancia correttamente al pin di un simbolo custom
 
 ```mermaid
 flowchart TD
-    A[Il filo non aggancia] --> B{Pin presente?}
-    B -->|No| C[Controllare attributi pin]
-    B -->|Sì| D{Pin in griglia?}
-    D -->|No| E[Allineare alla griglia]
-    D -->|Sì| F{Filo intelligente?}
-    F -->|No| G[Creare collegamento corretto]
-    F -->|Sì| H[Test simbolo in progetto prova]
+    A[Filo non aggancia]:::danger --> B{Pin presente?}:::warn
+    B -->|No| C[Controllare attributi]:::todo
+    B -->|Sì| D{Pin in griglia?}:::warn
+    D -->|No| E[Allineare]:::process
+    D -->|Sì| F{Filo intelligente?}:::warn
+    F -->|No| G[Creare collegamento]:::process
+    F -->|Sì| H[Test progetto]:::ok
+
+    classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
+    classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
+    classDef danger fill:#fdecea,stroke:#c62828,color:#7f1d1d;
+    classDef todo fill:#f3e8ff,stroke:#7b1fa2,color:#4a148c;
+    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
 ```
 
 ## Procedura

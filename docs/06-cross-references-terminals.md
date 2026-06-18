@@ -51,13 +51,20 @@ Prima di diagnosticare un rimando distinguere questi livelli.
 
 ```mermaid
 flowchart LR
-    A[Elemento selezionato] --> B{Riconosciuto da SPAC?}
-    B -->|No| C[Verificare linea CAD o oggetto residuo]
-    B -->|Sì| D[Controllare nome e direzione]
-    D --> E[Aggiornare o verificare cross-reference]
-    E --> F{Riferimento corretto?}
-    F -->|No| G[Cercare residui o rimandi non usati]
-    F -->|Sì| H[Verifica finale su foglio]
+    A[Elemento selezionato]:::info --> B{Oggetto SPAC?}:::warn
+    B -->|No| C[Verificare CAD]:::todo
+    B -->|Sì| D[Nome e direzione]:::process
+    D --> E[Aggiornare riferimenti]:::process
+    E --> F{Riferimento OK?}:::warn
+    F -->|No| G[Cercare residui]:::danger
+    F -->|Sì| H[Verifica finale]:::ok
+
+    classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
+    classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
+    classDef danger fill:#fdecea,stroke:#c62828,color:#7f1d1d;
+    classDef info fill:#e8f0fe,stroke:#1565c0,color:#0d47a1;
+    classDef todo fill:#f3e8ff,stroke:#7b1fa2,color:#4a148c;
+    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
 ```
 
 Regola: il rimando deve appoggiarsi a un collegamento o oggetto riconosciuto,
@@ -108,9 +115,11 @@ Dopo aver creato o modificato rimandi:
 4. verificare eventuale output generato;
 5. controllare che i riferimenti puntino alle posizioni corrette.
 
-Da verificare: il nome esatto del comando o del percorso menu può cambiare in
-base alla configurazione SPAC Start installata. Documentare il percorso usato
-nel progetto se viene consolidato come standard interno.
+!!! warning "Da verificare"
+
+    Il nome esatto del comando o del percorso menu può cambiare in base alla
+    configurazione SPAC Start installata. Documentare il percorso usato nel
+    progetto se viene consolidato come standard interno.
 
 ## Rimandi per alimentazioni
 

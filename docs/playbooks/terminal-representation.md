@@ -23,6 +23,26 @@ Separare sempre:
 | Rappresentazione grafica | Il simbolo mostra il campo atteso, ad esempio `NumM`? |
 | Testo visibile | Il testo è coerente con il dato che deve rappresentare? |
 
+## Flusso diagnostico
+
+```mermaid
+flowchart TD
+    A[Morsetto visibile]:::info --> B[Oggetto morsetto]:::data
+    B --> C[Dati sorgente]:::data
+    C --> D[Rappresentazione]:::process
+    D --> E{Dato atteso?}:::warn
+    E -->|Sì| F[OK]:::ok
+    E -->|No| G[Verificare campo]:::danger
+    G --> C
+
+    classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
+    classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
+    classDef danger fill:#fdecea,stroke:#c62828,color:#7f1d1d;
+    classDef info fill:#e8f0fe,stroke:#1565c0,color:#0d47a1;
+    classDef data fill:#e0f7fa,stroke:#00838f,color:#004d40;
+    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
+```
+
 ## Diagnosi
 
 Controllare separatamente:
@@ -61,8 +81,11 @@ Verificare quale campo viene richiamato dalla rappresentazione grafica del morse
 ### 4. Confrontare numero morsetto e numero filo
 
 Controllare se la rappresentazione mostra il numero morsetto o il numero filo.
-Se il comportamento non è verificato nella propria installazione, marcarlo come
-`Da verificare`.
+
+!!! warning "Da verificare"
+
+    Se il comportamento non è verificato nella propria installazione, marcarlo
+    come `Da verificare` prima di promuoverlo a procedura stabile.
 
 ### 5. Testare su morsetto nuovo
 

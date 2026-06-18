@@ -1058,9 +1058,12 @@ La regola è: inserire solo i campi necessari a distinguere correttamente il sim
 
 Il nome deve seguire questa priorità:
 
-```text
-FAMIGLIA → TIPO → POLI → ESECUZIONE → AZIONAMENTO → ACCESSORI
-```
+1. `FAMIGLIA`
+2. `TIPO`
+3. `POLI`
+4. `ESECUZIONE`
+5. `AZIONAMENTO`
+6. `ACCESSORI`
 
 Esempi:
 

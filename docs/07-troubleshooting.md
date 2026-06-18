@@ -21,12 +21,18 @@ Questa sezione raccoglie problemi ricorrenti e checklist diagnostiche per SPAC S
 
 ```mermaid
 flowchart TD
-    A[Sintomo] --> B{È ripetibile?}
-    B -->|No| C[Test su progetto o foglio pulito]
-    B -->|Sì| D{Esiste known issue?}
-    D -->|Sì| E[Seguire known issue]
-    D -->|No| F[Seguire playbook o checklist]
-    F --> G[Registrare caso se ricorrente]
+    A[Sintomo]:::info --> B{Ripetibile?}:::warn
+    B -->|No| C[Test pulito]:::todo
+    B -->|Sì| D{Known issue?}:::warn
+    D -->|Sì| E[Seguire known issue]:::process
+    D -->|No| F[Playbook o checklist]:::process
+    F --> G[Registrare caso]:::ok
+
+    classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
+    classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
+    classDef info fill:#e8f0fe,stroke:#1565c0,color:#0d47a1;
+    classDef todo fill:#f3e8ff,stroke:#7b1fa2,color:#4a148c;
+    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
 ```
 
 ## Menu o librerie non visibili

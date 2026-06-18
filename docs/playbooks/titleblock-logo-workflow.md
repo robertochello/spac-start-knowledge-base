@@ -17,13 +17,19 @@ Usare questo playbook quando:
 
 ```mermaid
 flowchart TD
-    A[Cartiglio con logo] --> B[Percorso immagine stabile]
-    B --> C[Test nel master]
-    C --> D[Test nel multifoglio]
-    D --> E{Logo visibile?}
-    E -->|Sì| F[Standardizzabile]
-    E -->|No| G[Verifica riferimento]
+    A[Cartiglio con logo]:::data --> B[Percorso stabile]:::warn
+    B --> C[Test master]:::process
+    C --> D[Test multifoglio]:::process
+    D --> E{Logo visibile?}:::warn
+    E -->|Sì| F[Standardizzabile]:::ok
+    E -->|No| G[Verifica riferimento]:::danger
     G --> B
+
+    classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
+    classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
+    classDef danger fill:#fdecea,stroke:#c62828,color:#7f1d1d;
+    classDef data fill:#e0f7fa,stroke:#00838f,color:#004d40;
+    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
 ```
 
 ## Procedura

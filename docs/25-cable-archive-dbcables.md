@@ -2,9 +2,47 @@
 
 Questa sezione documenta il comportamento operativo dell'archivio cavi avanzato di SPAC e il metodo controllato per aggiornare il database `DbCables.db`.
 
-![Workflow DbCables](assets/diagrams/dbcables-replace-workflow.svg)
+Il workflow DbCables deve mantenere backup, sostituzione e verifica separati.
 
-![Validazione incrociata DbCables](assets/diagrams/dbcables-cross-version-validation.svg)
+```mermaid
+flowchart LR
+    A[Backup]:::warn --> B[Sostituzione DB]:::process
+    B --> C[Avvio SPAC]:::process
+    C --> D[Allineamento]:::warn
+    D --> E[Riapertura]:::process
+    E --> F[Test cavo reale]:::warn
+    F -->|OK| G[Archivio usabile]:::ok
+    F -->|KO| H[Rollback]:::danger
+
+    classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
+    classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
+    classDef danger fill:#fdecea,stroke:#c62828,color:#7f1d1d;
+    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
+```
+
+La validazione incrociata serve quando l'archivio deve funzionare in più
+ambienti.
+
+```mermaid
+flowchart TD
+    A[Archivio aggiornato]:::data --> B[Test SPAC Start]:::process
+    A --> C[Test SPAC Automazione]:::process
+    B --> D{Esito Start?}:::warn
+    C --> E{Esito Automazione?}:::warn
+    D -->|OK| F[Start valido]:::ok
+    D -->|KO| G[Da verificare]:::todo
+    E -->|OK| H[Automazione valida]:::ok
+    E -->|KO| G
+    F --> I[Confronto finale]:::warn
+    H --> I
+    I --> J[Release documentabile]:::ok
+
+    classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
+    classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
+    classDef todo fill:#f3e8ff,stroke:#7b1fa2,color:#4a148c;
+    classDef data fill:#e0f7fa,stroke:#00838f,color:#004d40;
+    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
+```
 
 !!! warning "File sensibile"
 
@@ -44,7 +82,8 @@ La procedura di aggiornamento tramite sostituzione controllata del file `DbCable
 
 Conclusione operativa:
 
-> Per Archivio Cavi avanzato, il workflow `backup → sostituzione → allineamento → riavvio → verifica` è lo stesso su SPAC Automazione e SPAC Start.
+> Per Archivio Cavi avanzato, lo stesso workflow di backup, sostituzione,
+> allineamento, riavvio e verifica è valido su SPAC Automazione e SPAC Start.
 
 ## Differenza tra L_CAVI.txt e DbCables.db
 
@@ -117,12 +156,16 @@ record principale non basta per considerare utilizzabile il cavo.
 
 ```mermaid
 flowchart LR
-    A[DbCables.db] --> B[Cables]
-    A --> C[Cables_Conductors]
-    B --> D[Archivio Cavi SPAC]
+    A[DbCables.db]:::data --> B[Cables]:::data
+    A --> C[Cables_Conductors]:::data
+    B --> D[Archivio Cavi SPAC]:::process
     C --> D
-    D --> E[Dati tecnici visibili]
-    E --> F[Test posa cavo]
+    D --> E[Dati tecnici visibili]:::process
+    E --> F[Test posa cavo]:::warn
+
+    classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
+    classDef data fill:#e0f7fa,stroke:#00838f,color:#004d40;
+    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
 ```
 
 ## Regola strutturale
@@ -219,8 +262,11 @@ programma, seguire il flusso controllato.
 7. Aprire Archivio Cavi.
 8. Verificare ricerca, dettaglio tecnico, conduttori e posa cavo.
 
-Se il comportamento della finestra cambia nella propria installazione, segnare
-il caso come `Da verificare` e documentare ambiente, versione e messaggio.
+!!! warning "Da verificare"
+
+    Se il comportamento della finestra cambia nella propria installazione,
+    segnare il caso come `Da verificare` e documentare ambiente, versione e
+    messaggio.
 
 ## Checklist pre-aggiornamento
 

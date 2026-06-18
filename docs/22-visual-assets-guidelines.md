@@ -10,10 +10,10 @@ Aggiungere supporto visuale alla guida senza introdurre confusione, dati sensibi
 
 | Tipo | Uso |
 |---|---|
-| Diagrammi SVG | Spiegare workflow, lifecycle e relazioni |
+| Diagrammi Mermaid | Spiegare workflow, lifecycle e relazioni |
 | Screenshot sanitizzati | Mostrare finestre, menu o configurazioni generiche |
 | Immagini annotate | Evidenziare aree specifiche con frecce o box |
-| Schemi generici | Esempi non legati a commesse reali |
+| Schemi generici | Usare Mermaid se rappresentano processi o relazioni |
 
 ## Regole di sanitizzazione
 
@@ -55,15 +55,23 @@ titleblock-logo-reference.png
 terminal-num-m-representation.png
 ```
 
-## Quando usare un diagramma
+## Quando usare Mermaid
 
-Usare un diagramma quando il contenuto spiega:
+Usare Mermaid quando il contenuto spiega:
 
 - un workflow;
 - una relazione tra oggetti;
 - un ciclo di validazione;
 - un processo decisionale;
 - una sequenza di controllo.
+
+Regole:
+
+- usare blocchi fenced `mermaid`;
+- mantenere nodi brevi;
+- usare colori solo per stato, rischio, dato o azione;
+- non sostituire screenshot reali con Mermaid;
+- non usare SVG statici per workflow o mappe concettuali.
 
 ## Quando usare uno screenshot
 

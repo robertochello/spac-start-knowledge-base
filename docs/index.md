@@ -34,7 +34,27 @@ Knowledge base operativa per **SPAC Start Impianti**. Serve per trovare rapidame
 
 ## Mappa logica
 
-![SPAC Start Knowledge Base map](assets/diagrams/site-structure-map.svg)
+La mappa mostra le aree principali e il tipo di contenuto da cercare.
+
+```mermaid
+flowchart TD
+    A[Start]:::info --> A1[Orientamento]
+    A --> A2[Concetti base]
+    B[Operativo]:::process --> B1[Setup]
+    B --> B2[Schemi]
+    B --> B3[Simboli]
+    B --> B4[Archivi]
+    C[Playbook]:::process --> C1[Procedure guidate]
+    D[Diagnosi]:::warn --> D1[Troubleshooting]
+    D --> D2[Known issue]
+    E[Governance]:::ok --> E1[Standard]
+    E --> E2[Quality gate]
+
+    classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
+    classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
+    classDef info fill:#e8f0fe,stroke:#1565c0,color:#0d47a1;
+    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
+```
 
 | Area | Cosa contiene |
 |---|---|
@@ -52,14 +72,19 @@ materiali e report.
 
 ```mermaid
 flowchart LR
-    A[Progetto] --> B[Simboli]
-    B --> C[Collegamenti]
-    C --> D[Morsetti e rimandi]
-    B --> E[Materiali]
-    E --> F[Report e distinte]
-    D --> G[Verifica]
+    A[Progetto]:::process --> B[Simboli]:::data
+    B --> C[Collegamenti]:::process
+    C --> D[Morsetti e rimandi]:::warn
+    B --> E[Materiali]:::data
+    E --> F[Report e distinte]:::process
+    D --> G[Verifica]:::warn
     F --> G
-    G --> H[Standard e quality gate]
+    G --> H[Quality gate]:::ok
+
+    classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
+    classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
+    classDef data fill:#e0f7fa,stroke:#00838f,color:#004d40;
+    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
 ```
 
 | Se stai lavorando su... | Vai a |

@@ -13,14 +13,18 @@ Questa pagina raccoglie i concetti fondamentali usati nella knowledge base.
 
 ```mermaid
 flowchart LR
-    A[Grafica CAD] --> B[Blocco CAD]
-    B --> C[Simbolo SPAC intelligente]
-    C --> D[Attributi]
-    C --> E[Pinatura]
-    C --> F[Materiali]
-    C --> G[Rimandi]
-    D --> H[Madre/Figlia]
-    E --> I[PINA/PINB]
+    A[Grafica CAD]:::process --> B[Blocco CAD]:::process
+    B --> C[Oggetto SPAC]:::data
+    C --> D[Attributi]:::data
+    C --> E[Pinatura]:::data
+    C --> F[Materiali]:::data
+    C --> G[Rimandi]:::warn
+    D --> H[Madre/Figlia]:::data
+    E --> I[PINA/PINB]:::data
+
+    classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
+    classDef data fill:#e0f7fa,stroke:#00838f,color:#004d40;
+    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
 ```
 
 ## Distinzione operativa
@@ -41,12 +45,18 @@ Il percorso corretto di diagnosi è questo.
 
 ```mermaid
 flowchart LR
-    A[Elemento visibile] --> B{È solo grafica CAD?}
-    B -->|Sì| C[Controllare disegno e layer]
-    B -->|No| D[Oggetto SPAC intelligente]
-    D --> E[Attributi e dati sorgente]
-    E --> F[Rappresentazione visibile]
-    F --> G[Report, rimandi o distinta]
+    A[Elemento visibile]:::info --> B{Solo grafica?}:::warn
+    B -->|Sì| C[Controllare disegno]:::process
+    B -->|No| D[Oggetto SPAC]:::data
+    D --> E[Dati sorgente]:::data
+    E --> F[Rappresentazione]:::process
+    F --> G[Report o rimandi]:::ok
+
+    classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
+    classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
+    classDef info fill:#e8f0fe,stroke:#1565c0,color:#0d47a1;
+    classDef data fill:#e0f7fa,stroke:#00838f,color:#004d40;
+    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
 ```
 
 !!! warning "Errore tipico"

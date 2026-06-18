@@ -21,11 +21,16 @@ confermato usare prima [Troubleshooting generale](../07-troubleshooting.md).
 
 ```mermaid
 flowchart TD
-    A[Sintomo ricorrente] --> B[Known issue]
-    B --> C[Cause probabili]
-    C --> D[Diagnosi]
-    D --> E[Soluzione]
-    E --> F[Prevenzione]
+    A[Sintomo ricorrente]:::danger --> B[Known issue]:::process
+    B --> C[Cause probabili]:::warn
+    C --> D[Diagnosi]:::process
+    D --> E[Soluzione]:::ok
+    E --> F[Prevenzione]:::ok
+
+    classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
+    classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
+    classDef danger fill:#fdecea,stroke:#c62828,color:#7f1d1d;
+    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
 ```
 
 ## Regola

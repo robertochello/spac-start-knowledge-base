@@ -13,12 +13,17 @@ Questa sezione raccoglie le convenzioni operative sugli attributi principali dei
 
 ```mermaid
 flowchart LR
-    A[Simbolo custom] --> B[Attributi principali]
-    B --> C{Madre o Figlio?}
-    C --> D[NOME e PRES]
-    D --> E[Pinatura PINA/PINB]
-    E --> F[Test aggancio fili]
-    F --> G[Report o materiale]
+    A[Simbolo custom]:::process --> B[Attributi]:::data
+    B --> C{Madre o Figlio?}:::warn
+    C --> D[NOME e PRES]:::data
+    D --> E[PINA/PINB]:::data
+    E --> F[Test fili]:::warn
+    F --> G[Report o materiale]:::ok
+
+    classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
+    classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
+    classDef data fill:#e0f7fa,stroke:#00838f,color:#004d40;
+    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
 ```
 
 ## Attributi principali

@@ -2,7 +2,26 @@
 
 Questa sezione definisce il workflow operativo per creare e gestire simboli custom in SPAC Start.
 
-![Lifecycle simbolo custom](assets/diagrams/custom-symbol-lifecycle.svg)
+Il ciclo di vita di un simbolo custom parte dalla geometria e arriva al riuso
+solo dopo test e inventario.
+
+```mermaid
+flowchart LR
+    A[Geometria]:::process --> B[Pulizia]:::process
+    B --> C[Blocco DWG]:::data
+    C --> D[Attributi]:::data
+    D --> E[Pinatura]:::warn
+    E --> F[Test]:::warn
+    F -->|OK| G[Inventario]:::ok
+    F -->|Da verificare| H[Correggere]:::todo
+    H --> B
+
+    classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
+    classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
+    classDef todo fill:#f3e8ff,stroke:#7b1fa2,color:#4a148c;
+    classDef data fill:#e0f7fa,stroke:#00838f,color:#004d40;
+    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
+```
 
 ## In questa pagina impari
 

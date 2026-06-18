@@ -28,16 +28,22 @@ Usare questa checklist quando:
 
 ```mermaid
 flowchart LR
-    A[Backup] --> B[File modificato]
-    B --> C[Controllo dati]
-    C --> D[Test in SPAC]
-    D --> E[Report o uso operativo]
-    E --> F[Rollback verificabile]
-    F --> G[Rilascio o Da verificare]
+    A[Backup]:::warn --> B[File modificato]:::data
+    B --> C[Controllo dati]:::warn
+    C --> D[Test in SPAC]:::process
+    D --> E[Report o uso]:::process
+    E --> F[Rollback]:::warn
+    F --> G[Rilascio o verifica]:::ok
+
+    classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
+    classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
+    classDef data fill:#e0f7fa,stroke:#00838f,color:#004d40;
+    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
 ```
 
-Il rilascio è possibile solo se ogni passaggio ha un esito documentabile. In
-caso contrario lo stato resta `Da verificare`.
+!!! warning "Da verificare"
+    Il rilascio è possibile solo se ogni passaggio ha un esito documentabile.
+    In caso contrario lo stato resta `Da verificare`.
 
 ## Controlli prima dell'avvio
 

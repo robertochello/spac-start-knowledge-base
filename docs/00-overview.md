@@ -71,14 +71,21 @@ scegliere il tipo di pagina più adatto.
 
 ```mermaid
 flowchart LR
-    A[Problema operativo] --> B{Ricorrente?}
-    B -->|No| C[Pagina operativa]
-    B -->|Sì| D[Playbook]
-    D --> E{Anomalia stabile?}
-    E -->|Sì| F[Known issue]
-    E -->|No| G[Caso pratico]
-    C --> H[Standard o quality gate]
+    A[Problema]:::info --> B{Ricorrente?}:::warn
+    B -->|No| C[Pagina operativa]:::process
+    B -->|Sì| D[Playbook]:::process
+    D --> E{Anomalia stabile?}:::warn
+    E -->|Sì| F[Known issue]:::danger
+    E -->|No| G[Caso pratico]:::todo
+    C --> H[Standard o gate]:::ok
     F --> H
+
+    classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
+    classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
+    classDef danger fill:#fdecea,stroke:#c62828,color:#7f1d1d;
+    classDef info fill:#e8f0fe,stroke:#1565c0,color:#0d47a1;
+    classDef todo fill:#f3e8ff,stroke:#7b1fa2,color:#4a148c;
+    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
 ```
 
 ## Convenzione documentale
