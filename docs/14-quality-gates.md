@@ -61,10 +61,12 @@ Un archivio materiali è documentabile come stabile quando:
 
 - esiste un backup dello stato precedente;
 - i dati sono normalizzati;
+- i codici catalogo sono reali e non fittizi o basati su iniziali personali;
 - i duplicati sono stati controllati;
 - l'import è stato testato in ambiente non critico;
 - almeno un materiale è stato associato a un simbolo;
 - distinta o report sono stati verificati;
+- il file pubblicato, se presente, è tracciato e sanitizzato;
 - ogni record ha uno stato chiaro.
 
 ## Quality gate per Archivio Cavi DbCables

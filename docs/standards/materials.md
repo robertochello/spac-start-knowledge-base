@@ -12,6 +12,8 @@ Definire regole operative per gestire materiali, archivi custom e associazioni a
 - La categoria deve essere coerente con la funzione del materiale.
 - Ogni record deve avere uno stato.
 - I materiali non verificati non devono essere trattati come standard.
+- I codici catalogo devono essere reali e verificabili.
+- Non usare codici fittizi o iniziali personali nei codici catalogo.
 
 ## Stati ammessi
 
@@ -33,6 +35,17 @@ Linee guida:
 - pura grafica: evitare associazione materiale stabile;
 - casi ambigui: documentare la scelta nel decision log.
 
+## Archivio, associazione e report
+
+Distinguere sempre:
+
+| Livello | Verifica |
+|---|---|
+| Archivio materiali | Record ricercabile e normalizzato |
+| Associazione simbolo | Materiale collegato a simbolo coerente |
+| Distinta o report | Materiale presente senza duplicazioni |
+| File pubblicato | Archivio tracciato, sanitizzato e versionato |
+
 ## Import archivi
 
 Ogni import deve passare da:
@@ -42,7 +55,8 @@ Ogni import deve passare da:
 3. controllo duplicati;
 4. ambiente di prova;
 5. validazione;
-6. promozione a standard.
+6. verifica distinta o report;
+7. promozione a standard.
 
 ## Regola finale
 

@@ -21,6 +21,20 @@ Un archivio materiali non deve essere importato direttamente in ambiente operati
 - validazione su progetto non critico;
 - documentazione della provenienza.
 
+## Ambiti da distinguere
+
+Nel workflow materiali distinguere sempre questi livelli.
+
+| Livello | Scopo | Verifica minima |
+|---|---|---|
+| Archivio materiali | Contiene i record disponibili per ricerca e associazione | Record ricercabile e dati coerenti |
+| Materiale associato al simbolo | Collega un record materiale a un oggetto SPAC | Simbolo riconosciuto e associazione stabile |
+| Distinta o report | Mostra i materiali estratti dal progetto | Nessuna duplicazione o omissione |
+| File scaricabile | Pubblica una versione riutilizzabile dell'archivio | File tracciato, sanitizzato e verificato |
+
+Un archivio è pronto solo quando record, associazione, distinta/report e file
+pubblicato sono coerenti tra loro.
+
 ## Workflow consigliato
 
 1. **Raccolta dati**  
@@ -44,6 +58,10 @@ Un archivio materiali non deve essere importato direttamente in ambiente operati
 7. **Promozione**  
    Solo dopo validazione, rendere l'archivio disponibile come standard.
 
+8. **Pubblicazione controllata**
+   Pubblicare il file solo se è generico, riutilizzabile, tracciato e privo di
+   dati cliente o commessa.
+
 ## Campi consigliati
 
 Per ogni materiale, mantenere almeno queste informazioni:
@@ -57,6 +75,20 @@ Per ogni materiale, mantenere almeno queste informazioni:
 | Tipo | Tipologia tecnica |
 | Note | Informazioni operative o limitazioni |
 | Stato | Bozza, Da verificare, Validato, Deprecato |
+
+## Regola codici catalogo
+
+I codici articolo o catalogo devono essere reali e verificabili.
+
+Regole:
+
+- usare codici produttore o codici aziendali realmente definiti;
+- non creare codici fittizi per chiudere una riga incompleta;
+- non inserire iniziali personali nei codici catalogo;
+- se il codice non è verificato, impostare lo stato `Da verificare`;
+- usare note o campi dedicati per release, provenienza o limitazioni.
+
+Un record senza codice verificato non deve essere promosso a standard.
 
 ## Stati materiali
 
@@ -79,6 +111,21 @@ Prima dell'import controllare duplicati su:
 
 Quando due record sembrano simili, non unificarli automaticamente: verificare se rappresentano davvero lo stesso materiale.
 
+## Checklist pre-aggiornamento
+
+Prima di creare o aggiornare un archivio materiali custom:
+
+- backup dell'archivio originale presente;
+- sorgente dati identificata;
+- codici catalogo reali e verificabili;
+- nessuna iniziale personale nei codici catalogo;
+- descrizioni normalizzate;
+- costruttori e categorie coerenti;
+- duplicati controllati;
+- stato assegnato a ogni record;
+- ambiente o progetto di prova disponibile;
+- file destinato al download tracciato con versione, data e provenienza.
+
 ## Import in ambiente di prova
 
 La prima importazione deve avvenire in ambiente controllato.
@@ -93,6 +140,9 @@ Checklist:
 - progetto prova disponibile;
 - report materiali verificabile.
 
+Se la modalità di import varia in base all'installazione o alla versione SPAC,
+marcare il passaggio come `Da verificare` e documentare ambiente e risultato.
+
 ## Validazione su simboli
 
 Dopo l'import:
@@ -104,11 +154,25 @@ Dopo l'import:
 5. controllare descrizione e costruttore;
 6. verificare che non compaiano duplicazioni.
 
+## Checklist post-aggiornamento
+
+Dopo import o aggiornamento:
+
+- archivio consultabile;
+- record materiale ricercabile;
+- codice catalogo coerente e non fittizio;
+- materiale associabile a un simbolo riconosciuto;
+- distinta o report generato senza duplicazioni;
+- dati principali leggibili e coerenti;
+- file scaricabile aggiornato solo se sanitizzato e tracciato;
+- rollback tecnicamente possibile tramite backup.
+
 ## Regole di governance
 
 - Non importare materiali non verificati in un archivio stabile.
 - Non cancellare record storici senza decisione documentata.
 - Non usare descrizioni troppo generiche.
+- Non usare codici catalogo fittizi o con iniziali personali.
 - Non mischiare materiali validati e bozze senza stato.
 - Aggiornare il changelog quando un archivio diventa standard.
 
@@ -117,6 +181,7 @@ Dopo l'import:
 Un archivio materiali è pronto quando:
 
 - i dati sono normalizzati;
+- i codici catalogo sono reali e verificabili;
 - i duplicati sono controllati;
 - l'import è stato testato;
 - almeno un materiale è stato associato a un simbolo;
@@ -129,10 +194,12 @@ La sezione archivi materiali è completa come riferimento operativo quando defin
 
 - principio di backup e staging;
 - campi minimi consigliati;
+- regole sui codici catalogo;
 - stati ammessi dei record;
 - controllo duplicati;
 - import in ambiente di prova;
 - validazione su simboli;
+- checklist pre/post aggiornamento;
 - criteri per promuovere l'archivio a standard.
 
 Gli archivi reali e i codici articolo non devono essere pubblicati nella guida.
@@ -141,6 +208,8 @@ Gli archivi reali e i codici articolo non devono essere pubblicati nella guida.
 
 - [Download](downloads.md)
 - [Associare materiali](playbooks/material-association.md)
+- [Standard materiali](standards/materials.md)
+- [Back-check e controlli incrociati](26-back-check-controls.md)
 - [Simboli custom](03-custom-symbols.md)
 - [Quality gates](14-quality-gates.md)
 - [Decision log](11-decision-log.md)

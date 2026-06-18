@@ -34,6 +34,7 @@ Usare questa checklist quando:
 | Record custom | Marcatura o release riconoscibile |
 | Dati collegati | Nessun record orfano evidente |
 | Codici catalogo | Nessun codice fittizio o con iniziali personali |
+| Materiale reale di test | Codice, costruttore e descrizione identificati |
 | Cavo reale di test | Costruttore e codice produttore identificati |
 | Ambiente test | Identificato prima della prova |
 
@@ -47,6 +48,8 @@ Usare questa checklist quando:
 | Record custom visibile | Ricerca positiva |
 | Dettaglio tecnico | Campi popolati e coerenti |
 | Conduttori | Dettaglio conduttori visibile e coerente |
+| Associazione simbolo | Materiale associabile a un simbolo riconosciuto |
+| Distinta o report | Nessuna duplicazione o omissione evidente |
 | Uso operativo | Il dato è selezionabile nella funzione prevista |
 
 ## Controllo incrociato ambienti
@@ -70,6 +73,7 @@ Una modifica può essere considerata pronta solo se:
 - passa i controlli minimi nell'ambiente di destinazione;
 - il rollback è stato verificato;
 - eventuali dati tecnici sono stati validati su fonte attendibile;
+- almeno un materiale reale è stato associato e verificato in distinta/report;
 - almeno un cavo reale è stato testato in uso operativo;
 - non sono presenti codici catalogo fittizi o con iniziali personali;
 - la procedura è documentata nel playbook o nel decision log.

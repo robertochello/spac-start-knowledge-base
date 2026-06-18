@@ -84,6 +84,8 @@ dbcables-r01.zip
 - contenuto sanitizzato;
 - hash SHA256 registrato per file binari;
 - origine o criterio di generazione documentato;
+- per archivi materiali, codici catalogo reali e senza iniziali personali;
+- per archivi materiali, almeno un record testato in associazione e report;
 - eventuale archivio compresso testato;
 - versione indicata nel nome o nelle note;
 - link provato dopo build del sito.
