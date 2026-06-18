@@ -40,6 +40,15 @@ Procedura sintetica:
 6. Se SPAC si chiude, riaprirlo.
 7. Verificare Archivio Cavi.
 
+Verifica minima dopo il riavvio:
+
+- Archivio Cavi consultabile;
+- cavo reale di test ricercabile;
+- dati tecnici visibili;
+- conduttori coerenti;
+- posa cavo accettata;
+- warning versione non ripetuto dopo riapertura.
+
 ## Comportamento atteso
 
 Dopo l'allineamento e il riavvio, il database sostituito può risultare utilizzabile.
@@ -53,6 +62,7 @@ Eseguire rollback se:
 - i cavi custom non sono visibili;
 - i conduttori risultano incoerenti;
 - la posa cavo non accetta i cavi selezionati.
+- il warning versione continua a ripresentarsi dopo allineamento e riavvio.
 
 ## Prevenzione
 
@@ -60,6 +70,7 @@ Eseguire rollback se:
 - Testare su ambiente non critico.
 - Eseguire integrity check prima del rilascio.
 - Marcare i cavi custom con campi dedicati.
+- Non usare codici catalogo fittizi o con iniziali personali.
 - Verificare i dati tecnici su datasheet prima dell'uso reale.
 - Applicare i back-check quando il database è destinato a più ambienti.
 

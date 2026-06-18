@@ -31,6 +31,7 @@ Il DB scelto non è un DB di SPAC valido
 - Accesso alla cartella Librerie/Archivi.
 - Test previsto su progetto non critico.
 - Elenco dei cavi custom da verificare.
+- Almeno un cavo reale con codice produttore verificabile.
 - Ambiente di test identificato: SPAC Automazione, SPAC Start o entrambi.
 
 ## Procedura
@@ -47,7 +48,7 @@ Il DB scelto non è un DB di SPAC valido
 
 6. Avviare SPAC.
 7. Se compare l'avviso di versione non congruente, proseguire.
-8. Nella finestra di ripristino usare:
+8. Nella finestra di ripristino o allineamento versione librerie usare:
 
    ```text
    Allinea la versione delle librerie
@@ -69,6 +70,22 @@ Prima di aprire SPAC, verificare:
 | Integrità database | Nessun errore |
 | Cavi custom marcati | Release o stato riconoscibile |
 | Conduttori collegati | Nessun cavo senza dettaglio conduttori |
+| Codici catalogo | Nessun codice fittizio o con iniziali personali |
+| Cavo reale di test | Codice produttore identificato |
+
+## Controlli dopo allineamento
+
+Dopo l'allineamento versione librerie:
+
+| Controllo | Esito atteso |
+|---|---|
+| Riapertura SPAC | Nessun blocco |
+| Archivio Cavi | Finestra consultabile |
+| Cavo reale di test | Ricercabile |
+| Dati tecnici | Pannello popolato |
+| Conduttori | Numero e dati coerenti |
+| Posa cavo | Cavo selezionabile |
+| Warning versione | Non ricompare dopo riapertura |
 
 ## Verifica funzionale
 
@@ -80,6 +97,7 @@ La procedura è valida quando:
 - il pannello dati tecnici è popolato;
 - la tabella conduttori è coerente;
 - la posa cavo accetta il cavo selezionato.
+- il test è stato eseguito su almeno un cavo reale, non su un codice fittizio.
 
 ## Verifica incrociata SPAC Automazione / SPAC Start
 
@@ -118,6 +136,7 @@ Se qualcosa non funziona:
 - Non lavorare mai senza backup.
 - Non usare direttamente su commessa reale prima del test.
 - Non considerare i dati dei cavi custom certificati senza verifica datasheet.
+- Non creare codici catalogo fittizi o basati su iniziali personali.
 - Documentare sempre release e marcatura dei cavi custom.
 - Se il database è destinato a più ambienti, validarlo sia su SPAC Automazione sia su SPAC Start.
 

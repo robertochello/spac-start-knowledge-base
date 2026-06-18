@@ -77,11 +77,13 @@ Un `DbCables.db` custom è rilasciabile solo quando:
 - ogni cavo ha conduttori coerenti nella tabella dedicata;
 - i campi tecnici principali sono popolati;
 - i cavi custom sono marcati con campi di tracciabilità;
+- i codici catalogo sono reali e non fittizi o basati su iniziali personali;
 - SPAC avvia il controllo versione;
 - l'allineamento versione librerie è completato;
 - SPAC viene riaperto dopo l'allineamento;
 - Archivio Cavi è consultabile;
 - almeno un cavo custom è selezionabile;
+- almeno un cavo reale con codice produttore verificabile è testato;
 - il pannello dati tecnici è popolato;
 - i conduttori sono visibili;
 - il test posa cavo è stato eseguito;

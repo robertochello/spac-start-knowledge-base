@@ -87,6 +87,19 @@ Tabelle principali osservate:
 | `Awg_Section` | Tabella AWG e sezioni |
 | `Relationship` | Relazioni accessorie |
 
+## Archivio, conduttori e dati visualizzati
+
+Nel workflow DbCables distinguere sempre tre livelli.
+
+| Livello | Contenuto | Verifica minima |
+|---|---|---|
+| Archivio cavi | Anagrafica del cavo e dati generali | Il cavo è ricercabile in Archivio Cavi |
+| Conduttori | Dettaglio dei singoli conduttori associati al cavo | Numero e dati conduttori coerenti |
+| Dati tecnici visualizzati | Campi mostrati dall'interfaccia SPAC | Pannello dati tecnici popolato e leggibile |
+
+Un cavo è valido solo se questi tre livelli sono coerenti. La sola presenza del
+record principale non basta per considerare utilizzabile il cavo.
+
 ## Regola strutturale
 
 Per aggiungere correttamente un cavo non basta inserire una riga in `Cables`.
@@ -100,6 +113,10 @@ Cables_Conductors
 
 `Cables` contiene l'anagrafica principale.  
 `Cables_Conductors` contiene il dettaglio dei singoli conduttori.
+
+Se un cavo appare in archivio ma non mostra correttamente conduttori o dati
+tecnici, controllare prima la coerenza tra archivio, conduttori e campi
+visualizzati.
 
 ## Chiave logica cavo
 
@@ -117,6 +134,21 @@ LAPP§00100014
 Prysmian§FG16M16 1x10
 TKD§05000697
 ```
+
+## Regola sui codici catalogo
+
+Non creare codici catalogo fittizi, provvisori o basati su iniziali personali.
+
+Regola operativa:
+
+- usare codici reali del produttore quando disponibili;
+- se un dato non è verificato, marcarlo come `Da verificare`;
+- usare campi note o campi utente per indicare stato, release o validazione;
+- non inserire iniziali personali nel codice catalogo del cavo;
+- non promuovere in uso reale cavi con codice non verificato.
+
+Se il codice produttore non è disponibile, il record resta da usare solo per
+test o progettazione preliminare.
 
 ## Import/Export
 
@@ -143,6 +175,55 @@ Sintesi:
 5. riapertura SPAC;
 6. validazione dell'archivio.
 
+## Workflow con allineamento versione librerie
+
+Quando SPAC segnala che `DbCables.db` non è congruente con la versione del
+programma, seguire il flusso controllato.
+
+1. Confermare l'avviso di versione non congruente.
+2. Aprire la finestra di ripristino o allineamento proposta da SPAC.
+3. Usare il pulsante o l'azione:
+
+   ```text
+   Allinea la versione delle librerie
+   ```
+
+4. Attendere il completamento dell'allineamento.
+5. Chiudere la finestra di allineamento.
+6. Se SPAC si chiude o richiede riavvio, riaprire SPAC.
+7. Aprire Archivio Cavi.
+8. Verificare ricerca, dettaglio tecnico, conduttori e posa cavo.
+
+Se il comportamento della finestra cambia nella propria installazione, segnare
+il caso come `Da verificare` e documentare ambiente, versione e messaggio.
+
+## Checklist pre-aggiornamento
+
+Prima di sostituire `DbCables.db`:
+
+- SPAC chiuso;
+- backup del `DbCables.db` originale presente e ripristinabile;
+- database modificato pronto e rinominabile in `DbCables.db`;
+- integrity check SQLite eseguito senza errori;
+- confronto tra record cavi e conduttori eseguito;
+- assenza di codici catalogo fittizi o con iniziali personali;
+- cavi custom marcati con stato, release o nota di validazione;
+- almeno un cavo reale identificato per il test funzionale;
+- ambiente di test definito.
+
+## Checklist post-aggiornamento
+
+Dopo sostituzione e allineamento:
+
+- SPAC si apre senza blocchi;
+- Archivio Cavi è consultabile;
+- il cavo reale di test è ricercabile;
+- il pannello dati tecnici è popolato;
+- i conduttori sono visibili e coerenti;
+- la posa cavo accetta il cavo selezionato;
+- eventuale warning di versione non ricompare dopo riapertura;
+- rollback verificato o almeno tecnicamente ripetibile.
+
 ## Verifica finale e controlli incrociati
 
 Per evitare falsi positivi, la validazione deve essere fatta su più livelli.
@@ -160,19 +241,20 @@ Per evitare falsi positivi, la validazione deve essere fatta su più livelli.
 
 ## Marcatura cavi custom
 
-Per distinguere cavi aggiunti da cavi originali, usare campi disponibili nel DB.
+Per distinguere cavi aggiunti da cavi originali, usare campi disponibili nel DB
+senza alterare il codice catalogo del produttore.
 
 Esempio:
 
 ```text
-User1 = RC_R02
+User1 = CUSTOM_R02
 User2 = VERIFICARE_DATASHEET
 ```
 
 Per dati verificati:
 
 ```text
-User1 = RC_R03
+User1 = CUSTOM_R03
 User2 = DATASHEET_VERIFICATO
 ```
 
@@ -181,6 +263,9 @@ Questa marcatura consente:
 - ricerca rapida dei cavi custom;
 - tracciabilità release;
 - distinzione tra dati indicativi e dati validati.
+
+Non usare iniziali personali, codici interni provvisori o sigle arbitrarie come
+codice catalogo del cavo.
 
 ## Stato dati tecnici
 
@@ -191,6 +276,9 @@ Regola:
 - dati indicativi: usare solo in test o progettazione preliminare;
 - dati validati: verificare su datasheet ufficiale produttore;
 - uso in commessa reale: consentito solo dopo validazione tecnica.
+
+Il test operativo deve includere almeno un cavo reale con costruttore, codice,
+dati tecnici e conduttori coerenti.
 
 ## Famiglie operative tipiche
 
