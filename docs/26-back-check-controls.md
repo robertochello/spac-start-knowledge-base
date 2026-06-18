@@ -27,7 +27,7 @@ Usare questa checklist quando:
 ## Flusso di controllo
 
 ```mermaid
-graph LR
+flowchart LR
     A[Backup] --> B[File modificato]
     B --> C[Controllo dati]
     C --> D[Test in SPAC]

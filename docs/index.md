@@ -51,7 +51,7 @@ modellano simboli e collegamenti, quindi si verificano morsetti, rimandi,
 materiali e report.
 
 ```mermaid
-graph LR
+flowchart LR
     A[Progetto] --> B[Simboli]
     B --> C[Collegamenti]
     C --> D[Morsetti e rimandi]

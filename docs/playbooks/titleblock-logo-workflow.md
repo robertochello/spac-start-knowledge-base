@@ -16,7 +16,7 @@ Usare questo playbook quando:
 ## Flusso operativo
 
 ```mermaid
-graph TD
+flowchart TD
     A[Cartiglio con logo] --> B[Percorso immagine stabile]
     B --> C[Test nel master]
     C --> D[Test nel multifoglio]

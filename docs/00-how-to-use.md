@@ -16,7 +16,7 @@ Questa pagina serve come punto di orientamento. La knowledge base non va letta t
 Questo flusso serve per scegliere rapidamente la prima pagina utile.
 
 ```mermaid
-graph TD
+flowchart TD
     A[Ho un obiettivo o problema] --> B{È un problema pratico?}
     B -->|Sì| C[Troubleshooting]
     C --> D{Esiste una procedura guidata?}

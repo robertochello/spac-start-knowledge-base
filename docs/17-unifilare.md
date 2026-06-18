@@ -15,7 +15,7 @@ Il flusso unifilare deve mantenere separati disegno, riconoscimento SPAC,
 identificazione delle linee e verifica finale.
 
 ```mermaid
-graph LR
+flowchart LR
     A[Preparazione pagina] --> B[Linee e simboli]
     B --> C[Identificazione linee]
     C --> D[Numerazione fili]
