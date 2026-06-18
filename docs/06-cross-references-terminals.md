@@ -1,16 +1,24 @@
 # Rimandi, cross-reference e morsetti
 
-Questa sezione raccoglie note operative su rimandi, alimentazioni, cross-reference e rappresentazione dei morsetti in SPAC Start.
+Questa sezione raccoglie note operative su rimandi, alimentazioni,
+cross-reference e rappresentazione dei morsetti in SPAC Start.
+
+Usare questa pagina come riferimento centrale quando il problema riguarda il
+collegamento logico tra punti dello schema, il rimando tra fogli o la coerenza
+tra dato sorgente e rappresentazione visibile.
 
 ## Cross-reference
 
-Il cross-reference dei rimandi è una procedura comune sia allo schema unifilare sia allo schema multifilare.
+Il cross-reference dei rimandi è una procedura comune sia allo schema unifilare
+sia allo schema multifilare.
 
 Principio operativo:
 
 - i collegamenti da mettere in relazione devono usare lo stesso nome;
 - un rimando di partenza deve essere coerente con un rimando di arrivo;
-- dopo la creazione dei rimandi è necessario aggiornare il cross-reference.
+- dopo la creazione dei rimandi è necessario aggiornare il cross-reference;
+- il riferimento generato va verificato sul dato logico, non solo sul testo
+  visibile nel foglio.
 
 ## Linea, alimentazione, oggetto e rimando
 
@@ -22,17 +30,40 @@ Prima di diagnosticare un rimando distinguere questi livelli.
 | Alimentazione SPAC | Collegamento creato e riconosciuto dalla logica SPAC | Rimando non applicabile se la linea è solo grafica |
 | Oggetto intelligente | Elemento con dati, attributi o relazione interna | Cross-reference collegato a dati non più coerenti |
 | Rimando | Simbolo o riferimento che collega logicamente punti dello schema | Riferimento duplicato, non aggiornato o diretto a posizione vecchia |
+| Cross-reference | Testo o riferimento generato dalla logica SPAC | Testo corretto graficamente ma collegato al dato sbagliato |
 
 Regola: il rimando deve appoggiarsi a un collegamento o oggetto riconosciuto,
 non alla sola geometria visibile.
+
+## Sequenza operativa consigliata
+
+Per evitare riferimenti incoerenti, lavorare sempre in questa sequenza:
+
+1. verificare che la linea o il collegamento siano oggetti SPAC riconosciuti;
+2. assegnare o verificare il nome logico usato dai rimandi;
+3. inserire i rimandi con direzione coerente;
+4. aggiornare o rigenerare il cross-reference;
+5. controllare la lista dei rimandi usati;
+6. verificare sul foglio che il riferimento punti alla posizione attesa;
+7. controllare che non esistano oggetti residui o duplicati;
+8. documentare come `Da verificare` i casi non ripetibili.
+
+Questa sequenza è valida anche in multifilare. Prima di validare rimandi e
+morsetti, verificare sempre che i collegamenti siano riconosciuti come oggetti
+SPAC e non come sole entità CAD.
 
 ## Direzione dei rimandi
 
 Regole:
 
-- se il primo rimando è di partenza, il secondo deve essere di arrivo oppure arrivo/partenza;
-- se il primo rimando è di arrivo, il secondo deve essere di partenza oppure arrivo/partenza;
+- se il primo rimando è di partenza, il secondo deve essere di arrivo oppure
+  arrivo/partenza;
+- se il primo rimando è di arrivo, il secondo deve essere di partenza oppure
+  arrivo/partenza;
 - la direzione deve essere coerente con il flusso logico dello schema.
+
+Se la direzione non è chiara, non forzare il riferimento: testare prima il caso
+su un foglio pulito e annotarlo come `Da verificare`.
 
 ## Aggiornamento cross-reference
 
@@ -44,15 +75,22 @@ Dopo aver creato o modificato rimandi:
 4. verificare eventuale output generato;
 5. controllare che i riferimenti puntino alle posizioni corrette.
 
+Da verificare: il nome esatto del comando o del percorso menu può cambiare in
+base alla configurazione SPAC Start installata. Documentare il percorso usato
+nel progetto se viene consolidato come standard interno.
+
 ## Rimandi per alimentazioni
 
-I rimandi permettono di collegare graficamente e logicamente alimentazioni o segnali tra fogli diversi.
+I rimandi permettono di collegare graficamente e logicamente alimentazioni o
+segnali tra fogli diversi.
 
 Prima di inserire un rimando:
 
-- verificare che la linea sia riconosciuta come alimentazione o collegamento corretto;
+- verificare che la linea sia riconosciuta come alimentazione o collegamento
+  corretto;
 - selezionare l'oggetto intelligente, non una semplice linea CAD;
 - evitare entità grafiche duplicate o residue;
+- verificare nome e direzione dei rimandi;
 - rigenerare/verificare i riferimenti dopo modifiche importanti.
 
 Se non è chiaro se la linea sia una alimentazione SPAC o solo grafica CAD,
@@ -60,26 +98,31 @@ marcare il caso come `Da verificare` e testare su un foglio pulito.
 
 ## Lista rimandi usati
 
-Per controllare i rimandi presenti nello schema, usare la funzione che mostra la lista dei numeri usati e filtrare i soli rimandi.
+Per controllare i rimandi presenti nello schema, usare la funzione che mostra la
+lista dei numeri usati e filtrare i soli rimandi.
 
 Questa lista è utile per:
 
 - individuare rimandi duplicati;
 - verificare nomi usati;
 - trovare ripetizioni;
-- controllare riferimenti non più coerenti.
+- controllare riferimenti non più coerenti;
+- individuare rimandi presenti nel progetto ma non più usati nello schema.
 
-Nota: i numeri segnalati come ripetuti devono essere verificati prima di procedere con ulteriori modifiche.
+Nota: i numeri segnalati come ripetuti devono essere verificati prima di
+procedere con ulteriori modifiche.
 
 ## Quando la selezione risulta non valida
 
-Se selezionando una linea il comando segnala selezione non valida, possibili cause:
+Se selezionando una linea il comando segnala selezione non valida, possibili
+cause:
 
 - la linea è solo geometria CAD;
 - l'alimentazione non è stata creata con il comando SPAC corretto;
 - l'oggetto intelligente è stato esploso o alterato;
 - esistono vecchi oggetti sovrapposti;
-- la selezione avviene su un elemento grafico e non sul collegamento riconosciuto.
+- la selezione avviene su un elemento grafico e non sul collegamento
+  riconosciuto.
 
 Diagnosi consigliata:
 
@@ -89,9 +132,14 @@ Diagnosi consigliata:
 4. riprodurre il caso su foglio pulito;
 5. documentare come `Da verificare` se il comportamento non è ripetibile.
 
+Non risolvere il problema disegnando una nuova linea grafica sopra quella
+esistente: prima va chiarito se il collegamento è riconosciuto dalla logica
+SPAC.
+
 ## Cross-reference non aggiornati
 
-Se un cross-reference punta a una posizione dove prima esisteva un collegamento ma ora non più, controllare:
+Se un cross-reference punta a una posizione dove prima esisteva un collegamento
+ma ora non più, controllare:
 
 - vecchi oggetti intelligenti rimasti nel foglio;
 - rimandi non più utilizzati;
@@ -102,6 +150,19 @@ Se un cross-reference punta a una posizione dove prima esisteva un collegamento 
 In questi casi il problema non va corretto spostando manualmente il testo del
 riferimento. Prima verificare se il riferimento è ancora collegato a vecchie
 celle, oggetti residui o rimandi non più utilizzati.
+
+Per un caso ricorrente usare anche
+[Known Issue - Cross-reference obsoleto](known-issues/obsolete-cross-reference.md).
+
+## Matrice diagnostica rimandi
+
+| Sintomo | Prima verifica | Azione consigliata |
+|---|---|---|
+| La linea non viene accettata | Linea CAD o collegamento SPAC | Testare su oggetto riconosciuto |
+| Il rimando punta a una vecchia posizione | Oggetti residui e riferimenti non aggiornati | Pulire residui e rigenerare riferimenti |
+| Compaiono duplicati | Lista rimandi usati | Verificare nomi e direzione |
+| Il testo è corretto ma il riferimento è errato | Dato sorgente del cross-reference | Non correggere solo graficamente |
+| Il comportamento non è ripetibile | Foglio pulito di prova | Marcare come `Da verificare` |
 
 ## Checklist rigenerazione rimandi
 
@@ -122,9 +183,20 @@ Dopo aggiornamento o rigenerazione:
 - testare almeno un caso su foglio pulito se il problema era ricorrente;
 - aprire una known issue se il comportamento si ripete.
 
+## Errori da evitare
+
+- Spostare manualmente il testo del cross-reference senza correggere il dato
+  sorgente.
+- Cancellare solo graficamente un collegamento lasciando oggetti logici nel
+  foglio.
+- Creare rimandi su linee CAD non riconosciute.
+- Duplicare rimandi senza verificare la lista dei rimandi usati.
+- Considerare valida una modifica senza rigenerare o verificare i riferimenti.
+
 ## Eliminare numerazione fili
 
-La funzione di eliminazione numerazione fili rimuove i numeri filo, ma non cancella i fili dallo schema.
+La funzione di eliminazione numerazione fili rimuove i numeri filo, ma non
+cancella i fili dallo schema.
 
 Usarla quando è necessario pulire una numerazione errata prima di rigenerarla.
 
@@ -163,7 +235,8 @@ Durante la gestione morsettiere, verificare:
 - progressione dei morsetti;
 - rappresentazione scelta.
 
-Per creare una nuova morsettiera, usare il menu contestuale della gestione morsettiere e assegnare un nome coerente.
+Per creare una nuova morsettiera, usare il menu contestuale della gestione
+morsettiere e assegnare un nome coerente.
 
 ## Inserimento morsetto
 
@@ -176,7 +249,8 @@ Workflow generale:
 5. verificare il punto di inserimento;
 6. controllare rappresentazione e dati.
 
-Il punto in cui viene selezionato il filo determina il punto di inserimento del morsetto.
+Il punto in cui viene selezionato il filo determina il punto di inserimento del
+morsetto.
 
 ## Rappresentazione morsetti
 
@@ -188,9 +262,12 @@ Sigle operative:
 | `NumO` | Numero filo di uscita dal morsetto |
 | `NumM` | Numero di morsetto |
 
-Per una lettura più chiara dello schema, preferire rappresentazioni che mostrino `NumM` insieme al nome della morsettiera.
+Per una lettura più chiara dello schema, preferire rappresentazioni che
+mostrino `NumM` insieme al nome della morsettiera.
 
-Se sul morsetto compare il numero filo invece del numero morsetto, il problema è probabilmente nella configurazione della rappresentazione grafica o nei dati visualizzati dal simbolo morsetto.
+Se sul morsetto compare il numero filo invece del numero morsetto, il problema
+è probabilmente nella configurazione della rappresentazione grafica o nei dati
+visualizzati dal simbolo morsetto.
 
 ## Diagnostica visualizzazione morsetti
 
@@ -225,7 +302,8 @@ Quando la rappresentazione del morsetto non è corretta:
 
 ## Regola pratica
 
-Non correggere solo il testo visibile se l'oggetto è intelligente. Verificare sempre il dato sorgente e la configurazione grafica che lo mostra.
+Non correggere solo il testo visibile se l'oggetto è intelligente. Verificare
+sempre il dato sorgente e la configurazione grafica che lo mostra.
 
 ## Collegamenti
 
@@ -238,15 +316,18 @@ Non correggere solo il testo visibile se l'oggetto è intelligente. Verificare s
 
 ## Baseline sezione
 
-La sezione rimandi e morsetti è completa come riferimento operativo quando copre:
+La sezione rimandi e morsetti è completa come riferimento operativo quando
+copre:
 
 - principio del cross-reference tra rimandi;
 - direzione coerente arrivo/partenza;
 - aggiornamento dei riferimenti;
 - controllo lista rimandi usati;
 - diagnosi di selezioni non valide;
-- distinzione tra linea grafica, alimentazione SPAC, oggetto intelligente e rimando;
+- distinzione tra linea grafica, alimentazione SPAC, oggetto intelligente e
+  rimando;
 - checklist prima/dopo rigenerazione rimandi;
+- errori da evitare nella correzione dei riferimenti;
 - pulizia numerazione fili;
 - gestione morsettiere e inserimento morsetti;
 - distinzione tra oggetto morsetto, dati sorgente e rappresentazione grafica;
@@ -254,4 +335,5 @@ La sezione rimandi e morsetti è completa come riferimento operativo quando copr
 - diagnostica della visualizzazione morsetti;
 - verifica finale della rappresentazione morsetti.
 
-Nuove anomalie ricorrenti vanno documentate come known issue o playbook dedicato.
+Nuove anomalie ricorrenti vanno documentate come known issue o playbook
+dedicato.
