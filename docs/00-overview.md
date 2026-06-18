@@ -45,6 +45,32 @@ Ogni nuova nota dovrebbe rispettare questa logica:
 4. aggiornare eventuali checklist collegate;
 5. mantenere il linguaggio operativo e diretto.
 
+## Modello documentale
+
+Le pagine non hanno tutte lo stesso ruolo. Prima di aggiungere contenuto,
+scegliere il tipo di pagina più adatto.
+
+| Tipo pagina | Quando usarla | Deve collegare |
+|---|---|---|
+| Pagina operativa | Descrive un'area stabile del lavoro SPAC Start | playbook, quality gate, standard |
+| Playbook | Guida un caso pratico passo-passo | pagina operativa, troubleshooting o known issue |
+| Known issue | Documenta un problema ricorrente e diagnosticabile | playbook di risoluzione e prevenzione |
+| Standard | Fissa una regola riutilizzabile | verifica e impatto operativo |
+| Quality gate | Dice quando una modifica è pronta | comandi di validazione e checklist |
+| Decision log | Registra una scelta già presa | motivazione, impatto e stato |
+
+```mermaid
+flowchart LR
+    A[Problema operativo] --> B{Ricorrente?}
+    B -->|No| C[Pagina operativa]
+    B -->|Sì| D[Playbook]
+    D --> E{Anomalia stabile?}
+    E -->|Sì| F[Known issue]
+    E -->|No| G[Caso pratico]
+    C --> H[Standard o quality gate]
+    F --> H
+```
+
 ## Convenzione documentale
 
 Usare preferibilmente file Markdown brevi, con sezioni chiare e titoli descrittivi.

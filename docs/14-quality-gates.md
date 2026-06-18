@@ -36,6 +36,18 @@ I controlli hanno questo scopo:
 - `yamllint mkdocs.yml .github/workflows` verifica la sintassi e lo stile dei
   file YAML principali.
 
+Processo consigliato:
+
+```mermaid
+flowchart LR
+    A[Modifica documentale] --> B[Build MkDocs]
+    B --> C[Markdown lint]
+    C --> D[YAML lint]
+    D --> E[git diff --check]
+    E --> F[Commit focalizzato]
+    F --> G[Push e deploy GitHub Pages]
+```
+
 Una modifica è pronta per il push quando:
 
 - i tre controlli terminano senza errori;

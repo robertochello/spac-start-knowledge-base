@@ -16,6 +16,20 @@ flowchart LR
     E --> I[PINA/PINB]
 ```
 
+## Distinzione operativa
+
+Molti problemi nascono quando un elemento visibile viene scambiato per un dato
+logico SPAC. Usare questa tabella prima di correggere graficamente un oggetto.
+
+| Elemento | È | Non è | Dove approfondire |
+|---|---|---|---|
+| Grafica CAD | geometria visibile nel disegno | un collegamento logico SPAC | [Workflow CAD 2D](02-cad-workflow.md) |
+| Blocco CAD | gruppo riutilizzabile di entità | garanzia di comportamento elettrico | [Simboli custom](03-custom-symbols.md) |
+| Simbolo SPAC intelligente | oggetto riconosciuto con dati e relazioni | solo una forma grafica | [Attributi e pinatura](04-attributes-and-pinning.md) |
+| Attributi | dati associati al simbolo | testo libero senza effetto operativo | [Checklist validazione simbolo](10-symbol-validation-checklist.md) |
+| Dati sorgente | informazione usata da report, rimandi o rappresentazioni | necessariamente il testo visibile nel foglio | [Rimandi e morsetti](06-cross-references-terminals.md) |
+| Rappresentazione | modo in cui un dato viene mostrato | prova che il dato sorgente sia corretto | [Verificare rappresentazione morsetti](playbooks/terminal-representation.md) |
+
 ## Grafica CAD
 
 È semplice geometria. Può essere utile per disegno 2D, layout, cornici o elementi non elettrici, ma non ha automaticamente logica SPAC.

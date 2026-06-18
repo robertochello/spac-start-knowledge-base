@@ -38,6 +38,34 @@ Knowledge base operativa per **SPAC Start Impianti**. Serve per trovare rapidame
 | Diagnosi | troubleshooting, known issues, casi pratici |
 | Governance | standard, decisioni, quality gates, roadmap |
 
+## Flusso operativo
+
+Il sito segue il flusso reale di lavoro: prima si prepara il progetto, poi si
+modellano simboli e collegamenti, quindi si verificano morsetti, rimandi,
+materiali e report.
+
+```mermaid
+flowchart LR
+    A[Progetto] --> B[Simboli]
+    B --> C[Collegamenti]
+    C --> D[Morsetti e rimandi]
+    B --> E[Materiali]
+    E --> F[Report e distinte]
+    D --> G[Verifica]
+    F --> G
+    G --> H[Standard e quality gate]
+```
+
+| Se stai lavorando su... | Vai a |
+|---|---|
+| impostazione del progetto | [Libreria custom](15-custom-library.md) e [Template progetto](16-project-template.md) |
+| schema unifilare o multifilare | [Schema unifilare](17-unifilare.md) o [Multifilare](09-multifilare.md) |
+| morsetti, fili o rimandi | [Rimandi e morsetti](06-cross-references-terminals.md) |
+| simboli custom e attributi | [Simboli custom](03-custom-symbols.md) e [Attributi e pinatura](04-attributes-and-pinning.md) |
+| materiali, cavi o file scaricabili | [Archivi materiali custom](21-material-archives.md), [Archivio Cavi DbCables](25-cable-archive-dbcables.md) e [Download](downloads.md) |
+| anomalie ricorrenti | [Troubleshooting](07-troubleshooting.md) e [Known Issues](known-issues/index.md) |
+| rilascio o manutenzione | [Quality gates](14-quality-gates.md) e [Decision log](11-decision-log.md) |
+
 ## Uso consigliato
 
 1. Parti dal problema operativo.
@@ -46,23 +74,23 @@ Knowledge base operativa per **SPAC Start Impianti**. Serve per trovare rapidame
 4. Verifica il risultato in un progetto di prova.
 5. Aggiorna standard, decision log o casi pratici se emerge una regola riutilizzabile.
 
-??? info "Stato attuale"
+## Stato attuale
 
-    | Area | Stato |
-    |---|---|
-    | Base documentale | Baseline completata |
-    | Simboli custom | Baseline completata |
-    | Attributi e pinatura | Baseline completata |
-    | Workflow CAD | Baseline completata |
-    | Rimandi e morsetti | Baseline completata |
-    | Materiali custom | Baseline completata |
-    | Archivio Cavi DbCables | Verificato su SPAC Automazione e SPAC Start |
-    | Multifilare | Baseline operativa completata |
-    | Governance documentale | Baseline completata |
+| Area | Stato |
+|---|---|
+| Base documentale | Baseline completata |
+| Simboli custom | Baseline completata |
+| Attributi e pinatura | Baseline completata |
+| Workflow CAD | Baseline completata |
+| Rimandi e morsetti | Baseline completata |
+| Materiali custom | Baseline completata |
+| Archivio Cavi DbCables | Verificato su SPAC Automazione e SPAC Start |
+| Multifilare | Baseline operativa completata |
+| Governance documentale | Baseline completata |
 
-??? note "Estensioni future"
+## Estensioni future
 
-    1. Aggiungere casi pratici multifilare quando emergono esempi riutilizzabili.
-    2. Aggiungere screenshot sanitizzati solo dove servono.
-    3. Collegare ogni caso pratico a una decisione o a uno standard.
-    4. Mantenere navigazione e Home pulite.
+1. Aggiungere casi pratici multifilare quando emergono esempi riutilizzabili.
+2. Aggiungere screenshot sanitizzati solo dove servono.
+3. Collegare ogni caso pratico a una decisione o a uno standard.
+4. Mantenere navigazione e Home pulite.

@@ -32,6 +32,17 @@ Prima di diagnosticare un rimando distinguere questi livelli.
 | Rimando | Simbolo o riferimento che collega logicamente punti dello schema | Riferimento duplicato, non aggiornato o diretto a posizione vecchia |
 | Cross-reference | Testo o riferimento generato dalla logica SPAC | Testo corretto graficamente ma collegato al dato sbagliato |
 
+```mermaid
+flowchart LR
+    A[Elemento selezionato] --> B{Riconosciuto da SPAC?}
+    B -->|No| C[Verificare linea CAD o oggetto residuo]
+    B -->|Sì| D[Controllare nome e direzione]
+    D --> E[Aggiornare o verificare cross-reference]
+    E --> F{Riferimento corretto?}
+    F -->|No| G[Cercare residui o rimandi non usati]
+    F -->|Sì| H[Verifica finale su foglio]
+```
+
 Regola: il rimando deve appoggiarsi a un collegamento o oggetto riconosciuto,
 non alla sola geometria visibile.
 

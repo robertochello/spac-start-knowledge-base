@@ -2,6 +2,18 @@
 
 Questa sezione raccoglie problemi ricorrenti e checklist diagnostiche per SPAC Start.
 
+## Diagnosi rapida
+
+| Sintomo | Prima verifica | Pagina o playbook |
+|---|---|---|
+| un simbolo non si collega correttamente | pinatura, attributi e oggetti residui | [Diagnosticare pin non agganciato](playbooks/diagnose-pin-not-snapping.md) |
+| un morsetto mostra un dato diverso da quello atteso | dato sorgente e rappresentazione grafica | [Verificare rappresentazione morsetti](playbooks/terminal-representation.md) |
+| un rimando non accetta la selezione | linea CAD o collegamento SPAC riconosciuto | [Diagnosticare rimandi alimentazione](playbooks/power-reference-diagnostic.md) |
+| un cross-reference punta a una posizione vecchia | oggetti residui e riferimenti non rigenerati | [Known Issue - Cross-reference obsoleto](known-issues/obsolete-cross-reference.md) |
+| un materiale manca o risulta duplicato | punto di associazione e report | [Associare materiali](playbooks/material-association.md) |
+| `DbCables.db` non risulta allineato | allineamento versione librerie e riapertura SPAC | [Known Issue DbCables](known-issues/dbcables-version-mismatch.md) |
+| un file scaricabile non è affidabile | sanitizzazione, versione, hash e link | [Download](downloads.md) e [Quality gates](14-quality-gates.md) |
+
 ## Menu o librerie non visibili
 
 Sintomi:

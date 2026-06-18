@@ -24,6 +24,21 @@ Usare questa checklist quando:
 - una procedura deve valere sia in SPAC Automazione sia in SPAC Start;
 - un archivio deve essere usato in commessa reale.
 
+## Flusso di controllo
+
+```mermaid
+flowchart LR
+    A[Backup] --> B[File modificato]
+    B --> C[Controllo dati]
+    C --> D[Test in SPAC]
+    D --> E[Report o uso operativo]
+    E --> F[Rollback verificabile]
+    F --> G[Rilascio o Da verificare]
+```
+
+Il rilascio è possibile solo se ogni passaggio ha un esito documentabile. In
+caso contrario lo stato resta `Da verificare`.
+
 ## Controlli prima dell'avvio
 
 | Controllo | Esito atteso |

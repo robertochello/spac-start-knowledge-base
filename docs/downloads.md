@@ -16,6 +16,16 @@ Prima di aggiungere un file:
 - aggiornare questa pagina;
 - aggiornare il changelog se il file diventa riferimento stabile.
 
+## Rischi da controllare
+
+| Rischio | Controllo minimo | Dove verificare |
+|---|---|---|
+| dati cliente o commessa nel file | aprire il file e verificare contenuto e metadati | questa pagina |
+| file non tracciato o non versionato | controllare nome, release, data e stato | [Quality gates](14-quality-gates.md) |
+| archivio materiali con codici fittizi | verificare codici catalogo reali e assenza di iniziali personali | [Archivi materiali custom](21-material-archives.md) |
+| `DbCables.db` non coerente | eseguire back-check e test su cavo reale | [Archivio Cavi DbCables](25-cable-archive-dbcables.md) |
+| link rotto nel sito pubblicato | eseguire build MkDocs e verificare link relativo | [Back-check e controlli incrociati](26-back-check-controls.md) |
+
 ## Cartelle pubbliche
 
 I file devono essere inseriti nelle cartelle:

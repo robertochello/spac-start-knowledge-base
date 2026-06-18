@@ -10,6 +10,16 @@ Gestire materiali custom in modo ordinato, evitando duplicazioni, import non con
 
 La guida non sostituisce la procedura ufficiale del software: definisce un metodo operativo sicuro da seguire prima di importare o consolidare archivi materiali.
 
+## Quando usarla
+
+| Caso | Azione consigliata | Rimando |
+|---|---|---|
+| devi creare un archivio materiali custom | seguire workflow, backup, normalizzazione e import di prova | questa pagina |
+| devi associare un materiale a un simbolo | verificare simbolo riconosciuto, punto di associazione e report | [Associare materiali](playbooks/material-association.md) |
+| devi pubblicare un file scaricabile | controllare sanitizzazione, metadati e link | [Download](downloads.md) |
+| devi validare un archivio prima del riuso | applicare controlli incrociati e quality gate | [Back-check e controlli incrociati](26-back-check-controls.md) |
+| devi fissare una regola stabile sui materiali | aggiornare lo standard o il decision log | [Standard materiali](standards/materials.md) |
+
 ## Principio operativo
 
 Un archivio materiali non deve essere importato direttamente in ambiente operativo senza:

@@ -2,6 +2,28 @@
 
 Questa sezione raccoglie le procedure operative per impostare e sviluppare uno schema unifilare in SPAC Start.
 
+## Flusso unifilare
+
+Il flusso unifilare deve mantenere separati disegno, riconoscimento SPAC,
+identificazione delle linee e verifica finale.
+
+```mermaid
+flowchart LR
+    A[Preparazione pagina] --> B[Linee e simboli]
+    B --> C[Identificazione linee]
+    C --> D[Numerazione fili]
+    D --> E[Materiali]
+    E --> F[Report e controlli]
+```
+
+| Fase | Verifica minima | Rimando |
+|---|---|---|
+| preparazione pagina | griglia, snap e scala coerenti | [Workflow CAD 2D](02-cad-workflow.md) |
+| linee e simboli | elementi riconosciuti quando serve logica SPAC | [Concetti SPAC](concepts.md) |
+| identificazione linee | alimentazioni e collegamenti nominati in modo coerente | [Rimandi e morsetti](06-cross-references-terminals.md) |
+| numerazione fili | numeri leggibili e rigenerabili | [Numerazione e identificazione fili](18-wire-numbering.md) |
+| materiali e report | materiali associati e distinta verificata | [Associare materiali](playbooks/material-association.md) |
+
 ## Preparazione
 
 Prima di iniziare:

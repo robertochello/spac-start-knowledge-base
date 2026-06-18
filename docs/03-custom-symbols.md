@@ -27,6 +27,19 @@ Un simbolo custom utile deve essere riconoscibile e gestibile come componente SP
 | Test | Inserimento, collegamenti, materiale e report |
 | Inventario | Stato e note operative documentate |
 
+## Quando usare le pagine collegate
+
+| Necessità | Pagina o playbook |
+|---|---|
+| capire il ruolo di grafica, blocco e simbolo intelligente | [Concetti SPAC](concepts.md) |
+| creare un simbolo con procedura guidata | [Creare un simbolo custom](playbooks/create-custom-symbol.md) |
+| impostare attributi, pinatura e relazione PINA/PINB | [Attributi e pinatura](04-attributes-and-pinning.md) |
+| applicare una convenzione di nome stabile | [Nomenclatura simboli](19-symbol-naming.md) |
+| validare aggancio, attributi e riuso | [Checklist validazione simbolo](10-symbol-validation-checklist.md) |
+| diagnosticare pin che non agganciano | [Diagnosticare pin non agganciato](playbooks/diagnose-pin-not-snapping.md) |
+| associare un materiale al simbolo | [Associare materiali](playbooks/material-association.md) |
+| decidere se il simbolo è pronto per standard o download | [Quality gates](14-quality-gates.md) |
+
 ## Creazione elemento grafico
 
 Questa procedura serve quando si parte da:

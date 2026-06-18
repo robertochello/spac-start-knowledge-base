@@ -18,6 +18,16 @@ DbCables.db
 
 che è l'archivio reale utilizzato dalla finestra avanzata **Archivio Cavi**.
 
+## Quando usarla
+
+| Caso | Azione consigliata | Rimando |
+|---|---|---|
+| devi capire quale archivio cavi usa SPAC | distinguere `L_CAVI.txt` e `DbCables.db` | questa pagina |
+| devi sostituire `DbCables.db` | usare backup, sostituzione controllata, allineamento e riavvio | [Aggiornare Archivio Cavi DbCables](playbooks/update-dbcables-archive.md) |
+| SPAC segnala versione librerie non congruente | seguire allineamento versione librerie e verifica dopo riapertura | [Known Issue DbCables](known-issues/dbcables-version-mismatch.md) |
+| devi pubblicare un archivio cavi | verificare sanitizzazione, hash, versione e download | [Download](downloads.md) |
+| devi rilasciare l'archivio per uso reale | eseguire quality gate, back-check e test su cavo reale | [Quality gates](14-quality-gates.md) |
+
 ## Compatibilità verificata
 
 La procedura di aggiornamento tramite sostituzione controllata del file `DbCables.db` è stata testata con esito positivo su:
