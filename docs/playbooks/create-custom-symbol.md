@@ -133,8 +133,10 @@ CORRISPROP
 
 1. Fai **doppio click sul simbolo**.
 2. Nel riquadro **Materiali**, fai **tasto destro**.
-3. Procedi con l'associazione del materiale prevista dalla libreria.
-4. Verifica poi distinta/report per evitare duplicazioni.
+3. Clicca **Avvio Archivio Materiali (DbCenter)**.
+4. In DbCenter seleziona il materiale corretto.
+5. Conferma l'associazione.
+6. Verifica poi distinta/report per evitare duplicazioni.
 
 Per il flusso completo usa [Associare materiali](material-association.md).
 
@@ -163,16 +165,17 @@ Il simbolo è pronto solo se:
 
 ## Comandi usati in questo playbook
 
-| Operazione | Comando |
+| Operazione | Comando / percorso |
 |---|---|
 | Inserire DWG/blocco | `_INSER` |
 | Esplodere geometria | `ESPLODI` |
 | Creare attributo | `ATTDEF` |
-| Salvare DWG simbolo | `MBLOCCO` |
+| Salvare DWG simbolo | `MBLOCCO` → **Origine: Oggetti** |
 | Creare anteprima SLD | `_MSLIDE` |
 | Modificare attributi istanza | `EDITATT` |
 | Aprire proprietà | `PROPRIETA` / `CTRL+1` |
 | Copiare proprietà | `CORRISPROP` |
+| Associare materiale | **doppio click → Materiali → tasto destro → Avvio Archivio Materiali (DbCenter)** |
 
 ## Collegamenti
 
