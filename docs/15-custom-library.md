@@ -1,47 +1,85 @@
 # Libreria custom
 
-Questa sezione raccoglie le regole operative per installare, organizzare e mantenere la libreria custom SPAC.
+Questa sezione raccoglie le regole operative per installare, aprire, organizzare e mantenere la libreria custom SPAC.
 
-## In questa pagina impari
+## Installazione della libreria `_CUSTOM`
 
-- dove collocare la libreria custom;
-- come distinguere categorie stabili e area temporanea;
-- quali controlli fare prima di aggiungere simboli;
-- quali pagine usare per nome, attributi e validazione.
-
-## Obiettivo
-
-Mantenere la libreria ordinata, stabile e facilmente consultabile nel tempo.
-
-## Struttura generale
-
-La libreria custom deve essere organizzata in una cartella dedicata `_CUSTOM` all'interno della libreria BLK di SPAC Start.
-
-Path operativo di riferimento:
+Path di installazione:
 
 ```text
 C:\SPAC Start 26\Librerie\Blk\_CUSTOM
 ```
 
-La cartella deve contenere categorie funzionali stabili e una sezione documentale separata.
+Procedura:
 
-## Installazione operativa
+1. Chiudi **SPAC Start 26**.
+2. Apri Esplora file.
+3. Vai in:
 
-Procedura consigliata:
+   ```text
+   C:\SPAC Start 26\Librerie\Blk
+   ```
 
-1. Chiudere SPAC Start prima di intervenire sulla libreria.
-2. Copiare la cartella `_CUSTOM` fornita.
-3. Inserirla nella libreria BLK del software.
-4. Verificare che siano presenti categorie e documentazione.
-5. Riavviare SPAC Start.
-6. Verificare la visibilità dei simboli nella libreria.
+4. Copia qui la cartella `_CUSTOM` completa.
+5. Verifica che il risultato sia:
 
-Se la cartella è già presente, verificare il contenuto prima di sovrascrivere file esistenti.
+   ```text
+   C:\SPAC Start 26\Librerie\Blk\_CUSTOM
+   ```
 
-!!! warning "Prima di sovrascrivere"
+6. Verifica che dentro `_CUSTOM` siano presenti le categorie della libreria e la cartella `Documentazione`.
+7. Riavvia **SPAC Start 26**.
 
-    Non sostituire una libreria esistente senza backup e senza sapere quali
-    simboli, anteprime e inventari contiene.
+Se `_CUSTOM` è già presente, non sovrascriverla alla cieca: confronta prima il contenuto.
+
+## Aprire la libreria simboli
+
+Il comando verificato da riga comando è:
+
+```text
+SP_XML_MENU
+```
+
+Risultato atteso: apertura della libreria simboli SPAC.
+
+## Creare una scorciatoia per aprire la libreria
+
+1. Nella riga comando digita:
+
+   ```text
+   CUI
+   ```
+
+   oppure:
+
+   ```text
+   _CUI
+   ```
+
+2. Nella finestra **Personalizza interfaccia utente**, individua **Elenco comandi**.
+3. Tasto destro in **Elenco comandi** → **Nuovo comando**.
+4. Assegna il nome `Libreria simboli`.
+5. Nel campo **Macro** inserisci:
+
+   ```text
+   ^C^CSP_XML_MENU;
+   ```
+
+6. Nell'albero di personalizzazione apri:
+
+   ```text
+   Tasti di scelta rapida → Tasti di scelta rapida
+   ```
+
+7. Trascina il nuovo comando dentro **Tasti di scelta rapida**.
+8. Seleziona il comando.
+9. Nel campo **Accesso-Tasto/i** imposta la combinazione desiderata, ad esempio:
+
+   ```text
+   CTRL+SHIFT+L
+   ```
+
+10. Clicca **Applica** → **OK**.
 
 ## Categorie libreria
 
@@ -63,32 +101,34 @@ Se la cartella è già presente, verificare il contenuto prima di sovrascrivere 
 
 ## Regole di classificazione
 
-- I simboli che iniziano con `INT_` devono stare in `10_INTERRUTTORI`.
-- La strumentazione deve stare in `09_STRUMENTAZIONE`.
-- Le protezioni non riconducibili a interruttori o sezionatori possono stare in `02_PROTEZIONI`.
-- `99_GENERICI` deve essere usata solo come area temporanea.
+- simboli `INT_*` → `10_INTERRUTTORI`;
+- strumentazione → `09_STRUMENTAZIONE`;
+- protezioni non riconducibili a interruttori/sezionatori → `02_PROTEZIONI`;
+- `99_GENERICI` solo temporanea.
 
-## Inventario
+## Verifica dopo l'installazione
 
-L'inventario completo dei simboli custom deve restare separato dal README e deve essere gestito con il template dedicato.
+1. Avvia SPAC Start 26.
+2. Digita `SP_XML_MENU`.
+3. Verifica che `_CUSTOM` sia raggiungibile nella libreria simboli.
+4. Apri almeno una categoria.
+5. Inserisci un simbolo in un progetto di prova.
+6. Se il simbolo non compare, verifica prima il path fisico della cartella e poi la configurazione della libreria.
 
-## Pagine correlate
+## Prima di aggiungere un simbolo
 
-| Se devi... | Vai a |
-|---|---|
-| creare o pulire un simbolo | [Simboli custom](03-custom-symbols.md) |
-| impostare attributi e pinatura | [Attributi e pinatura](04-attributes-and-pinning.md) |
-| scegliere il nome del file | [Nomenclatura simboli](19-symbol-naming.md) |
-| validare il simbolo prima del riuso | [Checklist validazione simbolo](10-symbol-validation-checklist.md) |
+- verifica categoria;
+- verifica nome secondo convenzione;
+- verifica `.dwg`;
+- verifica `.sld` con stesso nome base;
+- verifica attributi con `EDITATT` se il simbolo è intelligente;
+- verifica pinatura se presente;
+- aggiorna inventario.
 
-## Checklist manutenzione libreria
+## Collegamenti
 
-Prima di aggiungere un simbolo alla libreria:
-
-- verificare categoria corretta;
-- verificare nome secondo convenzione;
-- verificare file DWG e anteprima;
-- verificare attributi se simbolo intelligente;
-- verificare eventuale pinatura;
-- aggiornare inventario;
-- aggiornare changelog se il simbolo diventa standard.
+- [Comandi e percorsi esatti](command-reference.md)
+- [Simboli custom](03-custom-symbols.md)
+- [Attributi e pinatura](04-attributes-and-pinning.md)
+- [Nomenclatura simboli](19-symbol-naming.md)
+- [Checklist validazione simbolo](10-symbol-validation-checklist.md)
