@@ -1,58 +1,91 @@
 # Interfaccia, menu e comandi
 
-Questa sezione raccoglie note operative sulla gestione dell'interfaccia SPAC Start e dei comandi utili per ripristinare o velocizzare l'ambiente di lavoro.
+Questa sezione raccoglie i comandi effettivi già consolidati per gestire l'interfaccia SPAC Start.
 
-## Ripristino menu
+## Ripristinare o ricaricare i menu
 
-Se i menu non sono visibili o l'ambiente risulta alterato, usare il comando CAD di gestione menu:
+Nella riga comando digita:
 
 ```text
 _MENU
 ```
 
-Questo comando permette di ricaricare o ripristinare i menu dell'ambiente CAD/SPAC.
+Usa questo comando quando i menu CAD/SPAC non sono visibili o l'ambiente risulta alterato.
 
-## Libreria simboli SPAC
+!!! warning "Scelta del file/menu"
 
-Per aprire la libreria simboli/menu XML SPAC usare:
+    Il file/menu specifico da caricare dipende dalla configurazione installata. Se non è già noto nell'ambiente in uso, non indicare un nome file ipotetico nella documentazione.
+
+## Aprire la libreria simboli
+
+Nella riga comando digita:
 
 ```text
 SP_XML_MENU
 ```
 
-Questo comando apre la libreria simboli generica.
+Risultato atteso: apertura della libreria simboli SPAC.
 
-## Shortcut da tastiera per libreria simboli
+## Creare una shortcut per la libreria simboli
 
-Per creare una scorciatoia da tastiera:
+1. Nella riga comando digita:
 
-1. aprire la personalizzazione interfaccia con:
+   ```text
+   CUI
+   ```
+
+   oppure:
 
    ```text
    _CUI
    ```
 
-2. creare un nuovo comando nella Command List;
-3. associare al comando l'apertura della libreria simboli SPAC;
-4. trascinare il comando in Keyboard Shortcuts / Shortcut Keys;
-5. assegnare una combinazione, ad esempio CTRL + SHIFT + L;
-6. confermare con Apply/OK.
+2. Nella finestra **Personalizza interfaccia utente**, individua **Elenco comandi**.
+3. Tasto destro in **Elenco comandi** → **Nuovo comando**.
+4. Imposta un nome, ad esempio `Libreria simboli`.
+5. Nel campo **Macro** inserisci:
 
-## Macro contestuali
+   ```text
+   ^C^CSP_XML_MENU;
+   ```
 
-Per richiamare sezioni specifiche della libreria simboli, usare macro contestuali basate sul menu desiderato.
+6. Nell'albero vai in:
 
-La logica generale è:
+   ```text
+   Tasti di scelta rapida → Tasti di scelta rapida
+   ```
 
-```text
-richiamo menu contestuale + apertura libreria simboli
-```
+7. Trascina il nuovo comando in **Tasti di scelta rapida**.
+8. Seleziona il comando.
+9. Nel campo **Accesso-Tasto/i** imposta, ad esempio:
 
-Annotare sempre l'identificativo del menu richiamato e testare la macro su un progetto non critico prima di usarla in modo stabile.
+   ```text
+   CTRL+SHIFT+L
+   ```
 
-## Note operative
+10. Clicca **Applica** → **OK**.
 
-- Mantenere gli shortcut solo per comandi realmente ricorrenti.
-- Evitare macro troppo specifiche se non sono documentate.
-- Annotare sempre il comando reale usato, non solo il nome descrittivo.
-- Quando un comando viene testato, riportarlo nella knowledge base con eventuali limitazioni.
+## Verifica della shortcut
+
+1. Chiudi la finestra **Personalizza interfaccia utente**.
+2. Premi la combinazione assegnata.
+3. Verifica che si apra la stessa libreria ottenuta digitando `SP_XML_MENU`.
+
+## Regola sulle macro contestuali
+
+Le macro che richiamano sezioni specifiche della libreria vanno documentate solo dopo verifica reale.
+
+Per ogni macro consolidata devono essere riportati:
+
+- testo completo della macro;
+- nome del comando creato;
+- percorso dentro **Personalizza interfaccia utente**;
+- shortcut assegnata;
+- risultato atteso.
+
+Se manca uno di questi dati, segnare il passaggio `Da verificare`.
+
+## Riferimenti
+
+- [Comandi e click esatti](command-reference.md)
+- [Libreria custom](15-custom-library.md)
