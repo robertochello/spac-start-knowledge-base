@@ -1,26 +1,44 @@
-# SPAC Start Knowledge Base
+<div class="kb-hero" markdown>
 
-Guida operativa per **SPAC Start 26 / SPAC Start Impianti**. Parti da quello che devi fare: non è necessario leggere il manuale in ordine.
+<span class="kb-eyebrow">SPAC START 26 · KNOWLEDGE BASE</span>
 
-<div class="home-grid" markdown>
+# Lavora in SPAC senza cercare a caso
 
-[**Voglio sapere cosa cliccare**<br>Comandi reali, finestre, pulsanti e percorsi menu.](command-reference.md){ .home-card }
+Procedure operative con **comandi reali, nomi esatti delle finestre e percorsi da cliccare**. Parti dall'attività che devi svolgere oppure dal problema che hai davanti.
 
-[**Sto iniziando un progetto**<br>Template, pagine standard, cartiglio e libreria.](16-project-template.md){ .home-card }
+<div class="hero-actions" markdown>
 
-[**Sto lavorando in unifilare**<br>Disegno Unifilare, materiali, linee e numerazione.](17-unifilare.md){ .home-card }
-
-[**Sto lavorando in multifilare**<br>Rimandi, cross-reference, morsetti e accessori.](09-multifilare.md){ .home-card }
-
-[**Sto creando un simbolo**<br>DWG, attributi, pinatura, SLD e test.](playbooks/create-custom-symbol.md){ .home-card }
-
-[**Ho un problema**<br>Parti dal sintomo e dal primo comando da provare.](07-troubleshooting.md){ .home-card }
+[Comandi e click esatti](command-reference.md){ .md-button .md-button--primary }
+[Scarica archivi](downloads.md){ .md-button }
+[Diagnosi rapida](07-troubleshooting.md){ .md-button }
 
 </div>
 
-!!! important "Regola della guida"
+</div>
 
-    Se un nome è stato verificato in SPAC Start 26, viene scritto **esattamente come compare nell'interfaccia**. Se non è verificato, il punto è marcato **Da verificare** invece di inventare un comando plausibile.
+<div class="home-grid" markdown>
+
+[**Comandi e click esatti**<br>Cheat sheet da tenere aperto mentre lavori: menu, comandi, pulsanti e valori.](command-reference.md){ .home-card }
+
+[**Prepara un progetto**<br>Template, pagine standard, cartiglio, riferimenti DWG e libreria custom.](16-project-template.md){ .home-card }
+
+[**Schema unifilare**<br>Disegno Unifilare, ingresso linea, materiali, identificatori e numerazione.](17-unifilare.md){ .home-card }
+
+[**Schema multifilare**<br>Rimandi, cross-reference, morsetti, accessori e fili.](09-multifilare.md){ .home-card }
+
+[**Crea o correggi un simbolo**<br>DWG, attributi, pinatura, punto base, SLD, materiale e validazione.](playbooks/create-custom-symbol.md){ .home-card }
+
+[**Scarica archivi**<br>Archivio materiali ABB, archivio custom e futura area DbCables.](downloads.md){ .home-card }
+
+[**Risolvi un problema**<br>Parti dal sintomo: pin, rimandi, morsetti, layer, immagini, materiali o cavi.](07-troubleshooting.md){ .home-card }
+
+[**Non sai dove andare?**<br>Apri l'indice per attività e scegli il caso più vicino a quello che devi fare.](00-how-to-use.md){ .home-card }
+
+</div>
+
+!!! important "Come è scritta questa guida"
+
+    Quando un nome è stato verificato in SPAC Start 26 viene riportato **esattamente come compare nell'interfaccia**. Se non è stato verificato, il punto è marcato **Da verificare**: non vengono inventati comandi o pulsanti.
 
 ## Operazioni frequenti
 
@@ -41,23 +59,7 @@ Guida operativa per **SPAC Start 26 / SPAC Start Impianti**. Parti da quello che
 | capire perché un layer non si elimina | `PURGE → Trova elementi non eliminabili` |
 | ripristinare un'immagine | **Modifica/Inserisci → Gestioni immagini → Sfoglia → Salva percorso** |
 
-Per tutti i dettagli: **[Comandi e click esatti](command-reference.md)**.
-
-## Se non sai quale pagina aprire
-
-| Caso | Vai a |
-|---|---|
-| libreria `_CUSTOM`, setup iniziale | [Libreria custom](15-custom-library.md) |
-| struttura nuovo progetto | [Template progetto](16-project-template.md) |
-| schema unifilare | [Schema unifilare](17-unifilare.md) |
-| schema multifilare | [Multifilare](09-multifilare.md) |
-| rimandi, cross-reference, morsetti | [Rimandi e morsetti](06-cross-references-terminals.md) |
-| simboli custom | [Creare un simbolo custom](playbooks/create-custom-symbol.md) |
-| `PRES`, `PINA`, `PINB` | [Attributi e pinatura](04-attributes-and-pinning.md) |
-| materiali | [Associare materiali](playbooks/material-association.md) |
-| archivio cavi | [Archivio Cavi DbCables](25-cable-archive-dbcables.md) |
-| problema non chiaro | [Troubleshooting](07-troubleshooting.md) |
-| indice per attività | [Guida pratica](00-how-to-use.md) |
+Per l'elenco completo usa **[Comandi e click esatti](command-reference.md)**.
 
 ## Se hai già il sintomo davanti
 
@@ -70,14 +72,16 @@ Per tutti i dettagli: **[Comandi e click esatti](command-reference.md)**.
 | materiale manca/duplica | **Materiali → Avvio Archivio Materiali (DbCenter)** | [Materiali](playbooks/material-association.md) |
 | layer non eliminabile | `PURGE → Trova elementi non eliminabili` | [Oggetti residui](playbooks/clean-residual-objects.md) |
 | immagine mancante | **Gestioni immagini → Sfoglia → Salva percorso** | [Immagini](05-pages-titleblocks-images.md) |
+| archivio cavi non allineato | verifica `DbCables.db` e versione librerie | [DbCables](known-issues/dbcables-version-mismatch.md) |
 
-## Percorso consigliato per una commessa
+## Flusso di lavoro consigliato
 
-1. **Setup** — `_CUSTOM`, progetto, cartiglio, pagine standard.
-2. **Schema** — unifilare/multifilare con oggetti SPAC corretti.
+1. **Setup** — `_CUSTOM`, progetto, cartiglio e pagine standard.
+2. **Schema** — unifilare o multifilare usando oggetti SPAC coerenti.
 3. **Dati** — attributi, fili, rimandi, morsetti, materiali e cavi.
-4. **Verifica** — report, distinta, cross-reference, checklist.
+4. **Verifica** — distinta, report, cross-reference e checklist.
+5. **Condivisione** — pubblica solo archivi sanitizzati nella sezione [Download](downloads.md).
 
-!!! note "Manuale completo"
+!!! note "Manuale consolidato"
 
-    La [Guida operativa completa](guida-operativa-completa.md) resta utile per ricerca testuale e storico consolidato. Nel lavoro quotidiano usa le pagine operative sopra: sono quelle che vengono mantenute con i click esatti.
+    La [Guida operativa consolidata](guida-operativa-completa.md) è una vista unica e sanitizzata. Per il lavoro quotidiano usa le pagine specialistiche: sono quelle mantenute con il massimo dettaglio operativo.
