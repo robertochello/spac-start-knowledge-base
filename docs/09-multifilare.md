@@ -1,254 +1,157 @@
 # Multifilare
 
-Questa pagina orienta il lavoro in ambiente multifilare SPAC Start e rimanda
-alle procedure specialistiche già presenti nella knowledge base.
+Questa pagina raccoglie le operazioni multifilari già verificate in SPAC Start 26. Dove il comando o la voce di menu è nota viene riportata con il **nome esatto**.
 
-Stato: base operativa presente, da consolidare con casi reali riutilizzabili.
+## Lista completa dei numeri usati
 
-## In questa pagina impari
+Per visualizzare la lista dei numeri già presenti nello schema usa il percorso:
 
-- come leggere il multifilare come insieme di oggetti, dati e rappresentazioni;
-- quando passare ai playbook su accessori, morsetti, rimandi o materiali;
-- quali controlli fare prima di validare report, distinta o cross-reference;
-- quando marcare un comportamento come `Da verificare`.
-
-## Obiettivo
-
-Nel multifilare il disegno non deve essere trattato come sola grafica. Ogni
-elemento può avere significato elettrico, attributi, relazioni, riferimenti e
-rappresentazioni.
-
-L'obiettivo è mantenere chiara la relazione tra:
-
-- componente principale;
-- elementi associati;
-- collegamenti;
-- fili e numerazioni;
-- morsetti;
-- rimandi;
-- materiale;
-- rappresentazione grafica.
-
-## Quando usarla
-
-Usare questa pagina quando serve impostare o verificare una parte multifilare
-prima di entrare nei dettagli operativi.
-
-Per procedure specifiche usare i playbook collegati:
-
-| Necessità | Riferimento |
-|---|---|
-| Accessori, contatti o bobine associati a un componente | [Gestire accessori e bobine](playbooks/manage-accessories-and-coils.md) |
-| Morsetto che mostra un dato non atteso | [Verificare rappresentazione morsetti](playbooks/terminal-representation.md) |
-| Rimando non accettato o riferimento non coerente | [Diagnosticare rimandi alimentazione](playbooks/power-reference-diagnostic.md) |
-| Materiale da associare a componente o accessorio | [Associare materiali](playbooks/material-association.md) |
-| Cross-reference verso posizione non valida | [Known Issue - Cross-reference obsoleto](known-issues/obsolete-cross-reference.md) |
-
-## Quando non usarla
-
-Non usare questa pagina come guida completa per correggere un singolo sintomo.
-Se il problema è già chiaro, aprire direttamente il playbook o la known issue
-correlata.
-
-## Principio operativo
-
-Non correggere solo l'effetto visibile. Prima distinguere sempre tra:
-
-- grafica CAD;
-- simbolo SPAC intelligente;
-- attributi del simbolo;
-- relazione Madre/Figlia;
-- collegamento riconosciuto;
-- dato sorgente mostrato dalla rappresentazione;
-- report, distinta o cross-reference generati.
-
-!!! warning "Da verificare"
-
-    Se un comportamento non è verificato in SPAC Start 26, documentarlo come
-    `Da verificare`.
-
-!!! warning "Prima della correzione"
-
-    Nel multifilare una correzione solo grafica può nascondere il problema
-    reale. Verificare sempre oggetto SPAC, attributi, collegamenti, dato
-    sorgente e rappresentazione.
-
-## Sequenza consigliata
-
-```mermaid
-flowchart LR
-    A[Componente]:::data --> B[Elementi associati]:::data
-    B --> C[Collegamenti]:::process
-    C --> D[Fili e numerazione]:::process
-    D --> E[Morsetti]:::warn
-    D --> F[Rimandi]:::warn
-    A --> G[Materiali]:::data
-    B --> G
-    E --> H[Verifica finale]:::ok
-    F --> H
-    G --> H
-
-    classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
-    classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
-    classDef data fill:#e0f7fa,stroke:#00838f,color:#004d40;
-    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
+```text
+Numerazione fili → Lista numeri usati
 ```
 
-1. Identificare il componente principale.
-2. Verificare eventuali elementi associati.
-3. Controllare che i collegamenti siano riconosciuti come oggetti SPAC.
-4. Verificare fili, identificazioni e numerazioni necessarie.
-5. Inserire o controllare morsetti e morsettiere.
-6. Verificare rimandi e cross-reference.
-7. Associare materiali solo al livello coerente.
-8. Eseguire una verifica finale su rappresentazione, dati e report.
+Controllo:
 
-## Componenti principali
+- verifica i numeri presenti;
+- i numeri segnalati con **asterisco** indicano numerazioni ripetute.
 
-Un componente principale deve essere identificabile in modo chiaro.
+## Eliminare la numerazione dei fili
 
-Esempi concettuali:
+Percorso da menu:
 
-- interruttore;
-- selettore;
-- relè;
-- dispositivo modulare;
-- componente con accessori.
+```text
+SPAC → Utility Fili → Elimina numerazione
+```
 
-Quando il componente ha elementi associati, la relazione deve essere esplicita
-e verificabile. Non basta la vicinanza grafica.
+Comando equivalente da riga comando:
 
-Verificare:
+```text
+DEL_NUMF
+```
 
-- simbolo riconosciuto;
-- attributi coerenti;
-- eventuale ruolo Madre/Figlia;
-- nome o identificativo coerente;
-- effetto su report o distinta.
+Usa questa funzione quando devi rimuovere la numerazione esistente prima di rigenerarla.
 
-## Elementi associati
+## Inserire morsetti
 
-Gli elementi associati possono includere:
+Il comando verificato è:
 
-- contatti ausiliari;
-- bobine;
-- accessori;
-- elementi funzionali collegati.
+```text
+SPINSMOR
+```
 
-Regola operativa: la relazione deve essere coerente dal punto di vista
-dati/simbolo, non solo grafico.
+### Prerequisito
 
-Per il flusso di lavoro usare il playbook
-[Gestire accessori e bobine](playbooks/manage-accessories-and-coils.md).
+Prima di eseguire `SPINSMOR` deve essere aperto un **database materiali che contenga almeno una morsettiera**. Se il database non contiene una morsettiera, il comando può restituire errore.
 
-## Collegamenti e fili
+### Creare una nuova morsettiera
 
-Prima di validare morsetti o rimandi, verificare che il collegamento sia
-riconosciuto correttamente.
+Dopo l'apertura della finestra **Inser Morsetti**:
 
-Controllare:
+1. guarda il riquadro in alto a sinistra **Elenco Quadri**;
+2. fai **tasto destro** su una delle seguenti voci:
+   - **Elenco Quadri**;
+   - nome del quadro;
+   - una morsettiera già esistente;
+3. clicca **Nuova morsettiera**;
+4. completa i dati della nuova morsettiera;
+5. verifica che la morsettiera compaia sotto il quadro corretto.
 
-- differenza tra linea CAD e collegamento intelligente;
-- identificazione dei fili;
-- numerazione richiesta;
-- assenza di oggetti sovrapposti o residui;
-- coerenza con [Numerazione e identificazione fili](18-wire-numbering.md).
+## Verificare un morsetto che mostra il dato sbagliato
 
-## Morsetti
-
-Per i morsetti distinguere sempre:
+Non modificare subito il testo grafico. Prima distingui:
 
 - morsettiera;
 - numero morsetto;
 - numero filo;
-- riferimento funzionale;
-- rappresentazione grafica selezionata.
-
-Se il testo visibile non è quello atteso, non correggere solo la grafica:
-controllare dato sorgente e rappresentazione.
-
-La distinzione operativa è:
-
-- oggetto morsetto;
-- dati sorgente;
 - rappresentazione grafica;
-- testo visibile.
+- dato sorgente visualizzato.
 
-Riferimenti operativi:
-
-- [Rimandi, cross-reference e morsetti](06-cross-references-terminals.md)
-- [Verificare rappresentazione morsetti](playbooks/terminal-representation.md)
+Procedura dedicata: [Verificare rappresentazione morsetti](playbooks/terminal-representation.md).
 
 ## Rimandi e cross-reference
 
-Un rimando deve essere collegato a un oggetto coerente, non a una semplice linea
-grafica.
-
-Prima di diagnosticare un rimando distinguere tra:
-
-- linea grafica CAD;
-- alimentazione o collegamento SPAC;
-- oggetto intelligente;
-- rimando;
-- cross-reference generato.
+Un rimando deve essere collegato a un oggetto SPAC coerente e non a una semplice linea CAD.
 
 Quando un rimando non funziona:
 
-1. verificare se l'oggetto è riconosciuto;
-2. controllare eventuali residui;
-3. aggiornare o rigenerare i riferimenti;
-4. testare su foglio pulito.
+1. verifica se l'elemento selezionato è un oggetto SPAC o sola grafica CAD;
+2. verifica residui o oggetti sovrapposti;
+3. aggiorna i riferimenti previsti dalla procedura specifica;
+4. esegui un test su un foglio pulito se il comportamento resta ambiguo.
 
-Riferimenti operativi:
+Per la diagnosi usa:
 
-- [Rimandi, cross-reference e morsetti](06-cross-references-terminals.md)
-- [Diagnosticare rimandi alimentazione](playbooks/power-reference-diagnostic.md)
-- [Known Issue - Cross-reference obsoleto](known-issues/obsolete-cross-reference.md)
+- [Rimandi, cross-reference e morsetti](06-cross-references-terminals.md);
+- [Diagnosticare rimandi alimentazione](playbooks/power-reference-diagnostic.md);
+- [Cross-reference obsoleto](known-issues/obsolete-cross-reference.md).
 
-## Materiali
+## Componenti Madre, Figli e accessori
 
-L'associazione materiale deve essere effettuata sul simbolo più coerente con la
-logica del componente.
+La relazione non deve dipendere dalla vicinanza grafica.
 
-Prima di associare materiale verificare:
+Regola documentata:
 
-- simbolo riconosciuto;
-- attributi coerenti;
-- relazione Madre/Figlia, se presente;
-- rappresentazione corretta in distinta o report;
-- assenza di duplicazioni indesiderate.
+- Madre: `PRES = M`;
+- Figlio: `PRES = F`;
+- Figlio associato: `NOME` coerente con la Madre.
 
-Per il flusso di lavoro usare il playbook
-[Associare materiali](playbooks/material-association.md).
+Per creare o modificare questi attributi usa:
+
+```text
+ATTDEF
+```
+
+Per modificare gli attributi di un simbolo già inserito usa:
+
+```text
+EDITATT
+```
+
+Per la procedura completa: [Attributi e pinatura](04-attributes-and-pinning.md).
+
+## Associare un materiale a un simbolo
+
+Percorso già documentato:
+
+1. fai **doppio click sul simbolo**;
+2. nel riquadro **Materiali**, fai **tasto destro**;
+3. esegui l'associazione prevista;
+4. controlla distinta/report per verificare che il materiale compaia una sola volta dove previsto.
+
+Approfondimento: [Associare materiali](playbooks/material-association.md).
+
+## Sequenza consigliata di verifica multifilare
+
+1. Identifica il componente principale.
+2. Controlla `NOME` e `PRES` con `EDITATT` se necessario.
+3. Verifica gli elementi Figlio/accessori associati.
+4. Controlla fili e numerazioni.
+5. Per la lista numeri usa **Numerazione fili → Lista numeri usati**.
+6. Se devi azzerare la numerazione usa **SPAC → Utility Fili → Elimina numerazione** oppure `DEL_NUMF`.
+7. Per i morsetti usa `SPINSMOR` e lavora nella finestra **Inser Morsetti**.
+8. Verifica rimandi e cross-reference.
+9. Verifica materiali e distinta.
 
 ## Diagnostica rapida
 
-| Sintomo | Prima verifica | Riferimento |
-|---|---|---|
-| Accessorio non collegato logicamente al componente | Attributi e relazione Madre/Figlia | [Gestire accessori e bobine](playbooks/manage-accessories-and-coils.md) |
-| Morsetto mostra numero filo invece del dato atteso | Campo visualizzato dalla rappresentazione | [Verificare rappresentazione morsetti](playbooks/terminal-representation.md) |
-| Rimando non accetta la selezione | Linea grafica o oggetto intelligente selezionato | [Diagnosticare rimandi alimentazione](playbooks/power-reference-diagnostic.md) |
-| Cross-reference punta a posizione non più valida | Oggetti residui e riferimenti non aggiornati | [Known Issue - Cross-reference obsoleto](known-issues/obsolete-cross-reference.md) |
-| Materiale duplicato o mancante in distinta | Punto di associazione del materiale | [Associare materiali](playbooks/material-association.md) |
+| Sintomo | Prima azione concreta |
+|---|---|
+| Numero filo duplicato | **Numerazione fili** → **Lista numeri usati**; cerca asterischi |
+| Devo eliminare i numeri esistenti | **SPAC** → **Utility Fili** → **Elimina numerazione** oppure `DEL_NUMF` |
+| Devo inserire/gestire morsetti | `SPINSMOR` |
+| Devo creare una morsettiera | **Inser Morsetti** → tasto destro su **Elenco Quadri** → **Nuova morsettiera** |
+| Accessorio non collegato alla Madre | `EDITATT` e verifica `NOME` / `PRES` |
+| Materiale manca o è duplicato | doppio click simbolo → riquadro **Materiali** → tasto destro |
+| Rimando non accetta la selezione | verifica prima se stai selezionando un oggetto SPAC o una linea CAD |
 
-## Checklist multifilare
+## Da verificare
 
-Prima di considerare stabile una parte multifilare:
-
-- componente principale identificato;
-- elementi associati verificati;
-- collegamenti riconosciuti come oggetti SPAC quando necessario;
-- fili identificati o numerati secondo la logica prevista;
-- morsetti rappresentati correttamente;
-- rimandi coerenti e cross-reference aggiornati;
-- materiale associato dove necessario;
-- report o distinta verificati quando rilevanti;
-- nessuna correzione solo grafica non documentata.
+Se per una funzione non è ancora noto il nome esatto della voce di menu o del comando in SPAC Start 26, la guida deve riportare **Da verificare**. Non usare descrizioni inventate come se fossero comandi reali.
 
 ## Collegamenti
 
-- [Rimandi, cross-reference e morsetti](06-cross-references-terminals.md)
+- [Comandi e percorsi esatti](command-reference.md)
+- [Rimandi e morsetti](06-cross-references-terminals.md)
 - [Numerazione e identificazione fili](18-wire-numbering.md)
 - [Attributi e pinatura](04-attributes-and-pinning.md)
-- [Simboli custom](03-custom-symbols.md)
 - [Troubleshooting](07-troubleshooting.md)
