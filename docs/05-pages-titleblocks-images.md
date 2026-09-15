@@ -1,149 +1,133 @@
 # Pagine standard, cartigli e immagini
 
-Questa sezione raccoglie note operative per gestire pagine standard, cartigli, immagini e loghi in SPAC Start.
+Questa sezione raccoglie le procedure operative per pagine standard, cartigli, immagini e loghi in SPAC Start.
 
-## Pagine standard
+## Gestire le immagini collegate
 
-Le pagine standard possono includere:
-
-- pagina iniziale;
-- pagina sicurezza;
-- pagine documentali;
-- pagine con dati committente;
-- pagine con attributi editabili.
-
-Queste pagine devono essere mantenute come contenuti generici e riutilizzabili.
-
-## Pagine DWG senza cartiglio
-
-Una pagina DWG può essere usata come pagina standard anche se non contiene un cartiglio completo.
-
-Linee guida:
-
-- mantenere il file pulito;
-- verificare eventuali attributi editabili;
-- evitare riferimenti non controllati;
-- testare l'inserimento in un progetto prova;
-- conservare una copia standard separata dalle commesse.
-
-## Inserimento come riferimento DWG
-
-Le pagine standard non devono essere inserite come blocco semplice quando devono restare collegate al file sorgente.
-
-Workflow consigliato:
-
-1. aprire un foglio libero;
-2. usare la funzione riferimento DWG;
-3. selezionare il file della pagina standard;
-4. usare un percorso controllato;
-5. posizionare il riferimento nel foglio;
-6. verificare il comportamento dopo salvataggio e riapertura.
-
-## Immagini e loghi
-
-Quando un logo o un'immagine non viene visualizzato, il problema è spesso legato a un riferimento esterno non risolto.
-
-Approccio pratico consigliato:
-
-- mantenere le immagini in una cartella stabile;
-- usare riferimenti coerenti e verificabili;
-- controllare i riferimenti dopo riapertura del disegno;
-- includere sempre gli asset necessari quando si sposta una commessa.
-
-## Gestione immagini
-
-La gestione immagini permette di vedere i riferimenti presenti nel progetto e di scollegare o ricollegare asset esterni.
-
-Comando:
+Il comando verificato è:
 
 ```text
 IMMAGINI
 ```
 
-Procedure tipiche:
+Dalla finestra di gestione immagini:
 
-- verificare quali immagini sono collegate;
-- ricollegare un'immagine non trovata;
-- scollegare un'immagine non più utilizzata;
-- salvare il nuovo percorso;
-- verificare dopo riapertura.
+- **Attacca** → collega una nuova immagine;
+- **Stacca** → rimuove il riferimento dell'immagine selezionata.
 
-## Cartiglio master con logo
+### Inserire una nuova immagine
 
-Workflow consigliato:
+1. Digita `IMMAGINI` nella riga comando.
+2. Clicca **Attacca**.
+3. Seleziona il file immagine.
+4. Posiziona l'immagine nel disegno.
+5. Salva il progetto.
+6. Chiudi e riapri il progetto per verificare che il riferimento resti valido.
 
-1. aprire il file master del cartiglio;
-2. inserire il logo come immagine collegata;
-3. usare un percorso stabile;
-4. salvare il file;
-5. chiudere e riaprire per verificare che il logo resti visibile;
-6. testare il cartiglio in un multifoglio di prova.
+## Ripristinare un'immagine non visualizzata
 
-## Problema: riquadro al posto dell'immagine
+Percorso verificato da menu:
 
-Se nel multifoglio compare un riquadro o un riferimento testuale al posto dell'immagine, il collegamento non è stato risolto correttamente.
+```text
+Modifica/Inserisci → Gestioni immagini
+```
 
-Checklist:
+Procedura:
 
-- verificare se il frame immagine è visibile;
-- controllare il nome del file immagine;
-- controllare il percorso del riferimento;
-- rigenerare la visualizzazione;
-- ricaricare o correggere il collegamento;
-- ripetere il test chiudendo e riaprendo il progetto.
+1. Apri **Modifica/Inserisci**.
+2. Clicca **Gestioni immagini**.
+3. Individua l'immagine interessata nella lista.
+4. Clicca **Sfoglia**.
+5. Seleziona nuovamente il file corretto sul PC.
+6. Clicca **Salva percorso**.
+7. Salva il progetto.
+8. Chiudi e riapri per verificare il collegamento.
 
-## Bordo immagini
+## Eliminare il bordo delle immagini
 
-Le immagini possono essere visualizzate con un bordo o frame.
-
-Comando:
+Nella riga comando digita:
 
 ```text
 IMAGEFRAME
 ```
 
-Valore consigliato per non visualizzare il bordo:
+Quando viene richiesto il valore, imposta:
 
 ```text
 0
 ```
 
-Regola operativa:
+Risultato atteso: il bordo/frame delle immagini non viene visualizzato.
 
-- il frame va gestito nel progetto corrente;
-- anche se il cartiglio master è già stato configurato, un nuovo progetto può richiedere una verifica dedicata;
-- controllare sempre la visualizzazione dopo inserimento cartiglio o pagina standard.
+!!! important "Da ripetere nei nuovi progetti"
+
+    Anche se `IMAGEFRAME = 0` è già stato impostato nel cartiglio master o in un DWG sorgente, in un nuovo progetto può essere necessario eseguire nuovamente `IMAGEFRAME` e impostare `0`.
 
 ## Cartella immagini consigliata
 
-Per loghi e immagini ricorrenti usare una cartella risorse stabile, ad esempio:
+Per loghi e immagini ricorrenti usa una cartella stabile:
 
 ```text
-97_RISORSE/IMMAGINI
+97_RISORSE\IMMAGINI
 ```
 
-Regole:
+Evita di spostare o rinominare i file dopo averli collegati.
 
-- non spostare immagini dopo l'inserimento;
-- non rinominare file già referenziati;
-- non eliminare file sorgente usati da cartigli o pagine standard;
-- verificare sempre salvataggio e riapertura.
+## Cartiglio master con logo
 
-## Raster vs vettoriale
+Procedura:
 
-Per loghi ricorrenti esistono due approcci:
+1. Apri il DWG master del cartiglio.
+2. Inserisci/collega il logo con `IMMAGINI` → **Attacca**.
+3. Usa un file presente in `97_RISORSE\IMMAGINI` o in un altro percorso stabile controllato.
+4. Digita `IMAGEFRAME` e imposta `0` se non vuoi visualizzare il bordo.
+5. Salva il DWG master.
+6. Chiudi e riapri il file.
+7. Verifica che il logo sia ancora visibile.
+8. Testa il cartiglio in un progetto/multifoglio di prova.
 
-- immagine raster con riferimento controllato;
-- geometria vettoriale integrata nel DWG.
+## Inserimento di un DWG come riferimento
 
-La scelta dipende da robustezza richiesta, semplicità del workflow e frequenza di riutilizzo.
+La knowledge base stabilisce che una pagina standard che deve restare collegata al file sorgente non va trattata come semplice blocco.
+
+!!! warning "Percorso menu da verificare"
+
+    Il nome esatto del comando/percorso SPAC Start 26 per inserire la pagina come **riferimento DWG** non è ancora consolidato. Finché non viene verificato direttamente non deve essere sostituito con un nome ipotetico.
+
+Una volta aperta la funzione corretta, la verifica minima è:
+
+1. selezionare il DWG sorgente;
+2. usare un percorso stabile;
+3. posizionare il riferimento;
+4. salvare;
+5. chiudere e riaprire il progetto;
+6. verificare che il riferimento sia ancora risolto.
+
+## Problema: riquadro al posto dell'immagine
+
+Se compare un riquadro invece del logo/immagine:
+
+1. apri **Modifica/Inserisci → Gestioni immagini**;
+2. seleziona l'immagine;
+3. controlla il percorso;
+4. clicca **Sfoglia** se il file non viene trovato;
+5. riseleziona il file;
+6. clicca **Salva percorso**;
+7. verifica `IMAGEFRAME` se il problema riguarda solo il bordo.
 
 ## Checklist finale
 
 Prima di considerare stabile una pagina o un cartiglio:
 
-- verificare attributi editabili;
-- verificare immagini collegate;
-- testare in un progetto prova;
-- chiudere e riaprire;
-- verificare su una copia della commessa.
+- `IMMAGINI` mostra riferimenti validi;
+- il logo è collegato al file corretto;
+- **Sfoglia → Salva percorso** è stato usato se il path era errato;
+- `IMAGEFRAME = 0` se il bordo non deve comparire;
+- salvataggio, chiusura e riapertura completati senza perdita degli asset;
+- test eseguito su progetto prova.
+
+## Collegamenti
+
+- [Comandi e click esatti](command-reference.md)
+- [Gestire cartiglio e logo](playbooks/titleblock-logo-workflow.md)
+- [Known Issue - Riferimento immagine mancante](known-issues/missing-image-reference.md)
