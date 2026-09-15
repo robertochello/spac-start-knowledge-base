@@ -2,76 +2,104 @@
 
 ## Obiettivo
 
-Gestire loghi e immagini nei cartigli riducendo problemi di riferimenti mancanti o non caricati.
+Gestire loghi e immagini nei cartigli usando i comandi effettivi di SPAC/CAD, evitando riferimenti mancanti dopo lo spostamento del progetto.
 
-## Quando usarlo
+## Cartella consigliata
 
-Usare questo playbook quando:
+Per asset ricorrenti usa un percorso stabile, ad esempio:
 
-- un logo non viene visualizzato;
-- nel multifoglio compare un riquadro al posto dell'immagine;
-- una pagina standard deve essere riutilizzata;
-- un cartiglio master contiene immagini collegate.
-
-## Flusso operativo
-
-```mermaid
-flowchart TD
-    A[Cartiglio con logo]:::data --> B[Percorso stabile]:::warn
-    B --> C[Test master]:::process
-    C --> D[Test multifoglio]:::process
-    D --> E{Logo visibile?}:::warn
-    E -->|Sì| F[Standardizzabile]:::ok
-    E -->|No| G[Verifica riferimento]:::danger
-    G --> B
-
-    classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
-    classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
-    classDef danger fill:#fdecea,stroke:#c62828,color:#7f1d1d;
-    classDef data fill:#e0f7fa,stroke:#00838f,color:#004d40;
-    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
+```text
+97_RISORSE\IMMAGINI
 ```
 
-## Procedura
+Non rinominare o spostare il file dopo averlo collegato.
 
-### 1. Usare asset controllati
+## Inserire/collegare il logo
 
-- Mantenere il logo in una posizione stabile.
-- Evitare riferimenti casuali o temporanei.
-- Non dipendere da file locali non documentati.
+1. Apri il DWG master del cartiglio.
+2. Digita:
 
-### 2. Testare il cartiglio master
+   ```text
+   IMMAGINI
+   ```
 
-- Aprire il file master.
-- Verificare che il logo sia visibile.
-- Salvare.
-- Chiudere e riaprire.
+3. Nella finestra di gestione immagini clicca **Attacca**.
+4. Seleziona il file del logo.
+5. Posiziona il logo nel cartiglio.
+6. Salva il DWG.
+7. Chiudi e riapri per verificare il riferimento.
 
-### 3. Testare nel multifoglio
+## Eliminare il bordo del logo
 
-- Applicare il cartiglio a un progetto prova.
-- Verificare la visibilità del logo.
-- Controllare eventuali riquadri o riferimenti non risolti.
+Digita:
 
-### 4. Risolvere riferimenti non caricati
+```text
+IMAGEFRAME
+```
 
-Se compare un riquadro al posto dell'immagine:
+Imposta:
 
-- controllare il nome del file;
-- controllare il riferimento;
-- ricaricare l'immagine;
-- ripetere il test dopo riapertura.
+```text
+0
+```
+
+!!! note
+
+    `IMAGEFRAME = 0` può dover essere impostato nuovamente in ogni nuovo progetto anche se era già presente nel DWG master.
+
+## Se il logo non viene più trovato
+
+Percorso verificato:
+
+```text
+Modifica/Inserisci → Gestioni immagini
+```
+
+Poi:
+
+1. individua il logo nella lista;
+2. clicca **Sfoglia**;
+3. seleziona nuovamente il file corretto;
+4. clicca **Salva percorso**;
+5. salva;
+6. chiudi e riapri il progetto.
+
+## Se devi scollegare un logo/immagine
+
+1. Digita `IMMAGINI`.
+2. Seleziona l'immagine nella lista.
+3. Clicca **Stacca**.
+
+## Test del cartiglio master
+
+1. Apri il master.
+2. Verifica che il logo sia visibile.
+3. Digita `IMMAGINI` e controlla che il riferimento punti al file corretto.
+4. Digita `IMAGEFRAME` e verifica `0` se non vuoi il bordo.
+5. Salva.
+6. Chiudi e riapri.
+
+## Test nel progetto/multifoglio
+
+1. Applica il cartiglio a un progetto di prova.
+2. Verifica la visibilità del logo.
+3. Se appare un riquadro o il logo manca, apri **Modifica/Inserisci → Gestioni immagini**.
+4. Usa **Sfoglia → Salva percorso** se il path non è più valido.
+5. Esegui `IMAGEFRAME → 0` se il problema è solo il bordo.
+6. Salva, chiudi e riapri.
 
 ## Verifica finale
 
 Il cartiglio è stabile quando:
 
-- il logo è visibile nel master;
-- il logo è visibile nel multifoglio;
-- la visibilità resta corretta dopo riapertura;
-- la procedura è ripetibile.
+- `IMMAGINI` mostra il riferimento corretto;
+- il file del logo esiste nel percorso previsto;
+- il logo è visibile nel master e nel progetto;
+- `IMAGEFRAME = 0` se richiesto;
+- il riferimento resta valido dopo salvataggio e riapertura.
 
 ## Collegamenti
 
+- [Comandi e click esatti](../command-reference.md)
 - [Pagine, cartigli e immagini](../05-pages-titleblocks-images.md)
-- [Troubleshooting](../07-troubleshooting.md)
+- [Riferimento immagine mancante](../known-issues/missing-image-reference.md)
