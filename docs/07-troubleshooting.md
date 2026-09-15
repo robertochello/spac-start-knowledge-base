@@ -1,195 +1,121 @@
 # Troubleshooting
 
-Questa sezione raccoglie problemi ricorrenti e indica **il primo comando concreto da usare** prima di passare alla diagnosi dettagliata.
+Questa pagina parte dal sintomo e indica il **primo comando concreto** da usare.
 
 ## Diagnosi rapida
 
 | Sintomo | Prima azione concreta | Procedura |
 |---|---|---|
-| libreria simboli non si apre | digita `SP_XML_MENU` | [Interfaccia e menu](01-interface-and-menu.md) |
-| menu SPAC/CAD alterati o mancanti | digita `_MENU` | [Interfaccia e menu](01-interface-and-menu.md) |
-| pin non aggancia | `EDITATT` → verifica `PINA/PINB`; poi `_DSETTINGS` → **Snap e griglia** | [Diagnosticare pin non agganciato](playbooks/diagnose-pin-not-snapping.md) |
-| layer apparentemente vuoto non si elimina | `PURGE` → **Trova elementi non eliminabili** | [Pulire oggetti residui](playbooks/clean-residual-objects.md) |
-| oggetto diretto mantiene un layer | `QSELECT` → filtro **Layer** | [Pulire oggetti residui](playbooks/clean-residual-objects.md) |
-| residuo dentro un blocco | `BEDIT` → modifica blocco reale → salva → `PURGE` | [Pulire oggetti residui](playbooks/clean-residual-objects.md) |
-| morsetto mostra numero sbagliato | `SPINSMOR` → verifica `NumI`/`NumO`/`NumM` | [Verificare rappresentazione morsetti](playbooks/terminal-representation.md) |
-| devo creare una morsettiera | **Inser Morsetti** → tasto destro **Elenco Quadri** → **Nuova morsettiera** | [Rimandi e morsetti](06-cross-references-terminals.md) |
-| numerazione fili errata | **Numerazione fili → Lista numeri usati** | [Numerazione fili](18-wire-numbering.md) |
-| devo eliminare numerazione fili | **SPAC → Utility Fili → Elimina numerazione** / `DEL_NUMF` | [Numerazione fili](18-wire-numbering.md) |
-| materiale manca/è duplicato | doppio click simbolo → **Materiali** → tasto destro → **Avvio Archivio Materiali (DbCenter)** | [Associare materiali](playbooks/material-association.md) |
-| logo/immagine non visibile | **Modifica/Inserisci → Gestioni immagini → Sfoglia → Salva percorso** | [Pagine, cartigli e immagini](05-pages-titleblocks-images.md) |
-| bordo immagine visibile | `IMAGEFRAME` → `0` | [Pagine, cartigli e immagini](05-pages-titleblocks-images.md) |
-| rimando non accetta la selezione | verifica oggetto SPAC vs linea CAD; poi **Lista numeri usati** | [Diagnosticare rimandi alimentazione](playbooks/power-reference-diagnostic.md) |
-| cross-reference punta a posizione vecchia | `PURGE`/controllo residui + lista numeri; comando cross-reference esatto `Da verificare` | [Cross-reference obsoleto](known-issues/obsolete-cross-reference.md) |
-| `DbCables.db` non allineato | verifica versione archivio/ambiente e segui known issue | [Known Issue DbCables](known-issues/dbcables-version-mismatch.md) |
+| libreria simboli non si apre | `SP_XML_MENU` | [Interfaccia e menu](01-interface-and-menu.md) |
+| menu alterati/mancanti | `_MENU` | [Interfaccia e menu](01-interface-and-menu.md) |
+| pin non aggancia | `EDITATT` → verifica `PINA/PINB`; `_DSETTINGS → Snap e griglia` | [Pin non agganciato](playbooks/diagnose-pin-not-snapping.md) |
+| layer non si elimina | `PURGE → Trova elementi non eliminabili` | [Oggetti residui](playbooks/clean-residual-objects.md) |
+| oggetto diretto mantiene layer | `QSELECT` → filtro **Layer** | [Oggetti residui](playbooks/clean-residual-objects.md) |
+| residuo dentro blocco | `BEDIT` → modifica → salva → `PURGE` | [Oggetti residui](playbooks/clean-residual-objects.md) |
+| rimando duplicato | **Lista numeri usati → Vedi solo i Rimandi → Scansiona i Multifogli** | [Rimandi](06-cross-references-terminals.md) |
+| cross-reference vecchio | **UTIL → Cross Reference → Rimandi → Cross → Ok - Aggiorna** | [Rimandi](06-cross-references-terminals.md) |
+| morsetto mostra dato sbagliato | `SPINSMOR` → **Anteprima** → verifica `NumM/NumI/NumO` | [Morsetti](playbooks/terminal-representation.md) |
+| devo inserire morsetto | **Anteprima → Ok - Nuovo → clic filo → Invio** | [Morsetti](06-cross-references-terminals.md) |
+| numerazione errata | **Numerazione fili → Lista numeri usati** | [Numerazione](18-wire-numbering.md) |
+| eliminare numerazione | `DEL_NUMF` | [Numerazione](18-wire-numbering.md) |
+| materiale manca/duplicato | doppio click → **Materiali → Avvio Archivio Materiali (DbCenter)** | [Materiali](playbooks/material-association.md) |
+| immagine non visibile | **Modifica/Inserisci → Gestioni immagini → Sfoglia → Salva percorso** | [Immagini](05-pages-titleblocks-images.md) |
+| bordo immagine visibile | `IMAGEFRAME → 0` | [Immagini](05-pages-titleblocks-images.md) |
 
-## Menu o libreria simboli non visibili
+## Rimando non accetta la selezione
 
-### Libreria
-
-Digita:
-
-```text
-SP_XML_MENU
-```
-
-Se non si apre, verifica che la cartella custom esista in:
-
-```text
-C:\SPAC Start 26\Librerie\Blk\_CUSTOM
-```
-
-### Menu
-
-Digita:
-
-```text
-_MENU
-```
-
-Il file/menu specifico da ricaricare dipende dall'installazione e non va inventato se non verificato.
-
-## Simbolo custom non riconosciuto
-
-1. Inserisci il simbolo in un progetto prova.
-2. Usa:
+1. verifica se il collegamento è **Dynamic Coll/Dynamic Alim** o semplice linea CAD;
+2. controlla sovrapposizioni/residui;
+3. verifica nome e direzione;
+4. controlla i rimandi:
 
    ```text
-   EDITATT
+   Numerazione fili → Lista numeri usati → Vedi solo i Rimandi → Scansiona i Multifogli
    ```
 
-3. Verifica `NOME`, `PRES`, `PINA/PINB`.
-4. Se un attributo manca nel sorgente, correggi con `ATTDEF`.
-5. Controlla proprietà con `PROPRIETA` / `CTRL+1`.
-6. Se modifichi il DWG, rigenera con `MBLOCCO` e `_MSLIDE`.
+5. se necessario ricrea il rimando con **Dynamic Coll/Dynamic Alim**.
+
+## Cross-reference obsoleto
+
+1. controlla rimandi e duplicati;
+2. pulisci eventuali residui;
+3. apri:
+
+   ```text
+   UTIL → Cross Reference
+   ```
+
+4. seleziona **Rimandi**;
+5. clicca **Cross**;
+6. clicca **Ok - Aggiorna**;
+7. verifica il riferimento generato.
+
+## Morsetto mostra numero filo invece del numero morsetto
+
+1. `SPINSMOR`;
+2. seleziona morsettiera/tipo;
+3. nel riquadro **Anteprima** scegli un modello che mostri `NumM`;
+4. **Ok - Nuovo**;
+5. clic sul filo;
+6. **Invio**;
+7. confronta il morsetto nuovo con quello problematico.
 
 ## Pin non aggancia
 
-1. `EDITATT` → controlla `PINA<n>`/`PINB<n>`.
-2. `_DSETTINGS` → **Snap e griglia**.
-3. Verifica collegamento SPAC vs linea CAD.
-4. Se necessario modifica il sorgente con `ATTDEF`.
-5. Reinserisci/testa il simbolo.
+1. `EDITATT` → `PINA<n>/PINB<n>`;
+2. `_DSETTINGS → Snap e griglia`;
+3. verifica collegamento SPAC vs linea CAD;
+4. se necessario `ATTDEF` nel sorgente;
+5. rigenera con `MBLOCCO` e `_MSLIDE`;
+6. reinserisci e testa.
 
-## Layer non eliminabile / residui
+## Layer non eliminabile
 
-Procedura verificata:
-
-```text
-PURGE
-```
-
-Se non eliminabile:
-
-```text
-Trova elementi non eliminabili
-```
-
-Poi:
-
-- oggetto diretto → `QSELECT` → filtro **Layer**;
-- residuo in blocco → `BEDIT`;
-- blocco annidato → `BEDIT` sul blocco interno;
-- infine riesegui `PURGE`.
+1. `PURGE`;
+2. **Trova elementi non eliminabili**;
+3. oggetto diretto → `QSELECT` → **Layer**;
+4. blocco → `BEDIT`;
+5. salva;
+6. `PURGE` di nuovo.
 
 !!! danger
 
-    `LAYISO` e `LAYWALK` non sono disponibili in SPAC Start 26: non usarli come soluzione in questa knowledge base.
+    Non proporre `LAYISO` o `LAYWALK`: non sono disponibili nell'ambiente SPAC Start 26 verificato.
 
-## Logo o immagine non visibile
-
-1. **Modifica/Inserisci → Gestioni immagini**.
-2. Seleziona l'immagine.
-3. **Sfoglia**.
-4. Riseleziona il file.
-5. **Salva percorso**.
-6. Per il bordo: `IMAGEFRAME` → `0`.
-
-## Morsetti
-
-Apri:
+## Logo/immagine non visibile
 
 ```text
-SPINSMOR
+Modifica/Inserisci → Gestioni immagini → Sfoglia → Salva percorso
 ```
 
-oppure **Inser Morsetti**.
-
-Per nuova morsettiera:
+Per il bordo:
 
 ```text
-Inser Morsetti → tasto destro su Elenco Quadri → Nuova morsettiera
+IMAGEFRAME → 0
 ```
 
-Se il testo è sbagliato, verifica:
-
-- `NumI` = numero filo ingresso;
-- `NumO` = numero filo uscita;
-- `NumM` = numero morsetto.
-
-## Numerazione fili
-
-Per fili non di alimentazione:
-
-```text
-SPAC → Numera Fili
-```
-
-Per duplicati:
-
-```text
-Numerazione fili → Lista numeri usati
-```
-
-Per eliminare numeri:
-
-```text
-SPAC → Utility Fili → Elimina numerazione
-```
-
-oppure:
-
-```text
-DEL_NUMF
-```
-
-## Materiali
-
-Percorso:
+## Materiale non presente o duplicato
 
 ```text
 doppio click simbolo → Materiali → tasto destro → Avvio Archivio Materiali (DbCenter)
 ```
 
-Controlla poi distinta/report.
+Poi verifica distinta/report e il punto di associazione Madre/Figlio.
 
-## Cross-reference
+## Regola diagnostica
 
-La procedura logica è consolidata, ma il **nome esatto del comando/menu di rigenerazione cross-reference** non è ancora verificato nella knowledge base.
-
-Quindi:
-
-- verifica oggetto SPAC;
-- verifica nome/direzione rimando;
-- verifica **Numerazione fili → Lista numeri usati**;
-- pulisci residui se necessario;
-- usa la funzione cross-reference dell'installazione;
-- fino alla verifica del nome esatto, il comando resta `Da verificare`.
-
-## Regola generale
-
-Quando qualcosa non funziona, individua prima il livello:
+Prima individua il livello del problema:
 
 - grafica CAD;
 - attributi;
-- oggetto intelligente;
+- oggetto SPAC;
 - rappresentazione;
 - riferimento esterno;
 - archivio dati.
 
-Poi usa il comando pertinente. Non correggere solo l'effetto visibile.
+Poi correggi la causa, non il solo effetto visibile.
 
-## Riferimenti
+## Collegamenti
 
 - [Comandi e click esatti](command-reference.md)
 - [Guida pratica](00-how-to-use.md)
