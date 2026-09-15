@@ -384,7 +384,7 @@ Non inserire nella documentazione pubblica:
 - nomi di elaborati reali;
 - indirizzi IP/MAC di impianti reali;
 - email o credenziali;
-- percorsi `C:\Users\...` o home directory personali;
+- percorsi delle home directory personali;
 - screenshot con dati identificativi;
 - file di progetto cliente;
 - database non sanitizzati.
