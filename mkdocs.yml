@@ -1,6 +1,5 @@
-site_name: SPAC Start Knowledge Base
+site_name: SPAC Start 26 · Knowledge Base
 site_description: Guida operativa per SPAC Start 26: comandi esatti, setup, schemi, simboli, archivi e troubleshooting.
-site_author: Roberto Chello
 site_url: https://robertochello.github.io/spac-start-knowledge-base/
 
 repo_name: robertochello/spac-start-knowledge-base
@@ -18,6 +17,8 @@ theme:
       primary: blue
       accent: cyan
   features:
+    - navigation.instant
+    - navigation.instant.progress
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
@@ -26,9 +27,14 @@ theme:
     - navigation.footer
     - navigation.tracking
     - navigation.top
+    - toc.follow
     - search.suggest
     - search.highlight
     - content.code.copy
+    - content.tooltips
+
+extra:
+  generator: false
 
 extra_css:
   - assets/stylesheets/extra.css
@@ -67,8 +73,10 @@ nav:
       - Concetti base SPAC: concepts.md
       - FAQ: faq.md
       - Glossario: glossary.md
+      - Manuale consolidato: guida-operativa-completa.md
       - Panoramica knowledge base: 00-overview.md
-      - Manuale completo (riferimento): guida-operativa-completa.md
+
+  - Download: downloads.md
 
   - Lavoro in SPAC:
       - Setup progetto:
@@ -91,7 +99,6 @@ nav:
           - Archivi materiali custom: 21-material-archives.md
           - Archivio Cavi DbCables: 25-cable-archive-dbcables.md
           - Back-check e controlli incrociati: 26-back-check-controls.md
-          - Download: downloads.md
 
   - Procedure:
       - Come usare i playbook: playbooks/index.md
