@@ -2,122 +2,99 @@
 
 ## Obiettivo
 
-Capire perché un rimando o riferimento di alimentazione non viene accettato o punta a una posizione non coerente.
+Capire perché un rimando/alimentazione non viene accettato oppure punta a una posizione non coerente, senza inventare comandi non ancora verificati.
 
-## Quando usarlo
+## Prima verifica: oggetto SPAC o linea CAD?
 
-Usare questo playbook quando:
+Prima di qualsiasi rigenerazione:
 
-- una linea non viene riconosciuta come selezione valida;
-- il riferimento punta a una posizione non aggiornata;
-- un rimando sembra collegato solo graficamente;
-- dopo modifiche al foglio restano riferimenti non coerenti.
+1. seleziona il tratto interessato;
+2. verifica se è un collegamento/alimentazione SPAC o semplice geometria CAD;
+3. controlla se ci sono oggetti sovrapposti o residui;
+4. verifica nome e direzione del rimando.
 
-## Principio operativo
+Un rimando deve appoggiarsi a un oggetto riconosciuto, non a una semplice linea disegnata.
 
-Un rimando deve appoggiarsi a un oggetto riconosciuto, non a una semplice geometria.
+## Verificare duplicati e numeri usati
 
-## Distinzione iniziale
+Percorso verificato:
 
-Separare sempre:
-
-| Livello | Domanda di controllo |
-|---|---|
-| Linea grafica | È solo una entità CAD visibile? |
-| Alimentazione SPAC | La linea è riconosciuta come alimentazione o collegamento SPAC? |
-| Oggetto intelligente | L'oggetto selezionato contiene dati o relazioni coerenti? |
-| Rimando | Il rimando usa nome e direzione coerenti con il punto collegato? |
-| Cross-reference | Il riferimento è stato aggiornato dopo le modifiche? |
-
-## Flusso diagnostico
-
-```mermaid
-flowchart TD
-    A[Linea selezionata]:::info --> B{Oggetto SPAC?}:::warn
-    B -->|No| C[Test foglio pulito]:::todo
-    B -->|Sì| D[Nome e direzione]:::process
-    D --> E[Aggiorna riferimenti]:::process
-    E --> F{Riferimento OK?}:::warn
-    F -->|Sì| G[OK]:::ok
-    F -->|No| H[Controllare residui]:::danger
-
-    classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
-    classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
-    classDef danger fill:#fdecea,stroke:#c62828,color:#7f1d1d;
-    classDef info fill:#e8f0fe,stroke:#1565c0,color:#0d47a1;
-    classDef todo fill:#f3e8ff,stroke:#7b1fa2,color:#4a148c;
-    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
+```text
+Numerazione fili → Lista numeri usati
 ```
 
-## Diagnosi
+Controlla:
 
-Verificare:
+- numeri ripetuti;
+- rimandi duplicati;
+- riferimenti ancora presenti ma non più coerenti.
 
-- se l'oggetto selezionato è intelligente;
-- se esistono oggetti residui;
-- se il riferimento è stato aggiornato;
-- se ci sono duplicazioni;
-- se il collegamento è stato cancellato solo graficamente.
+I numeri con **asterisco** richiedono verifica.
 
-## Checklist prima/dopo rigenerazione
+## Regole direzionali dei rimandi
 
-Prima di rigenerare o aggiornare i riferimenti:
+- partenza ↔ arrivo;
+- partenza ↔ arrivo/partenza;
+- arrivo ↔ partenza;
+- arrivo ↔ arrivo/partenza.
 
-- verificare che la linea non sia solo grafica CAD;
-- controllare che alimentazione o collegamento siano riconosciuti;
-- verificare nome e direzione dei rimandi;
-- cercare rimandi duplicati o non utilizzati;
-- cercare oggetti sovrapposti o residui;
-- annotare i casi `Da verificare`.
+I rimandi che rappresentano lo stesso collegamento devono usare un nome coerente.
 
-Dopo la rigenerazione:
+## Aggiornare il cross-reference
 
-- controllare che il riferimento punti al punto atteso;
-- verificare che non punti a celle o oggetti vecchi;
-- controllare che non siano comparsi duplicati;
-- ripetere il test su foglio pulito se il comportamento resta ambiguo.
+Sequenza logica:
 
-## Procedura
+1. verifica oggetti SPAC e nomi dei rimandi;
+2. verifica la direzione;
+3. apri la funzione di cross-reference;
+4. seleziona l'elaborazione dedicata ai rimandi;
+5. avvia l'aggiornamento;
+6. verifica il riferimento generato;
+7. ricontrolla **Numerazione fili → Lista numeri usati**.
 
-### 1. Verificare l'oggetto selezionato
+!!! warning "Nome comando cross-reference da verificare"
 
-Assicurarsi che la selezione riguardi l'oggetto corretto e non una linea CAD sovrapposta.
+    Il nome esatto del comando/percorso menu che avvia l'elaborazione cross-reference non è ancora consolidato nella knowledge base per SPAC Start 26. Non usare un nome ipotetico. Quando viene verificato direttamente va sostituito qui.
 
-### 2. Verificare alimentazione o collegamento
+## Se il comando segnala selezione non valida
 
-Controllare che la linea sia riconosciuta come alimentazione o collegamento
-SPAC.
+Controlla nell'ordine:
 
-!!! warning "Da verificare"
+1. stai selezionando la linea CAD o il collegamento SPAC?
+2. l'oggetto è stato esploso o alterato?
+3. esistono vecchi oggetti sovrapposti?
+4. il collegamento è stato cancellato solo graficamente?
+5. lo stesso caso funziona su un foglio pulito?
 
-    Se il comportamento non è verificabile nella propria installazione,
-    segnare il caso come `Da verificare`.
+Non risolvere disegnando una seconda linea grafica sopra quella esistente.
 
-### 3. Cercare residui
+## Se il riferimento punta a una vecchia posizione
 
-Controllare eventuali vecchi oggetti rimasti nella zona del foglio.
+1. Cerca oggetti residui nella zona originaria.
+2. Cerca rimandi non più utilizzati.
+3. Controlla eventuali alimentazioni duplicate.
+4. Verifica la lista numeri/rimandi usati.
+5. Rigenera il cross-reference con la funzione corretta dell'installazione.
+6. Controlla di nuovo il foglio.
 
-### 4. Rigenerare riferimenti
+## Se devi pulire residui
 
-Aggiornare i riferimenti dopo modifiche strutturali.
-
-### 5. Testare su foglio pulito
-
-Riprodurre il rimando in un contesto semplice per distinguere problema locale e problema di procedura.
+Usa il playbook [Pulire oggetti residui](clean-residual-objects.md) prima di rigenerare i riferimenti.
 
 ## Verifica finale
 
 Il rimando è corretto quando:
 
-- la selezione è valida;
-- il riferimento punta al punto atteso;
-- non esistono duplicazioni residue;
-- il riferimento non punta a celle o oggetti vecchi;
-- il comportamento resta stabile dopo aggiornamento.
+- la selezione viene accettata su un oggetto SPAC reale;
+- nome e direzione sono coerenti;
+- **Lista numeri usati** non evidenzia duplicati inattesi;
+- il cross-reference punta alla posizione corretta;
+- non rimangono riferimenti a celle/oggetti vecchi;
+- il comportamento resta corretto dopo salvataggio e riapertura.
 
 ## Collegamenti
 
-- [Multifilare](../09-multifilare.md)
+- [Comandi e click esatti](../command-reference.md)
 - [Rimandi, cross-reference e morsetti](../06-cross-references-terminals.md)
-- [Known Issue — Cross-reference obsoleto](../known-issues/obsolete-cross-reference.md)
+- [Cross-reference obsoleto](../known-issues/obsolete-cross-reference.md)
 - [Pulire oggetti residui](clean-residual-objects.md)
