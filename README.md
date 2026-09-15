@@ -9,70 +9,89 @@ Il contenuto è pensato per il lavoro reale: setup progetto, schemi unifilari e 
 
 ## Da dove partire
 
-Non è necessario leggere tutta la documentazione in ordine.
-
 | Se devi... | Apri |
 |---|---|
+| sapere **esattamente cosa digitare o cliccare** | [Comandi e click esatti](https://robertochello.github.io/spac-start-knowledge-base/command-reference/) |
 | capire dove trovare una procedura | [Guida pratica](https://robertochello.github.io/spac-start-knowledge-base/00-how-to-use/) |
-| iniziare un lavoro o configurare SPAC | [Lavoro in SPAC](https://robertochello.github.io/spac-start-knowledge-base/15-custom-library/) |
+| iniziare un lavoro o configurare SPAC | [Libreria custom](https://robertochello.github.io/spac-start-knowledge-base/15-custom-library/) |
 | risolvere un problema | [Problemi e diagnosi](https://robertochello.github.io/spac-start-knowledge-base/07-troubleshooting/) |
 | scaricare archivi pubblicati | [Download](https://robertochello.github.io/spac-start-knowledge-base/downloads/) |
 | consultare tutto il materiale in una sola pagina | [Manuale completo](https://robertochello.github.io/spac-start-knowledge-base/guida-operativa-completa/) |
 
-Il **Manuale completo** è una pagina di consultazione estesa: non è il punto di ingresso consigliato per il sito.
+## Regola fondamentale della guida
+
+Le procedure operative devono riportare i **nomi reali** dell'interfaccia quando sono stati verificati.
+
+Esempi:
+
+```text
+SP_XML_MENU
+_DSETTINGS
+ATTDEF
+MBLOCCO
+_MSLIDE
+EDITATT
+SPINSMOR
+DEL_NUMF
+PURGE
+QSELECT
+BEDIT
+```
+
+e percorsi come:
+
+```text
+SPAC → Numera Fili
+SPAC → Utility Fili → Elimina numerazione
+Inser Morsetti → tasto destro su Elenco Quadri → Nuova morsettiera
+Modifica/Inserisci → Gestioni immagini → Sfoglia → Salva percorso
+```
+
+Se il nome esatto di un comando, pulsante o percorso non è ancora stato verificato in **SPAC Start 26**, viene indicato **Da verificare** invece di inventarlo.
 
 ## Come è organizzata
 
-La documentazione pubblicata è divisa per utilizzo:
-
-- **Guida pratica**: orientamento, concetti, FAQ e manuale completo;
+- **Guida pratica**: orientamento e accesso immediato ai comandi esatti;
 - **Lavoro in SPAC**: setup, schemi, simboli e archivi;
-- **Procedure**: playbook passo-passo e checklist;
-- **Problemi e diagnosi**: troubleshooting, known issue e casi pratici;
-- **Riferimenti**: standard, decisioni, quality gate e manutenzione della knowledge base.
+- **Procedure**: playbook passo-passo;
+- **Problemi e diagnosi**: troubleshooting e known issue;
+- **Riferimenti**: standard, decisioni e quality gate.
 
-La fonte dei contenuti pubblicati è la cartella `docs/`; la navigazione del sito è definita in `mkdocs.yml`.
+La fonte dei contenuti pubblicati è `docs/`; la navigazione del sito è definita in `mkdocs.yml`.
 
 ## Aree tecniche principali
 
 | Area | Riferimento principale |
 |---|---|
+| Comandi e percorsi esatti | `docs/command-reference.md` |
 | Libreria custom `_CUSTOM` | `docs/15-custom-library.md` |
-| Template progetto | `docs/16-project-template.md` |
 | Schema unifilare | `docs/17-unifilare.md` |
+| Numerazione fili | `docs/18-wire-numbering.md` |
 | Schema multifilare | `docs/09-multifilare.md` |
 | Rimandi e morsetti | `docs/06-cross-references-terminals.md` |
 | Simboli custom | `docs/03-custom-symbols.md` |
 | Attributi e pinatura | `docs/04-attributes-and-pinning.md` |
 | Archivi materiali | `docs/21-material-archives.md` |
 | Archivio cavi `DbCables.db` | `docs/25-cable-archive-dbcables.md` |
-| Download pubblici | `docs/downloads.md` |
 | Troubleshooting | `docs/07-troubleshooting.md` |
 
 ## Regole della knowledge base
 
-- Documentare procedure realmente verificate o marcare chiaramente ciò che è **Da verificare**.
+- Documentare procedure realmente verificate.
+- Riportare comando, menu, finestra, pulsante e valore esatti quando noti.
+- Marcare **Da verificare** il punto preciso che non è ancora confermato.
 - Non inventare comandi, menu o comportamenti SPAC.
-- Separare oggetti CAD grafici e oggetti intelligenti SPAC.
-- Mantenere distinti unifilare e multifilare quando il comportamento cambia.
+- Separare oggetti CAD e oggetti intelligenti SPAC.
 - Non pubblicare dati cliente, commessa, credenziali o file riservati.
-- Preferire procedure, checklist e tabelle a testo generico.
 
-## Sviluppo e preview locale
-
-Installazione dipendenze:
+## Preview locale
 
 ```bash
 pip install -r requirements.txt
-```
-
-Preview:
-
-```bash
 mkdocs serve
 ```
 
-Verifica prima del push:
+Verifica:
 
 ```bash
 mkdocs build --strict
@@ -80,13 +99,11 @@ mkdocs build --strict
 
 ## Pubblicazione
 
-Il sito usa **MkDocs Material** e viene pubblicato automaticamente tramite GitHub Actions.
-
 ```text
 push su master -> mkdocs build --strict -> deploy GitHub Pages
 ```
 
-Non modificare manualmente il contenuto generato nel branch `gh-pages`.
+Non modificare manualmente il branch `gh-pages`.
 
 ## Ownership
 
