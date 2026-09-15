@@ -2,6 +2,33 @@
 
 Tutte le modifiche rilevanti alla knowledge base saranno documentate in questo file.
 
+## 0.6.0 - 2026-09-15 - Exact commands and click paths
+
+### Changed
+
+- `command-reference.md` trasformata in riferimento centrale per **comandi, menu, finestre, pulsanti e valori esatti** già verificati in SPAC Start 26.
+- Home e guida pratica aggiornate con accesso diretto a **Comandi e click esatti**.
+- Navigazione MkDocs aggiornata per mostrare **Comandi e click esatti** nella sezione Guida pratica.
+- `AGENTS.md` aggiornato: una procedura non è completa se usa descrizioni generiche al posto di comandi/percorsi già noti.
+- Pagine operative aggiornate con i comandi reali per libreria, interfaccia, CAD, simboli, attributi, immagini, unifilare, multifilare, fili, morsetti e materiali.
+- Playbook aggiornati con passaggi esatti per creazione/validazione simboli, pinatura, Madre/Figlio, materiali, morsetti, immagini e diagnostica rimandi.
+- Workflow layer/oggetti residui documentato con `PURGE`, **Trova elementi non eliminabili**, `QSELECT` e `BEDIT`.
+
+### Added
+
+- Percorsi verificati come **SPAC → Numera Fili**, **SPAC → Utility Fili → Elimina numerazione**, **Numerazione fili → Lista numeri usati**, **Modifica/Inserisci → Gestioni immagini**, **Inser Morsetti → Elenco Quadri → Nuova morsettiera**.
+- Nomi esatti delle finestre **Configurazione Numerazione Conduttori**, **Numerazione Fili Unifilare**, **Personalizza interfaccia utente**, **Inser Morsetti**.
+- Associazione materiali documentata come **doppio click simbolo → Materiali → tasto destro → Avvio Archivio Materiali (DbCenter)**.
+- Comandi consolidati: `SP_XML_MENU`, `CUI`, `_CUI`, `_DSETTINGS`, `IMMAGINI`, `IMAGEFRAME`, `_INSER`, `ESPLODI`, `MBLOCCO`, `_MSLIDE`, `ATTDEF`, `PROPRIETA`, `CORRISPROP`, `EDITATT`, `DEL_NUMF`, `SPINSMOR`, `PURGE`, `QSELECT`, `BEDIT`.
+
+### Explicitly unsupported / not to document as SPAC commands
+
+- `LAYISO` e `LAYWALK` risultano non disponibili in SPAC Start 26 e non devono essere proposti nella procedura di pulizia layer.
+
+### Rule
+
+- Dove il nome esatto di un comando/percorso non è ancora verificato, la documentazione deve indicare **Da verificare** nel punto preciso invece di inventare un nome plausibile.
+
 ## 0.5.0 - 2026-09-15 - Navigation and onboarding refresh
 
 ### Changed
