@@ -1,5 +1,5 @@
-site_name: SPAC Start 26 · Knowledge Base
-site_description: Guida operativa per SPAC Start 26: comandi esatti, setup, schemi, simboli, archivi e troubleshooting.
+site_name: SPAC Start 26 · Guida pratica
+site_description: Guida semplice e operativa per SPAC Start 26: comandi, schemi, simboli, materiali, cavi e problemi comuni.
 site_url: https://robertochello.github.io/spac-start-knowledge-base/
 
 repo_name: robertochello/spac-start-knowledge-base
@@ -22,10 +22,8 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
-    - navigation.indexes
     - navigation.path
     - navigation.footer
-    - navigation.tracking
     - navigation.top
     - toc.follow
     - search.suggest
@@ -67,79 +65,56 @@ markdown_extensions:
 nav:
   - Home: index.md
 
-  - Guida pratica:
+  - Guida semplice:
+      - Da dove partire: 00-how-to-use.md
       - Comandi e click esatti: command-reference.md
-      - Scegli cosa devi fare: 00-how-to-use.md
-      - Concetti base SPAC: concepts.md
-      - FAQ: faq.md
-      - Glossario: glossary.md
-      - Manuale consolidato: guida-operativa-completa.md
-      - Panoramica knowledge base: 00-overview.md
 
   - Download: downloads.md
 
-  - Lavoro in SPAC:
-      - Setup progetto:
-          - Template progetto: 16-project-template.md
+  - Cosa devi fare:
+      - Nuovo progetto: 16-project-template.md
+      - Schema unifilare: 17-unifilare.md
+      - Schema multifilare: 09-multifilare.md
+      - Numerazione fili: 18-wire-numbering.md
+      - Morsetti e rimandi: 06-cross-references-terminals.md
+      - Creare un simbolo: playbooks/create-custom-symbol.md
+      - Attributi e pin: 04-attributes-and-pinning.md
+      - Associare materiali: playbooks/material-association.md
+      - Archivio materiali: 21-material-archives.md
+      - Archivio cavi: 25-cable-archive-dbcables.md
+      - Altre operazioni:
           - Libreria custom: 15-custom-library.md
           - Interfaccia e menu: 01-interface-and-menu.md
-          - Pagine, cartigli e immagini: 05-pages-titleblocks-images.md
+          - Pagine e immagini: 05-pages-titleblocks-images.md
           - Workflow CAD 2D: 02-cad-workflow.md
-      - Schemi:
-          - Schema unifilare: 17-unifilare.md
-          - Schema multifilare: 09-multifilare.md
-          - Numerazione e identificazione fili: 18-wire-numbering.md
-          - Rimandi, cross-reference e morsetti: 06-cross-references-terminals.md
-      - Simboli:
           - Simboli custom: 03-custom-symbols.md
-          - Attributi e pinatura: 04-attributes-and-pinning.md
-          - Nomenclatura simboli: 19-symbol-naming.md
-          - Dizionario abbreviazioni: 20-abbreviations.md
-      - Materiali e cavi:
-          - Archivi materiali custom: 21-material-archives.md
-          - Archivio Cavi DbCables: 25-cable-archive-dbcables.md
-          - Back-check e controlli incrociati: 26-back-check-controls.md
 
-  - Procedure:
-      - Come usare i playbook: playbooks/index.md
-      - Simboli:
-          - Creare un simbolo custom: playbooks/create-custom-symbol.md
-          - Validare un simbolo: playbooks/validate-custom-symbol.md
-          - Diagnosticare pin non agganciato: playbooks/diagnose-pin-not-snapping.md
-          - Pulire oggetti residui: playbooks/clean-residual-objects.md
-      - Schemi:
-          - Gestire accessori e bobine: playbooks/manage-accessories-and-coils.md
-          - Verificare rappresentazione morsetti: playbooks/terminal-representation.md
-          - Diagnosticare rimandi alimentazione: playbooks/power-reference-diagnostic.md
-      - Cartigli e immagini:
-          - Gestire cartiglio e logo: playbooks/titleblock-logo-workflow.md
-      - Archivi:
-          - Associare materiali: playbooks/material-association.md
-          - Aggiornare Archivio Cavi DbCables: playbooks/update-dbcables-archive.md
-      - Checklist ed esempi:
-          - Checklist validazione simbolo: 10-symbol-validation-checklist.md
-          - Esempi operativi: 24-operational-examples.md
-
-  - Problemi e diagnosi:
-      - Diagnosi rapida: 07-troubleshooting.md
-      - Problemi noti:
-          - Indice: known-issues/index.md
-          - Pin non agganciato: known-issues/pin-not-snapping.md
-          - Riferimento immagine mancante: known-issues/missing-image-reference.md
-          - Cross-reference obsoleto: known-issues/obsolete-cross-reference.md
-          - DbCables versione non congruente: known-issues/dbcables-version-mismatch.md
-      - Casi pratici: 12-practical-cases.md
+  - Problemi:
+      - Problemi e soluzioni: 07-troubleshooting.md
+      - Pin non agganciato: playbooks/diagnose-pin-not-snapping.md
+      - Layer / oggetti residui: playbooks/clean-residual-objects.md
+      - Rimandi alimentazione: playbooks/power-reference-diagnostic.md
+      - Numero morsetto sbagliato: playbooks/terminal-representation.md
+      - Immagine mancante: known-issues/missing-image-reference.md
+      - DbCables non allineato: known-issues/dbcables-version-mismatch.md
 
   - Riferimenti:
+      - FAQ: faq.md
+      - Glossario: glossary.md
+      - Concetti base: concepts.md
+      - Manuale consolidato: guida-operativa-completa.md
+      - Nomenclatura simboli: 19-symbol-naming.md
+      - Abbreviazioni: 20-abbreviations.md
       - Standard:
           - Standard operativi: 08-standards.md
-          - Indice standard: standards/index.md
           - Standard CAD: standards/cad.md
           - Standard simboli: standards/symbols.md
           - Standard materiali: standards/materials.md
-      - Manutenzione knowledge base:
-          - Decisioni operative: 11-decision-log.md
-          - Linee guida manutenzione: 13-maintenance-guidelines.md
-          - Quality gate e validazione: 14-quality-gates.md
-          - Linee guida immagini: 22-visual-assets-guidelines.md
-      - Roadmap: roadmap.md
+      - Manutenzione:
+          - Casi pratici: 12-practical-cases.md
+          - Decisioni: 11-decision-log.md
+          - Linee guida: 13-maintenance-guidelines.md
+          - Controlli qualità: 14-quality-gates.md
+          - Back-check: 26-back-check-controls.md
+          - Immagini e grafica: 22-visual-assets-guidelines.md
+          - Roadmap: roadmap.md
