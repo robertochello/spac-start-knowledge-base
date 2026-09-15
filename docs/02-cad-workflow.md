@@ -1,126 +1,128 @@
 # Workflow CAD 2D
 
-SPAC Start può essere usato anche per disegno CAD 2D quando il contenuto non è direttamente elettrico. Questa pagina riporta i comandi già verificati per le operazioni ricorrenti.
+Comandi CAD verificati e usati nel workflow SPAC Start 26.
 
-## Layer standard
-
-Per file CAD/DXF/DWG destinati a SPAC, usa:
+## Standard grafico per simboli/blocchi
 
 ```text
 Layer 0
+Colore: DaBlocco
+Tipo linea: DaBlocco
+Spessore linea: DaBlocco
 ```
 
-Per geometria destinata a diventare blocco/simbolo usa inoltre:
-
-- **Colore**: `DaBlocco`;
-- **Tipo linea**: `DaBlocco`;
-- **Spessore linea**: `DaBlocco`.
-
-## Importare un DWG o un blocco
-
-Nella riga comando digita:
+## Importare DWG o blocco
 
 ```text
 _INSER
 ```
 
-Poi seleziona il file/blocco da inserire e verifica scala e punto di inserimento.
+Nella finestra puoi usare:
 
-## Esplodere una geometria importata
+- **Disegno corrente**;
+- **Recenti**;
+- **Preferiti**;
+- **Librerie**;
+- ricerca/sfoglia.
 
-Se devi modificare le singole entità usa:
+Dopo l'inserimento verifica scala e punto di inserimento.
+
+## Esplodere
 
 ```text
 ESPLODI
 ```
 
-Non esplodere automaticamente ogni oggetto: fallo solo quando serve per pulire o modificare la geometria.
+Usalo solo quando devi modificare le singole entità.
 
-## Riempire una forma con colore pieno
+## Tratteggio pieno
 
-Percorso verificato:
+1. **Disegna → Tratteggio**;
+2. usa **I** per aprire le impostazioni;
+3. finestra **Tratteggio e sfumatura**;
+4. **Modello → SOLID**;
+5. scegli colore;
+6. seleziona area.
 
-1. apri il menu **Disegna**;
-2. clicca **Tratteggio**;
-3. nella barra dei comandi clicca/digita **I** per aprire le impostazioni;
-4. nella finestra **Tratteggio e sfumatura**, alla voce **Modello**, seleziona:
+## Creare un DWG riutilizzabile
 
-   ```text
-   SOLID
-   ```
+1. pulisci la geometria;
+2. Layer `0`;
+3. proprietà `DaBlocco`;
+4. seleziona oggetti;
+5. digita `MBLOCCO`;
+6. **Origine → Oggetti**;
+7. seleziona punto base;
+8. **Destinazione → Nome e percorso del file**;
+9. scegli il percorso;
+10. **Unità inser. → Senza unità**;
+11. salva.
 
-5. scegli il colore;
-6. conferma;
-7. seleziona l'area o la forma da riempire.
-
-## Creare un blocco DWG riutilizzabile
-
-1. Pulisci la geometria.
-2. Porta tutto su **Layer 0**.
-3. Imposta **DaBlocco** per colore/tipo linea/spessore quando previsto.
-4. Seleziona tutti gli oggetti del futuro blocco.
-5. Digita:
-
-   ```text
-   MBLOCCO
-   ```
-
-6. In **Origine**, seleziona:
-
-   ```text
-   Oggetti
-   ```
-
-7. Seleziona il punto base.
-8. Salva il DWG nel percorso previsto.
-
-Se il blocco è un simbolo della libreria custom, usa una categoria sotto:
+Per la libreria custom usa:
 
 ```text
-C:\SPAC Start 26\Librerie\Blk\_CUSTOM
+C:\SPAC Start 26\Librerie\Blk\_CUSTOM\<CATEGORIA>
 ```
 
-## Creare l'anteprima del blocco/simbolo
+## Creare anteprima SLD
 
-Per un simbolo della libreria:
+1. apri il DWG;
+2. centra e regola zoom;
+3. `_MSLIDE`;
+4. salva nella stessa cartella;
+5. stesso nome base del DWG.
 
-1. apri direttamente il DWG;
-2. centra il disegno;
-3. regola lo zoom;
-4. digita:
+```text
+NOME_SIMBOLO.dwg
+NOME_SIMBOLO.sld
+```
 
-   ```text
-   _MSLIDE
-   ```
+## Verificare proprietà
 
-5. salva la slide nella stessa cartella del DWG;
-6. usa lo stesso nome base per `.dwg` e `.sld`.
+```text
+PROPRIETA
+```
 
-## Disegni fuori scala
+oppure:
 
-Quando un disegno copiato/importato risulta fuori scala:
+```text
+CTRL+1
+```
 
-1. identifica una quota reale nota;
-2. misura la quota attuale;
-3. calcola il fattore di scala;
-4. applica la scalatura all'insieme selezionato;
-5. misura di nuovo la quota nota.
+Per copiare proprietà:
 
-!!! warning "Comando di scala"
+```text
+CORRISPROP
+```
 
-    In questa knowledge base non è ancora consolidato il nome/comportamento esatto del comando di scala usato nell'ambiente SPAC Start 26. Finché non viene verificato direttamente, non viene indicato un comando ipotetico.
+Sequenza: sorgente → destinazione → **Invio**.
 
-## Test prima del riuso
+## Disegno fuori scala
 
-- apri/inserisci il file con `_INSER`;
-- verifica scala;
-- verifica Layer 0;
-- verifica eventuali riferimenti esterni;
-- controlla che non ci siano entità invisibili o inutili;
-- se è un simbolo, verifica DWG + SLD.
+Procedura concettuale verificata:
+
+1. misura una quota nota;
+2. confrontala con il valore reale;
+3. calcola il fattore;
+4. scala l'insieme;
+5. rimisura una seconda quota.
+
+!!! warning "Comando scala: Da verificare"
+
+    Il nome/comportamento esatto del comando di scala nell'ambiente SPAC Start 26 non è ancora consolidato nella knowledge base. Non viene inventato.
+
+## Test finale
+
+- `_INSER` riuscito;
+- scala verificata;
+- Layer 0;
+- proprietà DaBlocco;
+- `MBLOCCO` con **Origine: Oggetti**;
+- **Unità inser.: Senza unità**;
+- SLD coerente se previsto;
+- nessuna entità residua/invisibile indesiderata.
 
 ## Riferimenti
 
 - [Comandi e click esatti](command-reference.md)
-- [Simboli custom](03-custom-symbols.md)
 - [Creare un simbolo custom](playbooks/create-custom-symbol.md)
