@@ -98,6 +98,56 @@ Do not invent SPAC commands, menu paths or behaviors.
 If a command, menu path or behavior is not verified in SPAC Start 26, mark it
 clearly as `Da verificare`.
 
+### Exact-command requirement
+
+For every operational procedure, generic wording such as:
+
+- "open the library";
+- "create the block";
+- "open the terminal manager";
+- "go to wire numbering";
+- "edit the attributes";
+
+is not sufficient when the exact command or UI path is already known.
+
+When verified, documentation MUST state the exact sequence using the visible
+SPAC/CAD names, for example:
+
+```text
+SPAC → Utility Fili → Elimina numerazione
+```
+
+or:
+
+```text
+SPINSMOR
+```
+
+or:
+
+```text
+Inser Morsetti → tasto destro su Elenco Quadri → Nuova morsettiera
+```
+
+Each verified operational procedure should provide, when applicable:
+
+1. exact command to type;
+2. exact menu/ribbon path to click;
+3. exact window/dialog name;
+4. exact field, button or option name;
+5. value to enter or select;
+6. expected result;
+7. prerequisite or known error condition.
+
+If only the behavior is known but the exact menu path is not verified, keep the
+behavior documented but add an explicit `Da verificare` warning for the missing
+UI path. Never replace an unknown path with a plausible-sounding invented one.
+
+`docs/command-reference.md` is the canonical quick reference for consolidated
+commands and click paths. Operational pages and playbooks should repeat the
+relevant commands locally so the user does not need to jump between pages just
+to complete a procedure.
+
 When documenting SPAC workflows:
 
 - distinguish between SPAC Start 26 and SPAC Automazione if relevant;
@@ -247,5 +297,7 @@ A change is complete only when:
 - no sensitive information is introduced;
 - the build passes or the failure is clearly explained;
 - the affected pages remain practical and operational;
+- known commands and click paths are stated explicitly;
+- unknown commands or menu paths are marked `Da verificare`;
 - new content is connected to standards, playbooks, known issues or quality
   gates where appropriate.
