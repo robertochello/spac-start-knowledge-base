@@ -2,110 +2,181 @@
 
 ## Obiettivo
 
-Creare un simbolo custom ordinato, riconoscibile e riutilizzabile in SPAC Start.
+Creare un simbolo custom ordinato, riconoscibile e riutilizzabile in SPAC Start usando i comandi effettivi della procedura.
 
-## Quando usarlo
+## Procedura operativa
 
-Usare questo playbook quando:
+### 1. Preparare o importare la geometria
 
-- serve creare un nuovo simbolo;
-- una geometria CAD deve diventare un simbolo intelligente;
-- un simbolo deve essere gestito come componente;
-- il simbolo dovrà essere riutilizzato in più progetti.
-
-## Flusso operativo
-
-```mermaid
-flowchart TD
-    A[Geometria]:::process --> B[Pulizia CAD]:::process
-    B --> C[Tipo simbolo]:::warn
-    C --> D[Attributi]:::data
-    D --> E[Pinatura]:::data
-    E --> F[Test progetto]:::warn
-    F --> G[Inventario]:::ok
-
-    classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
-    classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
-    classDef data fill:#e0f7fa,stroke:#00838f,color:#004d40;
-    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
-```
-
-## Procedura
-
-### 1. Preparare la geometria
-
-- Rimuovere entità inutili.
-- Verificare scala e orientamento.
-- Portare le entità sul Layer 0.
-- Evitare dettagli grafici non necessari.
-
-### 2. Definire il tipo simbolo
-
-Stabilire se il simbolo è:
-
-- Madre;
-- Figlia;
-- solo grafico;
-- parte di una macro.
-
-### 3. Gestire attributi
-
-Verificare gli attributi principali:
-
-- NOME;
-- PRES;
-- DESCRIZIONE;
-- TIPO;
-- COSTRUTTORE;
-- QUADRO.
-
-Per simboli Madre:
+Se devi inserire un DWG o un blocco di partenza, dalla riga comando usa:
 
 ```text
-PRES = M
+_INSER
 ```
 
-### 4. Gestire pinatura
+Se devi modificare le singole entità della geometria importata, usa solo quando necessario:
 
-Se il simbolo è cablato:
+```text
+ESPLODI
+```
 
-- usare PINA con numerazione progressiva;
-- usare PINB solo se il segnale deve essere riportato;
-- allineare i pin alla griglia;
-- testare l'aggancio filo.
+Poi:
 
-### 5. Testare in progetto prova
+1. rimuovi entità inutili;
+2. verifica scala e orientamento;
+3. porta la geometria su **Layer 0**;
+4. imposta colore, tipo linea e spessore su **DaBlocco**;
+5. definisci il punto che dovrà diventare il punto base del simbolo.
 
-Prima del riuso:
+### 2. Creare gli attributi
 
-- inserire il simbolo in un progetto non critico;
-- modificare attributi;
-- collegare eventuali fili;
-- verificare associazione materiale se prevista;
-- controllare comportamento grafico.
+Per ogni attributo usa:
 
-### 6. Aggiornare inventario
+```text
+ATTDEF
+```
 
-Aggiornare l'inventario simboli con:
+Per una Madre crea almeno:
 
-- nome;
+- `NOME`;
+- `PRES` con valore `M`.
+
+Per un Figlio usa `PRES = F` e mantieni `NOME` coerente con la Madre.
+
+Per i pin cablati usa:
+
+```text
+PINA1
+PINA2
+PINA3
+...
+```
+
+Aggiungi `PINB<n>` solo quando il segnale deve essere riportato sul lato opposto.
+
+Per i valori dettagliati dei campi ATTDEF usa [Attributi e pinatura](../04-attributes-and-pinning.md).
+
+### 3. Creare il DWG del simbolo
+
+1. Seleziona tutti gli oggetti che devono appartenere al simbolo.
+2. Digita:
+
+   ```text
+   MBLOCCO
+   ```
+
+3. Nella finestra del comando, alla voce **Origine**, seleziona `Oggetti`.
+4. Seleziona il **punto base**.
+5. Salva il file nella categoria corretta della libreria:
+
+   ```text
+   C:\SPAC Start 26\Librerie\Blk\_CUSTOM\<CATEGORIA>
+   ```
+
+6. Usa il nome previsto dalla convenzione della libreria.
+
+### 4. Creare l'anteprima SLD
+
+1. Apri direttamente il `.dwg` appena creato.
+2. Centra il simbolo e regola lo zoom.
+3. Digita:
+
+   ```text
+   _MSLIDE
+   ```
+
+4. Salva il file `.sld` nella stessa cartella del `.dwg`.
+5. Usa obbligatoriamente lo stesso nome base:
+
+   ```text
+   NOME_SIMBOLO.dwg
+   NOME_SIMBOLO.sld
+   ```
+
+### 5. Testare gli attributi
+
+Inserisci il simbolo in un progetto di prova.
+
+Per modificare gli attributi dell'istanza usa:
+
+```text
+EDITATT
+```
+
+Per aprire le proprietà usa:
+
+```text
+PROPRIETA
+```
+
+oppure:
+
+```text
+CTRL+1
+```
+
+Se devi copiare proprietà da un elemento già corretto usa:
+
+```text
+CORRISPROP
+```
+
+### 6. Testare la pinatura
+
+1. Inserisci il simbolo in un foglio di prova.
+2. Disegna un filo verso ogni `PINA<n>`.
+3. Verifica che il filo agganci esattamente il punto del pin.
+4. Se esiste `PINB<n>`, verifica anche la connessione corrispondente.
+5. Se non aggancia, non spostare casualmente il filo: usa il playbook [Diagnosticare pin non agganciato](diagnose-pin-not-snapping.md).
+
+### 7. Associare il materiale, se previsto
+
+1. Fai **doppio click sul simbolo**.
+2. Nel riquadro **Materiali**, fai **tasto destro**.
+3. Procedi con l'associazione del materiale prevista dalla libreria.
+4. Verifica poi distinta/report per evitare duplicazioni.
+
+Per il flusso completo usa [Associare materiali](material-association.md).
+
+### 8. Aggiornare l'inventario
+
+Registra almeno:
+
+- nome simbolo;
 - categoria;
-- stato;
-- pinatura;
-- note operative.
+- Madre/Figlio;
+- presenza di `PINA/PINB`;
+- materiale associabile;
+- stato del test;
+- eventuali note.
 
 ## Verifica finale
 
-Il simbolo è valido solo se:
+Il simbolo è pronto solo se:
 
-- si inserisce correttamente;
-- gli attributi sono modificabili;
-- la pinatura funziona se presente;
-- il simbolo è documentato;
-- lo stato è aggiornato nell'inventario.
+- `MBLOCCO` ha generato il DWG nella categoria corretta;
+- `_MSLIDE` ha generato l'SLD con stesso nome base;
+- `EDITATT` permette di modificare gli attributi previsti;
+- i fili agganciano i pin previsti;
+- il materiale, se presente, compare correttamente nei report;
+- l'inventario è aggiornato.
+
+## Comandi usati in questo playbook
+
+| Operazione | Comando |
+|---|---|
+| Inserire DWG/blocco | `_INSER` |
+| Esplodere geometria | `ESPLODI` |
+| Creare attributo | `ATTDEF` |
+| Salvare DWG simbolo | `MBLOCCO` |
+| Creare anteprima SLD | `_MSLIDE` |
+| Modificare attributi istanza | `EDITATT` |
+| Aprire proprietà | `PROPRIETA` / `CTRL+1` |
+| Copiare proprietà | `CORRISPROP` |
 
 ## Collegamenti
 
+- [Comandi e percorsi esatti](../command-reference.md)
 - [Simboli custom](../03-custom-symbols.md)
 - [Attributi e pinatura](../04-attributes-and-pinning.md)
 - [Checklist validazione simbolo](../10-symbol-validation-checklist.md)
