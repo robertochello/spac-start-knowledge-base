@@ -1,48 +1,51 @@
 # Attributi e pinatura
 
-Questa sezione raccoglie le convenzioni operative sugli attributi principali dei simboli custom SPAC e sulla gestione della pinatura.
+Questa pagina documenta i campi `ATTDEF` verificati per i simboli custom SPAC Start 26.
 
-## Procedura pratica: creare gli attributi
-
-Per creare gli attributi non usare indicazioni generiche: il comando verificato è:
+## Comando da usare
 
 ```text
 ATTDEF
 ```
 
-### Creare `NOME`
+## Attributo NOME
 
-1. Digitare `ATTDEF` nella riga comando.
-2. Nella finestra di definizione attributo impostare:
+1. Digita `ATTDEF`.
+2. Imposta:
 
 | Campo | Valore |
 |---|---|
 | **Etichetta** | `NOME` |
 | **Messaggio** | `Sigla componente` |
+| **Default** | vuoto |
+| **Invisibile** | No |
+| **Costante** | No |
+| **Blocca posizione** | Sì |
 
-3. Confermare.
-4. Posizionare l'attributo nel punto in cui deve comparire la sigla componente.
+3. Conferma.
+4. Posiziona l'attributo nel punto in cui deve essere visualizzata la sigla.
 
-### Creare `PRES` per una Madre
+## Attributo PRES per una Madre
 
-1. Digitare `ATTDEF`.
-2. Impostare:
+1. Digita `ATTDEF`.
+2. Imposta:
 
 | Campo | Valore |
 |---|---|
 | **Etichetta** | `PRES` |
 | **Default** | `M` |
-
-3. Confermare e posizionare l'attributo.
+| **Invisibile** | Sì |
+| **Costante** | Sì |
+| **Blocca posizione** | Sì |
 
 `PRES = M` identifica il simbolo Madre.
 
-Per un simbolo Figlio usare `PRES = F` e mantenere `NOME` coerente con la Madre a cui deve essere associato.
+Per un Figlio usa `PRES = F` e lo stesso `NOME` della Madre quando deve essere associato logicamente.
 
-### Creare `PINA1`
+## Attributo PINA1
 
-1. Digitare `ATTDEF`.
-2. Impostare:
+1. Digita `ATTDEF`.
+2. Imposta:
 
 | Campo | Valore |
 |---|---|
@@ -52,23 +55,40 @@ Per un simbolo Figlio usare `PRES = F` e mantenere `NOME` coerente con la Madre 
 | **Costante** | No |
 | **Blocca posizione** | Sì |
 
-3. Posizionare l'attributo esattamente sul punto di connessione previsto.
-4. Per i pin successivi usare `PINA2`, `PINA3`, ecc.
+3. Posiziona l'attributo esattamente sul punto di connessione.
 
-### Creare `PINB1`
+Per altri pin usa `PINA2`, `PINA3`, ecc.
 
-Usare `PINB1` solo se il segnale presente su `PINA1` deve essere riportato sul lato opposto del simbolo.
+## Attributo PINB1
 
-1. Digitare `ATTDEF`.
-2. Impostare l'etichetta `PINB1`.
-3. Mantenere la stessa numerazione della relativa `PINA1`.
-4. Posizionare il pin sul punto di uscita previsto.
+Usa `PINB1` quando il segnale di `PINA1` deve essere riportato sul lato opposto.
 
-Per le coppie successive usare `PINA2`/`PINB2`, `PINA3`/`PINB3`, ecc.
+1. Digita `ATTDEF`.
+2. Imposta:
 
-## Modificare attributi e proprietà
+| Campo | Valore |
+|---|---|
+| **Etichetta** | `PINB1` |
+| **Default** | `2` |
+| **Invisibile** | No |
+| **Costante** | No |
+| **Blocca posizione** | Sì |
 
-Per modificare le proprietà dell'oggetto selezionato usare:
+3. Posiziona `PINB1` sul punto di uscita previsto.
+
+Per le coppie successive usa `PINA2`/`PINB2`, `PINA3`/`PINB3`, ecc.
+
+## Dimensione testo pin
+
+Nei DWG dei BLK custom la grandezza testo standard dei pin è:
+
+```text
+1.5
+```
+
+## Modificare proprietà
+
+Seleziona l'attributo e usa:
 
 ```text
 PROPRIETA
@@ -80,106 +100,66 @@ oppure:
 CTRL+1
 ```
 
-Per copiare proprietà da un oggetto già configurato a un altro usare:
+Modifica le proprietà nella palette.
 
-```text
-CORRISPROP
-```
+## Copiare proprietà da un attributo corretto
 
-Per modificare gli attributi di un'istanza già inserita usare:
+1. Digita:
+
+   ```text
+   CORRISPROP
+   ```
+
+2. seleziona l'attributo sorgente;
+3. seleziona l'attributo destinazione;
+4. premi **Invio**.
+
+## Modificare attributi di un simbolo già inserito
+
+Usa:
 
 ```text
 EDITATT
 ```
 
-## In questa pagina impari
-
-- quali attributi controllare nei simboli custom;
-- come distinguere Madre, Figlio e relazione logica;
-- quando usare solo `PINA<n>` e quando aggiungere `PINB<n>`;
-- quali comandi digitare per creare e modificare gli attributi;
-- quali test fare prima di validare il simbolo.
-
-## Attributi principali
-
-| Attributo | Uso operativo |
-|---|---|
-| `NOME` | Identificativo del componente |
-| `PRES` | Ruolo del simbolo, ad esempio Madre o Figlio |
-| `DESCRIZIONE` | Descrizione funzionale |
-| `TIPO` | Tipo componente |
-| `COSTRUTTORE` | Costruttore o marca |
-| `QUADRO` | Quadro o area di appartenenza |
-
-## Simbolo Madre
+Per un accessorio Figlio verifica:
 
 ```text
-PRES = M
+PRES = F
+NOME = stesso NOME della Madre
 ```
 
-La Madre identifica il componente principale nello schema.
+Se SPAC avvisa che esiste già un dispositivo con lo stesso `NOME`, conferma quando la duplicazione è intenzionale per creare la relazione Madre/Figlio.
 
-## Simbolo Figlio
+## Regola PINA/PINB
 
-Regola operativa:
+- solo `PINA<n>`: punto di connessione singolo;
+- `PINA<n>` + `PINB<n>`: collegamento attraversa il simbolo;
+- non aggiungere `PINB` se non serve realmente.
 
-- `PRES = F`;
-- stesso `NOME` della Madre quando deve essere associato logicamente;
-- la relazione non deve dipendere dalla sola vicinanza grafica.
+## Test pinatura
 
-Esempi: contatti ausiliari, bobine, accessori ed elementi funzionali associati.
+1. Configura la griglia con `_DSETTINGS → Snap e griglia`.
+2. Inserisci il simbolo in un progetto prova.
+3. Usa `EDITATT` per verificare gli attributi.
+4. Collega un filo a ogni `PINA<n>`.
+5. Se esiste `PINB<n>`, verifica anche il lato opposto.
+6. Salva, chiudi e riapri.
 
-## Pinatura standard
+Il test è superato solo se il collegamento aggancia realmente il pin e resta corretto dopo la riapertura.
 
-Lo standard adottato è:
+## Tabella rapida
 
-```text
-PINA1
-PINA2
-PINA3
-...
-```
+| Attributo | Default | Invisibile | Costante | Blocca posizione |
+|---|---:|---|---|---|
+| `NOME` | vuoto | No | No | Sì |
+| `PRES` Madre | `M` | Sì | Sì | Sì |
+| `PINA1` | `1` | No | No | Sì |
+| `PINB1` | `2` | No | No | Sì |
 
-La presenza di `PINB<n>` con lo stesso numero indica che il segnale su `PINA<n>` viene riportato su `PINB<n>`.
+## Collegamenti
 
-| Ingresso | Uscita collegata | Significato |
-|---|---|---|
-| `PINA1` | `PINB1` | Segnale riportato dalla coppia 1 |
-| `PINA2` | `PINB2` | Segnale riportato dalla coppia 2 |
-
-## Quando usare solo PINA
-
-Usare solo `PINA<n>` quando il simbolo rappresenta un singolo punto di connessione o non deve riportare il segnale in uscita.
-
-## Quando usare PINA e PINB
-
-Usare `PINA<n>` + `PINB<n>` quando il simbolo è attraversato da un collegamento o quando il segnale deve essere rappresentato in ingresso e uscita.
-
-## Configurazione grafica dei pin
-
-- testo pin standard nei BLK custom: `1.5`;
-- posizione coerente con la griglia;
-- attributi bloccati in posizione quando necessario;
-- orientamento coerente con il significato elettrico.
-
-## Test dopo il salvataggio
-
-1. Inserire il simbolo in un progetto di prova.
-2. Selezionarlo e usare `EDITATT` per verificare la modifica degli attributi.
-3. Collegare un filo a ogni `PINA<n>` previsto.
-4. Verificare l'aggancio reale al pin.
-5. Se presente `PINB<n>`, verificare anche il lato di uscita corrispondente.
-6. Controllare eventuali report o associazioni materiali.
-7. Aggiornare l'inventario simboli custom.
-
-!!! warning "Errore da evitare"
-
-    Non aggiungere pin per tentativi. Se il filo non aggancia, verificare prima
-    posizione del pin, etichetta `PINA/PINB`, griglia e struttura del simbolo.
-
-## Riferimenti
-
-- [Comandi e percorsi esatti](command-reference.md)
-- [Simboli custom](03-custom-symbols.md)
+- [Comandi e click esatti](command-reference.md)
 - [Creare un simbolo custom](playbooks/create-custom-symbol.md)
 - [Diagnosticare pin non agganciato](playbooks/diagnose-pin-not-snapping.md)
+- [Gestire accessori e bobine](playbooks/manage-accessories-and-coils.md)
