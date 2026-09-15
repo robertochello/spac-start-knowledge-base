@@ -1,18 +1,30 @@
 # Schema unifilare
 
-Questa pagina raccoglie le procedure operative già consolidate per sviluppare uno schema unifilare in **SPAC Start 26**.
+## Parti da qui
 
-## Aprire l'ambiente unifilare
+Se devi fare un unifilare, segui questo ordine:
 
-Dalla barra superiore:
+1. **UNIFILARE → Disegno Unifilare**.
+2. Seleziona il tipo di linea.
+3. Associa i materiali con **Avvio DbCenter**.
+4. Premi **Disegna**.
+5. Inserisci eventuali nuove linee.
+6. Numera i fili.
+7. Controlla i rimandi.
+
+Il resto della pagina spiega questi passaggi uno per uno.
+
+## Aprire Disegno Unifilare
+
+Clicca:
 
 ```text
 UNIFILARE → Disegno Unifilare
 ```
 
-Risultato atteso: apertura della finestra **Disegno Unifilare**.
+Si apre la finestra **Disegno Unifilare**.
 
-## Preparazione: snap e griglia
+## Impostare snap e griglia
 
 Digita:
 
@@ -20,123 +32,95 @@ Digita:
 _DSETTINGS
 ```
 
-Apri il tab **Snap e griglia**.
+Poi apri **Snap e griglia**.
 
-Esempio verificato:
+Esempio usato:
 
 ```text
 Intervallo snap X = 2,5
 Intervallo snap Y = 2,5
 ```
 
-Con griglia principale `10`, ogni quadrato viene suddiviso in quattro passi per lato.
-
-## Finestra Disegno Unifilare
-
-Controlla i campi:
-
-- **Scelta Circuiti memorizzati**;
-- **Tipo quadro**;
-- **Monofase / Trifase**;
-- **Composizione/Tipologia**;
-- **Anteprima**;
-- **Scelta del quadro**.
-
-A destra è presente la tabella dei componenti/materiali per ogni livello.
-
-## Associare un materiale a un livello
+## Creare l'ingresso linea
 
 Nella finestra **Disegno Unifilare**:
 
-1. seleziona il livello interessato;
-2. seleziona il tipo di dispositivo;
-3. fai **tasto destro** sulla tabella materiali;
-4. clicca **Avvio DbCenter**;
-5. scegli il materiale;
-6. verifica che il record compaia sul livello corretto.
+1. seleziona **Ingresso linea**;
+2. scegli **Monofase** o **Trifase**;
+3. compila i livelli necessari;
+4. per ogni materiale fai tasto destro sulla tabella;
+5. clicca **Avvio DbCenter**;
+6. scegli il materiale;
+7. controlla **Composizione/Tipologia**;
+8. premi **Disegna**.
 
-## Disegnare l'ingresso linea
+SPAC inserisce la linea nello schema.
 
-1. seleziona la voce dedicata a **Ingresso linea**;
-2. compila i livelli necessari;
-3. associa i materiali;
-4. verifica **Composizione/Tipologia**;
-5. clicca **Disegna**.
+## Aggiungere una nuova linea
 
-SPAC disegna automaticamente la linea e genera la tabella con i dati dei materiali e del cavo.
+1. Togli la spunta da **Ingresso linea**.
+2. Configura la linea.
+3. Premi **Disegna**.
+4. Clicca nello schema dove vuoi inserirla.
 
-La finestra resta in primo piano per consentire l'inserimento di ulteriori linee.
+## Numerare i fili normali
 
-## Disegnare una nuova linea singola
+1. Clicca **SPAC → Numera Fili**.
+2. Seleziona il tipo di cavo.
+3. Vai a **Modalita' di Numerazione**.
+4. Clicca sull'immagine della modalità.
+5. Si apre **Configurazione Numerazione Conduttori**.
+6. Apri **Numerazione Conduttori**.
+7. Scegli la modalità.
+8. Se usi **Foglio Numero**, scegli il separatore.
+9. Premi **OK**.
+10. Premi ancora **OK**.
+11. Torna allo schema.
+12. Traccia una linea che attraversa il cavo da numerare.
 
-1. togli la spunta da **Ingresso linea**;
-2. configura la linea;
-3. clicca **Disegna**;
-4. clicca nello schema la posizione della nuova linea.
+## Fili di alimentazione
 
-## Numerare fili non di alimentazione
+Se manca l'identificatore:
 
-1. **SPAC → Numera Fili**;
-2. seleziona il tipo di cavo;
-3. individua **Modalita' di Numerazione**;
-4. clicca sull'immagine della modalità;
-5. nella finestra **Configurazione Numerazione Conduttori** apri **Numerazione Conduttori**;
-6. scegli la **Modalita' di Numerazione**;
-7. se usi **Foglio Numero**, scegli il separatore;
-8. clicca **OK** nella finestra **Configurazione Numerazione Conduttori**;
-9. clicca **OK** nella finestra precedente;
-10. torna allo schema;
-11. traccia una linea che interseca il cavo da numerare.
+1. clicca **Identificatore Linee**;
+2. scegli il tipo di linea;
+3. premi **OK**;
+4. attraversa con una linea il filo interessato.
 
-Questa procedura vale per fili **non di alimentazione**.
+Per fasi e neutro:
 
-## Identificare una linea di alimentazione
+1. apri **Numerazione Fili**;
+2. nella finestra **Numerazione Fili Unifilare** scegli, per esempio, **L1 L2 L3 N**;
+3. nel campo vicino a **Numero** inserisci il valore iniziale;
+4. imposta il progressivo.
 
-Se manca il simbolo identificatore:
+Se vuoi vedere solo `L1`, `L2`, `L3`, `N`, usa **Non utilizzare numero incrementale**.
 
-1. barra dei menu → **Identificatore Linee**;
-2. seleziona il tipo di linea;
-3. clicca **OK**;
-4. torna allo schema;
-5. traccia una linea che interseca la linea interessata.
+## Prefisso o suffisso
 
-## Numerare/identificare fasi e neutro
+Vai a **Prefissi o Suffissi Locali** e attiva **Abilita**.
 
-1. seleziona **Numerazione Fili**;
-2. nella finestra **Numerazione Fili Unifilare** scegli il tipo, ad esempio **L1 L2 L3 N**;
-3. nel campo accanto a **Numero** imposta il valore iniziale, ad esempio `1`;
-4. configura il progressivo numerico.
+Funziona solo quando è attivo un numero incrementale.
 
-Se vuoi solo `L1`, `L2`, `L3`, `N`, attiva l'opzione equivalente a **Non utilizzare numero incrementale**.
+## Controllare i rimandi
 
-### Prefissi o suffissi locali
-
-Nella sezione **Prefissi o Suffissi Locali**:
-
-1. attiva **Abilita** se vuoi aggiungere un prefisso/suffisso;
-2. configura il testo desiderato.
-
-!!! note
-
-    Prefissi e suffissi locali funzionano solo se viene utilizzato un numero incrementale. Se **Non utilizzare numero incrementale** è attivo, non vengono applicati.
-
-## Lista dei rimandi/numeri usati
-
-Percorso:
+Apri:
 
 ```text
 Numerazione fili → Lista numeri usati
 ```
 
-Per vedere solo i rimandi:
+Poi:
 
 1. attiva **Vedi solo i Rimandi**;
 2. seleziona i multifogli;
-3. clicca **Scansiona i Multifogli**.
+3. premi **Scansiona i Multifogli**.
 
-I numeri con asterisco indicano ripetizioni.
+Un asterisco indica un numero ripetuto.
 
 ## Eliminare la numerazione
+
+Usa:
 
 ```text
 SPAC → Utility Fili → Elimina numerazione
@@ -148,32 +132,28 @@ oppure:
 DEL_NUMF
 ```
 
-## Cross-reference
+## Aggiornare i cross-reference
 
-Dopo aver creato i rimandi con nome e direzione coerenti:
+Clicca:
 
 ```text
 UTIL → Cross Reference → Rimandi → Cross → Ok - Aggiorna
 ```
 
-Verifica poi il riferimento generato sul foglio.
+Poi controlla il rimando sul foglio.
 
-## Checklist unifilare
+## Controllo finale
 
-- **UNIFILARE → Disegno Unifilare** usato per aprire l'ambiente;
-- `_DSETTINGS` configurato;
-- ingresso linea disegnato;
-- materiali associati con **Avvio DbCenter**;
-- nuove linee inserite con **Disegna**;
-- fili non alimentazione numerati con **SPAC → Numera Fili**;
-- alimentazioni con **Identificatore Linee**;
-- fasi/neutro configurati in **Numerazione Fili Unifilare**;
-- eventuali prefissi/suffissi compatibili con il progressivo;
-- rimandi verificati con **Lista numeri usati**;
-- cross-reference aggiornato con **UTIL → Cross Reference**.
+Prima di chiudere verifica:
 
-## Collegamenti
+- ingresso linea presente;
+- materiali corretti;
+- linee inserite;
+- fili numerati;
+- identificatori di alimentazione presenti;
+- rimandi controllati;
+- cross-reference aggiornati.
 
-- [Comandi e click esatti](command-reference.md)
-- [Numerazione e identificazione fili](18-wire-numbering.md)
-- [Rimandi e morsetti](06-cross-references-terminals.md)
+## Se qualcosa non funziona
+
+Vai a [Problemi e soluzioni](07-troubleshooting.md).
