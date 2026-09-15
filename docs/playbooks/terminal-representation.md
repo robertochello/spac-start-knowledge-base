@@ -2,109 +2,117 @@
 
 ## Obiettivo
 
-Capire perché un morsetto mostra un'informazione diversa da quella attesa e riportare la rappresentazione a una logica coerente.
+Capire perché un morsetto mostra un'informazione diversa da quella attesa e verificare il dato sorgente prima di modificare la grafica.
 
-## Quando usarlo
+## Aprire la gestione morsetti
 
-Usare questo playbook quando sul morsetto viene visualizzato un dato non desiderato, ad esempio un riferimento diverso dal numero morsetto.
+Usa la funzione:
 
-## Principio operativo
-
-Un morsetto è un oggetto dati, non solo testo visibile. Prima di modificare graficamente la scritta, verificare il dato sorgente e la configurazione della rappresentazione.
-
-## Distinzione iniziale
-
-Separare sempre:
-
-| Livello | Domanda di controllo |
-|---|---|
-| Oggetto morsetto | Il morsetto appartiene alla morsettiera e al filo corretti? |
-| Dati sorgente | Numero morsetto, numero filo e riferimento funzionale sono coerenti? |
-| Rappresentazione grafica | Il simbolo mostra il campo atteso, ad esempio `NumM`? |
-| Testo visibile | Il testo è coerente con il dato che deve rappresentare? |
-
-## Flusso diagnostico
-
-```mermaid
-flowchart TD
-    A[Morsetto visibile]:::info --> B[Oggetto morsetto]:::data
-    B --> C[Dati sorgente]:::data
-    C --> D[Rappresentazione]:::process
-    D --> E{Dato atteso?}:::warn
-    E -->|Sì| F[OK]:::ok
-    E -->|No| G[Verificare campo]:::danger
-    G --> C
-
-    classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
-    classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
-    classDef danger fill:#fdecea,stroke:#c62828,color:#7f1d1d;
-    classDef info fill:#e8f0fe,stroke:#1565c0,color:#0d47a1;
-    classDef data fill:#e0f7fa,stroke:#00838f,color:#004d40;
-    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
+```text
+Inser Morsetti
 ```
 
-## Diagnosi
+oppure da riga comando:
 
-Controllare separatamente:
+```text
+SPINSMOR
+```
 
-- morsettiera;
+!!! warning "Prerequisito"
+
+    Deve essere aperto un database materiali che contenga almeno una morsettiera.
+
+## Se devi creare una morsettiera di prova
+
+Nella finestra **Inser Morsetti**:
+
+1. individua **Elenco Quadri** in alto a sinistra;
+2. fai **tasto destro** su **Elenco Quadri**, sul nome del quadro oppure su una morsettiera esistente;
+3. clicca **Nuova morsettiera**;
+4. completa i dati;
+5. verifica che la morsettiera compaia sotto il quadro corretto.
+
+## Capire cosa sta mostrando il morsetto
+
+Sigle documentate:
+
+| Sigla | Significato |
+|---|---|
+| `NumI` | numero filo in ingresso |
+| `NumO` | numero filo in uscita |
+| `NumM` | numero morsetto |
+
+Se sul morsetto compare il numero filo invece del numero morsetto, verifica se la rappresentazione sta mostrando `NumI` o `NumO` invece di `NumM`.
+
+## Procedura diagnostica
+
+### 1. Apri il morsetto nella gestione corretta
+
+1. Avvia **Inser Morsetti** / `SPINSMOR`.
+2. Seleziona il quadro corretto.
+3. Seleziona la morsettiera corretta.
+4. Individua il morsetto interessato.
+
+### 2. Verifica i dati sorgente
+
+Controlla separatamente:
+
+- nome morsettiera;
 - numero morsetto;
-- numero filo;
-- riferimento funzionale;
-- campi mostrati dal simbolo;
-- impostazioni grafiche.
+- numero filo in ingresso;
+- numero filo in uscita;
+- riferimento funzionale.
 
-## Checklist diagnostica
+### 3. Verifica la rappresentazione
 
-| Sintomo | Controllo prioritario | Esito atteso |
-|---|---|---|
-| Compare il numero filo invece del numero morsetto | Verificare se il campo mostrato è `NumI` o `NumO` | La rappresentazione usa `NumM` quando serve il numero morsetto |
-| Compare una morsettiera inattesa | Verificare appartenenza del morsetto alla morsettiera | Nome morsettiera coerente con lo schema |
-| Il numero morsetto è assente | Verificare dati del morsetto e campo visualizzato | Numero morsetto presente e visibile |
-| Il testo è stato corretto manualmente | Verificare dato sorgente e rappresentazione | Correzione sul dato, non solo sul testo |
-| Il problema ricompare su nuovi morsetti | Testare in progetto prova e annotare il comportamento | Caso ripetibile da documentare |
+Controlla quale campo la rappresentazione del morsetto sta mostrando:
 
-## Procedura
+- `NumM` se vuoi il numero morsetto;
+- `NumI` se vuoi il numero filo in ingresso;
+- `NumO` se vuoi il numero filo in uscita.
 
-### 1. Verificare proprietà del morsetto
+!!! warning "Percorso della rappresentazione da verificare"
 
-Controllare che il morsetto appartenga alla morsettiera corretta e abbia numero coerente.
+    Il nome esatto del pulsante/menu interno con cui si cambia la rappresentazione grafica del morsetto non è ancora consolidato nella knowledge base. Non inventarlo. Quando viene verificato su SPAC Start 26 va aggiunto qui.
 
-### 2. Verificare dato visualizzato
+### 4. Non correggere il testo manualmente
 
-Capire se il testo mostrato proviene dal numero morsetto, dal filo o da altro riferimento.
+Se il dato visualizzato è sbagliato:
 
-### 3. Controllare rappresentazione
+- non spostare o riscrivere il testo a mano;
+- correggi il dato sorgente oppure la rappresentazione che richiama il campo sbagliato.
 
-Verificare quale campo viene richiamato dalla rappresentazione grafica del morsetto.
+### 5. Crea un morsetto di prova
 
-### 4. Confrontare numero morsetto e numero filo
+1. Usa **Inser Morsetti**.
+2. Se necessario crea una **Nuova morsettiera**.
+3. Inserisci un morsetto nuovo su un filo noto.
+4. Verifica quale campo viene mostrato.
+5. Confronta il comportamento con il morsetto problematico.
 
-Controllare se la rappresentazione mostra il numero morsetto o il numero filo.
+## Diagnostica rapida
 
-!!! warning "Da verificare"
-
-    Se il comportamento non è verificato nella propria installazione, marcarlo
-    come `Da verificare` prima di promuoverlo a procedura stabile.
-
-### 5. Testare su morsetto nuovo
-
-Creare un morsetto di prova per capire se il problema è locale o di configurazione generale.
+| Sintomo | Controllo |
+|---|---|
+| compare numero filo al posto del numero morsetto | verifica `NumI`/`NumO` vs `NumM` |
+| morsettiera inattesa | apri `SPINSMOR` e verifica appartenenza sotto **Elenco Quadri** |
+| numero morsetto corretto nei dati ma non a video | verifica campo usato dalla rappresentazione |
+| problema presente solo su un morsetto | confronta con un morsetto nuovo |
+| problema presente su tutti i morsetti | verifica configurazione/rappresentazione generale |
 
 ## Verifica finale
 
-La configurazione è corretta quando:
+Il problema è risolto quando:
 
-- il morsetto mostra il dato previsto;
-- la morsettiera è coerente;
-- il numero morsetto non viene confuso con altri riferimenti;
-- il numero filo viene mostrato solo quando previsto dalla rappresentazione;
-- il comportamento è stabile su un nuovo morsetto di prova.
+- il morsetto appartiene alla morsettiera corretta;
+- `NumM`, `NumI` e `NumO` sono coerenti con i dati reali;
+- la rappresentazione mostra il campo previsto;
+- non è stato corretto solo il testo grafico;
+- un morsetto nuovo mostra lo stesso comportamento corretto.
 
 ## Collegamenti
 
-- [Multifilare](../09-multifilare.md)
+- [Comandi e click esatti](../command-reference.md)
 - [Rimandi, cross-reference e morsetti](../06-cross-references-terminals.md)
+- [Multifilare](../09-multifilare.md)
 - [Numerazione e identificazione fili](../18-wire-numbering.md)
-- [Known Issues](../known-issues/index.md)
-- [Troubleshooting](../07-troubleshooting.md)
