@@ -2,6 +2,32 @@
 
 Tutte le modifiche rilevanti alla knowledge base saranno documentate in questo file.
 
+## 0.7.0 - 2026-09-15 - Procedure fidelity pass
+
+### Fixed
+
+- Ripristinato il percorso cross-reference già verificato: **UTIL → Cross Reference → Rimandi → Cross → Ok - Aggiorna**; rimosso il falso `Da verificare` dalle pagine operative.
+- Ripristinata la creazione rimandi tramite **Dynamic Coll / Dynamic Alim** con tipi arrivo/partenza e regole di direzione.
+- Completata la scansione rimandi: **Lista numeri usati → Vedi solo i Rimandi → Scansiona i Multifogli**.
+- Completato l'inserimento morsetto: morsettiera → tipo → **Anteprima → Ok - Nuovo → clic filo → Invio**.
+- Documentata la scelta `NumM`/`NumI`/`NumO` direttamente nel riquadro **Anteprima**.
+- Completato il salvataggio simboli `MBLOCCO` con **Destinazione → Nome e percorso del file** e **Unità inser. → Senza unità**.
+- Completati i campi `ATTDEF` di `NOME`, `PRES`, `PINA1`, `PINB1` inclusi Invisibile, Costante e Blocca posizione.
+
+### Added
+
+- Apertura ambiente unifilare: **UNIFILARE → Disegno Unifilare**.
+- Associazione materiale nei livelli unifilari tramite tasto destro tabella → **Avvio DbCenter**.
+- Conferme esplicite **OK → OK** nella configurazione di numerazione conduttori.
+- Regola **Prefissi o Suffissi Locali → Abilita** e dipendenza dal numero incrementale.
+- Dettagli `_INSER` sulle aree **Disegno corrente**, **Recenti**, **Preferiti**, **Librerie**.
+- Home trasformata in cheat sheet operativo con i percorsi più usati direttamente visibili.
+
+### Quality rule
+
+- Ogni procedura operativa deve preferire la struttura: **Dove cliccare → Cosa impostare → Esito atteso → Diagnosi se KO**.
+- Una voce già verificata nel manuale completo non deve essere degradata a descrizione generica o `Da verificare` nelle pagine operative.
+
 ## 0.6.0 - 2026-09-15 - Exact commands and click paths
 
 ### Changed
@@ -65,7 +91,7 @@ Tutte le modifiche rilevanti alla knowledge base saranno documentate in questo f
 - Navigazione pubblica semplificata in cinque aree principali: Start, Operativo, Playbook, Diagnosi e Governance.
 - Home resa più leggibile con percorsi principali e dettagli secondari richiudibili.
 - Stato Home aggiornato: le aree principali sono dichiarate come baseline completata o verificata.
-- Standard nomenclatura allineato a `SCB` per contatto di scambio.
+- Standard nomenclatura allineato alla convenzione adottata nella knowledge base.
 - Stato multifilare aggiornato da placeholder a base operativa presente.
 - Command Reference estesa con i comandi citati nella guida operativa.
 
