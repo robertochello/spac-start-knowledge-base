@@ -1,140 +1,126 @@
 # Schema unifilare
 
-Questa sezione raccoglie le procedure operative per impostare e sviluppare uno schema unifilare in SPAC Start.
-
-## In questa pagina impari
-
-- come impostare il flusso unifilare senza confonderlo con il multifilare;
-- quali controlli fare su linee, identificazione, numerazione e materiali;
-- quando passare a rimandi, numerazione fili o back-check;
-- quali verifiche fare prima di considerare stabile la pagina.
-
-## Flusso unifilare
-
-Il flusso unifilare deve mantenere separati disegno, riconoscimento SPAC,
-identificazione delle linee e verifica finale.
-
-```mermaid
-flowchart LR
-    A[Preparazione]:::process --> B[Linee e simboli]:::process
-    B --> C[Identificazione]:::data
-    C --> D[Numerazione]:::data
-    D --> E[Materiali]:::data
-    E --> F[Report e controlli]:::ok
-
-    classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
-    classDef data fill:#e0f7fa,stroke:#00838f,color:#004d40;
-    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
-```
-
-| Fase | Verifica minima | Rimando |
-|---|---|---|
-| preparazione pagina | griglia, snap e scala coerenti | [Workflow CAD 2D](02-cad-workflow.md) |
-| linee e simboli | elementi riconosciuti quando serve logica SPAC | [Concetti SPAC](concepts.md) |
-| identificazione linee | alimentazioni e collegamenti nominati in modo coerente | [Rimandi e morsetti](06-cross-references-terminals.md) |
-| numerazione fili | numeri leggibili e rigenerabili | [Numerazione e identificazione fili](18-wire-numbering.md) |
-| materiali e report | materiali associati e distinta verificata | [Associare materiali](playbooks/material-association.md) |
-
-!!! note "Differenza dal multifilare"
-
-    In unifilare l'obiettivo è rappresentare linee, livelli e materiali in
-    modo sintetico. Per componenti associati, morsetti dettagliati e rimandi
-    tra fogli, verificare anche [Multifilare](09-multifilare.md) e
-    [Rimandi e morsetti](06-cross-references-terminals.md).
+Questa pagina raccoglie le procedure operative per impostare e sviluppare uno schema unifilare in SPAC Start. I comandi verificati sono riportati con il nome esatto; dove il percorso non è ancora confermato viene indicato `Da verificare`.
 
 ## Preparazione
 
 Prima di iniziare:
 
-1. verificare che il progetto sia stato creato correttamente;
-2. verificare cartiglio e pagine standard;
-3. selezionare l'ambiente unifilare;
-4. usare la simbologia unifilare;
-5. configurare griglia e snap.
+1. verifica che il progetto sia stato creato correttamente;
+2. verifica cartiglio e pagine standard;
+3. seleziona l'ambiente unifilare;
+4. usa la simbologia unifilare;
+5. configura griglia e snap con il comando indicato sotto.
 
 ## Snap e griglia
 
-Per lavorare in modo ordinato, configurare snap e griglia in modo coerente.
+Nella riga comando digita:
 
-Esempio operativo:
+```text
+_DSETTINGS
+```
 
-- griglia principale con passo 10;
-- snap con passo 2,5;
-- ogni quadrato principale viene così suddiviso in 4 parti per lato.
+Nella finestra che si apre seleziona il tab:
 
-Questo consente un posizionamento più preciso dei simboli.
+```text
+Snap e griglia
+```
+
+Imposta gli intervalli di snap sugli assi X e Y e la griglia secondo lo standard del progetto.
+
+Esempio operativo già adottato:
+
+- griglia principale: `10`;
+- snap: `2.5`;
+- ogni quadrato principale viene suddiviso in 4 parti per lato.
+
+Verifica finale: spostando o inserendo un simbolo, il punto di inserimento deve agganciarsi ai passi impostati.
 
 ## Disegno unifilare
 
-La finestra di disegno unifilare permette di configurare circuiti, livelli, materiali e tipologia della linea.
+Nella finestra di disegno unifilare controlla i campi disponibili prima di confermare il disegno:
 
-Campi da verificare:
-
-| Campo | Scopo |
+| Campo | Cosa controllare |
 |---|---|
-| Circuiti memorizzati | Selezione di circuiti predisposti |
-| Tipo quadro | Filtro o selezione del quadro |
-| Monofase / Trifase | Tipo di alimentazione |
-| Composizione / Tipologia | Composizione della linea e fine circuito |
-| Anteprima | Controllo grafico prima del disegno |
-| Scelta quadro | Associazione al quadro corretto |
+| **Circuiti memorizzati** | circuito predisposto da utilizzare |
+| **Tipo quadro** | quadro corretto |
+| **Monofase / Trifase** | tipo di alimentazione |
+| **Composizione / Tipologia** | composizione linea e fine circuito |
+| **Anteprima** | risultato grafico prima dell'inserimento |
+| **Scelta quadro** | associazione al quadro corretto |
 
 ## Ingresso linea
 
 È consigliato disegnare prima l'ingresso linea.
 
-Procedura:
+Procedura attuale:
 
-1. selezionare la voce dedicata all'ingresso linea;
-2. configurare i livelli necessari;
-3. associare materiali ai componenti;
-4. disegnare la linea;
-5. verificare tabella e dati generati.
+1. seleziona la voce dedicata all'ingresso linea nella finestra unifilare;
+2. configura i livelli necessari;
+3. associa i materiali ai componenti;
+4. disegna la linea;
+5. verifica la tabella e i dati generati.
+
+!!! warning "Percorso menu da verificare"
+
+    Il nome esatto della voce/ribbon che apre la finestra di disegno unifilare non è ancora consolidato nella knowledge base. Finché non viene verificato direttamente in SPAC Start 26 non deve essere inventato.
 
 ## Nuove linee
 
-Per inserire una nuova linea:
-
-1. disattivare l'opzione ingresso linea;
-2. configurare la linea;
-3. disegnare;
-4. selezionare la posizione nello schema.
+1. disattiva l'opzione **Ingresso linea**;
+2. configura la nuova linea;
+3. conferma il disegno;
+4. seleziona la posizione nello schema;
+5. verifica l'anteprima e i dati generati.
 
 ## Materiali in unifilare
 
-Per ogni livello della linea è possibile associare un materiale.
+Per ogni livello della linea associa il materiale al livello corretto e controlla che non venga duplicato.
 
-Regole operative:
-
-- associare il materiale al livello corretto;
-- evitare duplicazioni;
-- verificare la tabella generata;
-- controllare distinta o report se richiesti.
+Per la gestione dettagliata usa [Associare materiali](playbooks/material-association.md).
 
 ## Identificazione linee di alimentazione
 
 I fili di alimentazione devono essere identificati come fasi, neutro o altri conduttori coerenti.
 
-Se l'identificatore non è presente:
+Procedura concettualmente verificata:
 
-1. usare la funzione di identificazione linee;
-2. selezionare il tipo di linea;
-3. applicare l'identificatore alla linea interessata;
-4. verificare che il simbolo identificatore sia visibile.
+1. usa la funzione di identificazione linee;
+2. seleziona il tipo di linea;
+3. applica l'identificatore alla linea interessata;
+4. verifica che il simbolo identificatore sia visibile.
+
+!!! warning "Comando esatto da verificare"
+
+    Il nome esatto del comando/percorso menu per **Identificazione linee** deve ancora essere consolidato. Non sostituirlo con un nome ipotetico.
 
 ## Numerazione fili
 
 I fili non di alimentazione possono essere numerati con le funzioni di numerazione dedicate.
 
-Regola pratica:
+Per consultare i numeri già usati nel progetto è verificato il percorso:
 
-- i fili di alimentazione seguono una logica di identificazione;
-- i fili non di alimentazione possono seguire una numerazione progressiva o per foglio.
+```text
+Numerazione fili → Lista numeri usati
+```
+
+Per eliminare la numerazione esistente è verificato:
+
+```text
+SPAC → Utility Fili → Elimina numerazione
+```
+
+oppure da riga comando:
+
+```text
+DEL_NUMF
+```
 
 ## Checklist unifilare
 
 Prima di chiudere uno schema unifilare:
 
+- `_DSETTINGS` verificato con snap/griglia corretti;
 - ingresso linea presente;
 - linee configurate correttamente;
 - materiali associati;
@@ -145,6 +131,7 @@ Prima di chiudere uno schema unifilare:
 
 ## Collegamenti
 
+- [Comandi e percorsi esatti](command-reference.md)
 - [Template progetto](16-project-template.md)
 - [Numerazione e identificazione fili](18-wire-numbering.md)
 - [Associazione materiali](playbooks/material-association.md)
