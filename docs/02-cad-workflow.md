@@ -1,89 +1,126 @@
 # Workflow CAD 2D
 
-SPAC Start può essere usato anche per disegno CAD 2D quando il contenuto non è direttamente elettrico.
+SPAC Start può essere usato anche per disegno CAD 2D quando il contenuto non è direttamente elettrico. Questa pagina riporta i comandi già verificati per le operazioni ricorrenti.
 
-In questi casi il disegno planimetrico/CAD è più coerente rispetto a un ambiente unifilare o multifilare, che sono orientati alla rappresentazione elettrica intelligente.
+## Layer standard
 
-## Quando usare il disegno CAD/planimetrico
-
-Usare il workflow CAD/planimetrico quando serve:
-
-- disegnare strutture 2D;
-- preparare viste dall'alto;
-- creare quote e ingombri;
-- importare o adattare geometrie DWG;
-- produrre elementi grafici non elettrici.
-
-## Layer
-
-Per file CAD/DXF/DWG destinati a SPAC, mantenere le entità sul:
+Per file CAD/DXF/DWG destinati a SPAC, usa:
 
 ```text
 Layer 0
 ```
 
-Questo riduce problemi di importazione, visibilità e gestione grafica.
+Per geometria destinata a diventare blocco/simbolo usa inoltre:
 
-## Rettangoli e geometrie
+- **Colore**: `DaBlocco`;
+- **Tipo linea**: `DaBlocco`;
+- **Spessore linea**: `DaBlocco`.
 
-Per disegnare rettangoli o cornici:
+## Importare un DWG o un blocco
 
-- definire sempre unità di misura e quote;
-- verificare se il rettangolo è solo contorno o pieno;
-- evitare tratteggi o riempimenti se non sono necessari;
-- usare offset controllati per rettangoli interni.
+Nella riga comando digita:
 
-## Rettangoli pieni e tratteggi
+```text
+_INSER
+```
 
-Per indicare in vista dall'alto un elemento pieno o una zona non vuota, usare un tratteggio coerente e leggibile.
+Poi seleziona il file/blocco da inserire e verifica scala e punto di inserimento.
 
-Linee guida:
+## Esplodere una geometria importata
 
-- evitare riempimenti troppo scuri se coprono quote o riferimenti;
-- usare tratteggi semplici per sezioni o parti piene;
-- mantenere lo stile coerente in tutto il disegno;
-- aggiungere legenda se il significato non è evidente.
+Se devi modificare le singole entità usa:
 
-## Scala e disegni copiati
+```text
+ESPLODI
+```
 
-Quando un disegno copiato da un altro DWG risulta troppo piccolo o fuori scala:
+Non esplodere automaticamente ogni oggetto: fallo solo quando serve per pulire o modificare la geometria.
 
-1. identificare una quota reale nota;
-2. misurare la quota attuale nel disegno importato;
-3. calcolare il fattore di scala;
-4. applicare la scala all'insieme selezionato;
-5. verificare nuovamente una quota nota.
+## Riempire una forma con colore pieno
 
-## Blocchi CAD
+Percorso verificato:
 
-Per creare blocchi DWG da elementi esistenti:
+1. apri il menu **Disegna**;
+2. clicca **Tratteggio**;
+3. nella barra dei comandi clicca/digita **I** per aprire le impostazioni;
+4. nella finestra **Tratteggio e sfumatura**, alla voce **Modello**, seleziona:
 
-1. partire da geometria pulita;
-2. esplodere eventuali oggetti complessi solo se necessario;
-3. rimuovere entità inutili;
-4. portare tutto su Layer 0;
-5. creare il blocco;
-6. testare inserimento, scala e visibilità.
+   ```text
+   SOLID
+   ```
 
-## Test minimi
+5. scegli il colore;
+6. conferma;
+7. seleziona l'area o la forma da riempire.
 
-Prima di riutilizzare una geometria CAD in una commessa:
+## Creare un blocco DWG riutilizzabile
 
-- aprire il file in un progetto di prova;
-- verificare scala;
-- verificare layer;
-- verificare eventuali riferimenti esterni;
-- controllare che non ci siano entità invisibili o inutili.
+1. Pulisci la geometria.
+2. Porta tutto su **Layer 0**.
+3. Imposta **DaBlocco** per colore/tipo linea/spessore quando previsto.
+4. Seleziona tutti gli oggetti del futuro blocco.
+5. Digita:
 
-## Baseline sezione
+   ```text
+   MBLOCCO
+   ```
 
-Il workflow CAD 2D è completo come riferimento operativo quando copre:
+6. In **Origine**, seleziona:
 
-- quando usare disegno CAD/planimetrico invece di schemi elettrici intelligenti;
-- regola Layer 0;
-- gestione di rettangoli, geometrie e tratteggi;
-- controllo scala su disegni copiati o importati;
-- creazione di blocchi CAD riutilizzabili;
-- test minimi prima del riuso in commessa.
+   ```text
+   Oggetti
+   ```
 
-Eventuali casi grafici speciali vanno aggiunti solo se ricorrenti e riutilizzabili.
+7. Seleziona il punto base.
+8. Salva il DWG nel percorso previsto.
+
+Se il blocco è un simbolo della libreria custom, usa una categoria sotto:
+
+```text
+C:\SPAC Start 26\Librerie\Blk\_CUSTOM
+```
+
+## Creare l'anteprima del blocco/simbolo
+
+Per un simbolo della libreria:
+
+1. apri direttamente il DWG;
+2. centra il disegno;
+3. regola lo zoom;
+4. digita:
+
+   ```text
+   _MSLIDE
+   ```
+
+5. salva la slide nella stessa cartella del DWG;
+6. usa lo stesso nome base per `.dwg` e `.sld`.
+
+## Disegni fuori scala
+
+Quando un disegno copiato/importato risulta fuori scala:
+
+1. identifica una quota reale nota;
+2. misura la quota attuale;
+3. calcola il fattore di scala;
+4. applica la scalatura all'insieme selezionato;
+5. misura di nuovo la quota nota.
+
+!!! warning "Comando di scala"
+
+    In questa knowledge base non è ancora consolidato il nome/comportamento esatto del comando di scala usato nell'ambiente SPAC Start 26. Finché non viene verificato direttamente, non viene indicato un comando ipotetico.
+
+## Test prima del riuso
+
+- apri/inserisci il file con `_INSER`;
+- verifica scala;
+- verifica Layer 0;
+- verifica eventuali riferimenti esterni;
+- controlla che non ci siano entità invisibili o inutili;
+- se è un simbolo, verifica DWG + SLD.
+
+## Riferimenti
+
+- [Comandi e click esatti](command-reference.md)
+- [Simboli custom](03-custom-symbols.md)
+- [Creare un simbolo custom](playbooks/create-custom-symbol.md)
