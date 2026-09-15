@@ -4,15 +4,21 @@ Questa pagina raccoglie i **nomi esatti dei comandi**, delle finestre e delle vo
 
 !!! important "Regola della knowledge base"
 
-    Una procedura operativa non deve limitarsi a dire "aprire la libreria", "creare un blocco" o "inserire un morsetto". Quando il percorso è noto deve riportare, nell'ordine: **comando da digitare**, **finestra che si apre**, **voce da cliccare**, **campo da impostare** e **risultato atteso**.
+    Quando il percorso è noto, una procedura deve riportare: **comando da digitare**, **finestra che si apre**, **voce da cliccare**, **campo da impostare** e **risultato atteso**.
 
-    Se il nome esatto non è stato ancora verificato in SPAC Start 26, va scritto esplicitamente `Da verificare` invece di inventare il percorso.
+    Se il nome esatto non è stato ancora verificato in SPAC Start 26, va scritto `Da verificare`. Non inventare nomi plausibili di menu o pulsanti.
 
-## Libreria simboli
+## Interfaccia e libreria simboli
 
-### Aprire direttamente la libreria simboli
+### Ripristino/gestione menu
 
-Nella riga comando digitare:
+```text
+_MENU
+```
+
+Il file/menu specifico da ricaricare dipende dalla configurazione installata.
+
+### Aprire la libreria simboli
 
 ```text
 SP_XML_MENU
@@ -22,67 +28,48 @@ Risultato atteso: apertura della libreria simboli SPAC.
 
 ### Creare una scorciatoia da tastiera per la libreria
 
-1. Nella riga comando digitare:
-
-   ```text
-   CUI
-   ```
-
-   oppure:
-
-   ```text
-   _CUI
-   ```
-
-2. Nella finestra **Personalizza interfaccia utente**, andare nel riquadro **Elenco comandi**.
-3. Tasto destro in **Elenco comandi** → **Nuovo comando**.
-4. Assegnare un nome, ad esempio `Libreria simboli`.
-5. Nel campo **Macro** inserire:
+1. Digita `CUI` oppure `_CUI`.
+2. Nella finestra **Personalizza interfaccia utente**, vai in **Elenco comandi**.
+3. Tasto destro → **Nuovo comando**.
+4. Nome consigliato: `Libreria simboli`.
+5. Nel campo **Macro** inserisci:
 
    ```text
    ^C^CSP_XML_MENU;
    ```
 
-6. Nell'albero di personalizzazione aprire:
+6. Nell'albero apri:
 
    ```text
    Tasti di scelta rapida → Tasti di scelta rapida
    ```
 
-7. Trascinare il nuovo comando dentro **Tasti di scelta rapida**.
-8. Selezionare il comando e compilare **Accesso-Tasto/i**, ad esempio `CTRL+SHIFT+L`.
-9. Cliccare **Applica** → **OK**.
+7. Trascina il comando dentro **Tasti di scelta rapida**.
+8. Nel campo **Accesso-Tasto/i** imposta la combinazione, ad esempio `CTRL+SHIFT+L`.
+9. Clicca **Applica** → **OK**.
 
 ## Snap e griglia
-
-Nella riga comando digitare:
 
 ```text
 _DSETTINGS
 ```
 
-Nella finestra aperta selezionare il tab **Snap e griglia**.
-
-Qui si impostano gli intervalli di snap X/Y e della griglia.
+Nella finestra aperta seleziona il tab **Snap e griglia**.
 
 ## Immagini
 
-### Gestione immagini collegate
-
-Nella riga comando digitare:
+### Gestione immagini
 
 ```text
 IMMAGINI
 ```
 
-Nella finestra:
+Pulsanti verificati:
 
-- **Attacca** → inserisce una nuova immagine;
-- **Stacca** → rimuove il riferimento dell'immagine selezionata.
+- **Attacca** → collega una nuova immagine;
+- **Stacca** → rimuove il riferimento selezionato.
 
-### Ripristinare il percorso di un'immagine non trovata
-
-Percorso verificato:
+### Ripristinare il percorso di un'immagine
 
 ```text
 Modifica/Inserisci → Gestioni immagini
@@ -90,59 +77,63 @@ Modifica/Inserisci → Gestioni immagini
 
 Poi:
 
-1. selezionare l'immagine interessata;
-2. cliccare **Sfoglia**;
-3. selezionare nuovamente il file;
-4. cliccare **Salva percorso**.
+1. seleziona l'immagine;
+2. **Sfoglia**;
+3. riseleziona il file;
+4. **Salva percorso**.
 
-### Nascondere il bordo delle immagini
-
-Nella riga comando digitare:
+### Nascondere il bordo immagini
 
 ```text
 IMAGEFRAME
 ```
 
-Impostare:
+Valore:
 
 ```text
 0
 ```
 
-Il comando deve essere eseguito anche nei nuovi progetti se il bordo torna visibile.
+## CAD e creazione simboli
 
-## Creazione simboli custom
-
-### Inserire un DWG o blocco di partenza
-
-Comando da riga comando:
+### Inserire DWG/blocco
 
 ```text
 _INSER
 ```
 
-### Esplodere la geometria importata
-
-Comando:
+### Esplodere geometria
 
 ```text
 ESPLODI
 ```
 
-Usarlo solo quando serve realmente modificare le singole entità.
+### Riempimento pieno
 
-### Creare il file DWG del simbolo
+```text
+Disegna → Tratteggio
+```
 
-1. Selezionare tutta la geometria del simbolo.
-2. Nella riga comando digitare:
+Poi:
+
+1. nella barra dei comandi usa **I**;
+2. finestra **Tratteggio e sfumatura**;
+3. campo **Modello** → `SOLID`;
+4. scegli il colore;
+5. seleziona l'area da riempire.
+
+### Creare il DWG del simbolo
+
+1. Seleziona gli oggetti.
+2. Digita:
 
    ```text
    MBLOCCO
    ```
 
-3. Nella finestra del comando, in **Origine**, selezionare `Oggetti`.
-4. Indicare il **punto base** del simbolo.
-5. Salvare il `.dwg` nella categoria corretta sotto:
+3. In **Origine** seleziona `Oggetti`.
+4. Seleziona il **punto base**.
+5. Salva nella categoria corretta sotto:
 
    ```text
    C:\SPAC Start 26\Librerie\Blk\_CUSTOM
@@ -150,47 +141,40 @@ Usarlo solo quando serve realmente modificare le singole entità.
 
 ### Creare l'anteprima SLD
 
-1. Aprire direttamente il DWG del simbolo.
-2. Centrare il disegno e regolare lo zoom.
-3. Nella riga comando digitare:
+1. Apri il DWG.
+2. Centra il disegno e regola lo zoom.
+3. Digita:
 
    ```text
    _MSLIDE
    ```
 
-4. Salvare il file `.sld` nella stessa cartella del `.dwg`.
-5. Il nome base deve essere identico:
+4. Salva nella stessa cartella del DWG.
+5. Usa lo stesso nome base per `.dwg` e `.sld`.
 
-   ```text
-   NOME_SIMBOLO.dwg
-   NOME_SIMBOLO.sld
-   ```
-
-## Attributi dei simboli
+## Attributi
 
 ### Creare un attributo
-
-Comando:
 
 ```text
 ATTDEF
 ```
 
-Per `NOME` usare almeno:
+Per `NOME`:
 
 | Campo | Valore |
 |---|---|
 | **Etichetta** | `NOME` |
 | **Messaggio** | `Sigla componente` |
 
-Per un simbolo Madre, `PRES` deve avere:
+Per `PRES` di una Madre:
 
 | Campo | Valore |
 |---|---|
 | **Etichetta** | `PRES` |
 | **Default** | `M` |
 
-Per il primo pin di ingresso:
+Per `PINA1`:
 
 | Campo | Valore |
 |---|---|
@@ -200,69 +184,104 @@ Per il primo pin di ingresso:
 | **Costante** | No |
 | **Blocca posizione** | Sì |
 
-Per il pin corrispondente di uscita usare `PINB1`; la numerazione deve restare coerente con `PINA1`.
+Per il pin di uscita corrispondente usa `PINB1` mantenendo la stessa numerazione della coppia.
 
-### Modificare le proprietà
-
-Comando:
+### Proprietà
 
 ```text
 PROPRIETA
 ```
 
-Scorciatoia equivalente:
+oppure:
 
 ```text
 CTRL+1
 ```
 
-### Copiare proprietà da un oggetto a un altro
-
-Comando:
+### Copiare proprietà
 
 ```text
 CORRISPROP
 ```
 
-### Modificare gli attributi di un'istanza
-
-Comando:
+### Modificare attributi di un'istanza
 
 ```text
 EDITATT
 ```
 
-## Multifilare: fili e numerazioni
+## Numerazione fili non di alimentazione
 
-### Visualizzare la lista dei numeri usati
+### Avviare la numerazione
 
-Percorso verificato:
+```text
+SPAC → Numera Fili
+```
+
+Poi:
+
+1. seleziona il tipo di cavo;
+2. a destra individua **Modalita' di Numerazione**;
+3. clicca sull'immagine della modalità;
+4. nella finestra **Configurazione Numerazione Conduttori** apri il tab **Numerazione Conduttori**;
+5. seleziona la **Modalita' di Numerazione**;
+6. se scegli **Foglio Numero**, seleziona anche il separatore;
+7. torna allo schema;
+8. evidenzia il cavo tracciando una linea che lo interseca.
+
+### Lista dei numeri usati
 
 ```text
 Numerazione fili → Lista numeri usati
 ```
 
-I numeri marcati con asterisco indicano numerazioni ripetute.
+I numeri con asterisco sono ripetuti.
 
-### Eliminare la numerazione fili
-
-Percorso verificato:
+### Eliminare numerazione
 
 ```text
 SPAC → Utility Fili → Elimina numerazione
 ```
 
-Comando equivalente da riga comando:
+oppure:
 
 ```text
 DEL_NUMF
 ```
 
-## Multifilare: morsetti e morsettiere
+La funzione elimina i numeri, non i fili.
+
+## Fili di alimentazione
+
+### Aggiungere l'identificatore alla linea
+
+Se manca il simbolo identificatore:
+
+1. barra dei menu → **Identificatore Linee**;
+2. seleziona il tipo di linea;
+3. **OK**;
+4. torna allo schema;
+5. evidenzia la linea tracciando una linea che la interseca.
+
+### Numerare/identificare fasi e neutro
+
+1. Seleziona **Numerazione Fili**.
+2. Nella finestra **Numerazione Fili Unifilare**, scegli il tipo di fase/neutro, ad esempio `L1 L2 L3 N`.
+3. Nel campo accanto a **Numero** imposta il numero di partenza, ad esempio `1`.
+4. Configura il progressivo numerico.
+5. Se vuoi solo `L1`, `L2`, `L3`, `N`, disattiva il progressivo.
+
+## Morsetti e morsettiere
 
 ### Aprire Inser Morsetti
 
-Comando da riga comando:
+Nome funzione:
+
+```text
+Inser Morsetti
+```
+
+Comando equivalente da riga comando:
 
 ```text
 SPINSMOR
@@ -274,41 +293,51 @@ Prerequisito: deve essere aperto un database materiali contenente almeno una mor
 
 Nella finestra **Inser Morsetti**:
 
-1. individuare il riquadro in alto a sinistra **Elenco Quadri**;
+1. individua il riquadro in alto a sinistra **Elenco Quadri**;
 2. tasto destro su **Elenco Quadri**, sul nome del quadro oppure su una morsettiera esistente;
-3. cliccare **Nuova morsettiera**.
+3. clicca **Nuova morsettiera**.
+
+## Associazione materiali
+
+Sul simbolo:
+
+1. **doppio click sul simbolo**;
+2. riquadro **Materiali**;
+3. **tasto destro**;
+4. clicca **Avvio Archivio Materiali (DbCenter)**;
+5. seleziona il materiale corretto;
+6. verifica distinta/report.
 
 ## Riferimento rapido
 
-| Cosa devi fare | Comando / percorso esatto |
+| Operazione | Comando / percorso esatto |
 |---|---|
-| Aprire libreria simboli | `SP_XML_MENU` |
-| Personalizzare shortcut | `CUI` / `_CUI` |
+| Ripristino/gestione menu | `_MENU` |
+| Libreria simboli | `SP_XML_MENU` |
+| Shortcut interfaccia | `CUI` / `_CUI` |
 | Snap e griglia | `_DSETTINGS` → **Snap e griglia** |
 | Gestire immagini | `IMMAGINI` |
-| Ripristinare immagine | **Modifica/Inserisci** → **Gestioni immagini** → **Sfoglia** → **Salva percorso** |
+| Ripristinare immagine | **Modifica/Inserisci → Gestioni immagini → Sfoglia → Salva percorso** |
 | Togliere bordo immagini | `IMAGEFRAME` → `0` |
 | Inserire DWG/blocco | `_INSER` |
 | Esplodere geometria | `ESPLODI` |
-| Salvare simbolo DWG | `MBLOCCO` → **Origine: Oggetti** |
-| Creare anteprima | `_MSLIDE` |
+| Tratteggio pieno | **Disegna → Tratteggio → I → Tratteggio e sfumatura → Modello: SOLID** |
+| Salvare DWG simbolo | `MBLOCCO` → **Origine: Oggetti** |
+| Creare SLD | `_MSLIDE` |
 | Creare attributo | `ATTDEF` |
 | Proprietà | `PROPRIETA` / `CTRL+1` |
 | Copiare proprietà | `CORRISPROP` |
 | Modificare attributi istanza | `EDITATT` |
-| Lista numeri usati | **Numerazione fili** → **Lista numeri usati** |
-| Eliminare numerazione | **SPAC** → **Utility Fili** → **Elimina numerazione** oppure `DEL_NUMF` |
-| Inserire morsetti | `SPINSMOR` |
-| Creare morsettiera | **Inser Morsetti** → tasto destro in **Elenco Quadri** → **Nuova morsettiera** |
+| Numerare fili normali | **SPAC → Numera Fili** |
+| Configurare numerazione | **Configurazione Numerazione Conduttori → Numerazione Conduttori** |
+| Lista numeri usati | **Numerazione fili → Lista numeri usati** |
+| Eliminare numerazione | **SPAC → Utility Fili → Elimina numerazione** / `DEL_NUMF` |
+| Identificare alimentazione | **Identificatore Linee** → tipo linea → **OK** |
+| Numerare alimentazione | **Numerazione Fili** → **Numerazione Fili Unifilare** |
+| Inserire morsetti | **Inser Morsetti** / `SPINSMOR` |
+| Creare morsettiera | **Inser Morsetti → tasto destro su Elenco Quadri → Nuova morsettiera** |
+| Associare materiale | **doppio click simbolo → Materiali → tasto destro → Avvio Archivio Materiali (DbCenter)** |
 
-## Regola per i prossimi aggiornamenti
+## Ancora da verificare
 
-Ogni nuovo comando consolidato deve riportare:
-
-1. nome esatto del comando;
-2. percorso esatto da cliccare, se disponibile;
-3. nome della finestra che si apre;
-4. campi o pulsanti da usare;
-5. valore da impostare;
-6. esito atteso;
-7. eventuale prerequisito o errore noto.
+Sezioni per cui la knowledge base conosce la logica ma non ha ancora consolidato il nome esatto di ogni comando/percorso devono restare marcate `Da verificare`, in particolare dove indicato nelle relative pagine operative.
