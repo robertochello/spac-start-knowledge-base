@@ -5,7 +5,7 @@ Knowledge base operativa per **SPAC Start 26 / SPAC Start Impianti**.
 Il contenuto è pensato per il lavoro reale: setup progetto, schemi unifilari e multifilari, simboli custom, attributi e pinatura, materiali, cavi, rimandi, morsetti e troubleshooting.
 
 > **Il modo consigliato per consultare la repository è il sito GitHub Pages:**
-> https://robertochello.github.io/spac-start-knowledge-base/
+> [Apri SPAC Start Knowledge Base](https://robertochello.github.io/spac-start-knowledge-base/)
 
 ## Da dove partire
 
