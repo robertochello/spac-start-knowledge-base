@@ -1,85 +1,75 @@
 # SPAC Start Knowledge Base
 
-Knowledge base operativa per **SPAC Start Impianti**. Serve per trovare rapidamente procedure, standard, playbook e soluzioni ricorrenti senza dover leggere tutta la guida in ordine.
-
-!!! tip "Non sai da dove partire?"
-
-    Parti da [Come usare questa guida](00-how-to-use.md). Se hai già un
-    problema pratico, vai direttamente a [Troubleshooting](07-troubleshooting.md)
-    o ai [Playbook](playbooks/index.md).
-
-## Percorsi principali
+Questa è una guida operativa per **SPAC Start Impianti**. Non va letta come un manuale lineare: scegli cosa devi fare e apri direttamente la procedura utile.
 
 <div class="home-grid" markdown>
 
-[**Inizia qui**<br>Orientamento, scopo e concetti base.](00-how-to-use.md){ .home-card }
+[**Sto iniziando un lavoro**<br>Setup libreria, template, interfaccia e pagine.](15-custom-library.md){ .home-card }
 
-[**Setup progetto**<br>Libreria custom, template, interfaccia, cartigli.](15-custom-library.md){ .home-card }
+[**Sto disegnando uno schema**<br>Unifilare, multifilare, fili, morsetti e rimandi.](17-unifilare.md){ .home-card }
 
-[**Schemi**<br>Unifilare, multifilare, fili, rimandi e morsetti.](17-unifilare.md){ .home-card }
+[**Sto creando o correggendo un simbolo**<br>Simboli custom, attributi, pinatura e naming.](03-custom-symbols.md){ .home-card }
 
-[**Simboli custom**<br>Creazione, attributi, pinatura e nomenclatura.](03-custom-symbols.md){ .home-card }
+[**Sto gestendo materiali o cavi**<br>Archivi materiali, DbCables, download e back-check.](21-material-archives.md){ .home-card }
 
-[**Archivi**<br>Materiali custom, cavi `DbCables.db` e back-check.](21-material-archives.md){ .home-card }
+[**Ho un problema da risolvere**<br>Diagnosi rapida, known issue e playbook.](07-troubleshooting.md){ .home-card }
 
-[**Download**<br>File scaricabili: materiali, cavi e archivi verificati.](downloads.md){ .home-card }
-
-[**Playbook**<br>Procedure guidate per casi operativi specifici.](playbooks/index.md){ .home-card }
-
-[**Diagnosi**<br>Troubleshooting, known issues e casi pratici.](07-troubleshooting.md){ .home-card }
-
-[**Governance**<br>Standard, decisioni, quality gates e manutenzione.](08-standards.md){ .home-card }
+[**Non so dove cercare**<br>Apri la guida pratica e scegli il caso più vicino al tuo.](00-how-to-use.md){ .home-card }
 
 </div>
 
-## Mappa logica
+!!! info "Prima volta qui?"
 
-La mappa mostra le aree principali e il tipo di contenuto da cercare.
+    Apri **[Guida pratica](00-how-to-use.md)**. In pochi passaggi ti porta alla pagina corretta senza costringerti a leggere tutta la knowledge base.
 
-```mermaid
-flowchart TD
-    A[Start]:::info --> A1[Orientamento]
-    A --> A2[Concetti base]
-    B[Operativo]:::process --> B1[Setup]
-    B --> B2[Schemi]
-    B --> B3[Simboli]
-    B --> B4[Archivi]
-    C[Playbook]:::process --> C1[Procedure guidate]
-    D[Diagnosi]:::warn --> D1[Troubleshooting]
-    D --> D2[Known issue]
-    E[Governance]:::ok --> E1[Standard]
-    E --> E2[Quality gate]
+!!! note "Manuale completo"
 
-    classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
-    classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
-    classDef info fill:#e8f0fe,stroke:#1565c0,color:#0d47a1;
-    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
-```
+    La **[Guida operativa completa](guida-operativa-completa.md)** raccoglie molte procedure in un'unica pagina ed è utile come riferimento esteso. Per il lavoro quotidiano è più rapido usare le sezioni e i playbook del sito.
 
-| Area | Cosa contiene |
+## Scelta rapida per attività
+
+| Devo... | Vai qui |
 |---|---|
-| Start | orientamento, overview, concetti, FAQ, glossario |
-| Operativo | setup, schemi, simboli, archivi |
-| Playbook | procedure guidate e checklist |
-| Diagnosi | troubleshooting, known issues, casi pratici |
-| Governance | standard, decisioni, quality gates, roadmap |
+| installare o aggiornare la libreria `_CUSTOM` | [Libreria custom](15-custom-library.md) |
+| preparare la struttura di un nuovo progetto | [Template progetto](16-project-template.md) |
+| lavorare in unifilare | [Schema unifilare](17-unifilare.md) |
+| lavorare in multifilare | [Schema multifilare](09-multifilare.md) |
+| sistemare fili, morsetti o cross-reference | [Rimandi e morsetti](06-cross-references-terminals.md) |
+| creare un simbolo custom | [Creare un simbolo custom](playbooks/create-custom-symbol.md) |
+| capire `PRES`, `PINA` e `PINB` | [Attributi e pinatura](04-attributes-and-pinning.md) |
+| associare o controllare materiali | [Archivi materiali custom](21-material-archives.md) |
+| gestire l'archivio cavi | [Archivio Cavi DbCables](25-cable-archive-dbcables.md) |
+| scaricare file pubblicati | [Download](downloads.md) |
+| capire perché qualcosa non funziona | [Diagnosi rapida](07-troubleshooting.md) |
+| verificare un problema già noto | [Known Issues](known-issues/index.md) |
 
-## Flusso operativo
+## Se il problema è già davanti a te
 
-Il sito segue il flusso reale di lavoro: prima si prepara il progetto, poi si
-modellano simboli e collegamenti, quindi si verificano morsetti, rimandi,
-materiali e report.
+Parti dal **sintomo**, non dalla struttura della documentazione.
+
+| Sintomo | Prima verifica | Procedura collegata |
+|---|---|---|
+| il pin di un simbolo non aggancia il filo | attributi e punto di inserimento | [Diagnosticare pin non agganciato](playbooks/diagnose-pin-not-snapping.md) |
+| un rimando punta alla posizione sbagliata | tipo oggetto, nome e aggiornamento riferimenti | [Diagnosticare rimandi alimentazione](playbooks/power-reference-diagnostic.md) |
+| un morsetto visualizza dati inattesi | rappresentazione e dato sorgente | [Verificare rappresentazione morsetti](playbooks/terminal-representation.md) |
+| un accessorio non risulta associato al dispositivo | relazione Madre/Figlio | [Gestire accessori e bobine](playbooks/manage-accessories-and-coils.md) |
+| un materiale manca o compare duplicato | associazione e archivio sorgente | [Associare materiali](playbooks/material-association.md) |
+| SPAC segnala una versione DbCables non congruente | versione archivio e ambiente | [Known Issue DbCables](known-issues/dbcables-version-mismatch.md) |
+| restano oggetti/layer apparentemente vuoti | riferimenti residui, blocchi e oggetti nascosti | [Pulire oggetti residui](playbooks/clean-residual-objects.md) |
+
+## Percorso consigliato per un progetto
+
+1. **Setup** — verifica libreria `_CUSTOM`, template e pagine standard.
+2. **Disegno** — lavora in unifilare o multifilare usando simboli coerenti.
+3. **Dati** — completa pinatura, morsetti, rimandi, materiali e cavi.
+4. **Verifica** — esegui checklist e quality gate prima di riutilizzare o pubblicare il risultato.
 
 ```mermaid
 flowchart LR
-    A[Progetto]:::process --> B[Simboli]:::data
-    B --> C[Collegamenti]:::process
-    C --> D[Morsetti e rimandi]:::warn
-    B --> E[Materiali]:::data
-    E --> F[Report e distinte]:::process
-    D --> G[Verifica]:::warn
-    F --> G
-    G --> H[Quality gate]:::ok
+    A[Setup]:::process --> B[Schema]:::process
+    B --> C[Simboli e collegamenti]:::data
+    C --> D[Morsetti, rimandi e materiali]:::warn
+    D --> E[Verifica finale]:::ok
 
     classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
     classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
@@ -87,46 +77,20 @@ flowchart LR
     classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
 ```
 
-| Se stai lavorando su... | Vai a |
-|---|---|
-| impostazione del progetto | [Libreria custom](15-custom-library.md) e [Template progetto](16-project-template.md) |
-| schema unifilare o multifilare | [Schema unifilare](17-unifilare.md) o [Multifilare](09-multifilare.md) |
-| morsetti, fili o rimandi | [Rimandi e morsetti](06-cross-references-terminals.md) |
-| simboli custom e attributi | [Simboli custom](03-custom-symbols.md) e [Attributi e pinatura](04-attributes-and-pinning.md) |
-| materiali, cavi o file scaricabili | [Archivi materiali custom](21-material-archives.md), [Archivio Cavi DbCables](25-cable-archive-dbcables.md) e [Download](downloads.md) |
-| anomalie ricorrenti | [Troubleshooting](07-troubleshooting.md) e [Known Issues](known-issues/index.md) |
-| rilascio o manutenzione | [Quality gates](14-quality-gates.md) e [Decision log](11-decision-log.md) |
+## Come leggere le pagine
 
-## Uso consigliato
+Nel sito trovi tipi di contenuto diversi:
 
-1. Parti dal problema operativo.
-2. Apri la sezione dedicata.
-3. Segui il playbook, la procedura o la checklist.
-4. Verifica il risultato in un progetto di prova.
-5. Aggiorna standard, decision log o casi pratici se emerge una regola riutilizzabile.
+- **pagina operativa**: spiega un'area di lavoro stabile;
+- **playbook**: procedura passo-passo per fare una cosa precisa;
+- **known issue**: diagnosi di un problema ricorrente;
+- **standard**: regola adottata e riutilizzabile;
+- **quality gate**: controlli da superare prima di considerare il lavoro pronto.
 
-!!! warning "Regola operativa"
+Quando devi **fare qualcosa**, preferisci un playbook. Quando devi **capire perché non funziona**, parti dalla diagnosi. Quando devi **sapere qual è la regola corretta**, apri gli standard.
 
-    Non correggere solo l'effetto visibile: prima verifica se il problema è
-    grafico, attributivo, logico, di rappresentazione o di dato sorgente.
+## Principio di diagnosi
 
-## Stato attuale
+!!! warning "Non correggere solo l'effetto visibile"
 
-| Area | Stato |
-|---|---|
-| Base documentale | Baseline completata |
-| Simboli custom | Baseline completata |
-| Attributi e pinatura | Baseline completata |
-| Workflow CAD | Baseline completata |
-| Rimandi e morsetti | Baseline completata |
-| Materiali custom | Baseline completata |
-| Archivio Cavi DbCables | Verificato su SPAC Automazione e SPAC Start |
-| Multifilare | Baseline operativa completata |
-| Governance documentale | Baseline completata |
-
-## Estensioni future
-
-1. Aggiungere casi pratici multifilare quando emergono esempi riutilizzabili.
-2. Aggiungere screenshot sanitizzati solo dove servono.
-3. Collegare ogni caso pratico a una decisione o a uno standard.
-4. Mantenere navigazione e Home pulite.
+    Prima distingui se il problema è **grafico CAD**, **attributivo**, **logico SPAC**, **di rappresentazione** oppure **nel dato sorgente**. La correzione dipende dal livello in cui nasce il problema.

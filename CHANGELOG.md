@@ -2,6 +2,24 @@
 
 Tutte le modifiche rilevanti alla knowledge base saranno documentate in questo file.
 
+## 0.5.0 - Navigation and onboarding refresh
+
+### Changed
+
+- Home del sito riscritta come selettore per attività reali: setup, schemi, simboli, archivi e diagnosi.
+- Pagina `00-how-to-use.md` trasformata in guida pratica con percorsi diretti per obiettivo e sintomo.
+- Navigazione MkDocs semplificata e rinominata in aree più immediate: Home, Guida pratica, Lavoro in SPAC, Procedure, Problemi e diagnosi, Riferimenti.
+- Guida operativa completa marcata in navigazione come documento di riferimento, non come punto di ingresso principale.
+- README orientato al sito pubblico e ai collegamenti principali.
+- CSS delle card e delle tabelle migliorato per rendere più leggibile la Home anche su mobile.
+- Aggiunti breadcrumb e tab sticky tramite funzionalità native di MkDocs Material.
+
+### Goal
+
+- Ridurre il tempo necessario per capire dove cercare una procedura.
+- Rendere la documentazione utilizzabile partendo dall'attività o dal problema concreto.
+- Evitare che il manuale monolitico nasconda i playbook e le pagine operative più mirate.
+
 ## 0.4.0 - Site coherence pass
 
 ### Added

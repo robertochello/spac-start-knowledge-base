@@ -1,5 +1,5 @@
-﻿site_name: SPAC Start Knowledge Base
-site_description: Knowledge base operativa per workflow SPAC Start, simboli custom, attributi, pinatura e troubleshooting.
+site_name: SPAC Start Knowledge Base
+site_description: Guida operativa per SPAC Start 26: setup, schemi, simboli, archivi e troubleshooting.
 site_author: Roberto Chello
 site_url: https://robertochello.github.io/spac-start-knowledge-base/
 
@@ -19,8 +19,10 @@ theme:
       accent: cyan
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
     - navigation.indexes
+    - navigation.path
     - navigation.footer
     - navigation.tracking
     - navigation.top
@@ -57,16 +59,18 @@ markdown_extensions:
       custom_checkbox: true
 
 nav:
-  - Start:
-      - Home: index.md
+  - Home: index.md
+
+  - Guida pratica:
       - Dove andare: 00-how-to-use.md
-      - Overview: 00-overview.md
       - Concetti base SPAC: concepts.md
-      - Guida operativa completa: guida-operativa-completa.md
       - FAQ: faq.md
       - Glossario: glossary.md
-  - Operativo:
-      - Setup:
+      - Panoramica knowledge base: 00-overview.md
+      - Manuale completo (riferimento): guida-operativa-completa.md
+
+  - Lavoro in SPAC:
+      - Setup progetto:
           - Libreria custom: 15-custom-library.md
           - Template progetto: 16-project-template.md
           - Interfaccia e menu: 01-interface-and-menu.md
@@ -75,55 +79,58 @@ nav:
       - Schemi:
           - Schema unifilare: 17-unifilare.md
           - Numerazione e identificazione fili: 18-wire-numbering.md
-          - Multifilare: 09-multifilare.md
+          - Schema multifilare: 09-multifilare.md
           - Rimandi e morsetti: 06-cross-references-terminals.md
       - Simboli:
           - Simboli custom: 03-custom-symbols.md
           - Attributi e pinatura: 04-attributes-and-pinning.md
           - Nomenclatura simboli: 19-symbol-naming.md
           - Dizionario abbreviazioni: 20-abbreviations.md
-          - Standard simboli: standards/symbols.md
-      - Archivi:
+      - Materiali e cavi:
           - Download: downloads.md
           - Archivi materiali custom: 21-material-archives.md
-          - Standard materiali: standards/materials.md
           - Archivio Cavi DbCables: 25-cable-archive-dbcables.md
           - Back-check e controlli incrociati: 26-back-check-controls.md
-  - Playbook:
-      - Introduzione: playbooks/index.md
+
+  - Procedure:
+      - Come usare i playbook: playbooks/index.md
       - Simboli:
           - Creare un simbolo custom: playbooks/create-custom-symbol.md
           - Validare un simbolo: playbooks/validate-custom-symbol.md
           - Diagnosticare pin non agganciato: playbooks/diagnose-pin-not-snapping.md
           - Pulire oggetti residui: playbooks/clean-residual-objects.md
-      - Checklist e riferimenti:
-          - Checklist validazione simbolo: 10-symbol-validation-checklist.md
-          - Command Reference: command-reference.md
-          - Esempi operativi: 24-operational-examples.md
-      - Cartigli e immagini:
-          - Gestire cartiglio e logo: playbooks/titleblock-logo-workflow.md
       - Schemi:
           - Gestire accessori e bobine: playbooks/manage-accessories-and-coils.md
           - Verificare rappresentazione morsetti: playbooks/terminal-representation.md
           - Diagnosticare rimandi alimentazione: playbooks/power-reference-diagnostic.md
+      - Cartigli e immagini:
+          - Gestire cartiglio e logo: playbooks/titleblock-logo-workflow.md
       - Archivi:
           - Associare materiali: playbooks/material-association.md
           - Aggiornare Archivio Cavi DbCables: playbooks/update-dbcables-archive.md
-  - Diagnosi:
+      - Checklist e comandi:
+          - Checklist validazione simbolo: 10-symbol-validation-checklist.md
+          - Command Reference: command-reference.md
+          - Esempi operativi: 24-operational-examples.md
+
+  - Problemi e diagnosi:
       - Diagnosi rapida: 07-troubleshooting.md
-      - Known Issues:
+      - Problemi noti:
           - Indice: known-issues/index.md
           - Pin non agganciato: known-issues/pin-not-snapping.md
           - Riferimento immagine mancante: known-issues/missing-image-reference.md
           - Cross-reference obsoleto: known-issues/obsolete-cross-reference.md
           - DbCables versione non congruente: known-issues/dbcables-version-mismatch.md
       - Casi pratici: 12-practical-cases.md
-  - Governance:
+
+  - Riferimenti:
       - Standard:
           - Standard operativi: 08-standards.md
           - Indice standard: standards/index.md
           - Standard CAD: standards/cad.md
-      - Manutenzione:
+          - Standard simboli: standards/symbols.md
+          - Standard materiali: standards/materials.md
+      - Manutenzione knowledge base:
           - Decisioni operative: 11-decision-log.md
           - Linee guida manutenzione: 13-maintenance-guidelines.md
           - Quality gate e validazione: 14-quality-gates.md

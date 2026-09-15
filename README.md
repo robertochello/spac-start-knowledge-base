@@ -1,78 +1,64 @@
 # SPAC Start Knowledge Base
 
-Guida operativa tecnica per **SPAC Start 26**: libreria custom, template progetto, schemi unifilari e multifilari, simboli, attributi, pinatura, materiali, cavi e troubleshooting.
+Knowledge base operativa per **SPAC Start 26 / SPAC Start Impianti**.
 
-La repository è pensata per essere pubblicata come sito documentale su **GitHub Pages** tramite MkDocs Material.
+Il contenuto è pensato per il lavoro reale: setup progetto, schemi unifilari e multifilari, simboli custom, attributi e pinatura, materiali, cavi, rimandi, morsetti e troubleshooting.
 
-## Scopo
+> **Il modo consigliato per consultare la repository è il sito GitHub Pages:**
+> https://robertochello.github.io/spac-start-knowledge-base/
 
-Raccogliere procedure pratiche e standard riutilizzabili per:
+## Da dove partire
 
-- installare e mantenere la libreria custom `_CUSTOM`;
-- preparare progetti SPAC con pagine standard e cartigli;
-- gestire schema unifilare, multifilare, rimandi e morsetti;
-- creare simboli grafici e simboli intelligenti SPAC;
-- mantenere nomenclatura, abbreviazioni e inventario simboli;
-- documentare problemi ricorrenti, decisioni operative e quality gate.
+Non è necessario leggere tutta la documentazione in ordine.
 
-## Struttura sito
-
-| Area | Contenuto |
+| Se devi... | Apri |
 |---|---|
-| `docs/index.md` | Home della guida pubblicata |
-| `docs/guida-operativa-completa.md` | Guida operativa completa SPAC Start 26 |
-| `docs/00-how-to-use.md` | Percorsi di lettura |
-| `docs/15-custom-library.md` | Libreria custom `_CUSTOM` |
-| `docs/16-project-template.md` | Template progetto e pagine standard |
-| `docs/17-unifilare.md` | Schema unifilare |
-| `docs/09-multifilare.md` | Base operativa multifilare |
-| `docs/06-cross-references-terminals.md` | Rimandi, cross-reference e morsetti |
-| `docs/03-custom-symbols.md` | Creazione simboli custom |
-| `docs/04-attributes-and-pinning.md` | Attributi, `PRES`, `PINA`, `PINB` |
-| `docs/19-symbol-naming.md` | Nomenclatura simboli |
-| `docs/20-abbreviations.md` | Dizionario abbreviazioni |
-| `docs/21-material-archives.md` | Archivi materiali custom |
-| `docs/25-cable-archive-dbcables.md` | Archivio Cavi `DbCables.db` |
-| `docs/26-back-check-controls.md` | Back-check e controlli incrociati |
-| `docs/downloads.md` | File scaricabili pubblicati dal sito |
-| `docs/assets/downloads/materiali/` | Cartella pubblica per archivi materiali, inclusi i file `.db` pubblicati |
-| `docs/assets/downloads/cavi/` | Cartella pubblica per archivi cavi |
-| `docs/07-troubleshooting.md` | Troubleshooting generale |
-| `docs/known-issues/` | Problemi noti |
-| `docs/playbooks/` | Procedure guidate |
-| `docs/standards/` | Standard operativi |
+| capire dove trovare una procedura | [Guida pratica](https://robertochello.github.io/spac-start-knowledge-base/00-how-to-use/) |
+| iniziare un lavoro o configurare SPAC | [Lavoro in SPAC](https://robertochello.github.io/spac-start-knowledge-base/15-custom-library/) |
+| risolvere un problema | [Problemi e diagnosi](https://robertochello.github.io/spac-start-knowledge-base/07-troubleshooting/) |
+| scaricare archivi pubblicati | [Download](https://robertochello.github.io/spac-start-knowledge-base/downloads/) |
+| consultare tutto il materiale in una sola pagina | [Manuale completo](https://robertochello.github.io/spac-start-knowledge-base/guida-operativa-completa/) |
 
-## Regole editoriali
+Il **Manuale completo** è una pagina di consultazione estesa: non è il punto di ingresso consigliato per il sito.
 
-- Scrivere in modo tecnico, sintetico e operativo.
-- Preferire procedure, checklist e tabelle a testo teorico.
-- Separare guida, standard, decisioni, troubleshooting e casi pratici.
-- Non inserire dati sensibili, nomi cliente o dettagli di commessa.
-- Usare immagini solo se chiariscono una procedura o un controllo.
-- Mantenere grafica e diagrammi minimal, leggibili e non decorativi.
-- Pubblicare download solo se generici, verificati e privi di dati sensibili.
-- Aggiornare il decision log quando una scelta diventa standard.
+## Come è organizzata
 
-## Pubblicazione
+La documentazione pubblicata è divisa per utilizzo:
 
-La configurazione principale è in `mkdocs.yml`.
+- **Guida pratica**: orientamento, concetti, FAQ e manuale completo;
+- **Lavoro in SPAC**: setup, schemi, simboli e archivi;
+- **Procedure**: playbook passo-passo e checklist;
+- **Problemi e diagnosi**: troubleshooting, known issue e casi pratici;
+- **Riferimenti**: standard, decisioni, quality gate e manutenzione della knowledge base.
 
-Caratteristiche abilitate:
+La fonte dei contenuti pubblicati è la cartella `docs/`; la navigazione del sito è definita in `mkdocs.yml`.
 
-- navigazione laterale e tab;
-- ricerca interna;
-- tema chiaro/scuro;
-- diagrammi e tabelle;
-- copia rapida dei blocchi codice;
-- deploy automatico su branch `gh-pages` tramite GitHub Actions.
+## Aree tecniche principali
 
-Workflow:
+| Area | Riferimento principale |
+|---|---|
+| Libreria custom `_CUSTOM` | `docs/15-custom-library.md` |
+| Template progetto | `docs/16-project-template.md` |
+| Schema unifilare | `docs/17-unifilare.md` |
+| Schema multifilare | `docs/09-multifilare.md` |
+| Rimandi e morsetti | `docs/06-cross-references-terminals.md` |
+| Simboli custom | `docs/03-custom-symbols.md` |
+| Attributi e pinatura | `docs/04-attributes-and-pinning.md` |
+| Archivi materiali | `docs/21-material-archives.md` |
+| Archivio cavi `DbCables.db` | `docs/25-cable-archive-dbcables.md` |
+| Download pubblici | `docs/downloads.md` |
+| Troubleshooting | `docs/07-troubleshooting.md` |
 
-```text
-push su master -> mkdocs build --strict -> deploy gh-pages
-```
+## Regole della knowledge base
 
-## Preview locale
+- Documentare procedure realmente verificate o marcare chiaramente ciò che è **Da verificare**.
+- Non inventare comandi, menu o comportamenti SPAC.
+- Separare oggetti CAD grafici e oggetti intelligenti SPAC.
+- Mantenere distinti unifilare e multifilare quando il comportamento cambia.
+- Non pubblicare dati cliente, commessa, credenziali o file riservati.
+- Preferire procedure, checklist e tabelle a testo generico.
+
+## Sviluppo e preview locale
 
 Installazione dipendenze:
 
@@ -80,32 +66,27 @@ Installazione dipendenze:
 pip install -r requirements.txt
 ```
 
-Avvio sito locale:
+Preview:
 
 ```bash
 mkdocs serve
 ```
 
-Build di verifica:
+Verifica prima del push:
 
 ```bash
 mkdocs build --strict
 ```
 
-## Stato
+## Pubblicazione
 
-| Area | Stato |
-|---|---|
-| Sito MkDocs | Configurato |
-| Guida operativa completa | Presente |
-| Libreria custom | Standard documentato |
-| Template progetto | Base operativa presente |
-| Unifilare | Base operativa presente |
-| Multifilare | Base operativa presente, da consolidare |
-| Simboli custom | Workflow e checklist presenti |
-| Materiali e cavi | Procedure e back-check presenti |
-| Troubleshooting | Avviato |
-| Governance | Decision log, manutenzione e quality gate presenti |
+Il sito usa **MkDocs Material** e viene pubblicato automaticamente tramite GitHub Actions.
+
+```text
+push su master -> mkdocs build --strict -> deploy GitHub Pages
+```
+
+Non modificare manualmente il contenuto generato nel branch `gh-pages`.
 
 ## Ownership
 
