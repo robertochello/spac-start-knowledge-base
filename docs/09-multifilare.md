@@ -1,162 +1,150 @@
 # Multifilare
 
-Questa pagina raccoglie le operazioni multifilari già verificate in SPAC Start 26. Dove il comando o la voce di menu è nota viene riportata con il **nome esatto**.
+Questa pagina raccoglie le operazioni multifilari verificate in SPAC Start 26 con i nomi esatti di comandi, finestre e pulsanti.
 
-## Lista completa dei numeri usati
+## Lista dei soli rimandi
 
-Per visualizzare la lista dei numeri già presenti nello schema usa il percorso:
+Apri:
 
 ```text
 Numerazione fili → Lista numeri usati
 ```
 
-Controllo:
+Nella finestra **Lista numeri usati**:
 
-- verifica i numeri presenti;
-- i numeri segnalati con **asterisco** indicano numerazioni ripetute.
+1. attiva **Vedi solo i Rimandi**;
+2. seleziona i multifogli da analizzare, ad esempio `SCHEMA`;
+3. clicca **Scansiona i Multifogli**.
 
-## Eliminare la numerazione dei fili
+I numeri con **asterisco** sono ripetuti.
 
-Percorso da menu:
+## Eliminare numerazione fili
 
 ```text
 SPAC → Utility Fili → Elimina numerazione
 ```
 
-Comando equivalente da riga comando:
+oppure:
 
 ```text
 DEL_NUMF
 ```
 
-Usa questa funzione quando devi rimuovere la numerazione esistente prima di rigenerarla.
+La funzione rimuove i numeri ma non cancella i fili.
+
+## Creare e aggiornare rimandi
+
+Per creare il rimando usa **Dynamic Coll** oppure **Dynamic Alim** e scegli il tipo:
+
+- **Rimandi di arrivo**;
+- **Rimandi di partenza**;
+- **Rimandi di arrivo e partenza**.
+
+I due rimandi collegati devono usare lo stesso nome e direzioni coerenti.
+
+Per aggiornare il cross-reference:
+
+```text
+UTIL → Cross Reference → Rimandi → Cross → Ok - Aggiorna
+```
 
 ## Inserire morsetti
 
-Il comando verificato è:
+Apri:
 
 ```text
 SPINSMOR
 ```
 
-### Prerequisito
+oppure la funzione **Inser Morsetti**.
 
-Prima di eseguire `SPINSMOR` deve essere aperto un **database materiali che contenga almeno una morsettiera**. Se il database non contiene una morsettiera, il comando può restituire errore.
+!!! warning "Prerequisito"
 
-### Creare una nuova morsettiera
+    Deve essere aperto un database materiali che contenga almeno una morsettiera.
 
-Dopo l'apertura della finestra **Inser Morsetti**:
+### Creare una morsettiera
 
-1. guarda il riquadro in alto a sinistra **Elenco Quadri**;
-2. fai **tasto destro** su una delle seguenti voci:
-   - **Elenco Quadri**;
-   - nome del quadro;
-   - una morsettiera già esistente;
-3. clicca **Nuova morsettiera**;
-4. completa i dati della nuova morsettiera;
-5. verifica che la morsettiera compaia sotto il quadro corretto.
+Nella finestra **Inser Morsetti**:
 
-## Verificare un morsetto che mostra il dato sbagliato
+1. tasto destro su **Elenco Quadri**, sul nome del quadro o su una morsettiera esistente;
+2. clicca **Nuova morsettiera**;
+3. completa i dati;
+4. verifica l'appartenenza al quadro corretto.
 
-Non modificare subito il testo grafico. Prima distingui:
+### Inserire un morsetto
 
-- morsettiera;
-- numero morsetto;
-- numero filo;
-- rappresentazione grafica;
-- dato sorgente visualizzato.
+1. seleziona la morsettiera;
+2. scegli il tipo di morsetto;
+3. nel riquadro **Anteprima** scegli la rappresentazione corretta;
+4. se vuoi mostrare il numero morsetto, scegli il modello che visualizza `NumM`;
+5. clicca **Ok - Nuovo** in basso a destra;
+6. clicca il filo nel punto di inserimento;
+7. premi **Invio**.
 
-Procedura dedicata: [Verificare rappresentazione morsetti](playbooks/terminal-representation.md).
+Il punto cliccato sul filo determina la posizione del morsetto.
 
-## Rimandi e cross-reference
+| Campo | Significato |
+|---|---|
+| `NumI` | numero filo ingresso |
+| `NumO` | numero filo uscita |
+| `NumM` | numero morsetto |
 
-Un rimando deve essere collegato a un oggetto SPAC coerente e non a una semplice linea CAD.
+## Madre, Figlio e accessori
 
-Quando un rimando non funziona:
-
-1. verifica se l'elemento selezionato è un oggetto SPAC o sola grafica CAD;
-2. verifica residui o oggetti sovrapposti;
-3. aggiorna i riferimenti previsti dalla procedura specifica;
-4. esegui un test su un foglio pulito se il comportamento resta ambiguo.
-
-Il nome esatto del comando di rigenerazione cross-reference resta **Da verificare** finché non viene confermato direttamente in SPAC Start 26.
-
-Per la diagnosi usa:
-
-- [Rimandi, cross-reference e morsetti](06-cross-references-terminals.md);
-- [Diagnosticare rimandi alimentazione](playbooks/power-reference-diagnostic.md);
-- [Cross-reference obsoleto](known-issues/obsolete-cross-reference.md).
-
-## Componenti Madre, Figli e accessori
-
-La relazione non deve dipendere dalla vicinanza grafica.
-
-Regola documentata:
-
-- Madre: `PRES = M`;
-- Figlio: `PRES = F`;
-- Figlio associato: `NOME` uguale/coerente con la Madre.
-
-Per creare gli attributi nel DWG sorgente usa:
+Regola:
 
 ```text
-ATTDEF
+Madre  → PRES = M
+Figlio → PRES = F
+Figlio → NOME uguale alla Madre
 ```
 
-Per modificare gli attributi di un simbolo già inserito usa:
+Per modificare un simbolo già inserito usa:
 
 ```text
 EDITATT
 ```
 
-Per la procedura completa: [Gestire accessori e bobine](playbooks/manage-accessories-and-coils.md).
+Se SPAC segnala un nome già esistente, conferma quando l'uguaglianza è intenzionale per associare il Figlio alla Madre.
 
-## Associare un materiale a un simbolo
+## Associare materiale
 
-Percorso verificato:
+1. doppio click sul simbolo;
+2. riquadro **Materiali**;
+3. tasto destro;
+4. **Avvio Archivio Materiali (DbCenter)**;
+5. seleziona il materiale;
+6. conferma;
+7. verifica distinta/report.
 
-1. fai **doppio click sul simbolo**;
-2. nel riquadro **Materiali**, fai **tasto destro**;
-3. clicca **Avvio Archivio Materiali (DbCenter)**;
-4. in DbCenter seleziona il materiale corretto;
-5. conferma l'associazione;
-6. controlla distinta/report per verificare che il materiale compaia una sola volta dove previsto.
+## Sequenza operativa consigliata
 
-Approfondimento: [Associare materiali](playbooks/material-association.md).
-
-## Sequenza consigliata di verifica multifilare
-
-1. Identifica il componente principale.
-2. Controlla `NOME` e `PRES` con `EDITATT` se necessario.
-3. Verifica gli elementi Figlio/accessori associati.
-4. Controlla fili e numerazioni.
-5. Per la lista numeri usa **Numerazione fili → Lista numeri usati**.
-6. Se devi azzerare la numerazione usa **SPAC → Utility Fili → Elimina numerazione** oppure `DEL_NUMF`.
-7. Per i morsetti usa `SPINSMOR` e lavora nella finestra **Inser Morsetti**.
-8. Verifica rimandi e cross-reference.
-9. Per i materiali usa **doppio click → Materiali → tasto destro → Avvio Archivio Materiali (DbCenter)**.
-10. Verifica distinta/report.
+1. Verifica componente Madre con `EDITATT`.
+2. Verifica eventuali Figli/accessori.
+3. Numera/identifica i fili.
+4. Controlla rimandi con **Lista numeri usati → Vedi solo i Rimandi → Scansiona i Multifogli**.
+5. Aggiorna cross-reference con **UTIL → Cross Reference → Rimandi → Cross → Ok - Aggiorna**.
+6. Inserisci morsetti con `SPINSMOR`.
+7. Per ogni morsetto usa **Anteprima → Ok - Nuovo → clic filo → Invio**.
+8. Associa materiali tramite DbCenter.
+9. Verifica distinta/report.
 
 ## Diagnostica rapida
 
-| Sintomo | Prima azione concreta |
+| Sintomo | Prima azione |
 |---|---|
-| Numero filo duplicato | **Numerazione fili → Lista numeri usati**; cerca asterischi |
-| Devo eliminare i numeri esistenti | **SPAC → Utility Fili → Elimina numerazione** oppure `DEL_NUMF` |
-| Devo inserire/gestire morsetti | `SPINSMOR` |
-| Devo creare una morsettiera | **Inser Morsetti → tasto destro su Elenco Quadri → Nuova morsettiera** |
-| Accessorio non collegato alla Madre | `EDITATT` e verifica `NOME` / `PRES` |
-| Materiale manca o è duplicato | **doppio click → Materiali → tasto destro → Avvio Archivio Materiali (DbCenter)** |
-| Rimando non accetta la selezione | verifica prima se stai selezionando un oggetto SPAC o una linea CAD |
-
-## Da verificare
-
-Se per una funzione non è ancora noto il nome esatto della voce di menu o del comando in SPAC Start 26, la guida deve riportare **Da verificare**. Non usare descrizioni inventate come se fossero comandi reali.
+| rimando duplicato | **Vedi solo i Rimandi → Scansiona i Multifogli** |
+| cross-reference vecchio | **UTIL → Cross Reference → Rimandi → Cross → Ok - Aggiorna** |
+| numerazione da cancellare | `DEL_NUMF` |
+| morsettiera da creare | **Elenco Quadri → tasto destro → Nuova morsettiera** |
+| morsetto da inserire | **Anteprima → Ok - Nuovo → clic filo → Invio** |
+| compare numero filo anziché morsetto | scegli in **Anteprima** un modello con `NumM` |
+| accessorio non associato | `EDITATT` → `PRES = F`, stesso `NOME` della Madre |
+| materiale mancante | doppio click → **Materiali → Avvio Archivio Materiali (DbCenter)** |
 
 ## Collegamenti
 
-- [Comandi e percorsi esatti](command-reference.md)
+- [Comandi e click esatti](command-reference.md)
 - [Rimandi e morsetti](06-cross-references-terminals.md)
-- [Numerazione e identificazione fili](18-wire-numbering.md)
-- [Attributi e pinatura](04-attributes-and-pinning.md)
-- [Troubleshooting](07-troubleshooting.md)
+- [Numerazione fili](18-wire-numbering.md)
+- [Gestire accessori e bobine](playbooks/manage-accessories-and-coils.md)
