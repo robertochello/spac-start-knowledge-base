@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Audit public documentation and downloadable SQLite DBs for sensitive data.
 
-The script intentionally reports only the location and type of a finding, not
-its value, so CI logs do not leak the data being detected.
+The script reports only the location and type of a finding, never the matched
+value, so CI logs do not leak the data being detected.
 """
 
 from __future__ import annotations
@@ -14,6 +14,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+SCRIPT_PATH = Path(__file__).resolve()
 DOWNLOADS = ROOT / "docs" / "assets" / "downloads"
 
 TEXT_EXTENSIONS = {
@@ -21,8 +22,8 @@ TEXT_EXTENSIONS = {
 }
 SKIP_DIRS = {".git", ".venv", "site", ".worktrees", "node_modules"}
 
-# High-confidence patterns. Keep these conservative to avoid blocking on normal
-# SPAC terminology. Project/customer names still require human review.
+# High-confidence patterns only. Customer/project names and licensing still
+# require human review because they cannot be recognized reliably by regex.
 PATTERNS = {
     "email": re.compile(r"\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b", re.I),
     "ipv4": re.compile(r"\b(?:\d{1,3}\.){3}\d{1,3}\b"),
@@ -40,8 +41,11 @@ ALLOWED_EMAILS = {
     "41898282+github-actions[bot]@users.noreply.github.com",
 }
 
+# Exact/bounded names only: avoid false positives on legitimate SPAC columns
+# that merely contain fragments such as "user" inside another identifier.
 SUSPICIOUS_SQLITE_NAMES = re.compile(
-    r"(?:customer|client|cliente|commessa|project|order|ordine|user|credential|password|secret)",
+    r"^(?:customers?|clients?|clienti?|commess[ae]|projects?|orders?|ordini?|"
+    r"users?|credentials?|passwords?|secrets?)$",
     re.I,
 )
 
@@ -57,6 +61,8 @@ def sha256(path: Path) -> str:
 def iter_text_files():
     for path in ROOT.rglob("*"):
         if not path.is_file() or path.suffix.lower() not in TEXT_EXTENSIONS:
+            continue
+        if path.resolve() == SCRIPT_PATH:
             continue
         if any(part in SKIP_DIRS for part in path.parts):
             continue
@@ -98,7 +104,7 @@ def scan_sqlite(path: Path, findings: list[str]) -> None:
             )
         ]
         for table in tables:
-            if SUSPICIOUS_SQLITE_NAMES.search(table):
+            if SUSPICIOUS_SQLITE_NAMES.fullmatch(table):
                 findings.append(f"{relative}: suspicious-table-name ({table})")
 
             quoted_table = '"' + table.replace('"', '""') + '"'
@@ -112,7 +118,7 @@ def scan_sqlite(path: Path, findings: list[str]) -> None:
                 continue
 
             for column in columns:
-                if SUSPICIOUS_SQLITE_NAMES.search(column):
+                if SUSPICIOUS_SQLITE_NAMES.fullmatch(column):
                     findings.append(
                         f"{relative}: suspicious-column-name ({table}.{column})"
                     )
