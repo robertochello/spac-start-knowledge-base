@@ -65,7 +65,7 @@ Non pubblicare nella repository:
 - codici ordine/elaborato reali;
 - email o credenziali;
 - IP/MAC reali di impianti;
-- percorsi personali `C:\Users\...`;
+- percorsi delle home directory personali;
 - screenshot o file con dati identificativi;
 - database non sanitizzati;
 - file vendor senza diritto di redistribuzione.
