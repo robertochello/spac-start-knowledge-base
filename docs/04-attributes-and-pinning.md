@@ -2,46 +2,116 @@
 
 Questa sezione raccoglie le convenzioni operative sugli attributi principali dei simboli custom SPAC e sulla gestione della pinatura.
 
+## Procedura pratica: creare gli attributi
+
+Per creare gli attributi non usare indicazioni generiche: il comando verificato è:
+
+```text
+ATTDEF
+```
+
+### Creare `NOME`
+
+1. Digitare `ATTDEF` nella riga comando.
+2. Nella finestra di definizione attributo impostare:
+
+| Campo | Valore |
+|---|---|
+| **Etichetta** | `NOME` |
+| **Messaggio** | `Sigla componente` |
+
+3. Confermare.
+4. Posizionare l'attributo nel punto in cui deve comparire la sigla componente.
+
+### Creare `PRES` per una Madre
+
+1. Digitare `ATTDEF`.
+2. Impostare:
+
+| Campo | Valore |
+|---|---|
+| **Etichetta** | `PRES` |
+| **Default** | `M` |
+
+3. Confermare e posizionare l'attributo.
+
+`PRES = M` identifica il simbolo Madre.
+
+Per un simbolo Figlio usare `PRES = F` e mantenere `NOME` coerente con la Madre a cui deve essere associato.
+
+### Creare `PINA1`
+
+1. Digitare `ATTDEF`.
+2. Impostare:
+
+| Campo | Valore |
+|---|---|
+| **Etichetta** | `PINA1` |
+| **Default** | `1` |
+| **Invisibile** | No |
+| **Costante** | No |
+| **Blocca posizione** | Sì |
+
+3. Posizionare l'attributo esattamente sul punto di connessione previsto.
+4. Per i pin successivi usare `PINA2`, `PINA3`, ecc.
+
+### Creare `PINB1`
+
+Usare `PINB1` solo se il segnale presente su `PINA1` deve essere riportato sul lato opposto del simbolo.
+
+1. Digitare `ATTDEF`.
+2. Impostare l'etichetta `PINB1`.
+3. Mantenere la stessa numerazione della relativa `PINA1`.
+4. Posizionare il pin sul punto di uscita previsto.
+
+Per le coppie successive usare `PINA2`/`PINB2`, `PINA3`/`PINB3`, ecc.
+
+## Modificare attributi e proprietà
+
+Per modificare le proprietà dell'oggetto selezionato usare:
+
+```text
+PROPRIETA
+```
+
+oppure:
+
+```text
+CTRL+1
+```
+
+Per copiare proprietà da un oggetto già configurato a un altro usare:
+
+```text
+CORRISPROP
+```
+
+Per modificare gli attributi di un'istanza già inserita usare:
+
+```text
+EDITATT
+```
+
 ## In questa pagina impari
 
 - quali attributi controllare nei simboli custom;
 - come distinguere Madre, Figlio e relazione logica;
 - quando usare solo `PINA<n>` e quando aggiungere `PINB<n>`;
+- quali comandi digitare per creare e modificare gli attributi;
 - quali test fare prima di validare il simbolo.
 
-## Flusso attributi e pin
-
-```mermaid
-flowchart LR
-    A[Simbolo custom]:::process --> B[Attributi]:::data
-    B --> C{Madre o Figlio?}:::warn
-    C --> D[NOME e PRES]:::data
-    D --> E[PINA/PINB]:::data
-    E --> F[Test fili]:::warn
-    F --> G[Report o materiale]:::ok
-
-    classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
-    classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
-    classDef data fill:#e0f7fa,stroke:#00838f,color:#004d40;
-    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
-```
-
 ## Attributi principali
-
-Attributi ricorrenti da considerare nei simboli custom:
 
 | Attributo | Uso operativo |
 |---|---|
 | `NOME` | Identificativo del componente |
-| `PRES` | Presenza/tipo simbolo, ad esempio Madre o Figlio |
+| `PRES` | Ruolo del simbolo, ad esempio Madre o Figlio |
 | `DESCRIZIONE` | Descrizione funzionale |
 | `TIPO` | Tipo componente |
 | `COSTRUTTORE` | Costruttore o marca |
 | `QUADRO` | Quadro o area di appartenenza |
 
 ## Simbolo Madre
-
-Per indicare un simbolo Madre:
 
 ```text
 PRES = M
@@ -51,43 +121,17 @@ La Madre identifica il componente principale nello schema.
 
 ## Simbolo Figlio
 
-Un simbolo Figlio è collegato a una Madre e rappresenta un elemento associato.
-
 Regola operativa:
 
-- il Figlio deve avere `PRES = F`;
-- il Figlio deve richiamare lo stesso `NOME` della Madre;
-- la relazione non deve essere basata solo sulla vicinanza grafica.
+- `PRES = F`;
+- stesso `NOME` della Madre quando deve essere associato logicamente;
+- la relazione non deve dipendere dalla sola vicinanza grafica.
 
-Esempi di Figli:
-
-- contatti ausiliari;
-- bobine;
-- accessori;
-- riferimenti funzionali collegati a una Madre.
-
-## Attributo NOME
-
-`NOME` deve identificare il componente o richiamare la Madre quando il simbolo è Figlio.
-
-Per un simbolo Madre, `NOME` è la sigla principale.
-
-Per un simbolo Figlio, `NOME` deve essere coerente con la Madre associata.
-
-## Attributo PRES
-
-`PRES` definisce il ruolo del simbolo.
-
-Valori operativi:
-
-| Valore | Uso |
-|---|---|
-| `M` | Simbolo Madre |
-| `F` | Simbolo Figlio o elemento associato |
+Esempi: contatti ausiliari, bobine, accessori ed elementi funzionali associati.
 
 ## Pinatura standard
 
-Per i simboli SPAC custom, lo standard adottato è:
+Lo standard adottato è:
 
 ```text
 PINA1
@@ -96,18 +140,16 @@ PINA3
 ...
 ```
 
-La presenza di `PINB`, con lo stesso numero incrementale, indica che il segnale presente su `PINA<n>` viene riportato in uscita su `PINB<n>`.
-
-Esempio:
+La presenza di `PINB<n>` con lo stesso numero indica che il segnale su `PINA<n>` viene riportato su `PINB<n>`.
 
 | Ingresso | Uscita collegata | Significato |
 |---|---|---|
-| `PINA1` | `PINB1` | Il segnale entra su PINA1 e viene riportato su PINB1 |
-| `PINA2` | `PINB2` | Il segnale entra su PINA2 e viene riportato su PINB2 |
+| `PINA1` | `PINB1` | Segnale riportato dalla coppia 1 |
+| `PINA2` | `PINB2` | Segnale riportato dalla coppia 2 |
 
 ## Quando usare solo PINA
 
-Usare solo `PINA<n>` quando il simbolo rappresenta un punto di connessione singolo o non deve riportare il segnale in uscita.
+Usare solo `PINA<n>` quando il simbolo rappresenta un singolo punto di connessione o non deve riportare il segnale in uscita.
 
 ## Quando usare PINA e PINB
 
@@ -115,55 +157,29 @@ Usare `PINA<n>` + `PINB<n>` quando il simbolo è attraversato da un collegamento
 
 ## Configurazione grafica dei pin
 
-Linee guida:
-
-- testo pin standard nei BLK custom: 1.5;
+- testo pin standard nei BLK custom: `1.5`;
 - posizione coerente con la griglia;
 - attributi bloccati in posizione quando necessario;
 - orientamento coerente con il significato elettrico.
 
-## Posizione dei pin
+## Test dopo il salvataggio
 
-La posizione dei pin deve essere coerente con la griglia di disegno.
-
-Linee guida:
-
-- allineare i pin alla griglia;
-- evitare posizioni arbitrarie;
-- verificare aggancio fili dopo l'inserimento;
-- testare il simbolo in un progetto prova;
-- mantenere coerenza tra orientamento grafico e significato del pin.
-
-## Test consigliati
-
-Dopo aver creato o modificato un simbolo:
-
-1. inserirlo in un progetto di prova;
-2. verificare modifica attributi;
-3. collegare fili ai pin;
-4. controllare aggancio e continuità grafica;
-5. verificare eventuali report o associazioni materiali;
-6. aggiornare l'inventario simboli custom.
-
-## Nota su PINB
-
-Non usare `PINB` se non serve realmente riportare il segnale. Una pinatura eccessiva o non coerente rende il simbolo più difficile da mantenere.
+1. Inserire il simbolo in un progetto di prova.
+2. Selezionarlo e usare `EDITATT` per verificare la modifica degli attributi.
+3. Collegare un filo a ogni `PINA<n>` previsto.
+4. Verificare l'aggancio reale al pin.
+5. Se presente `PINB<n>`, verificare anche il lato di uscita corrispondente.
+6. Controllare eventuali report o associazioni materiali.
+7. Aggiornare l'inventario simboli custom.
 
 !!! warning "Errore da evitare"
 
     Non aggiungere pin per tentativi. Se il filo non aggancia, verificare prima
-    posizione, attributo del pin, griglia e stato del simbolo.
+    posizione del pin, etichetta `PINA/PINB`, griglia e struttura del simbolo.
 
-## Baseline sezione
+## Riferimenti
 
-La sezione attributi e pinatura è completa come riferimento operativo quando documenta:
-
-- ruolo degli attributi principali;
-- differenza tra simbolo Madre e simbolo Figlio;
-- uso di `NOME` e `PRES`;
-- convenzione `PINA<n>` / `PINB<n>`;
-- casi in cui usare solo `PINA`;
-- casi in cui usare `PINA` e `PINB`;
-- controlli finali su aggancio fili, attributi e report.
-
-Le eccezioni devono essere documentate nel simbolo specifico o nel decision log.
+- [Comandi e percorsi esatti](command-reference.md)
+- [Simboli custom](03-custom-symbols.md)
+- [Creare un simbolo custom](playbooks/create-custom-symbol.md)
+- [Diagnosticare pin non agganciato](playbooks/diagnose-pin-not-snapping.md)
