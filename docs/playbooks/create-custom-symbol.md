@@ -2,19 +2,35 @@
 
 ## Obiettivo
 
-Creare un simbolo custom ordinato, riconoscibile e riutilizzabile in SPAC Start usando i comandi effettivi della procedura.
+Creare un simbolo custom riutilizzabile in SPAC Start 26 con comandi e campi verificati.
 
-## Procedura operativa
+## 1. Importare la geometria
 
-### 1. Preparare o importare la geometria
-
-Se devi inserire un DWG o un blocco di partenza, dalla riga comando usa:
+Per un DWG esterno:
 
 ```text
 _INSER
 ```
 
-Se devi modificare le singole entità della geometria importata, usa solo quando necessario:
+Nella finestra di inserimento puoi usare:
+
+- **Disegno corrente**;
+- **Recenti**;
+- **Preferiti**;
+- **Librerie**;
+- ricerca/sfoglia.
+
+Se il DWG contiene attributi, SPAC/AutoCAD può richiederne la compilazione dalla riga comando.
+
+Per partire da un simbolo SPAC esistente, apri la libreria con:
+
+```text
+SP_XML_MENU
+```
+
+## 2. Pulire e normalizzare
+
+Se devi modificare le singole entità:
 
 ```text
 ESPLODI
@@ -22,164 +38,149 @@ ESPLODI
 
 Poi:
 
-1. rimuovi entità inutili;
-2. verifica scala e orientamento;
-3. porta la geometria su **Layer 0**;
-4. imposta colore, tipo linea e spessore su **DaBlocco**;
-5. definisci il punto che dovrà diventare il punto base del simbolo.
+- elimina geometrie/testi inutili;
+- Layer `0`;
+- Colore `DaBlocco`;
+- Tipo linea `DaBlocco`;
+- Spessore `DaBlocco`.
 
-### 2. Creare gli attributi
+## 3. Creare gli attributi
 
-Per ogni attributo usa:
+Usa:
 
 ```text
 ATTDEF
 ```
 
-Per una Madre crea almeno:
+Per Madre:
 
-- `NOME`;
-- `PRES` con valore `M`.
+```text
+NOME
+PRES = M
+```
 
-Per un Figlio usa `PRES = F` e mantieni `NOME` coerente con la Madre.
+Per Figlio:
 
-Per i pin cablati usa:
+```text
+PRES = F
+NOME = stesso NOME della Madre
+```
+
+Per pin:
 
 ```text
 PINA1
-PINA2
-PINA3
-...
+PINB1
 ```
 
-Aggiungi `PINB<n>` solo quando il segnale deve essere riportato sul lato opposto.
+Per i campi esatti usa [Attributi e pinatura](../04-attributes-and-pinning.md).
 
-Per i valori dettagliati dei campi ATTDEF usa [Attributi e pinatura](../04-attributes-and-pinning.md).
+## 4. Salvare il DWG del simbolo
 
-### 3. Creare il DWG del simbolo
-
-1. Seleziona tutti gli oggetti che devono appartenere al simbolo.
-2. Digita:
+1. seleziona tutti gli oggetti;
+2. digita:
 
    ```text
    MBLOCCO
    ```
 
-3. Nella finestra del comando, alla voce **Origine**, seleziona `Oggetti`.
-4. Seleziona il **punto base**.
-5. Salva il file nella categoria corretta della libreria:
+3. in **Origine** seleziona `Oggetti`;
+4. seleziona il **punto base**;
+5. in **Destinazione → Nome e percorso del file** scegli la categoria `_CUSTOM` corretta;
+6. assegna il nome secondo la convenzione;
+7. in **Unità inser.** lascia:
 
    ```text
-   C:\SPAC Start 26\Librerie\Blk\_CUSTOM\<CATEGORIA>
+   Senza unità
    ```
 
-6. Usa il nome previsto dalla convenzione della libreria.
+8. salva il DWG.
 
-### 4. Creare l'anteprima SLD
+Per un simbolo puramente grafico il punto base può essere il centro grafico; per un simbolo cablato sceglilo in modo coerente con l'inserimento/pinatura.
 
-1. Apri direttamente il `.dwg` appena creato.
-2. Centra il simbolo e regola lo zoom.
-3. Digita:
+## 5. Creare l'anteprima SLD
+
+1. apri direttamente il DWG appena creato;
+2. centra il disegno e regola lo zoom;
+3. digita:
 
    ```text
    _MSLIDE
    ```
 
-4. Salva il file `.sld` nella stessa cartella del `.dwg`.
-5. Usa obbligatoriamente lo stesso nome base:
+4. salva nella stessa cartella del DWG;
+5. usa lo stesso nome base;
+6. chiudi il DWG;
+7. verifica nella libreria BLK che simbolo e slide siano visibili.
 
-   ```text
-   NOME_SIMBOLO.dwg
-   NOME_SIMBOLO.sld
-   ```
+```text
+NOME_SIMBOLO.dwg
+NOME_SIMBOLO.sld
+```
 
-### 5. Testare gli attributi
+## 6. Testare attributi
 
-Inserisci il simbolo in un progetto di prova.
+Inserisci il simbolo in un progetto prova.
 
-Per modificare gli attributi dell'istanza usa:
+Usa:
 
 ```text
 EDITATT
 ```
 
-Per aprire le proprietà usa:
+per verificare gli attributi dell'istanza.
+
+Per proprietà:
 
 ```text
 PROPRIETA
 ```
 
-oppure:
+oppure `CTRL+1`.
 
-```text
-CTRL+1
-```
-
-Se devi copiare proprietà da un elemento già corretto usa:
+Per copiare proprietà:
 
 ```text
 CORRISPROP
 ```
 
-### 6. Testare la pinatura
+Sequenza: attributo sorgente → attributo destinazione → **Invio**.
 
-1. Inserisci il simbolo in un foglio di prova.
-2. Disegna un filo verso ogni `PINA<n>`.
-3. Verifica che il filo agganci esattamente il punto del pin.
-4. Se esiste `PINB<n>`, verifica anche la connessione corrispondente.
-5. Se non aggancia, non spostare casualmente il filo: usa il playbook [Diagnosticare pin non agganciato](diagnose-pin-not-snapping.md).
+## 7. Testare pinatura
 
-### 7. Associare il materiale, se previsto
+1. `_DSETTINGS → Snap e griglia`;
+2. inserisci il simbolo;
+3. collega un filo a ogni `PINA<n>`;
+4. verifica eventuale `PINB<n>`;
+5. salva, chiudi e riapri.
 
-1. Fai **doppio click sul simbolo**.
-2. Nel riquadro **Materiali**, fai **tasto destro**.
-3. Clicca **Avvio Archivio Materiali (DbCenter)**.
-4. In DbCenter seleziona il materiale corretto.
-5. Conferma l'associazione.
-6. Verifica poi distinta/report per evitare duplicazioni.
+Se il filo non aggancia, usa [Diagnosticare pin non agganciato](diagnose-pin-not-snapping.md).
 
-Per il flusso completo usa [Associare materiali](material-association.md).
+## 8. Associare materiale
 
-### 8. Aggiornare l'inventario
-
-Registra almeno:
-
-- nome simbolo;
-- categoria;
-- Madre/Figlio;
-- presenza di `PINA/PINB`;
-- materiale associabile;
-- stato del test;
-- eventuali note.
+1. doppio click sul simbolo;
+2. riquadro **Materiali**;
+3. tasto destro;
+4. **Avvio Archivio Materiali (DbCenter)**;
+5. scegli il materiale;
+6. conferma;
+7. verifica distinta/report.
 
 ## Verifica finale
 
 Il simbolo è pronto solo se:
 
-- `MBLOCCO` ha generato il DWG nella categoria corretta;
-- `_MSLIDE` ha generato l'SLD con stesso nome base;
-- `EDITATT` permette di modificare gli attributi previsti;
-- i fili agganciano i pin previsti;
-- il materiale, se presente, compare correttamente nei report;
-- l'inventario è aggiornato.
-
-## Comandi usati in questo playbook
-
-| Operazione | Comando / percorso |
-|---|---|
-| Inserire DWG/blocco | `_INSER` |
-| Esplodere geometria | `ESPLODI` |
-| Creare attributo | `ATTDEF` |
-| Salvare DWG simbolo | `MBLOCCO` → **Origine: Oggetti** |
-| Creare anteprima SLD | `_MSLIDE` |
-| Modificare attributi istanza | `EDITATT` |
-| Aprire proprietà | `PROPRIETA` / `CTRL+1` |
-| Copiare proprietà | `CORRISPROP` |
-| Associare materiale | **doppio click → Materiali → tasto destro → Avvio Archivio Materiali (DbCenter)** |
+- DWG salvato con `MBLOCCO` nella categoria corretta;
+- **Unità inser. = Senza unità**;
+- SLD creato con `_MSLIDE` e stesso nome base;
+- libreria BLK mostra correttamente il simbolo;
+- `EDITATT` modifica gli attributi previsti;
+- pin agganciano;
+- materiale/report coerenti;
+- inventario aggiornato.
 
 ## Collegamenti
 
-- [Comandi e percorsi esatti](../command-reference.md)
-- [Simboli custom](../03-custom-symbols.md)
+- [Comandi e click esatti](../command-reference.md)
 - [Attributi e pinatura](../04-attributes-and-pinning.md)
-- [Checklist validazione simbolo](../10-symbol-validation-checklist.md)
+- [Validare un simbolo](validate-custom-symbol.md)
