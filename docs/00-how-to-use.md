@@ -2,41 +2,82 @@
 
 Usa questa pagina come indice operativo. Parti da **quello che devi fare**, non dal nome delle sezioni del sito.
 
+## Se vuoi sapere esattamente cosa cliccare
+
+Apri subito:
+
+**[Comandi e click esatti](command-reference.md)**
+
+Quella pagina raccoglie i nomi verificati di:
+
+- comandi da digitare nella riga comando;
+- menu e sottomenu;
+- finestre/dialog;
+- pulsanti;
+- campi e valori da impostare.
+
+Esempi:
+
+```text
+SP_XML_MENU
+_DSETTINGS
+ATTDEF
+MBLOCCO
+_MSLIDE
+EDITATT
+SPINSMOR
+DEL_NUMF
+```
+
+oppure percorsi come:
+
+```text
+SPAC → Utility Fili → Elimina numerazione
+Inser Morsetti → tasto destro su Elenco Quadri → Nuova morsettiera
+Modifica/Inserisci → Gestioni immagini → Sfoglia → Salva percorso
+```
+
+!!! important
+
+    Se un percorso non è stato ancora verificato direttamente in SPAC Start 26, la guida deve scrivere **Da verificare**. Non deve inventare il nome di un comando o di un pulsante.
+
 ## Scegli il tuo caso
 
 ### 1. Sto preparando o modificando un progetto
 
 | Obiettivo | Pagina da aprire |
 |---|---|
-| installare o verificare `_CUSTOM` | [Libreria custom](15-custom-library.md) |
+| installare/verificare `_CUSTOM` e aprire la libreria | [Libreria custom](15-custom-library.md) |
 | creare la base di un nuovo progetto | [Template progetto](16-project-template.md) |
-| orientarmi nell'interfaccia | [Interfaccia e menu](01-interface-and-menu.md) |
-| gestire pagine, cartigli o immagini | [Pagine, cartigli e immagini](05-pages-titleblocks-images.md) |
-| lavorare con geometria CAD | [Workflow CAD 2D](02-cad-workflow.md) |
+| menu, `SP_XML_MENU`, `CUI`, shortcut | [Interfaccia e menu](01-interface-and-menu.md) |
+| immagini, `IMMAGINI`, `IMAGEFRAME` | [Pagine, cartigli e immagini](05-pages-titleblocks-images.md) |
+| `_INSER`, `ESPLODI`, `MBLOCCO`, `_MSLIDE` | [Workflow CAD 2D](02-cad-workflow.md) |
 
 ### 2. Sto disegnando lo schema
 
 | Obiettivo | Pagina da aprire |
 |---|---|
-| schema unifilare | [Schema unifilare](17-unifilare.md) |
-| numerazione e identificazione fili | [Numerazione fili](18-wire-numbering.md) |
-| schema multifilare | [Multifilare](09-multifilare.md) |
-| morsetti, morsettiere e cross-reference | [Rimandi e morsetti](06-cross-references-terminals.md) |
+| schema unifilare, `_DSETTINGS`, **Disegna**, **Identificatore Linee** | [Schema unifilare](17-unifilare.md) |
+| **SPAC → Numera Fili**, modalità e alimentazioni | [Numerazione fili](18-wire-numbering.md) |
+| `DEL_NUMF`, `SPINSMOR`, Madre/Figlio | [Multifilare](09-multifilare.md) |
+| **Inser Morsetti**, `NumI/NumO/NumM`, cross-reference | [Rimandi e morsetti](06-cross-references-terminals.md) |
 
 ### 3. Sto lavorando sui simboli
 
 | Obiettivo | Pagina da aprire |
 |---|---|
-| creare un simbolo nuovo | [Playbook: creare un simbolo custom](playbooks/create-custom-symbol.md) |
-| capire la struttura dei simboli custom | [Simboli custom](03-custom-symbols.md) |
-| configurare `PRES`, `PINA`, `PINB` | [Attributi e pinatura](04-attributes-and-pinning.md) |
+| creare un simbolo dall'inizio | [Creare un simbolo custom](playbooks/create-custom-symbol.md) |
+| workflow `ATTDEF → MBLOCCO → _MSLIDE → EDITATT` | [Simboli custom](03-custom-symbols.md) |
+| creare `PRES`, `PINA`, `PINB` | [Attributi e pinatura](04-attributes-and-pinning.md) |
+| diagnosticare pin che non aggancia | [Diagnosticare pin non agganciato](playbooks/diagnose-pin-not-snapping.md) |
+| validare un simbolo prima del riuso | [Validare un simbolo](playbooks/validate-custom-symbol.md) |
 | scegliere il nome corretto | [Nomenclatura simboli](19-symbol-naming.md) |
-| verificare un simbolo prima del riuso | [Checklist validazione simbolo](10-symbol-validation-checklist.md) |
 
 ### 4. Sto gestendo materiali, cavi o download
 
 | Obiettivo | Pagina da aprire |
 |---|---|
+| associare materiale tramite **Avvio Archivio Materiali (DbCenter)** | [Associare materiali](playbooks/material-association.md) |
 | archivi materiali custom | [Archivi materiali](21-material-archives.md) |
 | regole per i materiali | [Standard materiali](standards/materials.md) |
 | archivio cavi | [Archivio Cavi DbCables](25-cable-archive-dbcables.md) |
@@ -47,51 +88,31 @@ Usa questa pagina come indice operativo. Parti da **quello che devi fare**, non 
 
 Apri prima **[Diagnosi rapida](07-troubleshooting.md)**.
 
-Se riconosci già il sintomo, usa direttamente il riferimento seguente.
-
 | Sintomo | Vai a |
 |---|---|
-| pin che non aggancia | [Diagnosticare pin non agganciato](playbooks/diagnose-pin-not-snapping.md) |
-| oggetti o layer che non riesci a eliminare | [Pulire oggetti residui](playbooks/clean-residual-objects.md) |
-| rimando alimentazione errato o obsoleto | [Diagnosticare rimandi alimentazione](playbooks/power-reference-diagnostic.md) |
-| morsetto rappresentato in modo inatteso | [Verificare rappresentazione morsetti](playbooks/terminal-representation.md) |
-| immagine non più visualizzata | [Known issue: riferimento immagine mancante](known-issues/missing-image-reference.md) |
+| pin non aggancia | [Diagnosticare pin non agganciato](playbooks/diagnose-pin-not-snapping.md) |
+| layer non si elimina / oggetto residuo | [PURGE, QSELECT, BEDIT](playbooks/clean-residual-objects.md) |
+| rimando alimentazione errato/obsoleto | [Diagnosticare rimandi alimentazione](playbooks/power-reference-diagnostic.md) |
+| morsetto mostra numero sbagliato | [Verificare rappresentazione morsetti](playbooks/terminal-representation.md) |
+| immagine non visualizzata | [Pagine, cartigli e immagini](05-pages-titleblocks-images.md) |
 | DbCables con versione non congruente | [Known issue: DbCables](known-issues/dbcables-version-mismatch.md) |
-
-## Quale tipo di pagina usare
-
-| Tipo | Quando usarlo |
-|---|---|
-| **Pagina operativa** | devi capire un'area di lavoro e le sue regole principali |
-| **Playbook** | devi eseguire una procedura passo-passo |
-| **Troubleshooting** | hai un sintomo ma non conosci ancora la causa |
-| **Known issue** | il problema è già noto e ricorrente |
-| **Standard** | devi sapere quale regola è stata adottata |
-| **Quality gate** | devi verificare che il lavoro sia pronto |
-| **Decision log** | devi capire perché è stata presa una certa decisione |
 
 ## Manuale completo: quando usarlo
 
-La pagina **[Guida operativa completa](guida-operativa-completa.md)** raccoglie molti argomenti in un unico documento.
+La **[Guida operativa completa](guida-operativa-completa.md)** resta il riferimento esteso e contiene la storia consolidata delle procedure.
 
-Usala quando:
+Per lavorare sul campo, preferisci però le pagine operative e i playbook sopra: devono contenere localmente i comandi necessari senza costringerti a cercarli nel manuale monolitico.
 
-- vuoi fare una ricerca testuale su tutto il manuale;
-- vuoi scorrere più argomenti consecutivamente;
-- ti serve un riferimento unico da consultare.
+## Regola editoriale
 
-Per una singola attività è normalmente più chiaro usare le pagine operative o i playbook collegati sopra.
+Ogni procedura deve rispondere, quando applicabile, a queste domande:
 
-## Se devi aggiungere nuova documentazione
+1. **Cosa devo digitare?**
+2. **Cosa devo cliccare?**
+3. **Come si chiama la finestra che si apre?**
+4. **Quale campo devo modificare?**
+5. **Che valore devo mettere?**
+6. **Cosa devo vedere se ha funzionato?**
+7. **Quali prerequisiti servono?**
 
-Prima di creare una nuova pagina, verifica se l'informazione appartiene già a una pagina esistente.
-
-1. **Procedura pratica** → aggiungi o aggiorna un playbook.
-2. **Problema ricorrente** → known issue.
-3. **Regola stabile** → standard.
-4. **Scelta progettuale/documentale** → decision log.
-5. **Controllo prima del rilascio** → quality gate.
-
-!!! note "Regola editoriale"
-
-    Una pagina deve aiutare almeno a **decidere, configurare, verificare, diagnosticare o standardizzare**. Se non fa nessuna di queste cose, va semplificata o collegata meglio.
+Se una di queste informazioni non è ancora nota, scrivere `Da verificare` nel punto preciso invece di sostituirla con una descrizione generica.
