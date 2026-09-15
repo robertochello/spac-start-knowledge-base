@@ -2,6 +2,16 @@
 
 Tutte le modifiche rilevanti alla knowledge base sono documentate in questo file.
 
+## 0.9.0 - 2026-09-15 - Simple guide pass
+
+- Home ridotta alle attività principali.
+- `Guida semplice` riscritta come tabella **devo fare X → apri Y**.
+- Navigazione ridotta a Home, Guida semplice, Download, Cosa devi fare, Problemi e Riferimenti.
+- FAQ, glossario, standard e manutenzione spostati fuori dal percorso operativo principale.
+- Pagina Download semplificata: file, stato e pulsante di download subito visibili.
+- Schema unifilare riscritto come procedura lineare passo-passo.
+- Linguaggio utente semplificato: meno terminologia documentale e più istruzioni dirette.
+
 ## 0.8.0 - 2026-09-15 - Public downloads & visual refresh
 
 ### Privacy
