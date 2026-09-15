@@ -63,6 +63,7 @@ nav:
 
   - Guida pratica:
       - Dove andare: 00-how-to-use.md
+      - Comandi e click esatti: command-reference.md
       - Concetti base SPAC: concepts.md
       - FAQ: faq.md
       - Glossario: glossary.md
@@ -108,9 +109,8 @@ nav:
       - Archivi:
           - Associare materiali: playbooks/material-association.md
           - Aggiornare Archivio Cavi DbCables: playbooks/update-dbcables-archive.md
-      - Checklist e comandi:
+      - Checklist ed esempi:
           - Checklist validazione simbolo: 10-symbol-validation-checklist.md
-          - Command Reference: command-reference.md
           - Esempi operativi: 24-operational-examples.md
 
   - Problemi e diagnosi:
