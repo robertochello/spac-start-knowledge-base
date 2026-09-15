@@ -4,11 +4,13 @@ Questa è una guida operativa per **SPAC Start Impianti**. Non va letta come un 
 
 <div class="home-grid" markdown>
 
+[**Voglio sapere cosa cliccare**<br>Comandi reali, nomi esatti delle finestre, pulsanti e percorsi menu.](command-reference.md){ .home-card }
+
 [**Sto iniziando un lavoro**<br>Setup libreria, template, interfaccia e pagine.](15-custom-library.md){ .home-card }
 
 [**Sto disegnando uno schema**<br>Unifilare, multifilare, fili, morsetti e rimandi.](17-unifilare.md){ .home-card }
 
-[**Sto creando o correggendo un simbolo**<br>Simboli custom, attributi, pinatura e naming.](03-custom-symbols.md){ .home-card }
+[**Sto creando o correggendo un simbolo**<br>Simboli custom, attributi, pinatura e naming.](playbooks/create-custom-symbol.md){ .home-card }
 
 [**Sto gestendo materiali o cavi**<br>Archivi materiali, DbCables, download e back-check.](21-material-archives.md){ .home-card }
 
@@ -18,30 +20,55 @@ Questa è una guida operativa per **SPAC Start Impianti**. Non va letta come un 
 
 </div>
 
+!!! important "Regola della guida"
+
+    Quando un comando o un percorso è stato verificato in SPAC Start 26, la procedura riporta il **nome esatto**: per esempio `MBLOCCO`, `_MSLIDE`, `ATTDEF`, `SPINSMOR`, oppure percorsi come **SPAC → Utility Fili → Elimina numerazione**.
+
+    Se il nome esatto non è ancora stato verificato, viene indicato **Da verificare**. La guida non deve inventare nomi di pulsanti o menu.
+
 !!! info "Prima volta qui?"
 
-    Apri **[Guida pratica](00-how-to-use.md)**. In pochi passaggi ti porta alla pagina corretta senza costringerti a leggere tutta la knowledge base.
+    Se vuoi sapere subito **cosa digitare o cosa cliccare**, apri **[Comandi e click esatti](command-reference.md)**. Se invece non sai quale procedura ti serve, apri **[Guida pratica](00-how-to-use.md)**.
 
 !!! note "Manuale completo"
 
-    La **[Guida operativa completa](guida-operativa-completa.md)** raccoglie molte procedure in un'unica pagina ed è utile come riferimento esteso. Per il lavoro quotidiano è più rapido usare le sezioni e i playbook del sito.
+    La **[Guida operativa completa](guida-operativa-completa.md)** raccoglie molte procedure in un'unica pagina ed è utile come riferimento esteso. Per il lavoro quotidiano usa le pagine operative e i playbook, che devono riportare i passaggi esatti già consolidati.
 
 ## Scelta rapida per attività
 
 | Devo... | Vai qui |
 |---|---|
+| sapere il comando preciso o il nome della voce da cliccare | [Comandi e click esatti](command-reference.md) |
 | installare o aggiornare la libreria `_CUSTOM` | [Libreria custom](15-custom-library.md) |
 | preparare la struttura di un nuovo progetto | [Template progetto](16-project-template.md) |
 | lavorare in unifilare | [Schema unifilare](17-unifilare.md) |
 | lavorare in multifilare | [Schema multifilare](09-multifilare.md) |
 | sistemare fili, morsetti o cross-reference | [Rimandi e morsetti](06-cross-references-terminals.md) |
 | creare un simbolo custom | [Creare un simbolo custom](playbooks/create-custom-symbol.md) |
-| capire `PRES`, `PINA` e `PINB` | [Attributi e pinatura](04-attributes-and-pinning.md) |
+| capire e creare `PRES`, `PINA` e `PINB` | [Attributi e pinatura](04-attributes-and-pinning.md) |
 | associare o controllare materiali | [Archivi materiali custom](21-material-archives.md) |
 | gestire l'archivio cavi | [Archivio Cavi DbCables](25-cable-archive-dbcables.md) |
 | scaricare file pubblicati | [Download](downloads.md) |
 | capire perché qualcosa non funziona | [Diagnosi rapida](07-troubleshooting.md) |
 | verificare un problema già noto | [Known Issues](known-issues/index.md) |
+
+## Alcuni comandi già consolidati
+
+| Operazione | Comando / percorso |
+|---|---|
+| Aprire libreria simboli | `SP_XML_MENU` |
+| Snap e griglia | `_DSETTINGS` → **Snap e griglia** |
+| Creare attributo | `ATTDEF` |
+| Salvare simbolo DWG | `MBLOCCO` → **Origine: Oggetti** |
+| Creare anteprima SLD | `_MSLIDE` |
+| Modificare attributi | `EDITATT` |
+| Eliminare numerazione fili | **SPAC → Utility Fili → Elimina numerazione** oppure `DEL_NUMF` |
+| Inserire morsetti | `SPINSMOR` |
+| Nuova morsettiera | **Inser Morsetti** → tasto destro su **Elenco Quadri** → **Nuova morsettiera** |
+| Gestire immagini | `IMMAGINI` |
+| Togliere bordo immagini | `IMAGEFRAME` → `0` |
+
+Per l'elenco completo vai a [Comandi e click esatti](command-reference.md).
 
 ## Se il problema è già davanti a te
 
@@ -64,30 +91,13 @@ Parti dal **sintomo**, non dalla struttura della documentazione.
 3. **Dati** — completa pinatura, morsetti, rimandi, materiali e cavi.
 4. **Verifica** — esegui checklist e quality gate prima di riutilizzare o pubblicare il risultato.
 
-```mermaid
-flowchart LR
-    A[Setup]:::process --> B[Schema]:::process
-    B --> C[Simboli e collegamenti]:::data
-    C --> D[Morsetti, rimandi e materiali]:::warn
-    D --> E[Verifica finale]:::ok
-
-    classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
-    classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
-    classDef data fill:#e0f7fa,stroke:#00838f,color:#004d40;
-    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
-```
-
 ## Come leggere le pagine
 
-Nel sito trovi tipi di contenuto diversi:
-
-- **pagina operativa**: spiega un'area di lavoro stabile;
-- **playbook**: procedura passo-passo per fare una cosa precisa;
+- **pagina operativa**: spiega un'area di lavoro stabile e riporta i comandi già verificati;
+- **playbook**: procedura passo-passo, con nomi reali di comandi/pulsanti quando noti;
 - **known issue**: diagnosi di un problema ricorrente;
 - **standard**: regola adottata e riutilizzabile;
 - **quality gate**: controlli da superare prima di considerare il lavoro pronto.
-
-Quando devi **fare qualcosa**, preferisci un playbook. Quando devi **capire perché non funziona**, parti dalla diagnosi. Quando devi **sapere qual è la regola corretta**, apri gli standard.
 
 ## Principio di diagnosi
 
