@@ -1,37 +1,96 @@
 # Rimandi, cross-reference e morsetti
 
-Questa pagina raccoglie le procedure operative per rimandi, cross-reference, morsetti e morsettiere in SPAC Start 26. I nomi esatti vengono riportati quando già verificati; ciò che non è ancora consolidato resta marcato `Da verificare`.
+Questa pagina contiene le procedure operative verificate per rimandi, cross-reference, morsetti e morsettiere in **SPAC Start 26**.
 
-## Prima distinzione: CAD o oggetto SPAC
+## Lista dei soli rimandi usati
 
-Prima di correggere un rimando o un morsetto verifica sempre se stai lavorando su:
-
-- semplice linea CAD;
-- collegamento/alimentazione SPAC;
-- simbolo intelligente;
-- rimando;
-- morsetto;
-- testo generato da una rappresentazione.
-
-Non correggere manualmente il testo se il dato sorgente è sbagliato.
-
-## Lista numeri/rimandi usati
-
-Percorso verificato:
+Percorso:
 
 ```text
 Numerazione fili → Lista numeri usati
 ```
 
-Usa questa lista per:
+Nella finestra **Lista numeri usati**:
 
-- individuare numeri ripetuti;
-- verificare rimandi duplicati;
-- controllare numerazioni/riferimenti ancora presenti.
+1. attiva **Vedi solo i Rimandi**;
+2. seleziona i multifogli da analizzare, ad esempio `SCHEMA`;
+3. clicca **Scansiona i Multifogli**;
+4. controlla l'elenco generato.
 
-I numeri segnalati con **asterisco** sono ripetuti.
+I numeri con **asterisco** sono ripetuti e devono essere verificati.
 
-## Eliminare numerazione fili
+## Creare un rimando
+
+Il collegamento deve essere un oggetto SPAC, non una semplice linea CAD.
+
+Per il primo rimando:
+
+1. seleziona **Dynamic Coll** oppure **Dynamic Alim**;
+2. seleziona il numero di fili;
+3. traccia il cavo/collegamento;
+4. premi **Invio**;
+5. scegli uno dei tipi:
+   - **Rimandi di arrivo**;
+   - **Rimandi di partenza**;
+   - **Rimandi di arrivo e partenza**;
+6. scegli il numero/nome del filo;
+7. se necessario scegli il tipo di cavo;
+8. clicca **Ok** per posizionare il filo.
+
+Per il secondo rimando usa lo **stesso nome** del primo.
+
+Regola direzionale:
+
+- primo **partenza** → secondo **arrivo** oppure **arrivo e partenza**;
+- primo **arrivo** → secondo **partenza** oppure **arrivo e partenza**.
+
+## Aggiornare il cross-reference
+
+Percorso verificato:
+
+```text
+UTIL → Cross Reference
+```
+
+Poi:
+
+1. scegli il tipo di elaborazione **Rimandi**;
+2. clicca **Cross**;
+3. scegli se visualizzare l'output del cross-reference, cioè il file Excel generato;
+4. clicca **Ok - Aggiorna**;
+5. torna allo schema e controlla i riferimenti generati;
+6. verifica eventuali duplicati con **Numerazione fili → Lista numeri usati → Vedi solo i Rimandi → Scansiona i Multifogli**.
+
+### Esito atteso
+
+- i due rimandi con lo stesso nome vengono collegati logicamente;
+- il riferimento punta al foglio/posizione corretti;
+- non restano rimandi duplicati inattesi.
+
+## Quando il rimando restituisce selezione non valida
+
+Controlla nell'ordine:
+
+1. stai selezionando **Dynamic Coll/Dynamic Alim** o una linea CAD?
+2. l'oggetto è stato esploso o alterato?
+3. esistono linee/oggetti sovrapposti?
+4. il collegamento è ancora un oggetto SPAC riconosciuto?
+5. il problema si ripete su un foglio pulito?
+
+Non disegnare una seconda linea CAD sopra quella esistente per simulare il collegamento.
+
+## Cross-reference che punta a una vecchia posizione
+
+1. Controlla i rimandi con **Lista numeri usati → Vedi solo i Rimandi → Scansiona i Multifogli**.
+2. Cerca oggetti residui o sovrapposti.
+3. Se necessario usa `PURGE`, `QSELECT` e `BEDIT` seguendo il playbook dedicato.
+4. Torna in **UTIL → Cross Reference**.
+5. Seleziona **Rimandi**.
+6. Clicca **Cross**.
+7. Clicca **Ok - Aggiorna**.
+8. Verifica nuovamente i riferimenti sul foglio.
+
+## Eliminare la numerazione fili
 
 Percorso:
 
@@ -45,19 +104,17 @@ Comando equivalente:
 DEL_NUMF
 ```
 
-Questa funzione elimina la numerazione, non i fili.
+La funzione elimina i numeri, non i fili.
 
-## Inserire morsetti
+## Aprire Inser Morsetti
 
-Prima di inserire morsetti è consigliato numerare/nominare i fili interessati.
-
-Nome funzione:
+Funzione:
 
 ```text
 Inser Morsetti
 ```
 
-Comando equivalente da riga comando:
+Comando equivalente:
 
 ```text
 SPINSMOR
@@ -65,113 +122,68 @@ SPINSMOR
 
 !!! warning "Prerequisito"
 
-    Deve essere aperto un database materiali contenente almeno una morsettiera. In caso contrario `SPINSMOR` può restituire errore.
+    Prima di usare `SPINSMOR` deve essere aperto un database materiali contenente almeno una morsettiera.
 
 ## Creare una nuova morsettiera
 
 Nella finestra **Inser Morsetti**:
 
-1. individua il riquadro in alto a sinistra **Elenco Quadri**;
-2. fai **tasto destro** su:
-   - **Elenco Quadri**;
-   - il nome del quadro;
-   - oppure una morsettiera già esistente;
+1. individua **Elenco Quadri** in alto a sinistra;
+2. tasto destro su **Elenco Quadri**, sul nome del quadro oppure su una morsettiera esistente;
 3. clicca **Nuova morsettiera**;
-4. completa i dati richiesti;
-5. verifica che la morsettiera sia sotto il quadro corretto.
+4. completa i dati;
+5. verifica che compaia sotto il quadro corretto.
+
+Per modificare/eliminare una morsettiera già esistente usa la relativa voce del menu contestuale aperto con il tasto destro.
 
 ## Inserire un morsetto sul filo
 
-Dopo aver aperto **Inser Morsetti**:
+Nella finestra **Inser Morsetti**:
 
-1. seleziona la morsettiera corretta;
-2. scegli il tipo di morsetto previsto;
-3. crea/seleziona il nuovo morsetto;
-4. seleziona il filo interessato nel disegno;
-5. verifica il punto di inserimento;
-6. controlla i dati del morsetto e la rappresentazione grafica.
+1. seleziona la morsettiera da utilizzare;
+2. scegli il **tipo di morsetto**;
+3. nel riquadro **Anteprima** seleziona il modello grafico desiderato;
+4. se vuoi visualizzare il numero morsetto, scegli una rappresentazione basata su `NumM`, preferibilmente insieme al nome morsettiera;
+5. clicca **Ok - Nuovo** in basso a destra;
+6. torna al disegno e clicca il filo nel punto in cui deve essere inserito il morsetto;
+7. premi **Invio**.
 
-Il punto in cui viene selezionato il filo determina il punto di inserimento del morsetto.
+Il punto cliccato sul filo determina la posizione del morsetto.
 
-!!! warning "Pulsante di creazione morsetto"
-
-    Il nome esatto di ogni pulsante interno usato per creare/selezionare il singolo morsetto non è ancora consolidato nella knowledge base. Non va inventato: verificare nell'installazione SPAC Start 26 e poi aggiornare questa pagina.
-
-## Numero filo vs numero morsetto
-
-Sigle operative documentate:
+### Significato campi rappresentazione
 
 | Sigla | Significato |
 |---|---|
-| `NumI` | numero filo in ingresso al morsetto |
-| `NumO` | numero filo in uscita dal morsetto |
+| `NumI` | numero filo in ingresso |
+| `NumO` | numero filo in uscita |
 | `NumM` | numero morsetto |
 
-Se compare il numero filo invece del numero morsetto:
-
-1. verifica quale campo sta mostrando la rappresentazione;
-2. controlla se è `NumI`/`NumO` invece di `NumM`;
-3. non correggere il testo a mano;
-4. verifica i dati sorgente del morsetto;
-5. prova la rappresentazione corretta su un morsetto nuovo.
-
-## Rimandi: regole logiche
-
-- rimando di **partenza** ↔ rimando di **arrivo** o arrivo/partenza;
-- rimando di **arrivo** ↔ rimando di **partenza** o arrivo/partenza;
-- i due punti che devono riferirsi allo stesso collegamento devono usare un nome coerente.
-
-## Cross-reference: aggiornamento
-
-Sequenza consolidata a livello logico:
-
-1. verifica che i collegamenti siano oggetti SPAC riconosciuti;
-2. verifica nome e direzione dei rimandi;
-3. apri la funzione di cross-reference;
-4. seleziona l'elaborazione dedicata ai rimandi;
-5. avvia l'aggiornamento;
-6. verifica i riferimenti generati sul foglio;
-7. controlla **Numerazione fili → Lista numeri usati** per eventuali duplicati/residui.
-
-!!! warning "Comando cross-reference da verificare"
-
-    Il nome esatto del comando/percorso menu che avvia l'elaborazione cross-reference non è ancora consolidato per l'installazione SPAC Start 26 documentata. Finché non viene verificato direttamente, la guida non deve assegnargli un nome ipotetico.
-
-## Quando un rimando dice selezione non valida
-
-Controlla nell'ordine:
-
-1. la linea è semplice geometria CAD o un collegamento SPAC?
-2. l'oggetto intelligente è stato esploso/alterato?
-3. esistono linee od oggetti sovrapposti?
-4. stai selezionando il collegamento reale o solo una geometria vicina?
-5. il comportamento si ripete su un foglio pulito?
-
-Non disegnare una nuova linea CAD sopra quella esistente per “far funzionare” il rimando.
-
-## Cross-reference che punta a una vecchia posizione
-
-Verifica:
-
-- oggetti intelligenti residui;
-- rimandi non più usati;
-- riferimenti non rigenerati;
-- alimentazioni duplicate;
-- oggetti cancellati graficamente ma ancora presenti logicamente.
-
-Poi rigenera i riferimenti con la funzione cross-reference verificata nell'ambiente.
+Se vedi il numero filo quando vuoi il numero morsetto, verifica il modello selezionato nel riquadro **Anteprima**: deve mostrare `NumM`, non `NumI`/`NumO`.
 
 ## Diagnostica rapida
 
 | Sintomo | Azione concreta |
 |---|---|
-| Numero/rimando duplicato | **Numerazione fili → Lista numeri usati**; controlla asterischi |
-| Devo rimuovere numeri filo | **SPAC → Utility Fili → Elimina numerazione** / `DEL_NUMF` |
+| Rimandi duplicati | **Lista numeri usati → Vedi solo i Rimandi → Scansiona i Multifogli** |
+| Cross-reference da aggiornare | **UTIL → Cross Reference → Rimandi → Cross → Ok - Aggiorna** |
+| Rimando non accetta la selezione | verifica `Dynamic Coll` / `Dynamic Alim` vs linea CAD |
+| Devo eliminare numeri filo | **SPAC → Utility Fili → Elimina numerazione** / `DEL_NUMF` |
 | Devo aprire gestione morsetti | **Inser Morsetti** / `SPINSMOR` |
-| Devo creare una morsettiera | **Inser Morsetti → tasto destro su Elenco Quadri → Nuova morsettiera** |
-| Morsetto mostra numero filo | verifica `NumI`/`NumO` vs `NumM` |
-| Rimando non accetta linea | verifica oggetto SPAC vs geometria CAD |
-| Cross-reference vecchio | cerca residui e rigenera con funzione cross-reference; nome comando `Da verificare` |
+| Devo creare morsettiera | **Elenco Quadri → tasto destro → Nuova morsettiera** |
+| Devo inserire morsetto | scegli morsettiera/tipo → **Anteprima** → **Ok - Nuovo** → clic filo → **Invio** |
+| Vedo numero filo invece del morsetto | seleziona modello **Anteprima** che visualizza `NumM` |
+
+## Verifica finale
+
+Prima di chiudere il lavoro:
+
+- rimandi con nomi coerenti;
+- direzione arrivo/partenza corretta;
+- cross-reference aggiornato con **Ok - Aggiorna**;
+- lista rimandi scansionata senza duplicati inattesi;
+- morsettiera corretta;
+- morsetto inserito sul filo corretto;
+- rappresentazione coerente (`NumM` se richiesto).
 
 ## Collegamenti
 
@@ -180,4 +192,4 @@ Poi rigenera i riferimenti con la funzione cross-reference verificata nell'ambie
 - [Numerazione e identificazione fili](18-wire-numbering.md)
 - [Verificare rappresentazione morsetti](playbooks/terminal-representation.md)
 - [Diagnosticare rimandi alimentazione](playbooks/power-reference-diagnostic.md)
-- [Cross-reference obsoleto](known-issues/obsolete-cross-reference.md)
+- [Pulire oggetti residui](playbooks/clean-residual-objects.md)
