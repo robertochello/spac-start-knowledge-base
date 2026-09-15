@@ -1,146 +1,195 @@
 # Troubleshooting
 
-Questa sezione raccoglie problemi ricorrenti e checklist diagnostiche per SPAC Start.
-
-!!! tip "Metodo rapido"
-
-    Prima identifica il livello del problema: grafica CAD, attributi, oggetto
-    intelligente, rappresentazione, riferimento esterno o archivio.
+Questa sezione raccoglie problemi ricorrenti e indica **il primo comando concreto da usare** prima di passare alla diagnosi dettagliata.
 
 ## Diagnosi rapida
 
-| Sintomo | Prima verifica | Pagina o playbook |
+| Sintomo | Prima azione concreta | Procedura |
 |---|---|---|
-| un simbolo non si collega correttamente | pinatura, attributi e oggetti residui | [Diagnosticare pin non agganciato](playbooks/diagnose-pin-not-snapping.md) |
-| un morsetto mostra un dato diverso da quello atteso | dato sorgente e rappresentazione grafica | [Verificare rappresentazione morsetti](playbooks/terminal-representation.md) |
-| un rimando non accetta la selezione | linea CAD o collegamento SPAC riconosciuto | [Diagnosticare rimandi alimentazione](playbooks/power-reference-diagnostic.md) |
-| un cross-reference punta a una posizione vecchia | oggetti residui e riferimenti non rigenerati | [Known Issue - Cross-reference obsoleto](known-issues/obsolete-cross-reference.md) |
-| un materiale manca o risulta duplicato | punto di associazione e report | [Associare materiali](playbooks/material-association.md) |
-| `DbCables.db` non risulta allineato | allineamento versione librerie e riapertura SPAC | [Known Issue DbCables](known-issues/dbcables-version-mismatch.md) |
-| un file scaricabile non è affidabile | sanitizzazione, versione, hash e link | [Download](downloads.md) e [Quality gates](14-quality-gates.md) |
+| libreria simboli non si apre | digita `SP_XML_MENU` | [Interfaccia e menu](01-interface-and-menu.md) |
+| menu SPAC/CAD alterati o mancanti | digita `_MENU` | [Interfaccia e menu](01-interface-and-menu.md) |
+| pin non aggancia | `EDITATT` → verifica `PINA/PINB`; poi `_DSETTINGS` → **Snap e griglia** | [Diagnosticare pin non agganciato](playbooks/diagnose-pin-not-snapping.md) |
+| layer apparentemente vuoto non si elimina | `PURGE` → **Trova elementi non eliminabili** | [Pulire oggetti residui](playbooks/clean-residual-objects.md) |
+| oggetto diretto mantiene un layer | `QSELECT` → filtro **Layer** | [Pulire oggetti residui](playbooks/clean-residual-objects.md) |
+| residuo dentro un blocco | `BEDIT` → modifica blocco reale → salva → `PURGE` | [Pulire oggetti residui](playbooks/clean-residual-objects.md) |
+| morsetto mostra numero sbagliato | `SPINSMOR` → verifica `NumI`/`NumO`/`NumM` | [Verificare rappresentazione morsetti](playbooks/terminal-representation.md) |
+| devo creare una morsettiera | **Inser Morsetti** → tasto destro **Elenco Quadri** → **Nuova morsettiera** | [Rimandi e morsetti](06-cross-references-terminals.md) |
+| numerazione fili errata | **Numerazione fili → Lista numeri usati** | [Numerazione fili](18-wire-numbering.md) |
+| devo eliminare numerazione fili | **SPAC → Utility Fili → Elimina numerazione** / `DEL_NUMF` | [Numerazione fili](18-wire-numbering.md) |
+| materiale manca/è duplicato | doppio click simbolo → **Materiali** → tasto destro → **Avvio Archivio Materiali (DbCenter)** | [Associare materiali](playbooks/material-association.md) |
+| logo/immagine non visibile | **Modifica/Inserisci → Gestioni immagini → Sfoglia → Salva percorso** | [Pagine, cartigli e immagini](05-pages-titleblocks-images.md) |
+| bordo immagine visibile | `IMAGEFRAME` → `0` | [Pagine, cartigli e immagini](05-pages-titleblocks-images.md) |
+| rimando non accetta la selezione | verifica oggetto SPAC vs linea CAD; poi **Lista numeri usati** | [Diagnosticare rimandi alimentazione](playbooks/power-reference-diagnostic.md) |
+| cross-reference punta a posizione vecchia | `PURGE`/controllo residui + lista numeri; comando cross-reference esatto `Da verificare` | [Cross-reference obsoleto](known-issues/obsolete-cross-reference.md) |
+| `DbCables.db` non allineato | verifica versione archivio/ambiente e segui known issue | [Known Issue DbCables](known-issues/dbcables-version-mismatch.md) |
 
-```mermaid
-flowchart TD
-    A[Sintomo]:::info --> B{Ripetibile?}:::warn
-    B -->|No| C[Test pulito]:::todo
-    B -->|Sì| D{Known issue?}:::warn
-    D -->|Sì| E[Seguire known issue]:::process
-    D -->|No| F[Playbook o checklist]:::process
-    F --> G[Registrare caso]:::ok
+## Menu o libreria simboli non visibili
 
-    classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
-    classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
-    classDef info fill:#e8f0fe,stroke:#1565c0,color:#0d47a1;
-    classDef todo fill:#f3e8ff,stroke:#7b1fa2,color:#4a148c;
-    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
+### Libreria
+
+Digita:
+
+```text
+SP_XML_MENU
 ```
 
-## Menu o librerie non visibili
+Se non si apre, verifica che la cartella custom esista in:
 
-Sintomi:
+```text
+C:\SPAC Start 26\Librerie\Blk\_CUSTOM
+```
 
-- menu mancanti;
-- libreria simboli non accessibile;
-- comandi SPAC non disponibili;
-- ambiente CAD alterato.
+### Menu
 
-Checklist:
+Digita:
 
-- verificare profilo/ambiente caricato;
-- ripristinare menu;
-- riaprire il progetto;
-- verificare che i comandi SPAC siano disponibili;
-- annotare eventuali personalizzazioni dell'interfaccia.
+```text
+_MENU
+```
+
+Il file/menu specifico da ricaricare dipende dall'installazione e non va inventato se non verificato.
 
 ## Simbolo custom non riconosciuto
 
-Possibili cause:
+1. Inserisci il simbolo in un progetto prova.
+2. Usa:
 
-- attributi mancanti;
-- `PRES` non coerente;
-- simbolo rimasto come semplice blocco CAD;
-- pin non correttamente definiti;
-- simbolo non testato in progetto prova.
+   ```text
+   EDITATT
+   ```
 
-Checklist:
+3. Verifica `NOME`, `PRES`, `PINA/PINB`.
+4. Se un attributo manca nel sorgente, correggi con `ATTDEF`.
+5. Controlla proprietà con `PROPRIETA` / `CTRL+1`.
+6. Se modifichi il DWG, rigenera con `MBLOCCO` e `_MSLIDE`.
 
-- verificare attributi;
-- verificare nome e categoria;
-- verificare presenza di pin se richiesti;
-- testare inserimento;
-- testare associazione materiale;
-- aggiornare inventario simboli.
+## Pin non aggancia
 
-## Pin non si aggancia al filo
+1. `EDITATT` → controlla `PINA<n>`/`PINB<n>`.
+2. `_DSETTINGS` → **Snap e griglia**.
+3. Verifica collegamento SPAC vs linea CAD.
+4. Se necessario modifica il sorgente con `ATTDEF`.
+5. Reinserisci/testa il simbolo.
 
-Possibili cause:
+## Layer non eliminabile / residui
 
-- pin fuori griglia;
-- attributo pin non corretto;
-- posizione grafica non coerente;
-- simbolo esploso o alterato;
-- filo non creato come collegamento intelligente.
+Procedura verificata:
 
-Checklist:
+```text
+PURGE
+```
 
-- verificare posizione pin;
-- allineare alla griglia;
-- controllare nome attributo pin;
-- testare con un filo nuovo;
-- verificare in progetto prova.
+Se non eliminabile:
+
+```text
+Trova elementi non eliminabili
+```
+
+Poi:
+
+- oggetto diretto → `QSELECT` → filtro **Layer**;
+- residuo in blocco → `BEDIT`;
+- blocco annidato → `BEDIT` sul blocco interno;
+- infine riesegui `PURGE`.
+
+!!! danger
+
+    `LAYISO` e `LAYWALK` non sono disponibili in SPAC Start 26: non usarli come soluzione in questa knowledge base.
 
 ## Logo o immagine non visibile
 
-Possibili cause:
+1. **Modifica/Inserisci → Gestioni immagini**.
+2. Seleziona l'immagine.
+3. **Sfoglia**.
+4. Riseleziona il file.
+5. **Salva percorso**.
+6. Per il bordo: `IMAGEFRAME` → `0`.
 
-- riferimento esterno non risolto;
-- file immagine spostato;
-- percorso non più valido;
-- visualizzazione frame attiva ma immagine non caricata.
+## Morsetti
 
-Checklist:
+Apri:
 
-- verificare file immagine;
-- verificare percorso;
-- ricaricare riferimento;
-- chiudere e riaprire;
-- testare su copia del progetto.
+```text
+SPINSMOR
+```
 
-## Cross-reference errato
+oppure **Inser Morsetti**.
 
-Possibili cause:
+Per nuova morsettiera:
 
-- vecchi oggetti intelligenti;
-- riferimenti non rigenerati;
-- rimandi duplicati;
-- oggetti cancellati solo graficamente.
+```text
+Inser Morsetti → tasto destro su Elenco Quadri → Nuova morsettiera
+```
 
-Checklist:
+Se il testo è sbagliato, verifica:
 
-- cercare oggetti residui;
-- verificare rimandi non utilizzati;
-- rigenerare riferimenti;
-- testare su un foglio pulito;
-- evitare correzioni solo grafiche.
+- `NumI` = numero filo ingresso;
+- `NumO` = numero filo uscita;
+- `NumM` = numero morsetto.
 
-## Disegno importato fuori scala
+## Numerazione fili
 
-Checklist:
+Per fili non di alimentazione:
 
-- misurare una quota nota;
-- calcolare fattore di scala;
-- scalare il disegno;
-- verificare una seconda quota;
-- controllare unità e snap.
+```text
+SPAC → Numera Fili
+```
+
+Per duplicati:
+
+```text
+Numerazione fili → Lista numeri usati
+```
+
+Per eliminare numeri:
+
+```text
+SPAC → Utility Fili → Elimina numerazione
+```
+
+oppure:
+
+```text
+DEL_NUMF
+```
+
+## Materiali
+
+Percorso:
+
+```text
+doppio click simbolo → Materiali → tasto destro → Avvio Archivio Materiali (DbCenter)
+```
+
+Controlla poi distinta/report.
+
+## Cross-reference
+
+La procedura logica è consolidata, ma il **nome esatto del comando/menu di rigenerazione cross-reference** non è ancora verificato nella knowledge base.
+
+Quindi:
+
+- verifica oggetto SPAC;
+- verifica nome/direzione rimando;
+- verifica **Numerazione fili → Lista numeri usati**;
+- pulisci residui se necessario;
+- usa la funzione cross-reference dell'installazione;
+- fino alla verifica del nome esatto, il comando resta `Da verificare`.
 
 ## Regola generale
 
-Quando qualcosa non funziona, distinguere sempre tra:
+Quando qualcosa non funziona, individua prima il livello:
 
-- problema grafico;
-- problema di attributi;
-- problema di oggetto intelligente;
-- problema di configurazione;
-- problema di riferimento esterno.
+- grafica CAD;
+- attributi;
+- oggetto intelligente;
+- rappresentazione;
+- riferimento esterno;
+- archivio dati.
 
-Correggere la causa, non solo l'effetto visibile.
+Poi usa il comando pertinente. Non correggere solo l'effetto visibile.
+
+## Riferimenti
+
+- [Comandi e click esatti](command-reference.md)
+- [Guida pratica](00-how-to-use.md)
