@@ -79,6 +79,8 @@ Quando un rimando non funziona:
 3. aggiorna i riferimenti previsti dalla procedura specifica;
 4. esegui un test su un foglio pulito se il comportamento resta ambiguo.
 
+Il nome esatto del comando di rigenerazione cross-reference resta **Da verificare** finché non viene confermato direttamente in SPAC Start 26.
+
 Per la diagnosi usa:
 
 - [Rimandi, cross-reference e morsetti](06-cross-references-terminals.md);
@@ -93,9 +95,9 @@ Regola documentata:
 
 - Madre: `PRES = M`;
 - Figlio: `PRES = F`;
-- Figlio associato: `NOME` coerente con la Madre.
+- Figlio associato: `NOME` uguale/coerente con la Madre.
 
-Per creare o modificare questi attributi usa:
+Per creare gli attributi nel DWG sorgente usa:
 
 ```text
 ATTDEF
@@ -107,16 +109,18 @@ Per modificare gli attributi di un simbolo già inserito usa:
 EDITATT
 ```
 
-Per la procedura completa: [Attributi e pinatura](04-attributes-and-pinning.md).
+Per la procedura completa: [Gestire accessori e bobine](playbooks/manage-accessories-and-coils.md).
 
 ## Associare un materiale a un simbolo
 
-Percorso già documentato:
+Percorso verificato:
 
 1. fai **doppio click sul simbolo**;
 2. nel riquadro **Materiali**, fai **tasto destro**;
-3. esegui l'associazione prevista;
-4. controlla distinta/report per verificare che il materiale compaia una sola volta dove previsto.
+3. clicca **Avvio Archivio Materiali (DbCenter)**;
+4. in DbCenter seleziona il materiale corretto;
+5. conferma l'associazione;
+6. controlla distinta/report per verificare che il materiale compaia una sola volta dove previsto.
 
 Approfondimento: [Associare materiali](playbooks/material-association.md).
 
@@ -130,18 +134,19 @@ Approfondimento: [Associare materiali](playbooks/material-association.md).
 6. Se devi azzerare la numerazione usa **SPAC → Utility Fili → Elimina numerazione** oppure `DEL_NUMF`.
 7. Per i morsetti usa `SPINSMOR` e lavora nella finestra **Inser Morsetti**.
 8. Verifica rimandi e cross-reference.
-9. Verifica materiali e distinta.
+9. Per i materiali usa **doppio click → Materiali → tasto destro → Avvio Archivio Materiali (DbCenter)**.
+10. Verifica distinta/report.
 
 ## Diagnostica rapida
 
 | Sintomo | Prima azione concreta |
 |---|---|
-| Numero filo duplicato | **Numerazione fili** → **Lista numeri usati**; cerca asterischi |
-| Devo eliminare i numeri esistenti | **SPAC** → **Utility Fili** → **Elimina numerazione** oppure `DEL_NUMF` |
+| Numero filo duplicato | **Numerazione fili → Lista numeri usati**; cerca asterischi |
+| Devo eliminare i numeri esistenti | **SPAC → Utility Fili → Elimina numerazione** oppure `DEL_NUMF` |
 | Devo inserire/gestire morsetti | `SPINSMOR` |
-| Devo creare una morsettiera | **Inser Morsetti** → tasto destro su **Elenco Quadri** → **Nuova morsettiera** |
+| Devo creare una morsettiera | **Inser Morsetti → tasto destro su Elenco Quadri → Nuova morsettiera** |
 | Accessorio non collegato alla Madre | `EDITATT` e verifica `NOME` / `PRES` |
-| Materiale manca o è duplicato | doppio click simbolo → riquadro **Materiali** → tasto destro |
+| Materiale manca o è duplicato | **doppio click → Materiali → tasto destro → Avvio Archivio Materiali (DbCenter)** |
 | Rimando non accetta la selezione | verifica prima se stai selezionando un oggetto SPAC o una linea CAD |
 
 ## Da verificare
