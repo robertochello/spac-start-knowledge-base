@@ -2,7 +2,7 @@
 
 Tutte le modifiche rilevanti alla knowledge base saranno documentate in questo file.
 
-## 0.5.0 - Navigation and onboarding refresh
+## 0.5.0 - 2026-09-15 - Navigation and onboarding refresh
 
 ### Changed
 
