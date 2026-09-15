@@ -86,22 +86,33 @@ Procedura:
 7. Verifica che il logo sia ancora visibile.
 8. Testa il cartiglio in un progetto/multifoglio di prova.
 
-## Inserimento di un DWG come riferimento
+## Inserire una pagina come Riferimento DWG
 
-La knowledge base stabilisce che una pagina standard che deve restare collegata al file sorgente non va trattata come semplice blocco.
+Non usare **Inserisci Blocco** se la pagina standard deve restare collegata al DWG sorgente.
 
-!!! warning "Percorso menu da verificare"
+Procedura verificata:
 
-    Il nome esatto del comando/percorso SPAC Start 26 per inserire la pagina come **riferimento DWG** non è ancora consolidato. Finché non viene verificato direttamente non deve essere sostituito con un nome ipotetico.
+1. Apri un foglio libero.
+2. Clicca:
 
-Una volta aperta la funzione corretta, la verifica minima è:
+   ```text
+   Modifica/Inserisci → Riferimento DWG
+   ```
 
-1. selezionare il DWG sorgente;
-2. usare un percorso stabile;
-3. posizionare il riferimento;
-4. salvare;
-5. chiudere e riaprire il progetto;
-6. verificare che il riferimento sia ancora risolto.
+3. Naviga fino alla cartella del DWG.
+4. Seleziona il file interessato.
+5. Nella finestra successiva, sulla destra, individua **Tipo di percorso**.
+6. Seleziona:
+
+   ```text
+   Percorso completo
+   ```
+
+7. Premi **OK**.
+8. Posiziona il riferimento DWG nel foglio.
+9. Salva, chiudi e riapri il progetto per verificare che il collegamento resti valido.
+
+Per le pagine standard del template usa la procedura descritta in [Template progetto](16-project-template.md).
 
 ## Problema: riquadro al posto dell'immagine
 
@@ -123,11 +134,14 @@ Prima di considerare stabile una pagina o un cartiglio:
 - il logo è collegato al file corretto;
 - **Sfoglia → Salva percorso** è stato usato se il path era errato;
 - `IMAGEFRAME = 0` se il bordo non deve comparire;
+- pagine standard inserite con **Modifica/Inserisci → Riferimento DWG**;
+- **Tipo di percorso = Percorso completo** verificato;
 - salvataggio, chiusura e riapertura completati senza perdita degli asset;
 - test eseguito su progetto prova.
 
 ## Collegamenti
 
 - [Comandi e click esatti](command-reference.md)
+- [Template progetto](16-project-template.md)
 - [Gestire cartiglio e logo](playbooks/titleblock-logo-workflow.md)
 - [Known Issue - Riferimento immagine mancante](known-issues/missing-image-reference.md)
