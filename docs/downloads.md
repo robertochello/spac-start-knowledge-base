@@ -1,104 +1,169 @@
 # Download
 
-Questa pagina raccoglie i file scaricabili collegati alla knowledge base.
+<div class="kb-hero kb-hero--compact" markdown>
 
-## Regola generale
+<span class="kb-eyebrow">ARCHIVI PUBBLICI</span>
 
-Pubblicare solo file generici, riutilizzabili e privi di dati sensibili.
+Scarica gli archivi destinati a **SPAC Start 26**. Materiali e cavi sono separati, versionati e sottoposti a controllo prima del deploy.
 
-Prima di aggiungere un file:
+<div class="hero-actions" markdown>
 
-- verificare che non contenga dati cliente o commessa;
-- verificare che il contenuto sia coerente con gli standard della guida;
-- indicare versione, data e stato;
-- registrare provenienza o criterio di generazione del file;
-- registrare un hash SHA256 per i file binari pubblicati;
-- aggiornare questa pagina;
-- aggiornare il changelog se il file diventa riferimento stabile.
+[Archivi materiali](#archivi-materiali){ .md-button .md-button--primary }
+[Archivi cavi](#archivi-cavi){ .md-button }
 
-## Rischi da controllare
+</div>
 
-| Rischio | Controllo minimo | Dove verificare |
-|---|---|---|
-| dati cliente o commessa nel file | aprire il file e verificare contenuto e metadati | questa pagina |
-| file non tracciato o non versionato | controllare nome, release, data e stato | [Quality gates](14-quality-gates.md) |
-| archivio materiali con codici fittizi | verificare codici catalogo reali e assenza di iniziali personali | [Archivi materiali custom](21-material-archives.md) |
-| `DbCables.db` non coerente | eseguire back-check e test su cavo reale | [Archivio Cavi DbCables](25-cable-archive-dbcables.md) |
-| link rotto nel sito pubblicato | eseguire build MkDocs e verificare link relativo | [Back-check e controlli incrociati](26-back-check-controls.md) |
+</div>
 
-## Cartelle pubbliche
+!!! warning "Pubblicazione controllata"
 
-I file devono essere inseriti nelle cartelle:
+    Un file presente in questa pagina è pubblico. Prima del deploy il workflow esegue `scripts/audit_public_content.py`, che controlla i file testuali e i database SQLite alla ricerca di pattern sensibili e calcola il relativo SHA256.
+
+    L'audit automatico **non sostituisce** il controllo umano di nomi cliente, codici commessa, proprietà intellettuale e diritti di redistribuzione.
+
+## Archivi materiali
+
+<div class="download-grid" markdown>
+
+<div class="download-card" markdown>
+
+<span class="download-kind">MATERIALI · ABB</span>
+
+### ABB Materials
+
+<span class="status-pill status-pill--available">Disponibile</span>
+
+Archivio materiali ABB destinato alla consultazione/importazione nel workflow SPAC.
+
+**File:** `ABB_Materials.db`  
+**Dimensione:** circa 3,43 MB  
+**Formato:** SQLite / archivio materiali  
+**Stato privacy:** controllo automatico richiesto al deploy
+
+[Scarica ABB_Materials.db](assets/downloads/materiali/ABB_Materials.db){ .md-button .md-button--primary }
+
+</div>
+
+<div class="download-card" markdown>
+
+<span class="download-kind">MATERIALI · CUSTOM</span>
+
+### Archivio materiali custom R01
+
+<span class="status-pill status-pill--available">Disponibile</span>
+
+Archivio materiali custom riutilizzabile, separato dagli archivi sorgente di commessa.
+
+**File:** `archivio-materiali-custom-r01.db`  
+**Versione:** R01  
+**Dimensione:** circa 856 KB  
+**Formato:** SQLite / archivio materiali  
+**Stato privacy:** controllo automatico richiesto al deploy
+
+[Scarica archivio R01](assets/downloads/materiali/archivio-materiali-custom-r01.db){ .md-button .md-button--primary }
+
+</div>
+
+</div>
+
+## Archivi cavi
+
+<div class="download-grid" markdown>
+
+<div class="download-card download-card--pending" markdown>
+
+<span class="download-kind">CAVI · DBCABLES</span>
+
+### Archivio Cavi SPAC
+
+<span class="status-pill status-pill--pending">In preparazione</span>
+
+La cartella pubblica è già predisposta, ma al momento non contiene ancora un archivio cavi scaricabile.
+
+**Cartella repository:**
+
+```text
+docs/assets/downloads/cavi/
+```
+
+Quando sarà disponibile, il file dovrà essere una copia **sanitizzata e verificata** di `DbCables.db`, preferibilmente versionata, ad esempio:
+
+```text
+dbcables-r01.db
+```
+
+oppure:
+
+```text
+archivio-cavi-dbcables-r01.zip
+```
+
+[Procedura DbCables](playbooks/update-dbcables-archive.md){ .md-button }
+
+</div>
+
+</div>
+
+## Cosa deve essere controllato prima di pubblicare
+
+| Controllo | Materiali | Cavi |
+|---|---:|---:|
+| file apribile | obbligatorio | obbligatorio |
+| dati cliente/commessa assenti | obbligatorio | obbligatorio |
+| email, IP, MAC, percorsi utente assenti | obbligatorio | obbligatorio |
+| codici catalogo reali | obbligatorio | obbligatorio |
+| duplicati controllati | obbligatorio | obbligatorio |
+| test in SPAC | obbligatorio | obbligatorio |
+| SHA256 calcolato | automatico al deploy | automatico al deploy |
+| licenza/redistribuzione verificata | obbligatorio | obbligatorio |
+
+## Regole per i file pubblici
+
+I file scaricabili devono vivere esclusivamente nelle cartelle:
 
 ```text
 docs/assets/downloads/materiali/
 docs/assets/downloads/cavi/
 ```
 
-MkDocs pubblica queste cartelle nel sito statico. I link vanno quindi scritti con percorso relativo da questa pagina.
+Non pubblicare:
 
-## Metadati minimi
+- file provenienti direttamente da commesse cliente;
+- backup con nomi cliente o codici ordine;
+- database contenenti note operative private;
+- percorsi locali `C:\Users\...`;
+- email, credenziali, IP/MAC reali;
+- file vendor la cui licenza non consente la redistribuzione.
 
-Ogni download pubblicato deve essere tracciabile con:
+## Convenzione nomi
 
-- nome file;
-- area di appartenenza;
-- versione o release;
-- data di pubblicazione o aggiornamento;
-- stato;
-- hash SHA256, se il file è binario;
-- nota di sanitizzazione;
-- pagina o procedura collegata.
-
-## File disponibili
-
-| Area | File | Versione/release | Stato | Note |
-|---|---|---|---|---|
-| Materiali | [ABB_Materials.db](assets/downloads/materiali/ABB_Materials.db) | Da documentare | Pubblicato | Archivio materiali ABB; completare metadati di tracciabilità |
-| Materiali | [archivio-materiali-custom-r01.db](assets/downloads/materiali/archivio-materiali-custom-r01.db) | R01 | Pubblicato | Archivio materiali custom; completare metadati di tracciabilità |
-| Cavi | Da caricare in `assets/downloads/cavi/` | Non applicabile | Non pubblicato | Archivio cavi o `DbCables.db` sanitizzato/verificato |
-
-## Template riga download
-
-Quando il file è disponibile, sostituire la riga corrispondente con un link diretto.
-
-Esempio:
+Preferire nomi brevi, senza spazi e con release quando applicabile:
 
 ```text
-Area: Materiali
-File: archivio-materiali-custom-r01.zip
-Percorso: assets/downloads/materiali/archivio-materiali-custom-r01.zip
-Versione/release: R01
-Data: AAAA-MM-GG
-Stato: Pubblicato
-SHA256: <hash>
-Note: Release verificata
-```
-
-## Convenzione nomi file
-
-Usare nomi minuscoli, senza spazi e con versione.
-
-Esempi:
-
-```text
-archivio-materiali-custom-r01.zip
+abb-materials-r01.db
+archivio-materiali-custom-r01.db
+dbcables-r01.db
 archivio-cavi-dbcables-r01.zip
-dbcables-r01.zip
 ```
 
-## Verifica prima della pubblicazione
+Per ogni nuova release aggiornare questa pagina e il changelog.
 
-- file apribile;
-- nome coerente;
-- contenuto sanitizzato;
-- hash SHA256 registrato per file binari;
-- origine o criterio di generazione documentato;
-- per archivi materiali, codici catalogo reali e senza iniziali personali;
-- per archivi materiali, almeno un record testato in associazione e report;
-- eventuale archivio compresso testato;
-- versione indicata nel nome o nelle note;
-- link provato dopo build del sito.
+## Verifica tecnica
+
+Il controllo automatico viene eseguito con:
+
+```bash
+python scripts/audit_public_content.py
+```
+
+Il controllo:
+
+- scansiona i file testuali pubblici;
+- apre i `.db` SQLite in sola lettura;
+- analizza nomi di tabelle/colonne e valori testuali;
+- non stampa nei log il valore sensibile trovato;
+- calcola SHA256 dei file scaricabili;
+- blocca il deploy in presenza di pattern ad alta confidenza.
 
 ## Collegamenti
 
