@@ -2,105 +2,104 @@
 
 ## Obiettivo
 
-Associare materiali in modo coerente, evitando duplicazioni o associazioni su simboli non adatti.
+Associare un materiale a un simbolo SPAC usando il percorso effettivo dell'interfaccia e verificare che il risultato sia corretto in distinta/report.
 
-## Quando usarlo
+## Percorso esatto sul simbolo
 
-Usare questo playbook quando un componente o un elemento associato deve comparire correttamente in distinta, report o documentazione materiali.
+1. Nel disegno fai **doppio click sul simbolo** a cui vuoi associare il materiale.
+2. Nella finestra/proprietà del simbolo individua il riquadro **Materiali**.
+3. Nel riquadro **Materiali**, fai **tasto destro**.
+4. Clicca:
 
-## Principio operativo
+   ```text
+   Avvio Archivio Materiali (DbCenter)
+   ```
 
-Il materiale deve essere associato al livello più coerente con la funzione del componente.
+5. In **DbCenter**, cerca e seleziona il materiale corretto.
+6. Conferma l'associazione.
+7. Torna al simbolo e verifica che il materiale risulti associato.
+8. Genera o controlla la distinta/report prevista e verifica che il materiale compaia una sola volta nel punto corretto.
 
-Prima di associare un materiale distinguere:
+## Prima di associare
 
-| Livello | Domanda di controllo |
+Controlla che:
+
+- il simbolo sia un oggetto SPAC riconosciuto e non sola grafica CAD;
+- il codice catalogo sia reale e verificato;
+- costruttore e descrizione siano coerenti;
+- sia chiaro se il materiale deve stare sulla Madre o su un Figlio/accessorio;
+- l'archivio materiali corretto sia disponibile in DbCenter.
+
+## Madre, Figlio e accessori
+
+| Scenario | Punto di associazione consigliato |
 |---|---|
-| Archivio materiali | Il record è presente, ricercabile e verificato? |
-| Simbolo SPAC | Il simbolo è riconosciuto e non è solo grafica? |
-| Associazione | Il materiale è collegato al punto corretto? |
-| Distinta o report | Il materiale compare una sola volta e nel punto atteso? |
+| Componente principale con materiale unico | Simbolo Madre/principale |
+| Accessorio compreso nel componente principale | Valutare associazione sulla Madre per evitare doppioni |
+| Accessorio gestito separatamente in distinta | Simbolo/accessorio dedicato |
+| Simbolo puramente grafico | Non usarlo come sorgente materiale stabile |
 
-```mermaid
-flowchart LR
-    A[Archivio]:::data --> B[Simbolo SPAC]:::data
-    B --> C[Associazione]:::process
-    C --> D[Distinta o report]:::process
-    D --> E{Coerente?}:::warn
-    E -->|Sì| F[OK]:::ok
-    E -->|No| G[Correggere punto]:::danger
+Se il simbolo è Madre/Figlio, verifica gli attributi con:
 
-    classDef ok fill:#e6f4ea,stroke:#2e7d32,color:#1b5e20;
-    classDef warn fill:#fff4e5,stroke:#ef6c00,color:#5d4037;
-    classDef danger fill:#fdecea,stroke:#c62828,color:#7f1d1d;
-    classDef data fill:#e0f7fa,stroke:#00838f,color:#004d40;
-    classDef process fill:#f5f5f5,stroke:#757575,color:#212121;
+```text
+EDITATT
 ```
 
-## Scenari tipici
+Regole documentate:
 
-| Scenario | Approccio consigliato |
-|---|---|
-| Componente principale con materiale unico | Associare al simbolo principale |
-| Accessorio parte del componente | Valutare associazione sul componente principale |
-| Accessorio gestito separatamente | Associare al simbolo dedicato |
-| Simbolo solo grafico | Non usarlo come sorgente materiale stabile |
+```text
+Madre  → PRES = M
+Figlio → PRES = F
+```
 
-## Prerequisiti
+Quando il Figlio deve essere collegato logicamente alla Madre, `NOME` deve essere coerente.
 
-- Archivio materiali importato in ambiente di prova.
-- Codice catalogo reale e verificabile.
-- Nessuna iniziale personale nel codice catalogo.
-- Stato del record assegnato.
-- Backup o rollback disponibile se l'archivio è stato aggiornato.
+## Verifica del record materiale
 
-## Procedura
+In DbCenter verifica almeno:
 
-### 1. Identificare il componente reale
+- codice catalogo;
+- costruttore;
+- descrizione;
+- categoria;
+- stato/validazione del record.
 
-Capire quale oggetto rappresenta il dispositivo fisico o l'accessorio da riportare.
+!!! warning "Dato non verificato"
 
-### 2. Verificare il record materiale
+    Se il codice catalogo o il record non è stato verificato sulla fonte corretta, non promuoverlo a standard. Marcalo `Da verificare`.
 
-Controllare codice, costruttore, descrizione, categoria e stato.
+## Verifica finale in distinta/report
 
-!!! warning "Da verificare"
+Dopo l'associazione controlla:
 
-    Se il codice catalogo non è verificato, marcarlo come `Da verificare` e non
-    promuoverlo a standard.
+1. il materiale compare;
+2. il codice è quello atteso;
+3. la quantità è coerente;
+4. non compare due volte per effetto di associazioni sia su Madre sia su Figlio;
+5. non manca un accessorio che deve essere gestito separatamente.
 
-### 3. Verificare il simbolo
+## Se il materiale non compare
 
-Controllare che il simbolo sia riconosciuto e non sia solo grafica.
+Controlla nell'ordine:
 
-### 4. Scegliere il punto di associazione
+1. che il simbolo sia realmente intelligente SPAC;
+2. doppio click sul simbolo → riquadro **Materiali**;
+3. che l'associazione effettuata tramite **Avvio Archivio Materiali (DbCenter)** sia presente;
+4. che il materiale sia stato associato al simbolo corretto;
+5. che la distinta/report stia leggendo la stessa sorgente dati prevista.
 
-Associare il materiale dove il dato risulta più coerente e meno ambiguo.
+## Se il materiale compare duplicato
 
-### 5. Verificare report o distinta
+1. Controlla la Madre.
+2. Controlla eventuali Figli/accessori.
+3. Apri ciascun simbolo con doppio click e verifica il riquadro **Materiali**.
+4. Rimuovi l'associazione dal livello non corretto solo dopo aver identificato quale oggetto deve essere la sorgente reale della distinta.
 
-Controllare che l'associazione non generi duplicazioni o omissioni.
+## Riferimenti
 
-### 6. Documentare eccezioni
-
-Se un caso richiede una scelta particolare, aggiungerlo al decision log o ai casi pratici.
-
-## Verifica finale
-
-L'associazione è corretta quando:
-
-- il materiale compare nel punto atteso;
-- non ci sono duplicazioni;
-- il simbolo sorgente è coerente;
-- il codice catalogo è reale e non fittizio;
-- il comportamento è ripetibile.
-
-## Collegamenti
-
+- [Comandi e click esatti](../command-reference.md)
 - [Archivi materiali custom](../21-material-archives.md)
 - [Standard materiali](../standards/materials.md)
 - [Back-check e controlli incrociati](../26-back-check-controls.md)
-- [Quality gates](../14-quality-gates.md)
 - [Multifilare](../09-multifilare.md)
-- [Simboli custom](../03-custom-symbols.md)
-- [Decision log](../11-decision-log.md)
+- [Attributi e pinatura](../04-attributes-and-pinning.md)
