@@ -1,185 +1,161 @@
 # Simboli custom
 
-Questa pagina raccoglie il workflow operativo per creare e gestire simboli custom in SPAC Start 26. I comandi consolidati sono riportati con il loro nome reale.
+Questa pagina è la panoramica operativa. Per il passo-passo completo usa [Creare un simbolo custom](playbooks/create-custom-symbol.md).
 
-## Workflow rapido
+## Workflow
 
-1. Importa o prepara la geometria.
-2. Pulisci Layer, colore e linee.
-3. Crea gli attributi con `ATTDEF`.
-4. Crea il DWG con `MBLOCCO`.
-5. Crea l'anteprima con `_MSLIDE`.
-6. Inserisci il simbolo in un progetto di prova.
-7. Modifica gli attributi con `EDITATT`.
-8. Verifica pin e materiali.
-9. Aggiorna l'inventario.
+```text
+_INSER / SP_XML_MENU
+        ↓
+     ESPLODI
+        ↓
+Layer 0 + DaBlocco
+        ↓
+      ATTDEF
+        ↓
+     MBLOCCO
+        ↓
+     _MSLIDE
+        ↓
+      EDITATT
+        ↓
+Test pin/materiali
+```
 
-## Importare una geometria
+## Preparare la geometria
 
-Per inserire un DWG/blocco di partenza:
+DWG esterno:
 
 ```text
 _INSER
 ```
 
-Se devi modificare le singole entità:
+Simbolo SPAC esistente:
+
+```text
+SP_XML_MENU
+```
+
+Per modificare le singole entità:
 
 ```text
 ESPLODI
 ```
 
-Usa `ESPLODI` solo quando serve realmente.
-
-## Pulizia grafica
-
-Per i simboli custom usa:
+Normalizzazione:
 
 ```text
 Layer 0
+Colore: DaBlocco
+Tipo linea: DaBlocco
+Spessore: DaBlocco
 ```
 
-Impostazioni grafiche adottate:
-
-- **Colore**: `DaBlocco`;
-- **Tipo linea**: `DaBlocco`;
-- **Spessore linea**: `DaBlocco`.
-
-## Creare gli attributi
-
-Comando:
+## Attributi
 
 ```text
 ATTDEF
 ```
 
-Attributi principali:
-
-- `NOME`;
-- `PRES`;
-- `PINA1`, `PINA2`, ...;
-- `PINB1`, `PINB2`, ... solo quando necessario.
-
-Per i campi esatti da compilare vedi [Attributi e pinatura](04-attributes-and-pinning.md).
-
-## Madre e Figlio
-
-Regole documentate:
+Regole principali:
 
 ```text
 Madre  → PRES = M
 Figlio → PRES = F
+Figlio → NOME uguale alla Madre
 ```
 
-Quando il Figlio deve essere associato alla Madre, `NOME` deve essere coerente con la Madre.
+Pin:
 
-## Creare il DWG del simbolo
+```text
+PINA1, PINA2, ...
+PINB1, PINB2, ... solo quando serve riportare il segnale
+```
 
-1. Seleziona tutti gli oggetti.
-2. Digita:
+I valori esatti dei campi sono in [Attributi e pinatura](04-attributes-and-pinning.md).
 
-   ```text
-   MBLOCCO
-   ```
+## Salvare il simbolo DWG
 
-3. In **Origine** seleziona:
+1. seleziona gli oggetti;
+2. `MBLOCCO`;
+3. **Origine → Oggetti**;
+4. seleziona punto base;
+5. **Destinazione → Nome e percorso del file**;
+6. scegli `C:\SPAC Start 26\Librerie\Blk\_CUSTOM\<CATEGORIA>`;
+7. **Unità inser. → Senza unità**;
+8. salva.
 
-   ```text
-   Oggetti
-   ```
+## Creare anteprima
 
-4. Seleziona il **punto base**.
-5. Salva nella categoria corretta della libreria:
+1. apri il DWG;
+2. centra/zoom;
+3. `_MSLIDE`;
+4. stessa cartella;
+5. stesso nome base.
 
-   ```text
-   C:\SPAC Start 26\Librerie\Blk\_CUSTOM\<CATEGORIA>
-   ```
+```text
+NOME_SIMBOLO.dwg
+NOME_SIMBOLO.sld
+```
 
-## Creare l'anteprima SLD
+Verifica poi che simbolo e slide siano visibili nella libreria BLK.
 
-1. Apri direttamente il DWG appena creato.
-2. Centra il simbolo.
-3. Regola lo zoom.
-4. Digita:
+## Modificare un'istanza
 
-   ```text
-   _MSLIDE
-   ```
-
-5. Salva il `.sld` nella stessa cartella del `.dwg`.
-6. Usa lo stesso nome base:
-
-   ```text
-   NOME_SIMBOLO.dwg
-   NOME_SIMBOLO.sld
-   ```
-
-## Modificare e verificare gli attributi
-
-Per modificare gli attributi del simbolo già inserito:
+Attributi:
 
 ```text
 EDITATT
 ```
 
-Per aprire le proprietà:
+Proprietà:
 
 ```text
 PROPRIETA
-```
-
-oppure:
-
-```text
 CTRL+1
 ```
 
-Per copiare proprietà:
+Copia proprietà:
 
 ```text
 CORRISPROP
 ```
 
-## Associare un materiale
+## Materiale
 
-1. Fai **doppio click sul simbolo**.
-2. Nel riquadro **Materiali**, fai **tasto destro**.
-3. Clicca:
+```text
+doppio click simbolo
+→ Materiali
+→ tasto destro
+→ Avvio Archivio Materiali (DbCenter)
+```
 
-   ```text
-   Avvio Archivio Materiali (DbCenter)
-   ```
+Poi seleziona il materiale e verifica distinta/report.
 
-4. Seleziona il materiale corretto.
-5. Verifica distinta/report.
+## Test pin
 
-Approfondimento: [Associare materiali](playbooks/material-association.md).
+1. `_DSETTINGS → Snap e griglia`;
+2. inserisci simbolo in progetto prova;
+3. collega filo a `PINA<n>`;
+4. verifica `PINB<n>` se presente;
+5. salva/riapri.
 
-## Test pinatura
-
-1. Inserisci il simbolo in un progetto prova.
-2. Usa `EDITATT` per verificare gli attributi.
-3. Collega un filo a ogni `PINA<n>` previsto.
-4. Se esiste `PINB<n>`, verifica anche il lato di uscita.
-5. Se il filo non aggancia, usa [Diagnosticare pin non agganciato](playbooks/diagnose-pin-not-snapping.md).
-
-## Checklist finale
-
-Un simbolo è riutilizzabile solo se:
+## Definition of Done simbolo
 
 - geometria pulita;
-- Layer 0;
-- attributi creati con `ATTDEF`;
-- DWG creato con `MBLOCCO`;
-- SLD creato con `_MSLIDE`;
-- `.dwg` e `.sld` con stesso nome base;
-- `EDITATT` funziona;
+- Layer 0 + DaBlocco;
+- attributi corretti;
+- `MBLOCCO` con **Unità inser.: Senza unità**;
+- DWG/SLD stesso nome base;
+- simbolo visibile in libreria;
+- `EDITATT` funzionante;
 - pin testati;
 - materiale testato se previsto;
 - inventario aggiornato.
 
 ## Collegamenti
 
-- [Creare un simbolo custom passo-passo](playbooks/create-custom-symbol.md)
+- [Creare un simbolo custom](playbooks/create-custom-symbol.md)
 - [Attributi e pinatura](04-attributes-and-pinning.md)
 - [Comandi e click esatti](command-reference.md)
-- [Checklist validazione simbolo](10-symbol-validation-checklist.md)
+- [Validare un simbolo](playbooks/validate-custom-symbol.md)
