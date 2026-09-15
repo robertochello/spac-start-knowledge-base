@@ -1,5 +1,5 @@
 site_name: SPAC Start Knowledge Base
-site_description: Guida operativa per SPAC Start 26: setup, schemi, simboli, archivi e troubleshooting.
+site_description: Guida operativa per SPAC Start 26: comandi esatti, setup, schemi, simboli, archivi e troubleshooting.
 site_author: Roberto Chello
 site_url: https://robertochello.github.io/spac-start-knowledge-base/
 
@@ -62,8 +62,8 @@ nav:
   - Home: index.md
 
   - Guida pratica:
-      - Dove andare: 00-how-to-use.md
       - Comandi e click esatti: command-reference.md
+      - Scegli cosa devi fare: 00-how-to-use.md
       - Concetti base SPAC: concepts.md
       - FAQ: faq.md
       - Glossario: glossary.md
@@ -72,26 +72,26 @@ nav:
 
   - Lavoro in SPAC:
       - Setup progetto:
-          - Libreria custom: 15-custom-library.md
           - Template progetto: 16-project-template.md
+          - Libreria custom: 15-custom-library.md
           - Interfaccia e menu: 01-interface-and-menu.md
-          - Workflow CAD 2D: 02-cad-workflow.md
           - Pagine, cartigli e immagini: 05-pages-titleblocks-images.md
+          - Workflow CAD 2D: 02-cad-workflow.md
       - Schemi:
           - Schema unifilare: 17-unifilare.md
-          - Numerazione e identificazione fili: 18-wire-numbering.md
           - Schema multifilare: 09-multifilare.md
-          - Rimandi e morsetti: 06-cross-references-terminals.md
+          - Numerazione e identificazione fili: 18-wire-numbering.md
+          - Rimandi, cross-reference e morsetti: 06-cross-references-terminals.md
       - Simboli:
           - Simboli custom: 03-custom-symbols.md
           - Attributi e pinatura: 04-attributes-and-pinning.md
           - Nomenclatura simboli: 19-symbol-naming.md
           - Dizionario abbreviazioni: 20-abbreviations.md
       - Materiali e cavi:
-          - Download: downloads.md
           - Archivi materiali custom: 21-material-archives.md
           - Archivio Cavi DbCables: 25-cable-archive-dbcables.md
           - Back-check e controlli incrociati: 26-back-check-controls.md
+          - Download: downloads.md
 
   - Procedure:
       - Come usare i playbook: playbooks/index.md
