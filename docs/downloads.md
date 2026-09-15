@@ -131,7 +131,7 @@ Non pubblicare:
 - file provenienti direttamente da commesse cliente;
 - backup con nomi cliente o codici ordine;
 - database contenenti note operative private;
-- percorsi locali `C:\Users\...`;
+- percorsi delle home directory personali;
 - email, credenziali, IP/MAC reali;
 - file vendor la cui licenza non consente la redistribuzione.
 
