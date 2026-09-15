@@ -32,6 +32,9 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Audit public content and downloads
+        run: python scripts/audit_public_content.py
+
       - name: Build documentation
         run: mkdocs build --strict
 
