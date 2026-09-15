@@ -1,39 +1,50 @@
 # Numerazione e identificazione fili
 
-Questa pagina separa le procedure per **fili non di alimentazione** e **conduttori di alimentazione**, riportando i nomi esatti delle funzioni già verificati in SPAC Start 26.
+Questa pagina separa le procedure per **fili non di alimentazione** e **conduttori di alimentazione**, riportando i nomi esatti già verificati in SPAC Start 26.
 
 ## Fili non di alimentazione
 
-Per numerare i fili:
+1. Apri **SPAC → Numera Fili**.
+2. Seleziona il **tipo di cavo** dalla lista.
+3. A destra individua **Modalita' di Numerazione**.
+4. Clicca sull'immagine della modalità.
+5. Nella finestra **Configurazione Numerazione Conduttori**, apri il tab **Numerazione Conduttori**.
+6. Scegli la **Modalita' di Numerazione**.
+7. Se usi **Foglio Numero**, scegli il separatore.
+8. Clicca **OK** nella finestra **Configurazione Numerazione Conduttori**.
+9. Clicca **OK** nella finestra precedente.
+10. Torna allo schema.
+11. Evidenzia il cavo tracciando una linea che lo interseca.
 
-1. Apri il menu **SPAC**.
-2. Clicca **Numera Fili**.
-3. Nella finestra che si apre seleziona il **tipo di cavo** dalla lista.
-4. A destra individua la sezione **Modalita' di Numerazione**.
-5. Clicca sull'immagine della modalità di numerazione.
-6. Nella finestra **Configurazione Numerazione Conduttori**, apri il tab **Numerazione Conduttori**.
-7. Seleziona la **Modalita' di Numerazione** desiderata.
-8. Se usi **Foglio Numero**, scegli anche il separatore.
-9. Torna allo schema.
-10. Evidenzia il cavo da numerare tracciando una linea che interseca il cavo.
+### Esito atteso
 
-!!! note "Limite"
+Con **Foglio Numero** l'identificativo segue una forma del tipo:
 
-    La funzione di numerazione descritta sopra si usa per i fili **non di alimentazione**.
+```text
+numeroPagina.numeroIncrementale
+```
 
-## Consultare i numeri già usati
+La procedura descritta sopra vale per fili **non di alimentazione**.
 
-Percorso:
+## Lista dei numeri/rimandi usati
+
+Apri:
 
 ```text
 Numerazione fili → Lista numeri usati
 ```
 
-I numeri segnalati con **asterisco** sono numeri ripetuti e vanno verificati.
+Per filtrare solo i rimandi:
+
+1. attiva **Vedi solo i Rimandi**;
+2. seleziona i multifogli da analizzare, ad esempio `SCHEMA`;
+3. clicca **Scansiona i Multifogli**.
+
+I numeri con **asterisco** sono ripetuti.
 
 ## Eliminare una numerazione esistente
 
-Percorso da menu:
+Percorso:
 
 ```text
 SPAC → Utility Fili → Elimina numerazione
@@ -45,68 +56,76 @@ Comando equivalente:
 DEL_NUMF
 ```
 
-Questa funzione rimuove i numeri filo ma **non cancella i fili dallo schema**.
+La funzione elimina i numeri ma non i fili.
 
-## Fili di alimentazione: verificare l'identificatore linea
+## Fili di alimentazione: aggiungere l'identificatore
 
-I conduttori di alimentazione devono avere un identificatore che permetta a SPAC di distinguere fase, neutro o altro conduttore.
+Se manca il simbolo identificatore:
 
-Se il simbolo identificatore non è presente sulla linea:
-
-1. dalla barra dei menu seleziona **Identificatore Linee**;
+1. barra dei menu → **Identificatore Linee**;
 2. seleziona il tipo di linea;
-3. premi **OK**;
+3. clicca **OK**;
 4. torna allo schema;
-5. evidenzia la linea interessata tracciando una linea che la interseca.
+5. traccia una linea che interseca il conduttore interessato.
 
 ## Numerare/identificare i fili di alimentazione
 
-Dopo aver verificato l'identificatore linea:
-
 1. seleziona **Numerazione Fili**;
-2. nella finestra **Numerazione Fili Unifilare**, seleziona il tipo di fase/neutro, per esempio:
+2. nella finestra **Numerazione Fili Unifilare** scegli il tipo, ad esempio:
 
    ```text
    L1 L2 L3 N
    ```
 
-3. nel campo accanto a **Numero**, imposta il numero di partenza, per esempio:
+3. nel campo accanto a **Numero** imposta il numero iniziale, ad esempio `1`;
+4. configura il numero incrementale in base al risultato desiderato.
 
-   ```text
-   1
-   ```
+Se vuoi soltanto l'identificatore (`L1`, `L2`, `L3`, `N`), usa l'opzione **Non utilizzare numero incrementale**.
 
-4. configura l'uso del numero incrementale in base al risultato desiderato;
-5. se vuoi visualizzare solo l'identificatore (`L1`, `N`, ecc.), disattiva l'uso del progressivo numerico.
+## Prefissi o Suffissi Locali
 
-Esempio senza progressivo:
+Nella sezione **Prefissi o Suffissi Locali**:
+
+1. attiva **Abilita**;
+2. configura il prefisso/suffisso richiesto.
+
+!!! warning "Vincolo"
+
+    Prefissi e suffissi locali funzionano solo insieme a un numero incrementale. Se **Non utilizzare numero incrementale** è attivo, non vengono applicati.
+
+## Cross-reference dei rimandi
+
+Dopo aver creato rimandi con lo stesso nome e direzione coerente:
 
 ```text
-L1
-N
+UTIL → Cross Reference → Rimandi → Cross → Ok - Aggiorna
 ```
 
-## Differenza pratica
+Se vuoi vedere il file Excel prodotto, abilita la visualizzazione dell'output prima di **Ok - Aggiorna**.
 
-| Caso | Funzione |
+## Riferimento rapido
+
+| Operazione | Percorso esatto |
 |---|---|
-| Filo non di alimentazione | **SPAC → Numera Fili** |
-| Configurazione modalità | **Configurazione Numerazione Conduttori** → **Numerazione Conduttori** |
-| Verifica duplicati | **Numerazione fili → Lista numeri usati** |
-| Rimozione numerazione | **SPAC → Utility Fili → Elimina numerazione** / `DEL_NUMF` |
-| Alimentazione senza identificatore | **Identificatore Linee** → tipo linea → **OK** |
-| Numerazione/identificazione alimentazione | **Numerazione Fili** → finestra **Numerazione Fili Unifilare** |
+| Numerare fili normali | **SPAC → Numera Fili** |
+| Configurare modalità | **Configurazione Numerazione Conduttori → Numerazione Conduttori** |
+| Confermare modalità | **OK** → **OK** → selezione cavo nello schema |
+| Lista numeri/rimandi | **Numerazione fili → Lista numeri usati** |
+| Solo rimandi | **Vedi solo i Rimandi → Scansiona i Multifogli** |
+| Eliminare numerazione | **SPAC → Utility Fili → Elimina numerazione** / `DEL_NUMF` |
+| Identificatore alimentazione | **Identificatore Linee → tipo linea → OK** |
+| Fasi/neutro | **Numerazione Fili → Numerazione Fili Unifilare** |
+| Prefissi/suffissi | **Prefissi o Suffissi Locali → Abilita** |
+| Cross-reference | **UTIL → Cross Reference → Rimandi → Cross → Ok - Aggiorna** |
 
 ## Checklist
 
-Prima di validare:
-
-- fili non di alimentazione numerati con **SPAC → Numera Fili**;
-- modalità scelta in **Configurazione Numerazione Conduttori**;
-- alimentazioni con identificatore linea presente;
-- fasi/neutro scelti nella finestra **Numerazione Fili Unifilare**;
-- duplicati verificati con **Lista numeri usati**;
-- numerazione vecchia eliminata con `DEL_NUMF` se necessario.
+- modalità numerazione confermata con i due **OK**;
+- selezione cavo eseguita nello schema;
+- rimandi controllati con filtro **Vedi solo i Rimandi**;
+- alimentazioni dotate di identificatore;
+- progressivo/prefisso/suffisso coerenti;
+- cross-reference aggiornato quando vengono modificati i rimandi.
 
 ## Collegamenti
 
