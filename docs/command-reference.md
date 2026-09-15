@@ -1,52 +1,127 @@
-# Comandi e percorsi esatti
+# Comandi e click esatti
 
-Questa pagina raccoglie i **nomi esatti dei comandi**, delle finestre e delle voci da cliccare già verificati nella guida SPAC Start 26.
+Questa è la pagina da tenere aperta mentre lavori in **SPAC Start 26**.
 
-!!! important "Regola della knowledge base"
+Regola: quando il percorso è verificato viene riportato letteralmente. Dove manca una verifica reale viene scritto **Da verificare**.
 
-    Quando il percorso è noto, una procedura deve riportare: **comando da digitare**, **finestra che si apre**, **voce da cliccare**, **campo da impostare** e **risultato atteso**.
+## Riferimento rapidissimo
 
-    Se il nome esatto non è stato ancora verificato in SPAC Start 26, va scritto `Da verificare`. Non inventare nomi plausibili di menu o pulsanti.
+| Devo fare | Comando / percorso |
+|---|---|
+| Aprire libreria simboli | `SP_XML_MENU` |
+| Personalizzare shortcut | `CUI` / `_CUI` |
+| Snap e griglia | `_DSETTINGS` → **Snap e griglia** |
+| Inserire pagina standard | **Modifica/Inserisci → Riferimento DWG → Tipo di percorso: Percorso completo → OK** |
+| Legenda fogli | **Fogli → Legenda Fogli → Disegna → foglio vuoto → OK** |
+| Aprire unifilare | **UNIFILARE → Disegno Unifilare** |
+| Materiale in Disegno Unifilare | tasto destro tabella → **Avvio DbCenter** |
+| Numerare fili | **SPAC → Numera Fili** |
+| Numeri/rimandi usati | **Numerazione fili → Lista numeri usati** |
+| Solo rimandi | **Vedi solo i Rimandi → Scansiona i Multifogli** |
+| Eliminare numerazione | **SPAC → Utility Fili → Elimina numerazione** / `DEL_NUMF` |
+| Cross-reference | **UTIL → Cross Reference → Rimandi → Cross → Ok - Aggiorna** |
+| Inserire morsetti | **Inser Morsetti** / `SPINSMOR` |
+| Nuova morsettiera | **Elenco Quadri → tasto destro → Nuova morsettiera** |
+| Nuovo morsetto | morsettiera → tipo → **Anteprima → Ok - Nuovo → clic filo → Invio** |
+| Associare materiale a simbolo | doppio click → **Materiali → tasto destro → Avvio Archivio Materiali (DbCenter)** |
+| Inserire DWG/blocco | `_INSER` |
+| Esplodere | `ESPLODI` |
+| Creare attributo | `ATTDEF` |
+| Proprietà | `PROPRIETA` / `CTRL+1` |
+| Copiare proprietà | `CORRISPROP` |
+| Modificare attributi | `EDITATT` |
+| Salvare simbolo DWG | `MBLOCCO` |
+| Anteprima simbolo | `_MSLIDE` |
+| Gestire immagini | `IMMAGINI` |
+| Ripristinare immagine | **Modifica/Inserisci → Gestioni immagini → Sfoglia → Salva percorso** |
+| Togliere bordo immagine | `IMAGEFRAME` → `0` |
+| Layer non eliminabile | `PURGE` → **Trova elementi non eliminabili** |
+| Oggetti su layer | `QSELECT` → filtro **Layer** |
+| Residuo dentro blocco | `BEDIT` → modifica → salva → `PURGE` |
 
-## Interfaccia e libreria simboli
+---
 
-### Ripristino/gestione menu
+## Interfaccia e libreria
 
-```text
-_MENU
-```
-
-Il file/menu specifico da ricaricare dipende dalla configurazione installata.
-
-### Aprire la libreria simboli
+### Libreria simboli
 
 ```text
 SP_XML_MENU
 ```
 
-Risultato atteso: apertura della libreria simboli SPAC.
+Esito atteso: apertura della libreria simboli SPAC.
 
-### Creare una scorciatoia da tastiera per la libreria
+### Shortcut per la libreria
 
-1. Digita `CUI` oppure `_CUI`.
-2. Nella finestra **Personalizza interfaccia utente**, vai in **Elenco comandi**.
-3. Tasto destro → **Nuovo comando**.
-4. Nome consigliato: `Libreria simboli`.
-5. Nel campo **Macro** inserisci:
+1. `CUI` oppure `_CUI`.
+2. Finestra **Personalizza interfaccia utente**.
+3. **Elenco comandi** → tasto destro → **Nuovo comando**.
+4. Nome, ad esempio `Libreria simboli`.
+5. Campo **Macro**:
 
    ```text
    ^C^CSP_XML_MENU;
    ```
 
-6. Nell'albero apri:
+6. **Tasti di scelta rapida → Tasti di scelta rapida**.
+7. Trascina il comando.
+8. Campo **Accesso-Tasto/i** → ad esempio `CTRL+SHIFT+L`.
+9. **Applica → OK**.
 
-   ```text
-   Tasti di scelta rapida → Tasti di scelta rapida
-   ```
+### Menu CAD/SPAC
 
-7. Trascina il comando dentro **Tasti di scelta rapida**.
-8. Nel campo **Accesso-Tasto/i** imposta la combinazione, ad esempio `CTRL+SHIFT+L`.
-9. Clicca **Applica** → **OK**.
+```text
+_MENU
+```
+
+Il menu/file specifico da ricaricare dipende dalla configurazione installata.
+
+---
+
+## Progetto, pagine e cartigli
+
+### Pagina standard come Riferimento DWG
+
+1. foglio libero;
+2. **Modifica/Inserisci → Riferimento DWG**;
+3. seleziona il DWG;
+4. **Tipo di percorso → Percorso completo**;
+5. **OK**;
+6. posiziona il riferimento.
+
+Non usare **Inserisci Blocco** per le pagine standard che devono restare collegate al sorgente.
+
+### Legenda fogli
+
+```text
+Fogli → Legenda Fogli → Disegna
+```
+
+Poi seleziona un foglio vuoto e premi **OK**.
+
+### Immagini
+
+```text
+IMMAGINI
+```
+
+- **Attacca** → collega immagine;
+- **Stacca** → scollega immagine.
+
+Se il path non è più valido:
+
+```text
+Modifica/Inserisci → Gestioni immagini → Sfoglia → Salva percorso
+```
+
+Bordo immagini:
+
+```text
+IMAGEFRAME
+0
+```
+
+---
 
 ## Snap e griglia
 
@@ -54,165 +129,61 @@ Risultato atteso: apertura della libreria simboli SPAC.
 _DSETTINGS
 ```
 
-Nella finestra aperta seleziona il tab **Snap e griglia**.
-
-## Immagini
-
-### Gestione immagini
+Tab:
 
 ```text
-IMMAGINI
+Snap e griglia
 ```
 
-Pulsanti verificati:
-
-- **Attacca** → collega una nuova immagine;
-- **Stacca** → rimuove il riferimento selezionato.
-
-### Ripristinare il percorso di un'immagine
+Esempio usato:
 
 ```text
-Modifica/Inserisci → Gestioni immagini
+Intervallo snap X = 2,5
+Intervallo snap Y = 2,5
 ```
 
-Poi:
+---
 
-1. seleziona l'immagine;
-2. **Sfoglia**;
-3. riseleziona il file;
-4. **Salva percorso**.
+## Schema unifilare
 
-### Nascondere il bordo immagini
+### Aprire Disegno Unifilare
 
 ```text
-IMAGEFRAME
+UNIFILARE → Disegno Unifilare
 ```
 
-Valore:
+Campi principali della finestra:
 
-```text
-0
-```
+- **Scelta Circuiti memorizzati**;
+- **Tipo quadro**;
+- **Monofase / Trifase**;
+- **Composizione/Tipologia**;
+- **Anteprima**;
+- **Scelta del quadro**.
 
-## CAD e creazione simboli
+### Materiale su un livello
 
-### Inserire DWG/blocco
+1. seleziona livello;
+2. seleziona tipo dispositivo;
+3. tasto destro sulla tabella materiali;
+4. **Avvio DbCenter**;
+5. scegli materiale.
 
-```text
-_INSER
-```
+### Ingresso linea
 
-### Esplodere geometria
+1. **Ingresso linea**;
+2. compila livelli;
+3. associa materiali;
+4. verifica **Composizione/Tipologia**;
+5. **Disegna**.
 
-```text
-ESPLODI
-```
+Nuova linea singola: togli spunta **Ingresso linea** → configura → **Disegna** → scegli posizione.
 
-### Riempimento pieno
+---
 
-```text
-Disegna → Tratteggio
-```
+## Numerazione fili
 
-Poi:
-
-1. nella barra dei comandi usa **I**;
-2. finestra **Tratteggio e sfumatura**;
-3. campo **Modello** → `SOLID`;
-4. scegli il colore;
-5. seleziona l'area da riempire.
-
-### Creare il DWG del simbolo
-
-1. Seleziona gli oggetti.
-2. Digita:
-
-   ```text
-   MBLOCCO
-   ```
-
-3. In **Origine** seleziona `Oggetti`.
-4. Seleziona il **punto base**.
-5. Salva nella categoria corretta sotto:
-
-   ```text
-   C:\SPAC Start 26\Librerie\Blk\_CUSTOM
-   ```
-
-### Creare l'anteprima SLD
-
-1. Apri il DWG.
-2. Centra il disegno e regola lo zoom.
-3. Digita:
-
-   ```text
-   _MSLIDE
-   ```
-
-4. Salva nella stessa cartella del DWG.
-5. Usa lo stesso nome base per `.dwg` e `.sld`.
-
-## Attributi
-
-### Creare un attributo
-
-```text
-ATTDEF
-```
-
-Per `NOME`:
-
-| Campo | Valore |
-|---|---|
-| **Etichetta** | `NOME` |
-| **Messaggio** | `Sigla componente` |
-
-Per `PRES` di una Madre:
-
-| Campo | Valore |
-|---|---|
-| **Etichetta** | `PRES` |
-| **Default** | `M` |
-
-Per `PINA1`:
-
-| Campo | Valore |
-|---|---|
-| **Etichetta** | `PINA1` |
-| **Default** | `1` |
-| **Invisibile** | No |
-| **Costante** | No |
-| **Blocca posizione** | Sì |
-
-Per il pin di uscita corrispondente usa `PINB1` mantenendo la stessa numerazione della coppia.
-
-### Proprietà
-
-```text
-PROPRIETA
-```
-
-oppure:
-
-```text
-CTRL+1
-```
-
-### Copiare proprietà
-
-```text
-CORRISPROP
-```
-
-### Modificare attributi di un'istanza
-
-```text
-EDITATT
-```
-
-## Numerazione fili non di alimentazione
-
-### Avviare la numerazione
+### Fili non di alimentazione
 
 ```text
 SPAC → Numera Fili
@@ -220,189 +191,300 @@ SPAC → Numera Fili
 
 Poi:
 
-1. seleziona il tipo di cavo;
-2. a destra individua **Modalita' di Numerazione**;
-3. clicca sull'immagine della modalità;
-4. nella finestra **Configurazione Numerazione Conduttori** apri il tab **Numerazione Conduttori**;
-5. seleziona la **Modalita' di Numerazione**;
-6. se scegli **Foglio Numero**, seleziona anche il separatore;
-7. torna allo schema;
-8. evidenzia il cavo tracciando una linea che lo interseca.
+1. tipo cavo;
+2. **Modalita' di Numerazione**;
+3. clic immagine modalità;
+4. finestra **Configurazione Numerazione Conduttori**;
+5. tab **Numerazione Conduttori**;
+6. scegli modalità;
+7. se **Foglio Numero**, scegli separatore;
+8. **OK**;
+9. **OK** nella finestra precedente;
+10. interseca il cavo nello schema.
 
-### Lista dei numeri usati
+### Alimentazioni
+
+Se manca l'identificatore:
+
+```text
+Identificatore Linee → tipo linea → OK
+```
+
+Poi interseca la linea nello schema.
+
+Per fasi/neutro:
+
+1. **Numerazione Fili**;
+2. finestra **Numerazione Fili Unifilare**;
+3. scegli, ad esempio, **L1 L2 L3 N**;
+4. campo **Numero** → valore iniziale;
+5. configura progressivo.
+
+Per soli identificatori usa **Non utilizzare numero incrementale**.
+
+Prefissi/suffissi:
+
+```text
+Prefissi o Suffissi Locali → Abilita
+```
+
+Funzionano solo se è attivo un numero incrementale.
+
+### Lista numeri e rimandi
 
 ```text
 Numerazione fili → Lista numeri usati
 ```
 
-I numeri con asterisco sono ripetuti.
+Per soli rimandi:
 
-### Eliminare numerazione
+1. **Vedi solo i Rimandi**;
+2. seleziona multifogli;
+3. **Scansiona i Multifogli**.
+
+Asterisco = numero ripetuto.
+
+---
+
+## Rimandi e cross-reference
+
+### Creare un rimando
+
+1. **Dynamic Coll** oppure **Dynamic Alim**;
+2. numero fili;
+3. traccia collegamento;
+4. **Invio**;
+5. scegli:
+   - **Rimandi di arrivo**;
+   - **Rimandi di partenza**;
+   - **Rimandi di arrivo e partenza**;
+6. scegli numero/nome filo;
+7. eventuale tipo cavo;
+8. **Ok**.
+
+Secondo rimando: stesso nome e direzione coerente.
+
+### Aggiornare cross-reference
 
 ```text
-SPAC → Utility Fili → Elimina numerazione
+UTIL → Cross Reference
 ```
 
-oppure:
+Poi:
 
-```text
-DEL_NUMF
-```
+1. **Rimandi**;
+2. **Cross**;
+3. scegli se mostrare il file Excel di output;
+4. **Ok - Aggiorna**.
 
-La funzione elimina i numeri, non i fili.
-
-## Fili di alimentazione
-
-### Aggiungere l'identificatore alla linea
-
-Se manca il simbolo identificatore:
-
-1. barra dei menu → **Identificatore Linee**;
-2. seleziona il tipo di linea;
-3. **OK**;
-4. torna allo schema;
-5. evidenzia la linea tracciando una linea che la interseca.
-
-### Numerare/identificare fasi e neutro
-
-1. Seleziona **Numerazione Fili**.
-2. Nella finestra **Numerazione Fili Unifilare**, scegli il tipo di fase/neutro, ad esempio `L1 L2 L3 N`.
-3. Nel campo accanto a **Numero** imposta il numero di partenza, ad esempio `1`.
-4. Configura il progressivo numerico.
-5. Se vuoi solo `L1`, `L2`, `L3`, `N`, disattiva il progressivo.
+---
 
 ## Morsetti e morsettiere
 
-### Aprire Inser Morsetti
-
-Nome funzione:
-
-```text
-Inser Morsetti
-```
-
-Comando equivalente da riga comando:
+### Aprire
 
 ```text
 SPINSMOR
 ```
 
-Prerequisito: deve essere aperto un database materiali contenente almeno una morsettiera.
+oppure **Inser Morsetti**.
 
-### Creare una nuova morsettiera
+Prerequisito: database materiali con almeno una morsettiera.
 
-Nella finestra **Inser Morsetti**:
+### Nuova morsettiera
 
-1. individua il riquadro in alto a sinistra **Elenco Quadri**;
-2. tasto destro su **Elenco Quadri**, sul nome del quadro oppure su una morsettiera esistente;
-3. clicca **Nuova morsettiera**.
+**Inser Morsetti** → **Elenco Quadri** → tasto destro → **Nuova morsettiera**.
 
-## Associazione materiali
+### Nuovo morsetto
 
-Sul simbolo:
+1. seleziona morsettiera;
+2. scegli tipo morsetto;
+3. riquadro **Anteprima** → scegli rappresentazione;
+4. per numero morsetto usa modello con `NumM`;
+5. **Ok - Nuovo**;
+6. clic sul filo nel punto di inserimento;
+7. **Invio**.
 
-1. **doppio click sul simbolo**;
+| Campo | Significato |
+|---|---|
+| `NumI` | numero filo ingresso |
+| `NumO` | numero filo uscita |
+| `NumM` | numero morsetto |
+
+---
+
+## Simboli custom
+
+### Importare DWG
+
+```text
+_INSER
+```
+
+Nella finestra puoi usare le tab **Disegno corrente**, **Recenti**, **Preferiti**, **Librerie**, oppure ricerca/sfoglia.
+
+### Esplodere
+
+```text
+ESPLODI
+```
+
+Poi normalizza su:
+
+- Layer `0`;
+- Colore `DaBlocco`;
+- Tipo linea `DaBlocco`;
+- Spessore `DaBlocco`.
+
+### Salvare DWG simbolo
+
+```text
+MBLOCCO
+```
+
+Impostazioni:
+
+1. **Origine → Oggetti**;
+2. seleziona punto base;
+3. **Destinazione → Nome e percorso del file** → cartella `_CUSTOM` corretta;
+4. **Unità inser. → Senza unità**;
+5. salva.
+
+### Creare SLD
+
+1. apri DWG;
+2. centra/zoom;
+3. `_MSLIDE`;
+4. salva nella stessa cartella e con lo stesso nome base.
+
+```text
+NOME_SIMBOLO.dwg
+NOME_SIMBOLO.sld
+```
+
+---
+
+## Attributi
+
+### NOME
+
+`ATTDEF`:
+
+| Campo | Valore |
+|---|---|
+| Etichetta | `NOME` |
+| Messaggio | `Sigla componente` |
+| Default | vuoto |
+| Invisibile | No |
+| Costante | No |
+| Blocca posizione | Sì |
+
+### PRES Madre
+
+| Campo | Valore |
+|---|---|
+| Etichetta | `PRES` |
+| Default | `M` |
+| Invisibile | Sì |
+| Costante | Sì |
+| Blocca posizione | Sì |
+
+### PINA1
+
+| Campo | Valore |
+|---|---|
+| Etichetta | `PINA1` |
+| Default | `1` |
+| Invisibile | No |
+| Costante | No |
+| Blocca posizione | Sì |
+
+### PINB1
+
+| Campo | Valore |
+|---|---|
+| Etichetta | `PINB1` |
+| Default | `2` |
+| Invisibile | No |
+| Costante | No |
+| Blocca posizione | Sì |
+
+Testo pin standard BLK custom: `1.5`.
+
+Altri comandi:
+
+```text
+PROPRIETA / CTRL+1
+CORRISPROP
+EDITATT
+```
+
+`CORRISPROP`: sorgente → destinazione → **Invio**.
+
+---
+
+## Materiali
+
+Su simbolo intelligente:
+
+1. doppio click;
 2. riquadro **Materiali**;
-3. **tasto destro**;
-4. clicca **Avvio Archivio Materiali (DbCenter)**;
-5. seleziona il materiale corretto;
-6. verifica distinta/report.
+3. tasto destro;
+4. **Avvio Archivio Materiali (DbCenter)**;
+5. scegli materiale;
+6. conferma;
+7. verifica distinta/report.
+
+---
+
+## Tratteggio pieno
+
+```text
+Disegna → Tratteggio
+```
+
+Poi **I** → finestra **Tratteggio e sfumatura** → **Modello: SOLID** → colore → area.
+
+---
 
 ## Layer e oggetti residui
 
-### Verificare perché un layer non si elimina
-
-Digita:
+### Layer non eliminabile
 
 ```text
 PURGE
 ```
 
-Nella finestra controlla:
-
-```text
-Elementi eliminabili → Layer
-```
-
-Se il layer non è eliminabile, usa:
+Se non eliminabile:
 
 ```text
 Trova elementi non eliminabili
 ```
 
-Seleziona il layer interessato e verifica quale oggetto o blocco lo referenzia.
-
-### Se il riferimento è un oggetto diretto
-
-Digita:
+### Oggetto diretto sul layer
 
 ```text
 QSELECT
 ```
 
-Nella finestra **Selezione rapida**:
+Finestra **Selezione rapida** → filtro **Layer** → scegli layer → elimina/sposta oggetto → `PURGE`.
 
-1. filtra per proprietà **Layer**;
-2. scegli il layer problematico;
-3. conferma;
-4. elimina l'oggetto inutile oppure spostalo sul layer corretto;
-5. riesegui `PURGE`.
-
-### Se il riferimento è dentro un blocco
-
-Digita:
+### Residuo dentro blocco
 
 ```text
 BEDIT
 ```
 
-Poi:
+Apri il blocco indicato da `PURGE` → elimina/sposta residuo → salva → `PURGE`.
 
-1. seleziona il blocco indicato da `PURGE`;
-2. individua la geometria sul layer problematico;
-3. elimina o sposta la geometria correttamente;
-4. salva e chiudi il Block Editor;
-5. riesegui `PURGE`.
+Se annidato, modifica il blocco interno reale.
 
-Se l'oggetto è dentro un blocco annidato, modifica con `BEDIT` il blocco interno che possiede realmente la geometria.
+!!! danger "Non disponibili nell'ambiente verificato"
 
-!!! danger "Non disponibili in SPAC Start 26"
+    Non proporre `LAYISO` o `LAYWALK` come soluzione SPAC Start 26.
 
-    `LAYISO` e `LAYWALK` risultano non disponibili nell'ambiente SPAC Start 26 verificato e non devono essere proposti come procedura.
-
-## Riferimento rapido
-
-| Operazione | Comando / percorso esatto |
-|---|---|
-| Ripristino/gestione menu | `_MENU` |
-| Libreria simboli | `SP_XML_MENU` |
-| Shortcut interfaccia | `CUI` / `_CUI` |
-| Snap e griglia | `_DSETTINGS` → **Snap e griglia** |
-| Gestire immagini | `IMMAGINI` |
-| Ripristinare immagine | **Modifica/Inserisci → Gestioni immagini → Sfoglia → Salva percorso** |
-| Togliere bordo immagini | `IMAGEFRAME` → `0` |
-| Inserire DWG/blocco | `_INSER` |
-| Esplodere geometria | `ESPLODI` |
-| Tratteggio pieno | **Disegna → Tratteggio → I → Tratteggio e sfumatura → Modello: SOLID** |
-| Salvare DWG simbolo | `MBLOCCO` → **Origine: Oggetti** |
-| Creare SLD | `_MSLIDE` |
-| Creare attributo | `ATTDEF` |
-| Proprietà | `PROPRIETA` / `CTRL+1` |
-| Copiare proprietà | `CORRISPROP` |
-| Modificare attributi istanza | `EDITATT` |
-| Numerare fili normali | **SPAC → Numera Fili** |
-| Configurare numerazione | **Configurazione Numerazione Conduttori → Numerazione Conduttori** |
-| Lista numeri usati | **Numerazione fili → Lista numeri usati** |
-| Eliminare numerazione | **SPAC → Utility Fili → Elimina numerazione** / `DEL_NUMF` |
-| Identificare alimentazione | **Identificatore Linee** → tipo linea → **OK** |
-| Numerare alimentazione | **Numerazione Fili** → **Numerazione Fili Unifilare** |
-| Inserire morsetti | **Inser Morsetti** / `SPINSMOR` |
-| Creare morsettiera | **Inser Morsetti → tasto destro su Elenco Quadri → Nuova morsettiera** |
-| Associare materiale | **doppio click simbolo → Materiali → tasto destro → Avvio Archivio Materiali (DbCenter)** |
-| Layer non eliminabile | `PURGE` → **Trova elementi non eliminabili** |
-| Selezionare oggetti di un layer | `QSELECT` → **Layer** |
-| Residuo dentro un blocco | `BEDIT` → modifica blocco → salva → `PURGE` |
+---
 
 ## Ancora da verificare
 
-Sezioni per cui la knowledge base conosce la logica ma non ha ancora consolidato il nome esatto di ogni comando/percorso devono restare marcate `Da verificare`, in particolare dove indicato nelle relative pagine operative.
+Restano da consolidare solo i click che non sono stati ancora osservati direttamente, ad esempio alcuni pulsanti iniziali della creazione di un nuovo progetto/cartiglio. In quei casi la pagina specifica deve riportare **Da verificare** nel punto preciso.
