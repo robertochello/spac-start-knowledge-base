@@ -308,6 +308,68 @@ Sul simbolo:
 5. seleziona il materiale corretto;
 6. verifica distinta/report.
 
+## Layer e oggetti residui
+
+### Verificare perché un layer non si elimina
+
+Digita:
+
+```text
+PURGE
+```
+
+Nella finestra controlla:
+
+```text
+Elementi eliminabili → Layer
+```
+
+Se il layer non è eliminabile, usa:
+
+```text
+Trova elementi non eliminabili
+```
+
+Seleziona il layer interessato e verifica quale oggetto o blocco lo referenzia.
+
+### Se il riferimento è un oggetto diretto
+
+Digita:
+
+```text
+QSELECT
+```
+
+Nella finestra **Selezione rapida**:
+
+1. filtra per proprietà **Layer**;
+2. scegli il layer problematico;
+3. conferma;
+4. elimina l'oggetto inutile oppure spostalo sul layer corretto;
+5. riesegui `PURGE`.
+
+### Se il riferimento è dentro un blocco
+
+Digita:
+
+```text
+BEDIT
+```
+
+Poi:
+
+1. seleziona il blocco indicato da `PURGE`;
+2. individua la geometria sul layer problematico;
+3. elimina o sposta la geometria correttamente;
+4. salva e chiudi il Block Editor;
+5. riesegui `PURGE`.
+
+Se l'oggetto è dentro un blocco annidato, modifica con `BEDIT` il blocco interno che possiede realmente la geometria.
+
+!!! danger "Non disponibili in SPAC Start 26"
+
+    `LAYISO` e `LAYWALK` risultano non disponibili nell'ambiente SPAC Start 26 verificato e non devono essere proposti come procedura.
+
 ## Riferimento rapido
 
 | Operazione | Comando / percorso esatto |
@@ -337,6 +399,9 @@ Sul simbolo:
 | Inserire morsetti | **Inser Morsetti** / `SPINSMOR` |
 | Creare morsettiera | **Inser Morsetti → tasto destro su Elenco Quadri → Nuova morsettiera** |
 | Associare materiale | **doppio click simbolo → Materiali → tasto destro → Avvio Archivio Materiali (DbCenter)** |
+| Layer non eliminabile | `PURGE` → **Trova elementi non eliminabili** |
+| Selezionare oggetti di un layer | `QSELECT` → **Layer** |
+| Residuo dentro un blocco | `BEDIT` → modifica blocco → salva → `PURGE` |
 
 ## Ancora da verificare
 
